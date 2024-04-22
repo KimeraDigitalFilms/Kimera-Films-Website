@@ -12,18 +12,18 @@ export default {
         "primary-dark": "#b29126",
         "primary-light": "#ddc061",
 
-        secondary: "#6e37d4",
+        secondary: "#6037d4",
         "secondary-content": "#ffffff",
-        "secondary-dark": "#5726b2",
-        "secondary-light": "#8c61dd",
+        "secondary-dark": "#4b26b2",
+        "secondary-light": "#8161dd",
 
-        background: "#f0f0f0",
-        foreground: "#fbfbfb",
-        border: "#dfdfdf",
+        background: "#1b1a18",
+        foreground: "#282724",
+        border: "#43413d",
 
-        copy: "#262626",
-        "copy-light": "#666666",
-        "copy-lighter": "#8c8c8c",
+        copy: "#fbfbfb",
+        "copy-light": "#dbdad7",
+        "copy-lighter": "#aaa8a1",
 
         success: "#37d437",
         warning: "#d4d437",
@@ -37,3 +37,5 @@ export default {
   },
   plugins: [],
 }
+
+

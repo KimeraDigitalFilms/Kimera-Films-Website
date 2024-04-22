@@ -28,7 +28,7 @@ function Distortion() {
 
   const fragmentShader = `
     varying vec2 vUv;
-    uniform sampler2D u_texture;    
+    uniform sampler2D u_texture;
     uniform vec2 u_mouse;
     uniform vec2 u_prevMouse;
     uniform float u_aberrationIntensity;
@@ -36,13 +36,13 @@ function Distortion() {
     void main() {
         vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
         vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
-        
+
         vec2 mouseDirection = u_mouse - u_prevMouse;
-        
+
         vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
         float pixelDistanceToMouse = length(pixelToMouseDirection);
         float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
- 
+
         vec2 uvOffset = strength * - mouseDirection * 0.2;
         vec2 uv = vUv - uvOffset;
 
@@ -54,19 +54,16 @@ function Distortion() {
     }
 `;
 
+  scene = new THREE.Scene();
 
-
-scene = new THREE.Scene();
-
-// camera setup
-camera = new THREE.PerspectiveCamera(
-  80,
-  window.innerWidth / window.innerHeight,
-  0.01,
-  10
-);
-camera.position.z = 1;
-
+  // camera setup
+  camera = new THREE.PerspectiveCamera(
+    80,
+    window.innerWidth / window.innerHeight,
+    0.01,
+    10
+  );
+  camera.position.z = 1;
 
   function initializeScene(texture) {
     //   scene creation
@@ -78,10 +75,9 @@ camera.position.z = 1;
       u_texture: { type: "t", value: texture },
     };
 
-
     //   creating a plane mesh with materials
     planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(4, 1.8),
+      new THREE.PlaneGeometry(3, 1.8),
       new THREE.ShaderMaterial({
         uniforms: shaderUniforms,
         vertexShader,
@@ -124,7 +120,6 @@ camera.position.z = 1;
     renderer.render(scene, camera);
   }
 
-
   function handleMouseMove(event) {
     easeFactor = 0.05; //increase to increase speed of distortion
     let rect = imageContainer.getBoundingClientRect();
@@ -151,8 +146,6 @@ camera.position.z = 1;
     targetMousePosition = { ...prevPosition };
   }
 
-
-
   useEffect(() => {
     // use the existing image from html in the canvas
     imageContainer = document.getElementById("imageContainer");
@@ -169,37 +162,36 @@ camera.position.z = 1;
     );
     camera.position.z = 1;
 
-
     initializeScene(new THREE.TextureLoader().load(imageElement.src));
 
     animateScene();
   }, []);
 
-  window.addEventListener("resize",useEffect(()=>{
-    let w=imageContainer.offsetWidth
-let h=imageContainer.offsetHeight;
-renderer.setSize(w,h)
-camera.aspect=w/h
-camera.updateProjectionMatrix()
-  },[]))
-
-
-
-
+  window.addEventListener(
+    "resize",
+    useEffect(() => {
+      let w = imageContainer.offsetWidth;
+      let h = imageContainer.offsetHeight;
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }, [])
+  );
 
   return (
-    <div className="flex justify-center w-full h-screen items-center">
+    <div className="flex justify-center w-full h-[75vh] items-center">
       <div
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         id="imageContainer"
-        className="flex items-center justify-center w-full relative h-full"
+        className="flex items-center justify-center w-full h-full"
       >
         <img
           id="myImage"
-          src="https://s3-alpha.figma.com/hub/file/3381690164/256f3509-133f-4701-9b42-cba6af6f094f-cover.png"
-          className="w-full h-full relative object-cover"
+          src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/1.jpg"
+          // src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>

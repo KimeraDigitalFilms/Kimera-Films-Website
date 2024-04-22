@@ -3,7 +3,7 @@ import Distortion from '../components/Distortion/Distortion'
 
 function Home() {
   return (
-    <div>
+    <div className='h-[750vh]'>
       <Distortion/>
     </div>
   )
