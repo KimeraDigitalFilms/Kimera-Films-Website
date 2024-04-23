@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Distortion.css";
 import * as THREE from "three";
-import { PerspectiveCamera } from "@react-three/drei";
+
 
 function Distortion() {
   // variables
@@ -60,8 +60,8 @@ function Distortion() {
   camera = new THREE.PerspectiveCamera(
     80,
     window.innerWidth / window.innerHeight,
-    0.01,
-    10
+    // 0.01,
+    // 10
   );
   camera.position.z = 1;
 
@@ -77,7 +77,7 @@ function Distortion() {
 
     //   creating a plane mesh with materials
     planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(3, 1.8),
+      new THREE.PlaneGeometry(4, 1.85),
       new THREE.ShaderMaterial({
         uniforms: shaderUniforms,
         vertexShader,
@@ -85,15 +85,18 @@ function Distortion() {
       })
     );
 
+   
+
     //   add mesh to scene
     scene.add(planeMesh);
 
     //   render
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(imageContainer.offsetWidth, imageContainer.offsetHeight);
-
     //   create a canvas
     imageContainer.appendChild(renderer.domElement);
+
+
   }
 
   function animateScene() {
@@ -163,7 +166,7 @@ function Distortion() {
     camera.position.z = 1;
 
     initializeScene(new THREE.TextureLoader().load(imageElement.src));
-
+   
     animateScene();
   }, []);
 
@@ -178,6 +181,7 @@ function Distortion() {
     }, [])
   );
 
+  
   return (
     <div className="flex justify-center w-full h-[75vh] items-center">
       <div
@@ -185,13 +189,16 @@ function Distortion() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         id="imageContainer"
-        className="flex items-center justify-center w-full h-full"
+        className="flex items-center justify-center  w-full h-full"
       >
+        <h1 
+    id="heroText"
+        className="absolute text-primary-light/60 z-[10] pointer-events-none text-7xl block h-fit w-fit mx-auto font-serif ">Unseen. Unknown. Unmatched.</h1>
         <img
           id="myImage"
-          src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/1.jpg"
+          src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"
           // src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
-          className="w-full h-full object-cover"
+          className="w-full  object-cover"
         />
       </div>
     </div>

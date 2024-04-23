@@ -38,7 +38,6 @@ function Navbar() {
     setMobile(window.innerWidth <= 460 ? 1 : 0);
   }, [window.innerWidth]);
 
-
   return (
     <>
       {!mobile ? (
@@ -54,7 +53,7 @@ function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font sticky bg-black/75 top-0 z-50 px-7`}
+            className={`body-font sticky bg-transparent top-0 z-50 px-7`}
           >
             <div className="container h-full mx-auto justify-between flex flex-wrap p-5 flex-col md:flex-row items-center">
               <Link
@@ -70,30 +69,19 @@ function Navbar() {
               </Link>
 
               <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
+                <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 <Anchor
-                
                   colorStyle={``}
-                  content={"Home"}
-                  href={"/"}
+                  content={"Projects"}
+                  href={"/projects"}
                 />
                 <Anchor
-           
                   colorStyle={``}
                   content={"Services"}
                   href={"/services"}
                 />
-                <Anchor
-      
-                  colorStyle={``}
-                  content={"About"}
-                  href={"/about"}
-                />
-                <Anchor
-               
-                  colorStyle={``}
-                  content={"Contact"}
-                  href={"/contact"}
-                />
+                <Anchor colorStyle={``} content={"About"} href={"/about"} />
+                <Anchor colorStyle={``} content={"Contact"} href={"/contact"} />
               </nav>
             </div>
           </motion.header>
