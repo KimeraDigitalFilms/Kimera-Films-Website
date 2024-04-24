@@ -2,3 +2,10 @@ body{
     background-color: #1b1a18 !important; 
     width: 100%;
 }
+.screen-padding{
+    padding-left: calc(8px + 1.5625vw);
+    padding-right: calc(8px + 1.5625vw);
+  }
+  .screen-height{
+    min-height: calc(100dvh - 88px);
+  }

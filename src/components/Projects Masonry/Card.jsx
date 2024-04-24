@@ -7,7 +7,7 @@ function Card({ setSelected, item }) {
 
   return (
     <>
-      <div className="box-content w-full  z-[50]">
+      <div className="box-content w-full   z-[50]">
         <motion.div
           // className={`flex justify-center items-center mx-auto justify-self-center place-items-center `}
         >
@@ -37,7 +37,7 @@ e.target.play()
            layout
            playsInline
            layoutId={item.id}
-           className="mx-auto w-full  overflow-hidden hover:cursor-pointer"
+           className="mx-auto inline w-full  overflow-hidden hover:cursor-pointer"
            whileTap={{ scale: 0.95 }}
           onClick={() => {
             setSelected(item);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, } from "framer-motion";
-
 import './Ticker.css'
+import '../../App.css'
 function TickerComponent() {
   const list = [
     {
@@ -82,10 +82,21 @@ function TickerComponent() {
     //   </div>
     // </div>
 
-    <div className="parent">
+    <div className="parent screen-padding">
       <div className="scroller" data-speed='fast'>
         <div className="scroller_inner tag-list">
         {list.slice(0,4).map((item, ind) => {
+          return (
+            <img src={item.img} alt={item.title} key={ind}/>
+          )
+          // <Card img={item.img} title={item.title} key={ind} />;
+
+        })}
+        </div>
+      </div>
+      <div className="scroller" data-speed='fast' data-direction='right'>
+        <div className="scroller_inner tag-list">
+        {list.slice(4).map((item, ind) => {
           return (
             <img src={item.img} alt={item.title} key={ind}/>
           )

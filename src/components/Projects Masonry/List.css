@@ -1,4 +1,4 @@
-/* Safari does not support columns more than 2, so this is Safari only override
+/* Safari does not support columns more than 2, so this is Safari only override */
 
 @supports (-webkit-hyphens: none) {
    @media only screen and (min-width: 1280px) {
@@ -6,4 +6,4 @@
 columns: 2;
     }
    }
-  } */
+  }

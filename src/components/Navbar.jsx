@@ -15,7 +15,7 @@ function Navbar() {
   if (location.pathname === "/") {
     document.body.style.background = "#ffffff";
   }
-  const { scrollY } = useScroll();
+  const { scrollY,scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -38,6 +38,15 @@ function Navbar() {
     setMobile(window.innerWidth <= 460 ? 1 : 0);
   }, [window.innerWidth]);
 
+
+//change nav bg color on scroll
+  useMotionValueEvent(scrollYProgress,'change',(latest)=>{
+    if (latest===0){
+document.getElementById('nav').style.backgroundColor = 'transparent';
+    }else{
+      document.getElementById('nav').style.backgroundColor = 'rgba(0,0,0,0.70)';
+    }
+  })
   return (
     <>
       {!mobile ? (
@@ -51,9 +60,10 @@ function Navbar() {
                 y: "-100%",
               },
             }}
+            id="nav"
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font sticky bg-black/75 top-0 z-50 px-7`}
+            className={`body-font sticky transition-colors top-0  z-50 px-7`}
           >
             <div className="container h-full mx-auto justify-between flex flex-wrap p-5 flex-col md:flex-row items-center">
               <Link
@@ -65,11 +75,12 @@ function Navbar() {
                   style={{ color: "#5900ff" }}
                 ></i>
                 {/* <img src="" alt="logo" /> */}
-                <span className="ml-3 text-xl">Framer Components</span>
+                {/* <span className="ml-3 text-xl">Framer Components</span> */}
               </Link>
 
               <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
+                <Anchor colorStyle={``} content={"About"} href={"/about"} />
                 <Anchor
                   colorStyle={``}
                   content={"Projects"}
@@ -80,7 +91,6 @@ function Navbar() {
                   content={"Services"}
                   href={"/services"}
                 />
-                <Anchor colorStyle={``} content={"About"} href={"/about"} />
                 <Anchor colorStyle={``} content={"Contact"} href={"/contact"} />
               </nav>
             </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-// import './List.css'
+import './List.css'
 function List({ setSelected }) {
 
   const list = [

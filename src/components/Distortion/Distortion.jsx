@@ -140,7 +140,7 @@ function Distortion() {
     targetMousePosition.x = (event.clientX - rect.left) / rect.width;
     targetMousePosition.y = (event.clientY - rect.top) / rect.height;
 
-    aberrationIntensity = 1;
+    aberrationIntensity = 0;
   }
 
   function handleMouseEnter(event) {
@@ -200,9 +200,11 @@ function Distortion() {
         id="imageContainer"
         className="flex items-center justify-center  w-full h-full"
       >
+        <div className="bg-black/40 inset-0 z-[10] flex justify-center w-full h-full">
         <h1 
-    id="heroText"
-        className="absolute text-primary-light z-[10] pointer-events-none text-7xl block h-fit w-fit mx-auto font-serif ">Unseen. Unknown. Unmatched.</h1>
+        id="heroText"
+            className="absolute text-primary-dark z-[10] pointer-events-none text-7xl block mx-auto font-serif  w-fit h-fit">Unseen. Unknown. Unmatched.</h1>
+        </div>
         <img
           id="myImage"
           src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"
