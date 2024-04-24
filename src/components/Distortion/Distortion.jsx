@@ -51,7 +51,7 @@ function Distortion() {
         float pixelDistanceToMouse = length(pixelToMouseDirection);
         float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
 
-        vec2 uvOffset = strength * - mouseDirection * 0.2;
+        vec2 uvOffset = strength * - mouseDirection * 0.07;
         vec2 uv = vUv - uvOffset;
 
         vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
@@ -140,7 +140,7 @@ function Distortion() {
     targetMousePosition.x = (event.clientX - rect.left) / rect.width;
     targetMousePosition.y = (event.clientY - rect.top) / rect.height;
 
-    aberrationIntensity = 2.5;
+    aberrationIntensity = 1;
   }
 
   function handleMouseEnter(event) {
@@ -192,7 +192,7 @@ function Distortion() {
 
   
   return (
-    <div className="flex justify-center w-full h-[75vh] items-center">
+    <div className="flex justify-center w-full h-[100vh] items-center">
       <div
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
@@ -202,7 +202,7 @@ function Distortion() {
       >
         <h1 
     id="heroText"
-        className="absolute text-primary-light/60 z-[10] pointer-events-none text-7xl block h-fit w-fit mx-auto font-serif ">Unseen. Unknown. Unmatched.</h1>
+        className="absolute text-primary-light z-[10] pointer-events-none text-7xl block h-fit w-fit mx-auto font-serif ">Unseen. Unknown. Unmatched.</h1>
         <img
           id="myImage"
           src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"

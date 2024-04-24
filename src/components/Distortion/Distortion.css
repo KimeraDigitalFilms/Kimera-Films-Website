@@ -18,7 +18,7 @@ canvas {
   position: absolute;
   inset: 0;
   width: 100vw !important ; 
-  height: 75vh !important; 
+  height: 100vh !important; 
   object-fit: cover;
 }
 

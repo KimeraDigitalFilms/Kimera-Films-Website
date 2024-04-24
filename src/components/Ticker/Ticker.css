@@ -46,6 +46,7 @@
   
   .scroller[data-speed="slow"] {
     --_animation-duration: 60s;
+  
   }
   
   @keyframes scroll {
@@ -53,10 +54,8 @@
       transform: translate(calc(-50% - 0.5rem));
     }
   }
+
   
-  .tag-list:hover{
-    animation-play-state: paused;
-  }
   /* general styles */
   
   :root {
