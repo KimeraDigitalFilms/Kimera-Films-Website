@@ -24,6 +24,7 @@ canvas {
 
 #heroText {
   display: table;
+  width: -moz-fit-content;
   width: fit-content !important;
   height: fit-content !important;
   top: 35vh;

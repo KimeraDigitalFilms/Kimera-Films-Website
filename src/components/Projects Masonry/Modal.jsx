@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 // import { Button } from "@material-tailwind/react";
-import { useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 
 function Modal({ selected, setSelected }) {
-  const navigate = useNavigate();
+
 
   if (!selected) {
     return <></>;
@@ -25,7 +25,7 @@ function Modal({ selected, setSelected }) {
         {/* inset-0 just covers whole screen */}
         <div
           onClick={(e) => e.stopPropagation()} // .stopPropagation() method prevents parent event from bubbling/affecting/calling from children
-          className="w-full max-w-[700px] h-max-[50vh] mx-auto my-12 px-8 cursor-default"
+          className="w-full max-w-[1000px] h-max-[50vh] mx-auto my-12 px-8 cursor-default"
         >
           <motion.div>
               <motion.video

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+// import './List.css'
 function List({ setSelected }) {
 
   const list = [
@@ -18,8 +19,9 @@ function List({ setSelected }) {
       opacity: 1,
     },
   };
+
   return (
-    <motion.div className="columns-2  break-inside-avoid xl:columns-3 gap-x-0">
+    <motion.div id="grid" className="columns-1 md:columns-2 xl:columns-3  gap-x-0">
       {list.map((item, k) => {
         return (
           <motion.div

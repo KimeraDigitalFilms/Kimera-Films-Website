@@ -26,6 +26,14 @@ function Distortion() {
     }
 `;
 
+//OG
+// vec2 gridUV = floor(vUv * vec2(200.0, 20.0)) / vec2(20.0, 20.0);
+// vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
+// vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+//         vec4 colorG = texture2D(u_texture, uv);
+//         vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+
+//         gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
   const fragmentShader = `
     varying vec2 vUv;
     uniform sampler2D u_texture;
@@ -34,8 +42,8 @@ function Distortion() {
     uniform float u_aberrationIntensity;
 
     void main() {
-        vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
-        vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
+        vec2 gridUV = floor(vUv * vec2(200.0, 200.0)) / vec2(200.0, 200.0);
+        vec2 centerOfPixel = gridUV + vec2(1.0/200.0, 1.0/200.0);
 
         vec2 mouseDirection = u_mouse - u_prevMouse;
 
@@ -53,6 +61,7 @@ function Distortion() {
         gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
     }
 `;
+
 
   scene = new THREE.Scene();
 
@@ -131,11 +140,11 @@ function Distortion() {
     targetMousePosition.x = (event.clientX - rect.left) / rect.width;
     targetMousePosition.y = (event.clientY - rect.top) / rect.height;
 
-    aberrationIntensity = 1;
+    aberrationIntensity = 2.5;
   }
 
   function handleMouseEnter(event) {
-    easeFactor = 0.02;
+    easeFactor = 0.05;
     let rect = imageContainer.getBoundingClientRect();
 
     mousePosition.x = targetMousePosition.x =
@@ -145,7 +154,7 @@ function Distortion() {
   }
 
   function handleMouseLeave() {
-    easeFactor = 0.02;
+    easeFactor = 0.03;
     targetMousePosition = { ...prevPosition };
   }
 

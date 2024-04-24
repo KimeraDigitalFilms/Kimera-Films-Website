@@ -53,7 +53,7 @@ function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font sticky bg-transparent top-0 z-50 px-7`}
+            className={`body-font sticky bg-black/75 top-0 z-50 px-7`}
           >
             <div className="container h-full mx-auto justify-between flex flex-wrap p-5 flex-col md:flex-row items-center">
               <Link
