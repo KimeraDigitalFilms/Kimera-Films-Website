@@ -15,7 +15,7 @@ function Navbar() {
   if (location.pathname === "/") {
     document.body.style.background = "#ffffff";
   }
-  const { scrollY,scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -40,8 +40,8 @@ function Navbar() {
 
 
 //change nav bg color on scroll
-  useMotionValueEvent(scrollYProgress,'change',(latest)=>{
-    if (latest===0){
+  useMotionValueEvent(scrollY,'change',(latest)=>{
+    if (latest<55){
 document.getElementById('nav').style.backgroundColor = 'transparent';
     }else{
       document.getElementById('nav').style.backgroundColor = 'rgba(0,0,0,0.70)';
@@ -63,7 +63,7 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
             id="nav"
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font sticky transition-colors top-0  z-50 px-7`}
+            className={`body-font sticky transition-colors duration-300 top-0  z-50 px-7`}
           >
             <div className="container h-full mx-auto justify-between flex flex-wrap p-5 flex-col md:flex-row items-center">
               <Link
@@ -75,7 +75,7 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
                   style={{ color: "#5900ff" }}
                 ></i>
                 {/* <img src="" alt="logo" /> */}
-                {/* <span className="ml-3 text-xl">Framer Components</span> */}
+                <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary-dark">Kimera Films</span>
               </Link>
 
               <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
@@ -83,15 +83,14 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
                 <Anchor colorStyle={``} content={"About"} href={"/about"} />
                 <Anchor
                   colorStyle={``}
-                  content={"Projects"}
-                  href={"/projects"}
+                  content={"Gallery"}
+                  href={"/gallery"}
                 />
                 <Anchor
                   colorStyle={``}
                   content={"Services"}
                   href={"/services"}
                 />
-                <Anchor colorStyle={``} content={"Contact"} href={"/contact"} />
               </nav>
             </div>
           </motion.header>
@@ -142,9 +141,10 @@ export default Navbar;
 function Dropdown() {
   const navLinks = [
     { title: "Home", href: "/" },
-    { title: "Services", href: "/services" },
     { title: "About", href: "/about" },
-    { title: "Contact", href: "/contact" },
+    { title: "Gallery", href: "/gallery" },
+    { title: "Services", href: "/services" },
+
   ];
 
   return (
@@ -215,3 +215,5 @@ function Dropdown() {
     </motion.div>
   );
 }
+
+

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, } from "framer-motion";
 import './Ticker.css'
-import '../../App.css'
+
 function TickerComponent() {
   const list = [
     {
-      img: "https://png.pngtree.com/png-vector/20211023/ourmid/pngtree-salon-logo-png-image_4004444.png",
+      img: "https://d30ny7ijak9wq4.cloudfront.net/s3fs-public/images/movie_image/2020/08/25/yash.jpg",
       title: "Company1",
     },
     {
@@ -69,19 +69,6 @@ function TickerComponent() {
     
   },[])
   return (
-    // <div className="logos flex gap-x-20">
-    //   <div className="logos-slide flex gap-x-20">
-    //     {[...list].map((item, ind) => {
-    //       return <Card img={item.img} title={item.title} key={ind} />;
-    //     })}
-    //   </div>
-    //   <div className="logos-slide flex gap-x-20">
-    //     {[...list].map((item, ind) => {
-    //       return <Card img={item.img} title={item.title} key={ind} />;
-    //     })}
-    //   </div>
-    // </div>
-
     <div className="parent screen-padding">
       <div className="scroller" data-speed='fast'>
         <div className="scroller_inner tag-list">
@@ -89,8 +76,6 @@ function TickerComponent() {
           return (
             <img src={item.img} alt={item.title} key={ind}/>
           )
-          // <Card img={item.img} title={item.title} key={ind} />;
-
         })}
         </div>
       </div>
@@ -100,8 +85,6 @@ function TickerComponent() {
           return (
             <img src={item.img} alt={item.title} key={ind}/>
           )
-          // <Card img={item.img} title={item.title} key={ind} />;
-
         })}
         </div>
       </div>

@@ -8,7 +8,7 @@ function GridComponent() {
 
   return (
     <>
-      <div className='w-full h-[300vh] my-5 '>
+      <div className='w-full  my-5 '>
         <List setSelected={setSelected}/>
         <Modal selected={selected} setSelected={setSelected} />
       </div>

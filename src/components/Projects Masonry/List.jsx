@@ -9,6 +9,11 @@ function List({ setSelected }) {
     { id: 1, vid: "/videos/random1.mp4", title: "Project 1" },
     { id: 2, vid: "/videos/random2.mp4", title: "Project 2" },
     { id: 3, vid: "/videos/random3.mp4", title: "Project 3" },
+    { id: 4, vid: "/videos/random4.mp4", title: "Project 4" },
+    { id: 5, vid: "/videos/random5.mp4", title: "Project 5" },
+    { id: 6, vid: "/videos/random6.mp4", title: "Project 6" },
+    { id: 7, vid: "/videos/random7.mp4", title: "Project 7" },
+    { id: 8, vid: "/videos/random8.mp4", title: "Project 8" },
   ];
 
   const ListVariants = {
@@ -39,6 +44,7 @@ function List({ setSelected }) {
             }}
             initial="hidden"
             whileInView="visible"
+            viewport={{once: true}}
           >
             <Card setSelected={setSelected} item={item} />
           </motion.div>

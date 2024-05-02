@@ -1,8 +1,8 @@
 import React from "react";
 
-const Button = ({ content }) => {
+const Button = ({ content,style }) => {
   return (
-    <div className="w-[200px] h-[100px] bg-purple-950 rounded-md relative cursor-pointer">
+    <div className={`w-[200px] h-[100px] bg-purple-950 rounded-md relative cursor-pointer ${style}`}>
       <button
         className={`w-[200px] h-[100px] bg-primary-dark rounded-md absolute -top-1 -left-1 active:top-0 active:left-0 p-4 group overflow-hidden py-6`}
       >

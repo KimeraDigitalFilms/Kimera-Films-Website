@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import Button from "./components/Button";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -6,8 +6,9 @@ import Home from "./pages/Home";
 import Cursor from "./components/Cursor/Cursor";
 import './App.css'
 import Projects from "./pages/Projects";
+import Services from "./pages/Services";
 function App() {
-
+ 
 
   document.body.style.overflowX = "hidden";
 
@@ -42,6 +43,15 @@ document.body.style.scrollBehavior='smooth'
           element={
             <>
               <Projects />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/services"
+          element={
+            <>
+              <Services/>
             </>
           }
         />

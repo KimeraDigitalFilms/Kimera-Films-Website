@@ -71,7 +71,7 @@
     display: grid;
     min-block-size: 100vh;
     place-content: center;
-    background-color: #1b1a18;
+    /* background-color: #1b1a18; */
   }
   
   .tag-list {
