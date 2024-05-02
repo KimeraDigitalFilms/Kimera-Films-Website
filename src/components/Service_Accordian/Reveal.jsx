@@ -4,6 +4,7 @@ function Reveal({ content, refP }) {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
+    layoutEffect: false,
     target: ref,
     container: refP,
     offset: [`start end`, `end start`],
@@ -20,9 +21,9 @@ function Reveal({ content, refP }) {
     [-100, 80, 100, 80, -100]
   );
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest);
-  })
+  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  //   console.log(latest);
+  // })
   return (
     <>
       <motion.div

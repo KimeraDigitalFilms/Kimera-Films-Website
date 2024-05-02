@@ -5,6 +5,7 @@ import { useState } from "react";
 import './Accordion.css'
 import { useRef } from "react";
 import Reveal from "./Reveal";
+// import Text_Scroller from "./Text_Scroller";
 const Accordion = () => {
   const [open, setOpen] = useState(items[0].id);
   
@@ -76,7 +77,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
                 backgroundSize: "cover",
               }}
             ></div>
-
+{/* <Text_Scroller list={list}/> */}
              <motion.div
              ref={refP}
              variants={{
