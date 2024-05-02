@@ -5,7 +5,7 @@ import { useState } from "react";
 import './Accordion.css'
 import { useRef } from "react";
 import Reveal from "./Reveal";
-// import Text_Scroller from "./Text_Scroller";
+
 const Accordion = () => {
   const [open, setOpen] = useState(items[0].id);
   
@@ -77,7 +77,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
                 backgroundSize: "cover",
               }}
             ></div>
-{/* <Text_Scroller list={list}/> */}
+
              <motion.div
              ref={refP}
              variants={{
@@ -94,7 +94,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
               transition={{ duration: 0.1 }}
               className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
               >
-             <div className="py-[40%]">
+             <div className="py-[50%]">
               {list.map((phrase, id) => {
                 return (
                   <Reveal refP={refP} content={phrase} key={id}/>
@@ -139,22 +139,66 @@ const panelVariantsSm = {
 const items = [
   {
     id: 1,
-    title: "Research and Analysis",
+    title: "BRAND FORGE",
     // Icon: FiDollarSign,
     imgSrc:
       "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
 list:[
-'Competitor Analysis',
-'Audience Research'
+  'Brand Positioning',
+   'Tone of Voice',
+   'Naming Consultation',
+   'Strategic Objectives Planning',
+  ' Brand Narrative Development',
+   'Messaging Architecture',
+  'Verbal Branding',
+   'Tagline Development',
+
+   'Creative Conceptualization',
+'Visual Identity Design',
+'Logo Design',
+ 'Brand Collateral Design',
+ 'Packaging Design',
+ 'Art Direction',
+ 'Stationery Design',
+'Signage Design',
+
+ 'Copywriting',
+ 'Website Copywriting',
+ 'Social Media Copy',
+'Brand Messaging',
 ]
   },
   {
     id: 2,
-    title: "Strategic Marketing",
+    title: "MOTION CANVAS",
     // Icon: FiPlay,
     imgSrc:
-      "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+      "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
 list:[
+   'AD Film Production',
+   'Music Video Production',
+   'Feature Films and TV Series',
+
+    'Animation',
+ 'Visual Effects',
+
+'Editorial Production',
+'Social Media Asset Production',
+ 'Printing',
+'Stationary Asset Production',
+ 'Creative Coding',
+]
+  },
+  {
+    id: 3,
+    title: "MARKETING MOMENTUM",
+    // Icon: FiBell,
+    imgSrc:
+      "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+ list: [
+  'Competitor Analysis',
+  'Audience Research',
+
 'Creative Strategy',
 'Brand Strategy Development',
 'Website Design',
@@ -164,20 +208,12 @@ list:[
 'Search Engine Optimization',
 'Search Engine Marketing',
 'Augmented Reality Filters',
-]
-  },
-  {
-    id: 3,
-    title: "Campaign Execution",
-    // Icon: FiBell,
-    imgSrc:
-      "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
- list: [
-  "Advertising Campaigns",
-  "Digital Marketing",
-  "User Experience",
-  "Email Campaigns",
-  "Social Media Filtersn",
+
+"Advertising Campaigns",
+"Digital Marketing",
+"User Experience",
+"Email Campaigns",
+"Social Media Filters",
 ]
   },
 //   {

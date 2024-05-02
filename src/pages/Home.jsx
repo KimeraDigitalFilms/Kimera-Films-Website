@@ -39,7 +39,7 @@ function Home() {
         ) : (
           <>
             {/* <Distortion/> */}
-            <Intro />
+            {/* <Intro /> */}
             {/* <TickerComponent /> */}
             {/* <Counter/> */}
           </>

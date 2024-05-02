@@ -12,25 +12,23 @@ function Reveal({ content, refP }) {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
   const scale = useTransform(
     scrollYProgress,
-    [0, 0.3,0.5,0.7, 1],
-    [0.3,0.8,1,0.8, 0.3]
+    [0,0.5, 1],
+    [0.3,1, 0.3]
   );
   const x = useTransform(
     scrollYProgress,
-    [0, 0.35, 0.5, 0.65, 1],
-    [-100, 80, 100, 80, -100]
+    [0,0.4,0.5,0.6,1],
+    [-60,80,105,80,-60]
   );
 
-  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //   console.log(latest);
-  // })
+ 
   return (
     <>
       <motion.div
         style={{ opacity, scale, x }}
         transition={{ ease: "linear" }}
         ref={ref}
-        className="w-[300px] text-left font-Dancing text-[40px] font-bold "
+        className="w-[300px] text-left font-Dancing text-xl font-bold "
       >
         {content}
       </motion.div>
