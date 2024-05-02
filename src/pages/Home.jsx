@@ -40,7 +40,7 @@ function Home() {
           <>
             {/* <Distortion/> */}
             <Intro />
-            <TickerComponent />
+            {/* <TickerComponent /> */}
             {/* <Counter/> */}
           </>
         )}

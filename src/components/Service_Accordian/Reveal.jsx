@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { easeOut, motion, useScroll, useTransform } from "framer-motion";
+import { easeOut, motion, useScroll, useTransform,useMotionValueEvent } from "framer-motion";
 function Reveal({ content, refP }) {
   const ref = useRef(null);
 
@@ -20,6 +20,9 @@ function Reveal({ content, refP }) {
     [-100, 80, 100, 80, -100]
   );
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log(latest);
+  })
   return (
     <>
       <motion.div
