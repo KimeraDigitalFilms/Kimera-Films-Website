@@ -1,5 +1,4 @@
-.logo {
-   
-    -webkit-mask: url(logo.svg) no-repeat center;
-    mask: url(logo.svg) no-repeat center;
+.logo { 
+    -webkit-mask: url(/logo.svg) no-repeat center;
+    mask: url(/logo.svg) no-repeat center;
   }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion, } from "framer-motion";
+import { motion,AnimatePresence } from "framer-motion";
 import './Ticker.css'
 
 function TickerComponent() {
