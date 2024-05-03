@@ -4,31 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#d4af37",
-        "primary-content": "#0a0802",
-        "primary-dark": "#b29126",
-        "primary-light": "#ddc061",
+        primary: "#ED6E0B",
+        secondary1: "#C9D9EE",
+        primaryBg: "#0A0A0A",
+        primaryFg: "#282724",
 
-        secondary: "#6037d4",
-        "secondary-content": "#ffffff",
-        "secondary-dark": "#4b26b2",
-        "secondary-light": "#8161dd",
+        accent1:'',
+        secondary2: "",
+        accentBg1: "",
+        accentFg1:"",
 
-        background: "#1b1a18",
-        foreground: "#282724",
-        border: "#43413d",
+        accent2:'',
+        secondary3: "",
+        accentBg2: "",
+        accentFg2:"",
+        // "primary-content": "#0a0802",
+        // "primary-dark": "#b29126",
+        // "primary-light": "#ddc061",
 
-        copy: "#fbfbfb",
-        "copy-light": "#dbdad7",
-        "copy-lighter": "#aaa8a1",
-
-        success: "#37d437",
-        warning: "#d4d437",
-        error: "#d43737",
-
-        "success-content": "#020a02",
-        "warning-content": "#0a0a02",
-        "error-content": "#ffffff",
+        // "secondary-content": "#ffffff",
+        // "secondary-dark": "#4b26b2",
+        // "secondary-light": "#8161dd",
       },
       fontFamily: {
         Oswald: ["Oswald", "sans-serif"],

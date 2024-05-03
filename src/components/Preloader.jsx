@@ -22,8 +22,8 @@ function Preloader({ ready, setVis }) {
     );
     // console.log(ready);
     await animate(scope.current, {
-      background: "#0bfc03",
-      boxShadow: "0px 0px 50px 7px #0bfc03",
+      background: "#C9D9EE",
+      boxShadow: "0px 0px 50px 7px #C9D9EE",
     });
     await animate(
       scope.current,
@@ -68,15 +68,12 @@ function Preloader({ ready, setVis }) {
       loaderAnimate1();
     }
   }, [ready]);
-  
 
-
-  
   return (
     <motion.div
       ref={scope2}
       id="preloader"
-      className={`flex justify-center  items-center flex-nowrap bg-black h-screen w-screen absolute z-[200] top-0 `}
+      className={`flex justify-center  items-center flex-nowrap bg-primaryBg h-screen w-screen absolute z-[200] top-0 `}
     >
       <motion.div
         variants={variants}
@@ -90,20 +87,25 @@ function Preloader({ ready, setVis }) {
           transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
           className="w-20 p-2  rounded-full"
         >
-          <Logo style="w-full bg-primary-dark" />
+          <Logo style="w-full bg-primary" />
         </motion.div>
 
         <div
           id="parent_progress"
-          className="w-[700px] bg-background rounded-lg h-[1px] overflow-visible "
+          className="w-[700px] bg-primaryBg rounded-lg h-[1px] overflow-visible "
         >
           <motion.div
             id="progress"
             ref={scope}
-            className="flex  bg-transparent w-full origin-left rounded-lg h-full "
+            className="flex bg-transparent w-full origin-left rounded-lg h-full "
           ></motion.div>
         </div>
-        <Box front="Learn" bottom="Earn" back="Grow" top="Repeat" />
+        <Box
+          front="Digital Design"
+          bottom="Brand Design"
+          back="User Interface"
+          top="User Experience"
+        />
       </motion.div>
 
       <motion.button
@@ -120,7 +122,7 @@ function Preloader({ ready, setVis }) {
           revealAnimate();
           sessionStorage.setItem("preloaded", "true");
         }}
-        className={`text-white text-2xl absolute transition-all font-serif bg-primary-dark px-3 py-1 rounded-full`}
+        className={`text-white text-2xl absolute transition-all font-serif bg-primary px-3 py-1 rounded-full`}
         disabled={enter ? false : true}
       >
         Enter
@@ -134,7 +136,7 @@ export default Preloader;
 const Box = ({ front, bottom, back, top }) => {
   return (
     <motion.span
-      className="relative h-20 w-72 text-5xl font-black uppercase"
+      className="relative h-20 w-72 text-2xl font-sans uppercase"
       style={{
         transformStyle: "preserve-3d",
         transformOrigin: "center center -40px",
@@ -154,7 +156,7 @@ const Box = ({ front, bottom, back, top }) => {
       }}
       transition={{
         repeat: Infinity,
-        duration: 5,
+        duration: 4,
         ease: "backInOut",
         times: [0, 0.2, 0.25, 0.45, 0.5, 0.7, 0.75, 1],
       }}

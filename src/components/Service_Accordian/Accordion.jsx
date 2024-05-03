@@ -67,10 +67,10 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="w-full h-full overflow-hidden relative bg-black  flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
+            className="w-full h-full overflow-hidden relative bg-primaryFg  flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
           >
             <div 
-              className="w-[500px] h-[200px]"
+              className="w-[400px] h-[300px] rounded-lg"
               style={{
                 backgroundImage: `url(${imgSrc})`,
                 backgroundPosition: "center",
@@ -128,7 +128,7 @@ const panelVariants = {
 const panelVariantsSm = {
   open: {
     width: "100%",
-    height: "200px",
+    height: "400px",
   },
   closed: {
     width: "100%",

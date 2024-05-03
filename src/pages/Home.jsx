@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <>
-      <div
+      <div className=""
         id="home"
         onLoad={() => {
           setTimeout(() => {

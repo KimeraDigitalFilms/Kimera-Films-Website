@@ -75,7 +75,7 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
                   style={{ color: "#5900ff" }}
                 ></i>
                 {/* <img src="" alt="logo" /> */}
-                <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary-dark">Kimera Films</span>
+                <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary">Kimera Films</span>
               </Link>
 
               <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
@@ -100,7 +100,7 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
           {" "}
           <motion.button
             onClick={handleSidebar}
-            className="p-0 fixed top-3 right-5 z-[100] flex items-center justify-center bg-secondary h-12 w-12 focus:outline-none hover:cursor-pointer rounded-[50%] gap-y-[5px] flex-col flex-nowrap"
+            className="p-0 fixed top-3 right-5 z-[100] flex items-center justify-center bg-secondary1 h-12 w-12 focus:outline-none hover:cursor-pointer rounded-[50%] gap-y-[5px] flex-col flex-nowrap"
           >
             <motion.div
               variants={{
