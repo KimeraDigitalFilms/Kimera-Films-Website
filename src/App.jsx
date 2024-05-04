@@ -39,7 +39,7 @@ document.body.style.scrollBehavior='smooth'
         />
         <Route
           exact
-          path="/projects"
+          path="/gallery"
           element={
             <>
               <Projects />

@@ -20,7 +20,7 @@ function Reveal({ content, refP }) {
   const x = useTransform(
     scrollYProgress,
     [0, 0.4, 0.5, 0.6, 1],
-    [-80, 85, 115, 85, -80]
+    [-80, 85, 117, 85, -80]
   );
 
   return (

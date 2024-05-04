@@ -38,15 +38,14 @@ function Navbar() {
     setMobile(window.innerWidth <= 460 ? 1 : 0);
   }, [window.innerWidth]);
 
-
-//change nav bg color on scroll
-  useMotionValueEvent(scrollY,'change',(latest)=>{
-    if (latest<55){
-document.getElementById('nav').style.backgroundColor = 'transparent';
-    }else{
-      document.getElementById('nav').style.backgroundColor = 'rgba(0,0,0,0.70)';
+  //change nav bg color on scroll
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 55) {
+      document.getElementById("nav").style.backgroundColor = "transparent";
+    } else {
+      document.getElementById("nav").style.backgroundColor = "rgba(0,0,0,0.70)";
     }
-  })
+  });
   return (
     <>
       {!mobile ? (
@@ -63,7 +62,7 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
             id="nav"
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font sticky transition-colors duration-300 top-0  z-50 px-7`}
+            className={`body-font fixed w-full transition-colors duration-300 top-0  z-50 px-7`}
           >
             <div className="container h-full mx-auto justify-between flex flex-wrap p-5 flex-col md:flex-row items-center">
               <Link
@@ -75,17 +74,15 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
                   style={{ color: "#5900ff" }}
                 ></i>
                 {/* <img src="" alt="logo" /> */}
-                <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary">Kimera Films</span>
+                <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary">
+                  Kimera Films
+                </span>
               </Link>
 
               <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 <Anchor colorStyle={``} content={"About"} href={"/about"} />
-                <Anchor
-                  colorStyle={``}
-                  content={"Gallery"}
-                  href={"/gallery"}
-                />
+                <Anchor colorStyle={``} content={"Gallery"} href={"/gallery"} />
                 <Anchor
                   colorStyle={``}
                   content={"Services"}
@@ -114,7 +111,7 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
               transition={{
                 duration: 0.5,
               }}
-              className="bg-white h-[1.5px] m-0 p-0 w-6"
+              className="bg-black h-[1.5px] m-0 p-0 w-6"
             ></motion.div>
 
             <motion.div
@@ -126,10 +123,12 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
               transition={{
                 duration: 0.5,
               }}
-              className="bg-white h-[1.5px] p-0 m-0 w-6"
+              className="bg-black h-[1.5px] p-0 m-0 w-6"
             ></motion.div>
           </motion.button>
-          <AnimatePresence>{isActive && <Dropdown />}</AnimatePresence>
+          <AnimatePresence>
+            {isActive && <Dropdown setActive={setActive} />}
+          </AnimatePresence>
         </>
       )}
     </>
@@ -138,13 +137,12 @@ document.getElementById('nav').style.backgroundColor = 'transparent';
 
 export default Navbar;
 
-function Dropdown() {
+function Dropdown({ setActive }) {
   const navLinks = [
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
     { title: "Gallery", href: "/gallery" },
     { title: "Services", href: "/services" },
-
   ];
 
   return (
@@ -170,7 +168,7 @@ function Dropdown() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="fixed top-0 origin-top left-0 w-full h-screen pb-10 px-10 pt-6 text-black bg-violet-800 z-[80]"
+      className="fixed top-0 origin-top left-0 w-full h-screen pb-10 px-10 pt-6 text-black bg-primary z-[80]"
     >
       <div className="flex h-full flex-col">
         <div className="flex justify-between">
@@ -180,7 +178,13 @@ function Dropdown() {
         <div className="flex flex-col h-full justify-center font-serif items-center gap-4 uppercase text-4xl text-black">
           {navLinks.map((link, i) => {
             return (
-              <motion.div key={i} className="overflow-hidden">
+              <motion.div
+                key={i}
+                className="overflow-hidden"
+                onClick={() => {
+                  setActive(false);
+                }}
+              >
                 <motion.div
                   variants={{
                     initial: {
@@ -207,13 +211,11 @@ function Dropdown() {
           })}
         </div>
         <div>
-          <p className="underline underline-offset-2 decoration-solid decoration-black text-black text-lg text-center">
-            info@gmail.com
+          <p className="underline underline-offset-4 decoration-solid decoration-black text-black text-lg text-center">
+            info@kimerafilms.art
           </p>
         </div>
       </div>
     </motion.div>
   );
 }
-
-

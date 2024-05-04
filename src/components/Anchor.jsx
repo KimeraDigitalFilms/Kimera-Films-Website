@@ -35,7 +35,7 @@ const FlyoutLink = ({ children, href, colorStyle, }) => {
             style={{
               transform: open ? "scaleX(1)" : "scaleX(0)",
             }}
-            className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-primary-dark transition-transform duration-300 ease-out"
+            className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-primary transition-transform duration-300 ease-out"
           />
         )}
       </Link>

@@ -92,7 +92,7 @@ function Preloader({ ready, setVis }) {
 
         <div
           id="parent_progress"
-          className="w-[700px] bg-primaryBg rounded-lg h-[1px] overflow-visible "
+          className="w-[700px] bg-primaryFg rounded-lg h-[1px] overflow-visible "
         >
           <motion.div
             id="progress"
@@ -108,7 +108,7 @@ function Preloader({ ready, setVis }) {
         />
       </motion.div>
 
-      <motion.button
+      <motion.div
         variants={{
           hidden: { opacity: 0, y: 20 },
           visible: { opacity: 1, y: 0 },
@@ -117,16 +117,16 @@ function Preloader({ ready, setVis }) {
         animate={enter && "visible"}
         transition={{ duration: 0.3, delay: 0.5 }}
         type="btn"
-        onClick={(e) => {
+        className={` text-2xl absolute transition-all font-serif `}
+        disabled={enter ? false : true}
+      >
+        {/* Enter */}
+<Button content={'Enter'} onclick={(e) => {
           e.target.style.opacity = 0;
           revealAnimate();
           sessionStorage.setItem("preloaded", "true");
-        }}
-        className={`text-white text-2xl absolute transition-all font-serif bg-primary px-3 py-1 rounded-full`}
-        disabled={enter ? false : true}
-      >
-        Enter
-      </motion.button>
+        }}/>
+      </motion.div>
     </motion.div>
   );
 }
