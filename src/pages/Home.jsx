@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Distortion from "../components/Distortion/Distortion";
 import TickerComponent from "../components/Ticker/Ticker";
-import Intro from "../components/Intro";
-import Counter from "../components/Counter";
 import Preloader from "../components/Preloader";
+import Services from "../components/Services";
 
-
+import Team from "../components/Team";
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
@@ -38,7 +37,10 @@ function Home() {
           )
         ) : (
           <>
-            {/* <Distortion/> */}
+          
+          <Services/>
+       <Team/>
+          {/* <About/> */}
             {/* <Intro /> */}
             {/* <TickerComponent /> */}
             {/* <Counter/> */}

@@ -3,11 +3,12 @@ import Button from "./components/Button";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Cursor from "./components/Cursor/Cursor";
+
 import './App.css'
 import Projects from "./pages/Projects";
-import Services from "./pages/Services";
-import About from "./pages/About";
+import Dummy from "./pages/Dummy";
+
+
 function App() {
  
 
@@ -26,7 +27,6 @@ document.body.style.scrollBehavior='smooth'
   
   return (
     <Router>
-      <Cursor />
       <Navbar />
       <Routes>
         <Route
@@ -35,6 +35,7 @@ document.body.style.scrollBehavior='smooth'
           element={
             <>
               <Home />
+              
             </>
           }
         />
@@ -47,21 +48,13 @@ document.body.style.scrollBehavior='smooth'
             </>
           }
         />
+        
         <Route
           exact
           path="/services"
           element={
             <>
-              <Services/>
-            </>
-          }
-        />
-        <Route
-          exact
-          path="/about"
-          element={
-            <>
-              <About/>
+              <Dummy />
             </>
           }
         />

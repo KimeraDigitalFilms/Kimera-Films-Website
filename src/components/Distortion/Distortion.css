@@ -4,7 +4,7 @@ canvas {
   height: 100%;
 }
 
-#imageContainer {
+.imageContainer {
   overflow: hidden;
   max-width: 100%;
   transition: all ease 0.5s;
@@ -14,18 +14,19 @@ canvas {
     filter: saturate(100%);
   }
    */
-#imageContainer > * {
+.imageContainer > * {
   position: absolute;
+  
   inset: 0;
-  width: 100vw !important ; 
-  height: 100vh !important; 
+  width: 300px !important ; 
+  height: 400px !important; 
   object-fit: cover;
 }
 
-#heroText {
+/* #heroText {
   display: table;
   width: -moz-fit-content;
   width: fit-content !important;
   height: fit-content !important;
   top: 35vh;
-}
+} */

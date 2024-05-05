@@ -31,7 +31,7 @@ function List({ setSelected }) {
     
     <motion.div
       id="grid"
-      className="screen-padding gap-y-7 gap-x-4 w-full h-[300vh] "
+      className="screen-padding gap-y-7 gap-x-4 w-full h-[250vh] "
       // className="columns-1 md:columns-2 xl:columns-3  gap-x-0"
       >
       <Card setSelected={setSelected} item={list[0]} style={"col-span-4 "} />

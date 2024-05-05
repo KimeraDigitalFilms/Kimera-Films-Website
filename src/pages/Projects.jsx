@@ -88,7 +88,7 @@ function Projects() {
       </div>
 
       <GridComponent />
-      <motion.h1
+      {/* <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -100,7 +100,7 @@ function Projects() {
         className=" text-center text-9xl w-full h-fit text-primary font-Dancing "
       >
         ~ the end ~
-      </motion.h1>
+      </motion.h1> */}
     </div>
   );
 }

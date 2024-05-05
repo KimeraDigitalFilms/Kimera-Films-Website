@@ -1,5 +1,5 @@
 import React from 'react'
-import Accordian from '../components/Service_Accordian/Accordion'
+import Accordian from './Service_Accordian/Accordion'
 
 function Services() {
   return (

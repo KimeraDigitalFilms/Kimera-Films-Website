@@ -3,10 +3,10 @@ import "./Distortion.css";
 import * as THREE from "three";
 
 
-function Distortion() {
+function Distortion({src,containerId,imageId}) {
   // variables
-  let imageContainer = document.getElementById("imageContainer");
-  let imageElement = document.getElementById("myImage");
+  let imageContainer = document.getElementById(containerId);
+  let imageElement = document.getElementById(imageId);
 
   let easeFactor = 0.02;
   let scene, camera, renderer, planeMesh;
@@ -27,9 +27,10 @@ function Distortion() {
 `;
 
 //OG
-// vec2 gridUV = floor(vUv * vec2(200.0, 20.0)) / vec2(20.0, 20.0);
+// vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
 // vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
 // vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+// vec2 uvOffset = strength * - mouseDirection * 0.2;
 //         vec4 colorG = texture2D(u_texture, uv);
 //         vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
 
@@ -42,8 +43,8 @@ function Distortion() {
     uniform float u_aberrationIntensity;
 
     void main() {
-        vec2 gridUV = floor(vUv * vec2(200.0, 200.0)) / vec2(200.0, 200.0);
-        vec2 centerOfPixel = gridUV + vec2(1.0/200.0, 1.0/200.0);
+      vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
+      vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
 
         vec2 mouseDirection = u_mouse - u_prevMouse;
 
@@ -51,7 +52,7 @@ function Distortion() {
         float pixelDistanceToMouse = length(pixelToMouseDirection);
         float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
 
-        vec2 uvOffset = strength * - mouseDirection * 0.07;
+        vec2 uvOffset = strength * - mouseDirection * 0.2;
         vec2 uv = vUv - uvOffset;
 
         vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
@@ -69,8 +70,8 @@ function Distortion() {
   camera = new THREE.PerspectiveCamera(
     80,
     window.innerWidth / window.innerHeight,
-    // 0.01,
-    // 10
+    0.01,
+    10
   );
   camera.position.z = 1;
 
@@ -86,7 +87,7 @@ function Distortion() {
 
     //   creating a plane mesh with materials
     planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(4, 1.85),
+      new THREE.PlaneGeometry(1.3, 1.71),
       new THREE.ShaderMaterial({
         uniforms: shaderUniforms,
         vertexShader,
@@ -133,7 +134,7 @@ function Distortion() {
   }
 
   function handleMouseMove(event) {
-    easeFactor = 0.05; //increase to increase speed of distortion
+    easeFactor = 0.04; //increase to increase speed of distortion
     let rect = imageContainer.getBoundingClientRect();
     prevPosition = { ...targetMousePosition };
 
@@ -144,7 +145,7 @@ function Distortion() {
   }
 
   function handleMouseEnter(event) {
-    easeFactor = 0.05;
+    easeFactor = 0.01;
     let rect = imageContainer.getBoundingClientRect();
 
     mousePosition.x = targetMousePosition.x =
@@ -154,14 +155,14 @@ function Distortion() {
   }
 
   function handleMouseLeave() {
-    easeFactor = 0.03;
+    easeFactor = 0.05;
     targetMousePosition = { ...prevPosition };
   }
 
   useEffect(() => {
     // use the existing image from html in the canvas
-    imageContainer = document.getElementById("imageContainer");
-    imageElement = document.getElementById("myImage");
+    imageContainer = document.getElementById(containerId);
+    imageElement = document.getElementById(imageId);
 
     scene = new THREE.Scene();
 
@@ -192,24 +193,25 @@ function Distortion() {
 
   
   return (
-    <div className="flex justify-center w-full h-[100vh] items-center">
+    <div className="flex justify-center relative w-[300px] h-[400px] items-center">
       <div
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        id="imageContainer"
-        className="flex items-center justify-center  w-full h-full"
+        id={containerId}
+        className="imageContainer flex items-center justify-center  w-full h-full"
       >
-        <div className="bg-black/40 inset-0 z-[10] flex justify-center w-full h-full">
-        <h1 
+        <div className=" inset-0 z-[10] flex justify-center w-full h-full">
+        {/* <h1 
         id="heroText"
-            className="absolute text-primary-dark z-[10] pointer-events-none text-7xl block mx-auto font-serif  w-fit h-fit">Unseen. Unknown. Unmatched.</h1>
+            className="absolute text-white z-[10] pointer-events-none text-7xl block mx-auto font-serif  w-fit h-fit">Unseen. Unknown. Unmatched.</h1> */}
         </div>
         <img
-          id="myImage"
-          src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"
+          id={imageId}
+          // src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"
           // src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
-          className="w-full  object-cover"
+          src={src}
+          className="myImage w-full  object-cover"
         />
       </div>
     </div>

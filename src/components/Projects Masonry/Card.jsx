@@ -28,7 +28,7 @@ function Card({ setSelected, item,style }) {
             scale:1,
             transition: {
               // delay: 0.1 * k,
-              type:'spring',
+              // type:'spring',
               ease:'easeIn'
             },
           },
