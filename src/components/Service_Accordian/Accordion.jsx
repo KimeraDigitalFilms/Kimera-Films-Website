@@ -2,13 +2,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "./useWindowSize";
 import { useState } from "react";
-import './Accordion.css'
+import "./Accordion.css";
 import { useRef } from "react";
 import Reveal from "./Reveal";
 
 const Accordion = () => {
   const [open, setOpen] = useState(items[0].id);
-  
+
   return (
     <section className="screen-padding mt-24">
       <div className="flex flex-col lg:flex-row h-fit lg:h-[600px] w-full max-w-6xl mx-auto  shadow overflow-hidden">
@@ -32,11 +32,10 @@ const Accordion = () => {
   );
 };
 
-const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
+const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
   const { width } = useWindowSize();
   const isOpen = open === id;
-  const refP=useRef(null)
-
+  const refP = useRef(null);
 
   return (
     <>
@@ -69,7 +68,25 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
             exit="closed"
             className="w-full h-full overflow-hidden relative bg-primaryFg  flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
           >
-            <div 
+            <div className="absolute bottom-10 right-10">
+              <motion.div
+                style={{ rotate: "45deg" }}
+                initial={{ y: 0, opacity: 1 }}
+                animate={{ y: -30, opacity: 1 }}
+                transition={{ repeat: Infinity, duration: 1, delay: 0.7 }}
+                className="absolute border-l-secondary1 border-t-secondary1 border-l-2 border-t-2 p-[7px] "
+              ></motion.div>
+              <motion.div
+                style={{ rotate: "45deg" }}
+                initial={{ y: 0, opacity: 1 }}
+                animate={{ y: -15, opacity: 1 }}
+                transition={{ repeat: Infinity, duration: 1, delay: 0.7 }}
+                className="absolute border-t-secondary1 border-l-secondary1 border-t-2 border-l-2 p-[7px] "
+              ></motion.div>
+              <motion.div className="absolute border-t-secondary1 border-l-secondary1 border-t-2 border-l-2 p-[7px] rotate-45"></motion.div>
+            </div>
+
+            <div
               className="w-[400px] h-[300px] rounded-lg"
               style={{
                 backgroundImage: `url(${imgSrc})`,
@@ -78,11 +95,11 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
               }}
             ></div>
 
-             <motion.div
-             ref={refP}
-             variants={{
-               open: {
-                 opacity: 1,
+            <motion.div
+              ref={refP}
+              variants={{
+                open: {
+                  opacity: 1,
                 },
                 closed: {
                   opacity: 0,
@@ -93,16 +110,13 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, }) => {
               exit="closed"
               transition={{ duration: 0.1 }}
               className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
-              >
-             <div className="py-[50%]">
-              {list.map((phrase, id) => {
-                return (
-                  <Reveal refP={refP} content={phrase} key={id}/>
-                  );
+            >
+              <div className="py-[50%]">
+                {list.map((phrase, id) => {
+                  return <Reveal refP={refP} content={phrase} key={id} />;
                 })}
-                </div>
+              </div>
             </motion.div>
-          
           </motion.div>
         )}
       </AnimatePresence>
@@ -143,30 +157,30 @@ const items = [
     // Icon: FiDollarSign,
     imgSrc:
       "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-list:[
-  'Brand Positioning',
-   'Tone of Voice',
-   'Naming Consultation',
-   'Strategic Objectives Planning',
-  ' Brand Narrative Development',
-   'Messaging Architecture',
-  'Verbal Branding',
-   'Tagline Development',
+    list: [
+      "Brand Positioning",
+      "Tone of Voice",
+      "Naming Consultation",
+      "Strategic Objectives Planning",
+      " Brand Narrative Development",
+      "Messaging Architecture",
+      "Verbal Branding",
+      "Tagline Development",
 
-   'Creative Conceptualization',
-'Visual Identity Design',
-'Logo Design',
- 'Brand Collateral Design',
- 'Packaging Design',
- 'Art Direction',
- 'Stationery Design',
-'Signage Design',
+      "Creative Conceptualization",
+      "Visual Identity Design",
+      "Logo Design",
+      "Brand Collateral Design",
+      "Packaging Design",
+      "Art Direction",
+      "Stationery Design",
+      "Signage Design",
 
- 'Copywriting',
- 'Website Copywriting',
- 'Social Media Copy',
-'Brand Messaging',
-]
+      "Copywriting",
+      "Website Copywriting",
+      "Social Media Copy",
+      "Brand Messaging",
+    ],
   },
   {
     id: 2,
@@ -174,20 +188,20 @@ list:[
     // Icon: FiPlay,
     imgSrc:
       "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
-list:[
-   'AD Film Production',
-   'Music Video Production',
-   'Feature Films and TV Series',
+    list: [
+      "AD Film Production",
+      "Music Video Production",
+      "Feature Films and TV Series",
 
-    'Animation',
- 'Visual Effects',
+      "Animation",
+      "Visual Effects",
 
-'Editorial Production',
-'Social Media Asset Production',
- 'Printing',
-'Stationary Asset Production',
- 'Creative Coding',
-]
+      "Editorial Production",
+      "Social Media Asset Production",
+      "Printing",
+      "Stationary Asset Production",
+      "Creative Coding",
+    ],
   },
   {
     id: 3,
@@ -195,39 +209,39 @@ list:[
     // Icon: FiBell,
     imgSrc:
       "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
- list: [
-  'Competitor Analysis',
-  'Audience Research',
+    list: [
+      "Competitor Analysis",
+      "Audience Research",
 
-'Creative Strategy',
-'Brand Strategy Development',
-'Website Design',
-'Application Design',
-'Social Media Content',
-'Merchandise Design',
-'Search Engine Optimization',
-'Search Engine Marketing',
-'Augmented Reality Filters',
+      "Creative Strategy",
+      "Brand Strategy Development",
+      "Website Design",
+      "Application Design",
+      "Social Media Content",
+      "Merchandise Design",
+      "Search Engine Optimization",
+      "Search Engine Marketing",
+      "Augmented Reality Filters",
 
-"Advertising Campaigns",
-"Digital Marketing",
-"User Experience",
-"Email Campaigns",
-"Social Media Filters",
-]
+      "Advertising Campaigns",
+      "Digital Marketing",
+      "User Experience",
+      "Email Campaigns",
+      "Social Media Filters",
+    ],
   },
-//   {
-//     id: 4,
-//     title: "Grow faster",
-//     // Icon: FiBarChart,
-//     imgSrc:
-//       "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-// list:[
-//   "Design",
-//   "User Interface",
-//   "User Experience",
-//   "Search Engine Optimization",
-//   "Web Design",
-// ]
-//   },
+  //   {
+  //     id: 4,
+  //     title: "Grow faster",
+  //     // Icon: FiBarChart,
+  //     imgSrc:
+  //       "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+  // list:[
+  //   "Design",
+  //   "User Interface",
+  //   "User Experience",
+  //   "Search Engine Optimization",
+  //   "Web Design",
+  // ]
+  //   },
 ];
