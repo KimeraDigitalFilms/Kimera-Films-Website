@@ -1,5 +1,5 @@
 // import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, delay, motion } from "framer-motion";
 import { useWindowSize } from "./useWindowSize";
 import { useEffect, useState } from "react";
 import "./Accordion.css";
@@ -23,7 +23,7 @@ const Accordion = () => {
               title={item.title}
               imgSrc={item.imgSrc}
               list={item.list}
-              // description={item.description}
+              desc={item.desc}
             />
           );
         })}
@@ -32,7 +32,7 @@ const Accordion = () => {
   );
 };
 
-const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
+const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
   const { width } = useWindowSize();
   const isOpen = open === id;
   const refP = useRef(null);
@@ -61,6 +61,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
 
       <AnimatePresence>
         {isOpen && (
+          <>
           <motion.div
             key={`panel-${id}`}
             variants={width && width > 1024 ? panelVariants : panelVariantsSm}
@@ -68,58 +69,99 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
             animate="open"
             exit="closed"
             className="w-full h-full overflow-hidden relative bg-primaryFg flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
-          >
-            <div className="absolute bottom-10 right-14">
+            >
+            
+          <motion.div
+              variants={descriptionVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              className="px-4 py-2 bg-black/40 backdrop-blur-sm w-full absolute top-0 left-0 text-white"
+            >
+              <p>{desc}</p>
+            </motion.div>
+            
+            <motion.div variants={{
+              open: {
+                visibility: 'visible',
+              },
+              closed: {
+                visibility: 'hidden',
+              },
+            }}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            className="absolute bottom-10 right-14">
               <motion.div
                 style={{ rotate: "45deg" }}
                 initial={{ y: 0, opacity: 1 }}
                 animate={{ y: -30, opacity: 1 }}
                 transition={{ repeat: Infinity, duration: 1, delay: 0.7 }}
                 className="absolute border-l-secondary1 border-t-secondary1 border-l-2 border-t-2 p-[7px] "
-              ></motion.div>
+                ></motion.div>
               <motion.div
                 style={{ rotate: "45deg" }}
                 initial={{ y: 0, opacity: 1 }}
                 animate={{ y: -15, opacity: 1 }}
                 transition={{ repeat: Infinity, duration: 1, delay: 0.7 }}
                 className="absolute border-t-secondary1 border-l-secondary1 border-t-2 border-l-2 p-[7px] "
-              ></motion.div>
+                ></motion.div>
               <motion.div className="absolute border-t-secondary1 border-l-secondary1 border-t-2 border-l-2 p-[7px] rotate-45"></motion.div>
-            </div>
+            </motion.div>
 
-            <div
+            <motion.div
+             variants={{
+              open: {
+                // opacity: 1,
+                visibility: "visible"
+              },
+              closed: {
+                // opacity: 0,
+                visibility: "hidden"
+              },
+            }}
+            initial="closed"
+            animate="open"
+            exit="closed"
               className="w-[400px] h-[300px] rounded-lg"
               style={{
                 backgroundImage: `url(${imgSrc})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
               }}
-            ></div>
+              ></motion.div>
 
             <motion.div
               ref={refP}
               variants={{
                 open: {
-                  opacity: 1,
+                  // opacity: 1,
+                  visibility: "visible"
                 },
                 closed: {
-                  opacity: 0,
+                  // opacity: 0,
+                  visibility: "hidden"
                 },
               }}
               initial="closed"
               animate="open"
               exit="closed"
-    
-              transition={{ duration: 0.1 }}
+              
+              // transition={{ duration: 0.1 }}
               className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
-            >
+              >
               <div className="py-[50%] ">
                 {list.map((phrase, id) => {
                   return <Reveal refP={refP} content={phrase} key={id} />;
                 })}
               </div>
             </motion.div>
+
+
+            
           </motion.div>
+                </>
         )}
       </AnimatePresence>
     </>
@@ -132,12 +174,14 @@ const panelVariants = {
   open: {
     width: "100%",
     height: "100%",
+
     // opacity:'1'
   },
   closed: {
     // opacity:'0',
     width: "0%",
     height: "100%",
+
   },
 };
 
@@ -145,12 +189,33 @@ const panelVariantsSm = {
   open: {
     width: "100%",
     height: "400px",
+
   },
   closed: {
+  
     width: "100%",
     height: "0px",
   },
 };
+
+
+// const descriptionVariants = {
+//   open: {
+//     opacity: 1,
+//     y: "0%",
+//     transition: {
+//       delay: 0.125,
+//     },
+//   },
+//   closed: { opacity: 0, y: "100%" },
+// };
+const descriptionVariants = {
+  open: {
+    visibility: 'visible',transition: {delay:0.25}
+
+  },
+  closed: { visibility: 'hidden' },
+}
 
 const items = [
   {
@@ -183,6 +248,7 @@ const items = [
       "Social Media Copy",
       "Brand Messaging",
     ],
+    desc:"Developing exclusive brand identities and captivating stories that cut through the noise, resonating with your audience and setting you apart in the market. Our tailored approach blends creativity and strategy to define your essence and drive meaningful connections."
   },
   {
     id: 2,
@@ -204,6 +270,7 @@ const items = [
       "Stationary Asset Production",
       "Creative Coding",
     ],
+    desc:"Breathing life into stories with captivating visuals that leave an indelible mark on viewers. Our studio is dedicated to crafting immersive experiences that ignite excitement. Let us transform your ideas into dynamic elements that spark engagement and elevate your brand's presence to new heights."
   },
   {
     id: 3,
@@ -231,6 +298,7 @@ const items = [
       "Email Campaigns",
       "Social Media Filters",
     ],
+    desc:"Amplifying your brand's reach and impact through strategic marketing solutions designed to maximize exposure and engagement. From targeted campaigns to engaging content, we craft creative strategies that propel your brand forward and unlock new opportunities for growth."
   },
   //   {
   //     id: 4,

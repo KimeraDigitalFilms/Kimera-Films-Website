@@ -3,7 +3,7 @@ html {
 }
 body{
     background-color: #0A0A0A !important; 
-        background-color: #ffffff !important; 
+        /* background-color: #ffffff !important;  */
     width: 100%;
 }
 .screen-padding{

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Distortion from "../components/Distortion/Distortion";
-import TickerComponent from "../components/Ticker/Ticker";
+import Ticker from "../components/Ticker";
 import Preloader from "../components/Preloader";
 import Services from "../components/Services";
 
@@ -29,21 +29,26 @@ function Home() {
           }, 2500);
         }}
       >
-        {!vis ? (
+        {/* {!vis 
+        ? 
+        (
           sessionStorage.getItem("preloaded") ? (
             <>{setVis(true)}</>
           ) : (
             <Preloader ready={ready} setVis={setVis} />
           )
-        ) : (
+        ) : ( */}
+          {!vis ?
+       (
+            <Preloader ready={ready} setVis={setVis} />
+          )
+         : (
           <>
-          
           <Services/>
-       <Team/>
           {/* <About/> */}
-            {/* <Intro /> */}
-            {/* <TickerComponent /> */}
-            {/* <Counter/> */}
+       <Team/>
+
+            <Ticker/>
           </>
         )}
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import Logo from "./Logo/Logo";
 import { motion, useAnimate } from "framer-motion";
@@ -23,7 +23,7 @@ function Preloader({ ready, setVis }) {
     // console.log(ready);
     await animate(scope.current, {
       background: "#C9D9EE",
-      boxShadow: "0px 0px 50px 7px #C9D9EE",
+      boxShadow: "0px 0px 30px 4px #C9D9EE",
     });
     await animate(
       scope.current,
@@ -45,6 +45,7 @@ function Preloader({ ready, setVis }) {
       { duration: 1, type: "spring", delay: 0.5 }
     );
     setEnter(true);
+    revealAnimate();
   }
 
   //remove preloader towards top
@@ -54,7 +55,7 @@ function Preloader({ ready, setVis }) {
       {
         translateY: "-100%",
       },
-      { duration: 0.4, ease: "easeIn" }
+      { duration: 0.4, ease: "easeIn", delay: 0.3 }
     );
     setVis(true);
   };
@@ -73,7 +74,7 @@ function Preloader({ ready, setVis }) {
     <motion.div
       ref={scope2}
       id="preloader"
-      className={`flex justify-center  items-center flex-nowrap bg-primaryBg h-screen w-screen absolute z-[200] top-0 `}
+      className={`flex justify-center  items-center flex-nowrap bg-neutral-700 h-screen w-screen absolute z-[200] top-0 `}
     >
       <motion.div
         variants={variants}
@@ -100,15 +101,16 @@ function Preloader({ ready, setVis }) {
             className="flex bg-transparent w-full origin-left rounded-lg h-full "
           ></motion.div>
         </div>
-        <Box
+        {/* <Box
           front="Digital Design"
           bottom="Brand Design"
           back="User Interface"
           top="User Experience"
-        />
+        /> */}
+        <Text />
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         variants={{
           hidden: { opacity: 0, y: 20 },
           visible: { opacity: 1, y: 0 },
@@ -120,18 +122,73 @@ function Preloader({ ready, setVis }) {
         className={` text-2xl absolute transition-all font-serif `}
         disabled={enter ? false : true}
       >
-        {/* Enter */}
+  
 <Button content={'Enter'} onclick={(e) => {
           e.target.style.opacity = 0;
           revealAnimate();
           sessionStorage.setItem("preloaded", "true");
         }}/>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 }
 
 export default Preloader;
+
+const Text = () => {
+  const [scope, animate] = useAnimate();
+
+  async function MoveUp() {
+    const sequence = [
+      [scope.current, { y: -40 }, { duration: 0.7, ease: "backInOut" }],
+      [scope.current, { y: -80 }, { duration: 0.7, ease: "backInOut" }],
+      [scope.current, { y: -120 }, { duration: 0.7, ease: "backInOut" }],
+      [scope.current, { y: -160 }, { duration: 0.7, ease: "backInOut" }],
+    ];
+    await animate(sequence, { repeat: Infinity, repeatType: "loop" });
+  }
+  useEffect(() => {
+    MoveUp();
+  }, []);
+  return (
+    <div className="block overflow-hidden">
+      <motion.div
+        ref={scope}
+        // whileHover={{ y: -20 }}
+        // transition={{ ease: "backInOut", duration: 0.5 }}
+        className="h-[40px]"
+      >
+        <span className="flex h-[40px] items-center text-3xl">
+          Digital Design
+        </span>
+        <span className="flex h-[40px] items-center text-3xl">
+          Brand Design
+        </span>
+        <span className="flex h-[40px] items-center text-3xl">
+          User Interface
+        </span>
+        <span className="flex h-[40px] items-center text-3xl">
+          User Experience
+        </span>
+        <span className="flex h-[40px] items-center text-3xl">
+          Digital Design
+        </span>
+        {/*<span className="flex h-[40px] items-center text-3xl">
+          Brand Design
+        </span>
+        <span className="flex h-[40px] items-center text-3xl">
+          User Interface
+        </span>
+        <span className="flex h-[40px] items-center text-3xl">
+          User Experience
+        </span> */}
+        {/* <span className="flex h-[20px] items-center text-neutral-50">
+          {children}
+        </span> */}
+      </motion.div>
+    </div>
+  );
+};
 
 const Box = ({ front, bottom, back, top }) => {
   return (
@@ -162,14 +219,14 @@ const Box = ({ front, bottom, back, top }) => {
       }}
     >
       {/* FRONT */}
-      <span className="absolute flex h-full w-full items-center justify-center border-2 border-black bg-primary text-white">
+      <span className="absolute flex h-full w-full items-center justify-center border-2 border-black bg-transparent text-white">
         {front}
       </span>
 
       {/* BOTTOM */}
       <span
         style={{ transform: "translateY(5rem) rotateX(-90deg)" }}
-        className="absolute flex h-full w-full origin-top items-center justify-center border-2 border-black bg-primary text-white"
+        className="absolute flex h-full w-full origin-top items-center justify-center bg-transparent text-white"
       >
         {bottom}
       </span>
@@ -177,7 +234,7 @@ const Box = ({ front, bottom, back, top }) => {
       {/* TOP */}
       <span
         style={{ transform: "translateY(-5rem) rotateX(90deg)" }}
-        className="absolute flex h-full w-full origin-bottom items-center justify-center border-2 border-black bg-primary text-white"
+        className="absolute flex h-full w-full origin-bottom items-center justify-center  bg-transparent text-white"
       >
         {top}
       </span>
@@ -187,7 +244,7 @@ const Box = ({ front, bottom, back, top }) => {
         style={{
           transform: "translateZ(-5rem) rotateZ(-180deg) rotateY(180deg)",
         }}
-        className="absolute flex h-full w-full origin-center items-center justify-center border-2 border-black bg-primary text-white"
+        className="absolute flex h-full w-full origin-center items-center justify-center bg-transparent text-white"
       >
         {back}
       </span>
