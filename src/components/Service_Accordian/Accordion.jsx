@@ -66,9 +66,9 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="w-full h-full overflow-hidden relative bg-primaryFg  flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
+            className="w-full h-full overflow-hidden relative bg-primaryFg flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
           >
-            <div className="absolute bottom-10 right-10">
+            <div className="absolute bottom-10 right-14">
               <motion.div
                 style={{ rotate: "45deg" }}
                 initial={{ y: 0, opacity: 1 }}
@@ -111,7 +111,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
               transition={{ duration: 0.1 }}
               className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
             >
-              <div className="py-[50%]">
+              <div className="py-[50%] ">
                 {list.map((phrase, id) => {
                   return <Reveal refP={refP} content={phrase} key={id} />;
                 })}
