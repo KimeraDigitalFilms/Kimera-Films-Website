@@ -1,7 +1,7 @@
 // import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "./useWindowSize";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Accordion.css";
 import { useRef } from "react";
 import Reveal from "./Reveal";
@@ -36,6 +36,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
   const { width } = useWindowSize();
   const isOpen = open === id;
   const refP = useRef(null);
+
 
   return (
     <>
@@ -108,6 +109,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list }) => {
               initial="closed"
               animate="open"
               exit="closed"
+    
               transition={{ duration: 0.1 }}
               className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
             >

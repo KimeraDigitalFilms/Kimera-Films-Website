@@ -25,7 +25,7 @@ function Reveal({ content, refP }) {
   );
 
   useMotionValueEvent(scrollYProgress,'change', (latest)=>{
-    if (latest<0.54 && latest>0.48){
+    if (latest<0.6 && latest>0.4){
 setOpacity(1)
     }else{
 setOpacity(0.5)
