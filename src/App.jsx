@@ -7,6 +7,7 @@ import Cursor from "./components/Cursor/Cursor";
 import './App.css'
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
+import About from "./pages/About";
 function App() {
  
 
@@ -52,6 +53,15 @@ document.body.style.scrollBehavior='smooth'
           element={
             <>
               <Services/>
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/about"
+          element={
+            <>
+              <About/>
             </>
           }
         />

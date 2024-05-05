@@ -6,10 +6,10 @@ function Projects() {
   return (
     <div className="w-full flex flex-col">
       <div className="w-full  h-[80vh] mt-24 justify-around flex flex-nowrap mb-20">
-        <div className="screen-padding  w-1/3 flex justify-center flex-col items-start">
-          <div className="overflow-hidden py-2">
+        <div className="screen-padding  w-1/3 flex justify-center gap-y-3 flex-col items-start">
+          <div className="overflow-hidden ">
             <motion.h1
-              initial={{ y: 80 }}
+              initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ delay: 0.2, duration: 0.4, ease: easeOut }}
               style={{
@@ -23,9 +23,9 @@ function Projects() {
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden py-2">
+          <div className="overflow-hidden ">
             <motion.h1
-              initial={{ y: 80 }}
+              initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ delay: 0.4, duration: 0.4, ease: easeOut }}
               style={{
@@ -39,9 +39,9 @@ function Projects() {
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden py-2">
+          <div className="overflow-hidden ">
             <motion.h1
-              initial={{ y: 80 }}
+              initial={{ y: '100%' }}
               animate={{ y: 0 }}
               transition={{ delay: 0.6, duration: 0.4, ease: easeOut }}
               style={{
@@ -49,7 +49,7 @@ function Projects() {
                 msUserSelect: "none",
                 userSelect: "none",
               }}
-              className="font-serif font-weight text-secondary1 text-7xl "
+              className="font-serif font-weight pb-1 text-secondary1 text-7xl "
             >
               Impactful.
             </motion.h1>
