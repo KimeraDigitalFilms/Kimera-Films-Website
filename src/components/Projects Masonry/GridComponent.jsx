@@ -17,13 +17,13 @@ function GridComponent() {
   const [opacity, setOpacity] = useState(0);
   const { scrollYProgress } = useScroll({
     target: ref,
-    target: ["start start,end end"],
+    // offset: ["start start,end start"],
   });
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (latest > 0.2) {
-      setOpacity(1);
-    } else {
       setOpacity(0);
+    } else {
+      setOpacity(1);
     }
   });
   return (
