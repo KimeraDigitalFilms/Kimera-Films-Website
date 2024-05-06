@@ -29,12 +29,12 @@ function LogoGimmick() {
 //     ["0px", "2000px"]
 //   );
 let translateX = useTransform(scrollYProgress, [0,0.5], ["0px", "50%"],);
-let translateY = useTransform(scrollYProgress, [0,0.85], ["0px", "2000px"],);
+let translateY = useTransform(scrollYProgress, [0,0.85], ["0px", "1000px"],);
 let scale = useTransform(scrollYProgress, [0,0.5], [1, 2.1],);
 let rotate = useTransform(
   scrollYProgress,
   [0,0.5],
-  ["0deg", "180deg"],
+  ["0deg", "90deg"],
 );
 
 let textX = useTransform(
@@ -45,7 +45,7 @@ let textX = useTransform(
 let textY = useTransform(
   scrollYProgress,
   [0,0.85],
-  ["0px", "2000px"]
+  ["0px", "1000px"]
 );
 //   useEffect(() => {
 //     setYOffset(
@@ -56,16 +56,16 @@ let textY = useTransform(
     <div
       id="logoGimmick"
       ref={ref}
-      className="h-[3000px] overflow-hidden relative"
+      className="h-[2000px] my-[200px] overflow-hidden relative"
     >
-      <motion.h1
+      <motion.h1 layout
       transition={{ease:'linear'}}
         style={{ translateY: textY, translateX: textX }}
         className="text-6xl font-bold text-secondary1 absolute top-[250px]"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </motion.h1>
-      <motion.div   
+      <motion.div    layout
           transition={{ease:'linear'}}
        style={{ translateY, scale, rotate, translateX }} className="h-fit ">
         <Logo style={"h-[700px] bg-primary"} />
