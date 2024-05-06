@@ -29,7 +29,7 @@ function LogoGimmick() {
 //     ["0px", "2000px"]
 //   );
 let translateX = useTransform(scrollYProgress, [0,0.5], ["0px", "50%"],);
-let translateY = useTransform(scrollYProgress, [0,0.85], ["0px", "1000px"],);
+let translateY = useTransform(scrollYProgress, [0,0.85], ["0px", "130vh"],);
 let scale = useTransform(scrollYProgress, [0,0.5], [1, 2.1],);
 let rotate = useTransform(
   scrollYProgress,
@@ -45,7 +45,7 @@ let textX = useTransform(
 let textY = useTransform(
   scrollYProgress,
   [0,0.85],
-  ["0px", "1000px"]
+  ["0px", "130vh"]
 );
 //   useEffect(() => {
 //     setYOffset(
