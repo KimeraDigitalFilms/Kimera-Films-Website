@@ -28,24 +28,24 @@ function LogoGimmick() {
 //     [YOffset, YOffset + 2000],
 //     ["0px", "2000px"]
 //   );
-let translateX = useTransform(scrollYProgress, [0,0.5], ["0px", "50%"],);
-let translateY = useTransform(scrollYProgress, [0,0.85], ["0px", "160vh"],);
-let scale = useTransform(scrollYProgress, [0,0.5], [1, 2.1],);
+let translateX = useTransform(scrollYProgress, [0,0.6], ["0px", "50%"],);
+let translateY = useTransform(scrollYProgress, [0,0.6], ["0px", "130vh"],);
+let scale = useTransform(scrollYProgress, [0,0.6], [1, 2.1],);
 let rotate = useTransform(
   scrollYProgress,
-  [0,0.5],
+  [0,0.6],
   ["0deg", "90deg"],
 );
 
 let textX = useTransform(
   scrollYProgress,
-  [0.5,0.8],
+  [0.6,0.8],
   ["100%", "-25%"]
 );
 let textY = useTransform(
   scrollYProgress,
-  [0,0.85],
-  ["0px", "160vh"]
+  [0,0.6],
+  ["0px", "130vh"]
 );
 //   useEffect(() => {
 //     setYOffset(
@@ -56,18 +56,18 @@ let textY = useTransform(
     <div
       id="logoGimmick"
       ref={ref}
-      className="h-[280vh]  overflow-hidden relative"
+      className="h-[240vh]  overflow-hidden relative"
     >
       <motion.h1 
       transition={{ease:'linear'}}
         style={{ translateY: textY, translateX: textX }}
-        className="text-6xl font-bold transition-transform text-secondary1 absolute top-[250px]"
+        className="text-6xl font-bold transition-transform ease-linear delay-0 text-secondary1 absolute top-[250px]"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </motion.h1>
       <motion.div    
           transition={{ease:'linear'}}
-       style={{ translateY, scale, rotate, translateX }} className="h-fit transition-transform">
+       style={{ translateY, scale, rotate, translateX }} className="h-fit transition-transform ease-linear delay-0">
         <Logo style={"h-[700px] bg-primary"} />
       </motion.div>
     </div>
