@@ -52,7 +52,7 @@ function Projects() {
                 msUserSelect: "none",
                 userSelect: "none",
               }}
-              className="font-serif font-weight pb-1 text-secondary1 text-7xl "
+              className="font-serif font-weight pb-1 text-secondary1  text-7xl "
             >
               Impactful.
             </motion.h1>

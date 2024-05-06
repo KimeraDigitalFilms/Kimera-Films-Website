@@ -61,13 +61,13 @@ let textY = useTransform(
       <motion.h1 
       transition={{ease:'linear'}}
         style={{ translateY: textY, translateX: textX }}
-        className="text-6xl font-bold text-secondary1 absolute top-[250px]"
+        className="text-6xl font-bold transition-transform text-secondary1 absolute top-[250px]"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </motion.h1>
       <motion.div    
           transition={{ease:'linear'}}
-       style={{ translateY, scale, rotate, translateX }} className="h-fit ">
+       style={{ translateY, scale, rotate, translateX }} className="h-fit transition-transform">
         <Logo style={"h-[700px] bg-primary"} />
       </motion.div>
     </div>
