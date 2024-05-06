@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Distortion from "../components/Distortion/Distortion";
 import LogoGimmick from "../components/LogoGimmick";
 
 function Dummy() {
+  useEffect(()=>{
+    window.scrollTo({top: 0, left: 0,behavior:'instant'})
+  },[])
   return (
     <div>
       {/* <Distortion
