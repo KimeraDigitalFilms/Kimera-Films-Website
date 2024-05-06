@@ -1,5 +1,5 @@
 // import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
-import { AnimatePresence, delay, motion } from "framer-motion";
+import { AnimatePresence, delay, motion,easeOut } from "framer-motion";
 import { useWindowSize } from "./useWindowSize";
 import { useEffect, useState } from "react";
 import "./Accordion.css";
@@ -11,7 +11,23 @@ const Accordion = () => {
 
   return (
     <section className="screen-padding mt-24">
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[600px] w-full max-w-6xl mx-auto  shadow overflow-hidden">
+      <div className="overflow-hidden mb-10">
+        <motion.h1
+          initial={{ y: "100%" }}
+          whileInView={{ y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.4, ease: easeOut }}
+          style={{
+            WebkitUserSelect: "none",
+            msUserSelect: "none",
+            userSelect: "none",
+          }}
+          className="font-serif font-weight text-center text-secondary1 text-7xl "
+        >
+          What We Do
+        </motion.h1>
+      </div>
+      <div className="flex flex-col lg:flex-row h-fit lg:h-[600px] w-full max-w-6xl mx-auto  overflow-hidden">
         {items.map((item) => {
           return (
             <Panel
@@ -41,22 +57,24 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
   return (
     <>
       <button
-        className="bg-white hover:bg-slate-50  transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group"
-        onClick={() => setOpen(id)}
+        className="bg-white  hover:cursor-default transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse flex-wrap items-center relative group"
+        onMouseEnter={() => setOpen(id)}
       >
         <span
           style={{
-            writingMode: "vertical-lr",
+            writingMode: 'vertical-lr',
+textOrientation: 'upright',
+letterSpacing:'1px'
           }}
-          className="hidden lg:block text-3xl font-Oswald rotate-180"
+          className="hidden lg:block text-xl font-Oswald text-wrap"
         >
           {title}
         </span>
-        <span className="block lg:hidden text-xl font-light">{title}</span>
+        <span className="block lg:hidden text-xl font-light ">{title}</span>
         {/* <div className="w-6 lg:w-full aspect-square bg-indigo-600 text-white grid place-items-center">
           <Icon />
         </div> */}
-        <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-slate-200 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20" />
+        {/* <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-slate-200 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20" /> */}
       </button>
 
       <AnimatePresence>
@@ -68,7 +86,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="w-full h-full overflow-hidden relative bg-primaryFg flex flex-nowrap gap-x-4 justify-center pl-10 items-center "
+            className="w-full h-full overflow-hidden relative bg-primaryFg flex flex-nowrap justify-center items-center "
             >
             
           <motion.div
@@ -76,17 +94,17 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 py-2 bg-black/40 backdrop-blur-sm w-full absolute top-0 left-0 text-white"
+              className="px-4 py-2 bg-black/40 backdrop-blur-sm w-full absolute overflow-hidden top-0 left-0 text-white"
             >
               <p>{desc}</p>
             </motion.div>
             
             <motion.div variants={{
               open: {
-                visibility: 'visible',
+                opacity: 1,
               },
               closed: {
-                visibility: 'hidden',
+                opacity: 0,
               },
             }}
             initial="closed"
@@ -113,18 +131,18 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
             <motion.div
              variants={{
               open: {
-                // opacity: 1,
-                visibility: "visible"
+                opacity: 1,
+                // visibility: "visible"
               },
               closed: {
-                // opacity: 0,
-                visibility: "hidden"
+                opacity: 0,
+                // visibility: "hidden"
               },
             }}
             initial="closed"
             animate="open"
             exit="closed"
-              className="w-[400px] h-[300px] rounded-lg"
+              className="w-[400px] h-[300px] ml-10 rounded-lg"
               style={{
                 backgroundImage: `url(${imgSrc})`,
                 backgroundPosition: "center",
@@ -136,19 +154,19 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
               ref={refP}
               variants={{
                 open: {
-                  // opacity: 1,
-                  visibility: "visible"
+                  opacity: 1,
+                  // visibility: "visible"
                 },
                 closed: {
-                  // opacity: 0,
-                  visibility: "hidden"
+                  opacity: 0,
+                  // visibility: "hidden"
                 },
               }}
               initial="closed"
               animate="open"
               exit="closed"
               
-              // transition={{ duration: 0.1 }}
+              transition={{ duration: 0.1 }}
               className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
               >
               <div className="py-[50%] ">
@@ -174,6 +192,7 @@ const panelVariants = {
   open: {
     width: "100%",
     height: "100%",
+    
 
     // opacity:'1'
   },
@@ -199,23 +218,23 @@ const panelVariantsSm = {
 };
 
 
-// const descriptionVariants = {
-//   open: {
-//     opacity: 1,
-//     y: "0%",
-//     transition: {
-//       delay: 0.125,
-//     },
-//   },
-//   closed: { opacity: 0, y: "100%" },
-// };
 const descriptionVariants = {
   open: {
-    visibility: 'visible',transition: {delay:0.25}
-
+    opacity: 1,
+    y: "0%",
+    transition: {
+      delay: 0.125,
+    },
   },
-  closed: { visibility: 'hidden' },
-}
+  closed: { opacity: 0, y: "100%" },
+};
+// const descriptionVariants = {
+//   open: {
+//     visibility: 'visible',transition: {delay:0.25}
+
+//   },
+//   closed: { visibility: 'hidden' },
+// }
 
 const items = [
   {

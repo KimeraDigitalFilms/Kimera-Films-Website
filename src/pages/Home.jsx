@@ -5,6 +5,7 @@ import Preloader from "../components/Preloader";
 import Services from "../components/Services";
 
 import Team from "../components/Team";
+import LogoGimmick from "../components/LogoGimmick";
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
@@ -45,12 +46,17 @@ function Home() {
          : (
           <>
           <Services/>
-          {/* <About/> */}
+          
        <Team/>
-
+<LogoGimmick/>
             <Ticker/>
           </>
         )}
+         {/* <Services/>
+          
+       <Team/>
+<LogoGimmick/>
+            <Ticker/> */}
       </div>
     </>
   );
