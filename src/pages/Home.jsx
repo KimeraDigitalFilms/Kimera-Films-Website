@@ -31,7 +31,7 @@ function Home() {
           setTimeout(() => {
             setReady(1);
             // console.log("yo")
-          }, 2500);
+          }, 2400);
         }}
       >
         {/* {!vis 
