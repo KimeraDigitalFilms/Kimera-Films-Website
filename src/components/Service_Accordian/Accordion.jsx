@@ -17,7 +17,7 @@ const Accordion = () => {
     //   backgroundPosition: 'center',
     //   backgroundSize: 'cover',
     // }}
-     className="screen-padding mt-24">
+     className="screen-padding mt-[150px]">
       <div className="overflow-hidden mb-10">
         <motion.h1
           initial={{ y: "100%" }}

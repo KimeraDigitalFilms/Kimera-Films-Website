@@ -1,9 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import webGLFluidEnhanced from 'webgl-fluid-enhanced';
 
 const App = () => {
   const canvasRef = useRef(null);
-
   useEffect(() => {
     webGLFluidEnhanced.simulation(canvasRef.current, {
       SIM_RESOLUTION: 256,
@@ -12,10 +11,11 @@ const App = () => {
       HOVER: true,
       BLOOM: false,
       CURL: 0,
+      BACK_COLOR:'#0A0A0A',
+      // TRANSPARENT: true,
       SPLAT_RADIUS: 0.5,
       // COLOR_PALETTE: ['#61dafb', '#a8dadc', '#457b9d', '#1d3557', '#f1faee'],
       COLOR_PALETTE: ['#ED6E0B'],
-      
     });
   }, []);
 
