@@ -198,21 +198,4 @@ const NavLink = ({ text }) => {
   };
 
 
-  const Cursor = ({ hovered, scope }) => {
-    return (
-      <motion.span
-        initial={false}
-        animate={{
-          opacity: hovered ? 1 : 0,
-          transform: `scale(${
-            hovered ? 1 : 0
-          }) translateX(-50%) translateY(-50%)`,
-        }}
-        transition={{ duration: 0.15 }}
-        ref={scope}
-        className="pointer-events-none absolute z-0 grid h-[50px] w-[50px] origin-[0px_0px] place-content-center rounded-full bg-gradient-to-br from-indigo-600 from-40% to-indigo-400 text-2xl"
-      >
-        <FiArrowUpRight className="text-white" />
-      </motion.span>
-    );
-  };
+  

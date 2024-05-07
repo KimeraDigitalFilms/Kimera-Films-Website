@@ -109,7 +109,7 @@ const Cursor = ({ hovered, scope }) => {
       }}
       transition={{ duration: 0.15 }}
       ref={scope}
-      className="pointer-events-none z-40 absolute  grid h-[50px] w-[50px] origin-[0px_0px] place-content-center rounded-full bg-gradient-to-br from-orange-500 from-40% to-orange-300 text-white text-sm"
+      className="pointer-events-none z-40 absolute  grid h-[50px] w-[50px] origin-[0px_0px] place-content-center rounded-full bg-gradient-to-br from-primary from-40% to-gray-400 text-secondary1 text-sm"
     >
       PLAY
     </motion.span>
