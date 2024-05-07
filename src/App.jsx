@@ -7,10 +7,11 @@ import Home from "./pages/Home";
 import './App.css'
 import Projects from "./pages/Projects";
 import Dummy from "./pages/Dummy";
+import { ColorState } from "./context/ColorContext";
 
 
 function App() {
- 
+
 
   document.body.style.overflowX = "hidden";
 
@@ -24,8 +25,9 @@ function App() {
 document.body.style.scrollBehavior='smooth'
   window.addEventListener("resize", notify);
 
-  
+
   return (
+    <ColorState>
     <Router>
       <Navbar />
       <Routes>
@@ -37,7 +39,7 @@ document.body.style.scrollBehavior='smooth'
               <Home />
             </>
           }
-        />
+          />
         <Route
           exact
           path="/gallery"
@@ -46,20 +48,21 @@ document.body.style.scrollBehavior='smooth'
               <Projects />
             </>
           }
-        />
+          />
         
         {/* <Route
           exact
           path="/services"
           element={
             <>
-              <Dummy />
+            <Dummy />
             </>
           }
         /> */}
 
       </Routes>
     </Router>
+        </ColorState>
   );
 }
 

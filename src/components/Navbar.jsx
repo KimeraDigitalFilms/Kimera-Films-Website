@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
   AnimatePresence,
@@ -9,11 +9,12 @@ import {
 } from "framer-motion";
 import { Link } from "react-router-dom";
 import Anchor from "./Anchor";
+import colorContext from "../context/ColorContext";
 
 function Navbar() {
   const location = useLocation();
   if (location.pathname === "/") {
-    document.body.style.background = "#ffffff";
+    // document.body.style.background = "#ffffff";
   }
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -79,7 +80,8 @@ function Navbar() {
                 </span>
               </Link>
 
-              <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
+              <nav className="gap-x-8 w-fit flex flex-wrap text-neutral-400 items-center text-base justify-center">
+                <Colors />
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 {/* <Anchor colorStyle={``} content={"About"} href={"/about"} /> */}
                 <Anchor colorStyle={``} content={"Gallery"} href={"/gallery"} />
@@ -219,3 +221,56 @@ function Dropdown({ setActive }) {
     </motion.div>
   );
 }
+
+const Colors = () => {
+  const { setCanvasBg, setCanvasColor, setLoadColor } =
+    useContext(colorContext);
+
+  const handleRadio = (e) => {
+    document.documentElement.setAttribute("data-theme", e.target.id);
+    document.body.style.backgroundColor = e.target.getAttribute("data-color");
+    setCanvasColor(e.target.getAttribute("data-canvasColor"));
+    setCanvasBg(e.target.getAttribute("data-color"));
+    setLoadColor(e.target.getAttribute("data-loadcolor"));
+  };
+  return (
+    <div>
+      <div className="flex justify-center items-center gap-x-3">
+        {/* <div className="rounded-full p-2 bg-"></div> */}
+        <div
+          defaultChecked
+          onClick={handleRadio}
+          type="radio"
+          name="color"
+          data-bg="#0A0A0A"
+          data-color="#0A0A0A"
+          id="main"
+          data-canvascolor="#ED6E0B"
+          data-loadcolor="#C9D9EE"
+          className="bg-[#ED6E0B] rounded-full p-2 cursor-pointer"
+        />
+        <div
+          onClick={handleRadio}
+          type="radio"
+          name="color"
+          id="alt1"
+          data-canvascolor="#75B0AC"
+          data-loadcolor="#C9D9EE"
+          data-color="#F6F6F6"
+          className="bg-[#75B0AC] rounded-full cursor-pointer p-2"
+        />
+        <div
+          onClick={handleRadio}
+          type="radio"
+          name="color"
+          id="alt2"
+          data-bg=""
+          data-color="#123524"
+          data-loadcolor="#D8D4F2"
+          data-canvascolor="#C4B2BC"
+          className="bg-[#C4B2BC] p-2 rounded-full cursor-pointer"
+        />
+      </div>
+    </div>
+  );
+};

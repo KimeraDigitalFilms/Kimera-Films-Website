@@ -1,10 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useState } from "react";
 import Logo from "./Logo/Logo";
 import { motion, useAnimate } from "framer-motion";
 import Button from "./Button";
+import colorContext from "../context/ColorContext";
 
 function Preloader({ ready, setVis }) {
+
+  const {loadColor}=useContext(colorContext)
+
   const [scope, animate] = useAnimate();
   const [scope2, animate2] = useAnimate();
 
@@ -22,8 +26,8 @@ function Preloader({ ready, setVis }) {
     );
     // console.log(ready);
     await animate(scope.current, {
-      background: "#C9D9EE",
-      boxShadow: "0px 0px 30px 4px #C9D9EE",
+      background: loadColor,
+      boxShadow: `0px 0px 30px 4px ${loadColor}`,
     });
     await animate(
       scope.current,

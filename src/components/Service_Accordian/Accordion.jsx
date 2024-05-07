@@ -105,7 +105,7 @@ letterSpacing:'1px'
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 py-2 bg-black/40 backdrop-blur-sm w-full absolute overflow-hidden top-0 left-0 text-white"
+              className="px-4 py-2  w-full absolute overflow-hidden top-0 left-0 text-white"
             >
               <p>{desc}</p>
             </motion.div>
