@@ -105,7 +105,7 @@ letterSpacing:'1px'
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 py-2  w-full absolute overflow-hidden top-0 left-0 text-white"
+              className="px-4 py-2  w-full absolute overflow-hidden top-0 left-0 text-secondary1"
             >
               <p>{desc}</p>
             </motion.div>
@@ -178,7 +178,7 @@ letterSpacing:'1px'
               exit="closed"
               
               transition={{ duration: 0.1 }}
-              className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-white"
+              className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-secondary1"
               >
               <div className="py-[50%] ">
                 {list.map((phrase, id) => {
