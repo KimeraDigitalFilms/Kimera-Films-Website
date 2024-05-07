@@ -4,6 +4,7 @@ import LogoGimmick from "../components/LogoGimmick";
 import Featured from "../components/Featured";
 import ShowReel from "../components/ShowReel/ShowReel";
 import Accordion from "../components/Service_Accordian/Accordion.jsx";
+import Hero from '../components/Hero.jsx';
 
 function Dummy() {
   useEffect(()=>{
@@ -26,7 +27,7 @@ function Dummy() {
       {/* <LogoGimmick/> */}
       {/* <Featured /> */}
       {/* <ShowReel/> */}
-      <Accordion/>
+      <Hero/>
     </div>
   );
 }

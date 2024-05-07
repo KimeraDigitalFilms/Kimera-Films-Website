@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import Distortion from "../components/Distortion/Distortion";
 import Ticker from "../components/Ticker";
 import Preloader from "../components/Preloader";
 import Services from "../components/Services";
-
+import ScrollTopButton from "../components/ScrollTopButton";
 import Team from "../components/Team";
 import LogoGimmick from "../components/LogoGimmick";
 import Featured from "../components/Featured";
 import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
@@ -46,6 +47,8 @@ function Home() {
           <Preloader ready={ready} setVis={setVis} />
         ) : (
           <>
+          <Hero/>
+          <ScrollTopButton/>
             <Services />
             <Featured />
             <Team />

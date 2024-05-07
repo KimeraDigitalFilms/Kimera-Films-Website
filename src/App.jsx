@@ -57,6 +57,7 @@ document.body.style.scrollBehavior='smooth'
             </>
           }
         />
+
       </Routes>
     </Router>
   );
