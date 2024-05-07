@@ -48,7 +48,7 @@ document.body.style.scrollBehavior='smooth'
           }
         />
         
-        <Route
+        {/* <Route
           exact
           path="/services"
           element={
@@ -56,7 +56,7 @@ document.body.style.scrollBehavior='smooth'
               <Dummy />
             </>
           }
-        />
+        /> */}
 
       </Routes>
     </Router>
