@@ -7,6 +7,7 @@ import Services from "../components/Services";
 import Team from "../components/Team";
 import LogoGimmick from "../components/LogoGimmick";
 import Featured from "../components/Featured";
+import Footer from "../components/Footer";
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
@@ -50,6 +51,7 @@ function Home() {
             <Team />
             <LogoGimmick />
             <Ticker />
+            <Footer/>
           </>
         )}
         {/* <Services/>

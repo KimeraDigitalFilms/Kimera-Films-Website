@@ -35,7 +35,7 @@ function Reveal({ content, refP }) {
     <>
       <motion.div
         style={{ opacity, scale, x }}
-        transition={{ ease: "linear" }}
+        transition={{ delay: 0 }}
         ref={ref}
         className="w-[400px] text-left font-Dancing text-3xl transition-opacity duration-200 py-[1px] font-bold "
       >

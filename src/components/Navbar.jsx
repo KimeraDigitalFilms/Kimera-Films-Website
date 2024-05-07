@@ -69,10 +69,10 @@ function Navbar() {
                 to={"/"}
                 className={`flex title-font font-medium  items-center  mb-4 md:mb-0`}
               >
-                <i
+                {/* <i
                   className="fa-sharp fa-solid fa-photo-film fa-2xl"
                   style={{ color: "#5900ff" }}
-                ></i>
+                ></i> */}
                 {/* <img src="" alt="logo" /> */}
                 <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary">
                   Kimera Films
