@@ -65,7 +65,7 @@ e.target.play()
            layout
            playsInline
            layoutId={item.id}
-           className="mx-auto inline w-full object-cover overflow-hidden hover:cursor-pointer"
+           className="mx-auto inline w-full object-cover z-20 overflow-hidden hover:cursor-pointer"
            whileTap={{ scale: 0.95 }}
           onClick={() => {
             setSelected(item);
