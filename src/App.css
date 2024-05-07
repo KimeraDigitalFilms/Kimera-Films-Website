@@ -3,7 +3,8 @@ html {
 }
 body{
     background-color: #0A0A0A !important; 
-        /* background-color: #ffffff !important;  */
+        /* background-color: #da1b1b !important;  */
+       
     width: 100%;
 }
 .screen-padding{
@@ -25,7 +26,7 @@ body{
 } */
 
 
-.pace {
+/* .pace {
   pointer-events: none;
   -webkit-user-select:none;
   user-select: none;
@@ -41,9 +42,9 @@ body{
   height: 1px;
   overflow: hidden;
   background:#1b1b1b;
-}
+} */
 
-.pace .pace-progress {
+/* .pace .pace-progress {
   box-sizing: border-box;
   transform: translate3d(0, 0, 0);
   max-width: 400px;
@@ -60,7 +61,7 @@ body{
 
 .pace.pace-inactive {
   display: none;
-}
+} */
 
 /* #preloader{
   width:100%;

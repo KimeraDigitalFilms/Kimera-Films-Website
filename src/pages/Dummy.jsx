@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Distortion from "../components/Distortion/Distortion";
 import LogoGimmick from "../components/LogoGimmick";
+import Featured from "../components/Featured";
+import Example from "../components/ShowReel/ShowReel";
 
 function Dummy() {
   useEffect(()=>{
@@ -20,7 +22,9 @@ function Dummy() {
           "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         }
       /> */}
-      <LogoGimmick/>
+      {/* <LogoGimmick/> */}
+      {/* <Featured /> */}
+      <Example/>
     </div>
   );
 }

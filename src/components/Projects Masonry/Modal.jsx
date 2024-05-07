@@ -1,7 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import { Button } from "@material-tailwind/react";
-
 import { Link } from "react-router-dom";
 
 function Modal({ selected, setSelected }) {

@@ -10,7 +10,14 @@ const Accordion = () => {
   const [open, setOpen] = useState(items[0].id);
 
   return (
-    <section className="screen-padding mt-24">
+    <section 
+    // style={{
+    //   backgroundImage: "url(https://img.freepik.com/premium-photo/photo-abstract-line-background_931878-84749.jpg)",
+    //   backgroundRepeat: 'no-repeat',
+    //   backgroundPosition: 'center',
+    //   backgroundSize: 'cover',
+    // }}
+     className="screen-padding mt-24">
       <div className="overflow-hidden mb-10">
         <motion.h1
           initial={{ y: "100%" }}
@@ -86,7 +93,11 @@ letterSpacing:'1px'
             initial="closed"
             animate="open"
             exit="closed"
-            className="w-full h-full overflow-hidden relative bg-primaryFg flex flex-nowrap justify-center items-center "
+            // style={{background:'linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0))',
+            // WebkitBackdropFilter:'blur(10px)',
+            //   backdropFilter:'blur(10px)'
+            // }}
+            className="w-full h-full overflow-hidden relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur flex flex-nowrap justify-center items-center "
             >
             
           <motion.div

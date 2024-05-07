@@ -6,6 +6,7 @@ import Services from "../components/Services";
 
 import Team from "../components/Team";
 import LogoGimmick from "../components/LogoGimmick";
+import Featured from "../components/Featured";
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
@@ -21,7 +22,8 @@ function Home() {
 
   return (
     <>
-      <div className=""
+      <div
+        className=""
         id="home"
         onLoad={() => {
           setTimeout(() => {
@@ -39,20 +41,18 @@ function Home() {
             <Preloader ready={ready} setVis={setVis} />
           )
         ) : ( */}
-          {!vis ?
-       (
-            <Preloader ready={ready} setVis={setVis} />
-          )
-         : (
+        {!vis ? (
+          <Preloader ready={ready} setVis={setVis} />
+        ) : (
           <>
-          <Services/>
-          
-       <Team/>
-<LogoGimmick/>
-            <Ticker/>
+            <Services />
+            <Featured />
+            <Team />
+            <LogoGimmick />
+            <Ticker />
           </>
         )}
-         {/* <Services/>
+        {/* <Services/>
           
        <Team/>
 <LogoGimmick/>
