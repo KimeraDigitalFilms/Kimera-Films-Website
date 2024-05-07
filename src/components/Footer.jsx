@@ -91,7 +91,7 @@ function Footer() {
         // variants={variants}
         // initial="initial"
         // whileInView="animate"
-        className="text-white h-full flex [@media(max-width:715px)]:flex-wrap flex-row [@media(max-width:970px)]:w-5/6 [@media(max-width:715px)]:!justify-around justify-between items-center m-auto w-2/3 "
+        className="text-secondary1 h-full flex [@media(max-width:715px)]:flex-wrap flex-row [@media(max-width:970px)]:w-5/6 [@media(max-width:715px)]:!justify-around justify-between items-center m-auto w-2/3 "
       >
         <motion.div
           className="flex flex-col flex-nowrap [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px] gap-y-[40px]"
@@ -125,7 +125,7 @@ function Footer() {
           <motion.div 
           // variants={variants}
           >
-            <h1 className="font-semibold text-lg [@media(max-width:715px)]:text-center">
+            <h1 className="font-semibold text-lg [@media(max-width:715px)]:text-center ">
               Phone
             </h1>
             <span className="text-gray-500">+91 88822 64140</span>
@@ -149,21 +149,21 @@ function Footer() {
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-square-facebook fa-2xl"
+                className="fa-brands fa-square-facebook fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://www.instagram.com/aiz.3d/">
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-square-instagram fa-2xl"
+                className="fa-brands fa-square-instagram fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://twitter.com/aizventurer">
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className=" fa-brands fa-square-x-twitter fa-2xl"
+                className=" fa-brands fa-square-x-twitter fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             {/* <Link target="_blank" to="https://www.behance.net/shadowz123">
@@ -180,7 +180,7 @@ function Footer() {
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className=" fa-brands fa-linkedin fa-2xl"
+                className=" fa-brands fa-linkedin fa-2xl text-secondary1"
               ></motion.i>
             </Link>
           </motion.div>
@@ -231,7 +231,7 @@ function Footer() {
               required
               id="name"
               name="name"
-              className="text-white placeholder:text-gray-500 px-3 py-2 outline-white bg-transparent outline outline-1"
+              className="text-secondary1 placeholder:text-gray-500 px-3 py-2 outline-secondary1 bg-transparent outline outline-1"
               color="white"
               placeholder="Username"
             ></input>
@@ -240,7 +240,7 @@ function Footer() {
               required
      id="email"
               name="email"
-              className="text-white  placeholder:text-gray-500 px-3 py-2 outline-white bg-transparent outline outline-1"
+              className="text-secondary1  placeholder:text-gray-500 px-3 py-2 outline-secondary1 bg-transparent outline outline-1"
               placeholder="Email"
             ></input>
             <textarea
@@ -248,7 +248,7 @@ function Footer() {
               rows={5}
               name="message"
               id="message"
-              className=" outline-white text-white placeholder:text-gray-500 p-3 bg-transparent outline outline-1"
+              className=" outline-secondary1 text-secondary placeholder:text-gray-500 p-3 bg-transparent outline outline-1"
               placeholder="Message"
             ></textarea>
             {/* <input
@@ -260,7 +260,7 @@ function Footer() {
             <button
 // onClick={sendEmail}
 
-        className="block h-[50px] overflow-hidden bg-white font-medium"
+        className="block h-[50px] overflow-hidden bg-secondary1 font-medium"
       >
         <motion.div whileHover={{ y: -50 }}>
           <span className="flex items-center h-[50px] justify-center text-2xl text-primary font-semibold uppercase">Submit</span>
