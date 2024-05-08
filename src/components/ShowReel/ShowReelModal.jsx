@@ -24,11 +24,12 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
             className=" text-white p-2 bg-primary
              rounded-lg w-[800px] shadow-xl cursor-default relative "
           >
-            <div className="relative z-10 w-full h-full object-cover">
+            <div className="relative  w-full h-full object-cover">
               <video
                 preload="none"
                 poster="/thumbnails/random3.png"
                 loop
+                playsInline
                 controls
                 src="/videos/random3.mp4"
                 className="w-full h-full"

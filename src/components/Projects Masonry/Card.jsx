@@ -1,6 +1,6 @@
 import React from "react";
 import { motion,useScroll, useTransform,  } from "framer-motion";
-import { useRef } from "react";
+import { useRef,useState } from "react";
 
 function Card({ setSelected, item,style }) {
 
@@ -12,6 +12,7 @@ function Card({ setSelected, item,style }) {
 
   // const opacity=useTransform(scrollYProgress,[0,0.2,0.8,1],[0,1,1,0])
   // const scale=useTransform(scrollYProgress,[0,0.3,0.8,1],[0,1,1,0])
+// const [loaded,setLoaded]=useState(false)
 
   return (
     <>
@@ -55,15 +56,24 @@ function Card({ setSelected, item,style }) {
           <motion.video 
           muted
           loop
+//           onCanPlayThrough={()=>{
+// setLoaded(true)
+//           }}
           preload="none"
           poster={item.poster}
-          // poster="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg"
-          onMouseEnter={(e)=>{
-e.target.play()
-          }}
-          onMouseLeave={(e)=>{
-            e.target.pause()
-          }}
+//           onMouseEnter={(e)=>{
+// console.log(loaded)
+//             if (loaded){
+//               e.target.play()
+//               console.log('enter')
+//             }
+//           }}
+          // onMouseLeave={(e)=>{
+          //   if (loaded){
+          //     console.log('leave')
+          //     e.target.pause()
+          //   }
+          // }}
            layout
            playsInline
            layoutId={item.id}
