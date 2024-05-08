@@ -43,7 +43,7 @@ function Home() {
             <Preloader ready={ready} setVis={setVis} />
           )
         ) : ( */}
-        {vis ? (
+        {!vis ? (
           <Preloader ready={ready} setVis={setVis} />
         ) : (
           <>
