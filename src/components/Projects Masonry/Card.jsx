@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion,useScroll, useTransform,  } from "framer-motion";
 import { useRef,useState } from "react";
 
@@ -13,6 +13,13 @@ function Card({ setSelected, item,style }) {
   // const opacity=useTransform(scrollYProgress,[0,0.2,0.8,1],[0,1,1,0])
   // const scale=useTransform(scrollYProgress,[0,0.3,0.8,1],[0,1,1,0])
 // const [loaded,setLoaded]=useState(false)
+
+useEffect(()=>{
+  document.getElementById(item.id).addEventListener('click',()=>{
+    setSelected(item)
+    console.log(item.id)
+  })
+},[])
 
   return (
     <>
@@ -53,27 +60,27 @@ function Card({ setSelected, item,style }) {
             src={item.img}
             alt=""
           /> */}
-          <motion.video 
+          {/* <motion.video 
           muted
           loop
-//           onCanPlayThrough={()=>{
-// setLoaded(true)
-//           }}
+          onCanPlayThrough={()=>{
+setLoaded(true)
+          }}
           preload="none"
           poster={item.poster}
-//           onMouseEnter={(e)=>{
-//             e.target.play()
-// console.log(loaded)
-//             if (loaded){
-//               console.log('enter')
-//             }
-//           }}
-          // onMouseLeave={(e)=>{
-          //   e.target.pause()
-          //   if (loaded){
-          //     console.log('leave')
-          //   }
-          // }}
+          onMouseEnter={(e)=>{
+            e.target.play()
+console.log(loaded)
+            if (loaded){
+              console.log('enter')
+            }
+          }}
+          onMouseLeave={(e)=>{
+            e.target.pause()
+            if (loaded){
+              console.log('leave')
+            }
+          }}
            layout
            playsInline
            layoutId={item.id}
@@ -83,7 +90,32 @@ function Card({ setSelected, item,style }) {
             setSelected(item);
           }}
           src={item.vid}/>
-         
+          */}
+          <motion.div style={{position:'relative',paddingLeft:'50%', paddingBottom:'50%',paddingTop:'50%',paddingRight:'50%'}}
+          whileTap={{ scale: 0.95 }}
+          className="z-0 overflow-hidden hover:cursor-pointer"
+          onClick={() => {
+            setSelected(item);
+            console.log('hi')
+          }}
+          >
+          <motion.iframe
+          layout
+          layoutId={item.id}
+          id={item.id}
+        
+          
+            src={`${item.vid}&background=1&title=0&byline=0&&controls=0&playsinline=1`}
+            // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
+            style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}
+            className="z-20 hover:cursor-pointer"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            webkitallowfullscreen 
+            mozallowfullscreen
+            allowfullscreen
+            ></motion.iframe>
+            </motion.div>
         </motion.div>
       </div>
     </>
@@ -91,3 +123,4 @@ function Card({ setSelected, item,style }) {
 }
 
 export default Card;
+

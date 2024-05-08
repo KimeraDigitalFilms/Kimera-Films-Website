@@ -9,53 +9,56 @@ function List({ setSelected }) {
   const list = [
     {
       id: 1,
-      vid: "/videos/random1.mp4",
+      vid: "https://player.vimeo.com/video/938376141?h=4bb8442f8d",
       title: "Project 1",
       poster: "/thumbnails/random1.png",
     },
     {
       id: 3,
-      vid: "/videos/random3.mp4",
+      vid: "https://player.vimeo.com/video/926940023?h=c46a7dc9aa",
       title: "Project 3",
       poster: "/thumbnails/random3.png",
     },
     {
       id: 2,
-      vid: "/videos/random2.mp4",
+      vid: "https://player.vimeo.com/video/137250145?h=ff9fe4f114",
       title: "Project 2",
       poster: "/thumbnails/random2.png",
     },
     {
       id: 4,
-      vid: "/videos/random4.mp4",
+      vid: "https://player.vimeo.com/video/21066530?h=1183d78d8b",
       title: "Project 4",
       poster: "/thumbnails/random4.png",
     },
     {
       id: 5,
-      vid: "/videos/random5.mp4",
+      vid: "https://player.vimeo.com/video/394673541?h=3e4e45cb06",
       title: "Project 5",
       poster: "/thumbnails/random5.png",
     },
     {
       id: 6,
-      vid: "/videos/random6.mp4",
+      vid: "https://player.vimeo.com/video/253316833?h=0363f35d21",
       title: "Project 6",
       poster: "/thumbnails/random6.png",
     },
     {
       id: 7,
-      vid: "/videos/random7.mp4",
+      vid: "https://player.vimeo.com/video/213079877?h=1552b59c80",
       title: "Project 7",
       poster: "/thumbnails/random7.png",
     },
     {
       id: 8,
-      vid: "/videos/random8.mp4",
+      vid: "https://player.vimeo.com/video/176189702?h=663625b3bd",
       title: "Project 8",
       poster: "/thumbnails/random8.png",
     },
   ];
+
+  
+
 
   const ListVariants = {
     hidden: {
@@ -117,3 +120,4 @@ function List({ setSelected }) {
 }
 
 export default List;
+
