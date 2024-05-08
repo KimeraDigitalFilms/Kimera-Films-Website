@@ -5,7 +5,7 @@ import Services from "../components/Services";
 import ScrollTopButton from "../components/ScrollTopButton";
 import Team from "../components/Team";
 import LogoGimmick from "../components/LogoGimmick";
-import Featured from "../components/Featured";
+import Featured from "../components/ShowReel/Featured";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 
