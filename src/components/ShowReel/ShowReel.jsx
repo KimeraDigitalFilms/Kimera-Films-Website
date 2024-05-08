@@ -72,7 +72,7 @@ const Video = () => {
 
         <video
           style={{ width: "25vw !important", height: "25vh !important" }}
-          muted={true}
+          muted={true} playsInline preload="none" poster="/thumbnails/random3.png"
           src="/videos/random3.mp4"
           id="reel"
           className="-z-10 w-[25vw] h-[25vh] object-fill"
