@@ -70,7 +70,7 @@ const Video = () => {
       <div className="glass-nav flex items-center justify-between h-full w-full">
         <Cursor hovered={hovered} scope={scope} />
    
-          <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important" }}
+          {/* <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important" }}
           className="-z-10"
           >
           <iframe
@@ -85,8 +85,8 @@ const Video = () => {
             mozallowfullscreen
             allowfullscreen
             ></iframe>
-            </div>
-        {/* <video
+            </div> */}
+        <video
           style={{ width: "25vw !important", height: "25vh !important" }}
           muted={true}
           playsInline
@@ -95,7 +95,7 @@ const Video = () => {
           src="/videos/random3.mp4"
           id="reel"
           className="-z-10 w-[25vw] h-[25vh] object-fill"
-        ></video> */}
+        ></video>
         {/* <motion.div
           style={{ scale: scale4 }}
           className={

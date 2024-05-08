@@ -84,7 +84,7 @@ function Featured() {
         <motion.div
           style={{ scale: scale5 }}
           className={
-            "el w-full h-full top-0 absolute flex items-center justify-center"
+            "el w-full h-full top-0  absolute flex items-center justify-center"
           }
         >
           <div className={" relative -top-[30vh] left-[5vw] w-[35vw] h-[30vh]"}>

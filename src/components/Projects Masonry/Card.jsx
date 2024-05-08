@@ -60,7 +60,7 @@ useEffect(()=>{
             src={item.img}
             alt=""
           /> */}
-          {/* <motion.video 
+          <motion.video 
           muted
           loop
           onCanPlayThrough={()=>{
@@ -84,29 +84,26 @@ console.log(loaded)
            layout
            playsInline
            layoutId={item.id}
-           className="mx-auto inline w-full object-cover z-20 overflow-hidden hover:cursor-pointer"
+           className="mx-0 w-full object-cover z-20 overflow-hidden hover:cursor-pointer"
            whileTap={{ scale: 0.95 }}
           onClick={() => {
             setSelected(item);
           }}
           src={item.vid}/>
-          */}
-          <motion.div style={{position:'relative',paddingLeft:'50%', paddingBottom:'50%',paddingTop:'50%',paddingRight:'50%'}}
+         
+          {/* <motion.div style={{position:'relative',padding:'28%'}}
           whileTap={{ scale: 0.95 }}
-          className="z-0 overflow-hidden hover:cursor-pointer"
+          className="z-50 overflow-hidden hover:cursor-pointer"
           onClick={() => {
             setSelected(item);
             console.log('hi')
-          }}
-          >
+          }}>
+          
           <motion.iframe
           layout
           layoutId={item.id}
           id={item.id}
-        
-          
             src={`${item.vid}&background=1&title=0&byline=0&&controls=0&playsinline=1`}
-            // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
             style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}
             className="z-20 hover:cursor-pointer"
             frameborder="0"
@@ -115,7 +112,7 @@ console.log(loaded)
             mozallowfullscreen
             allowfullscreen
             ></motion.iframe>
-            </motion.div>
+            </motion.div> */}
         </motion.div>
       </div>
     </>
