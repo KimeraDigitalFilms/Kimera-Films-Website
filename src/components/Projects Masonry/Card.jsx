@@ -55,7 +55,8 @@ function Card({ setSelected, item,style }) {
           <motion.video 
           muted
           loop
-          
+          preload="none"
+          poster="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg"
           onMouseEnter={(e)=>{
 e.target.play()
           }}
