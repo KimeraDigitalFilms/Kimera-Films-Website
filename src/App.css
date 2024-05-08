@@ -16,4 +16,6 @@ body{
   }
 
 
-   
+video[poster]{
+  object-fit:initial;
+} 
