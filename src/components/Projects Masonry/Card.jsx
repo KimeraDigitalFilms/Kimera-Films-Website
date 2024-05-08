@@ -61,19 +61,19 @@ function Card({ setSelected, item,style }) {
 //           }}
           preload="none"
           poster={item.poster}
-//           onMouseEnter={(e)=>{
+          onMouseEnter={(e)=>{
+            e.target.play()
 // console.log(loaded)
 //             if (loaded){
-//               e.target.play()
 //               console.log('enter')
 //             }
-//           }}
-          // onMouseLeave={(e)=>{
-          //   if (loaded){
-          //     console.log('leave')
-          //     e.target.pause()
-          //   }
-          // }}
+          }}
+          onMouseLeave={(e)=>{
+            e.target.pause()
+            // if (loaded){
+            //   console.log('leave')
+            // }
+          }}
            layout
            playsInline
            layoutId={item.id}
