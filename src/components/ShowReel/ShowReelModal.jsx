@@ -2,9 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiAlertCircle } from "react-icons/fi";
 // import { useState } from "react";
 
-
-
-
 const ShowReelModal = ({ isOpen, setIsOpen }) => {
   return (
     <AnimatePresence>
@@ -14,8 +11,9 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => {
-            document.body.style.overflow = 'scroll';
-            setIsOpen(false)}}
+            document.body.style.overflow = "scroll";
+            setIsOpen(false);
+          }}
           className="bg-slate-900/20 backdrop-blur-xl p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
         >
           <motion.div
@@ -27,7 +25,14 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
              rounded-lg w-[800px] shadow-xl cursor-default relative "
           >
             <div className="relative z-10 w-full h-full object-cover">
-              <video loop controls src="/videos/random3.mp4" className="w-full h-full"></video>
+              <video
+                preload="none"
+                poster="/thumbnails/random3.png"
+                loop
+                controls
+                src="/videos/random3.mp4"
+                className="w-full h-full"
+              ></video>
             </div>
           </motion.div>
         </motion.div>
