@@ -16,7 +16,7 @@ function GridComponent() {
 
           className={`absolute w-full top-[100vh] h-[250vh] left-0 -z-40`}
         >
-          <Logo
+          <Logo src={'/logo.svg'}
             style={` bg-primary/60 w-[500px] sticky left-[30%] top-[25%] -z-40 `}
           />
         </div>
