@@ -9,12 +9,12 @@ function List({ setSelected }) {
   const list = [
     { id: 1, vid: "/videos/random1.mp4", title: "Project 1", poster: "/thumbnails/random1.png" },
     { id: 3, vid: "/videos/random3.mp4", title: "Project 3", poster: "/thumbnails/random3.png" },
-    { id: 2, vid: "/videos/random2.mp4", title: "Project 2",  poster: "/thumbnails/random1.png" },
-    { id: 4, vid: "/videos/random4.mp4", title: "Project 4",  poster: "/thumbnails/random1.png" },
+    { id: 2, vid: "/videos/random2.mp4", title: "Project 2",  poster: "/thumbnails/random2.png" },
+    { id: 4, vid: "/videos/random4.mp4", title: "Project 4",  poster: "/thumbnails/random4.png" },
     { id: 5, vid: "/videos/random5.mp4", title: "Project 5",  poster: "/thumbnails/random5.png" },
-    { id: 6, vid: "/videos/random6.mp4", title: "Project 6",  poster: "/thumbnails/random1.png" },
-    { id: 7, vid: "/videos/random7.mp4", title: "Project 7",  poster: "/thumbnails/random5.png" },
-    { id: 8, vid: "/videos/random8.mp4", title: "Project 8",  poster: "/thumbnails/random1.png" },
+    { id: 6, vid: "/videos/random6.mp4", title: "Project 6",  poster: "/thumbnails/random6.png" },
+    { id: 7, vid: "/videos/random7.mp4", title: "Project 7",  poster: "/thumbnails/random7.png" },
+    { id: 8, vid: "/videos/random8.mp4", title: "Project 8",  poster: "/thumbnails/random8.png" },
   ];
 
   const ListVariants = {
