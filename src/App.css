@@ -2,6 +2,8 @@ html {
   scroll-behavior: smooth;
 }
 body{
+  overflow-x: hidden;
+  margin: 0;
     background-color: #0A0A0A ; 
         /* background-color: #da1b1b !important;  */
        

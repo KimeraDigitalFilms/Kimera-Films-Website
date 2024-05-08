@@ -49,14 +49,15 @@ function Featured() {
       scale: scale9,
     },
   ];
- useEffect(()=>{
-const vid=document.getElementById('reel')
-if (isInView){
-    vid.play()
-}else{
-    vid.pause()
-}
- },[isInView])
+
+//  useEffect(()=>{
+// const vid=document.getElementById('reel')
+// if (isInView){
+//     vid.play()
+// }else{
+//     vid.pause()
+// }
+//  },[isInView])
 
  
   return (

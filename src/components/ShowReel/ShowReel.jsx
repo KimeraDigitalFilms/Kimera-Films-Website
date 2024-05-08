@@ -11,7 +11,7 @@ const ShowReel = ({ viewRef, scale }) => {
         ref={viewRef}
         style={{ scale }}
         onClick={() => {
-          document.body.style.overflow = 'hidden';
+          document.body.style.overflow = "hidden";
           setIsOpen(true);
         }}
         className="z-40 relative w-[25vw] h-[25vh] overflow-hidden "
@@ -69,14 +69,33 @@ const Video = () => {
     >
       <div className="glass-nav flex items-center justify-between h-full w-full">
         <Cursor hovered={hovered} scope={scope} />
-
-        <video
+   
+          <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important" }}
+          className="-z-10"
+          >
+          <iframe
+          id="reel"
+            src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&autoplay=1&loop=1&title=0&byline=0&muted=1&controls=0"
+            // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
+            style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}
+            // className="w-full h-full"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            webkitallowfullscreen 
+            mozallowfullscreen
+            allowfullscreen
+            ></iframe>
+            </div>
+        {/* <video
           style={{ width: "25vw !important", height: "25vh !important" }}
-          muted={true} playsInline preload="none" poster="/thumbnails/random3.png"
+          muted={true}
+          playsInline
+          preload="none"
+          poster="/thumbnails/random3.png"
           src="/videos/random3.mp4"
           id="reel"
           className="-z-10 w-[25vw] h-[25vh] object-fill"
-        ></video>
+        ></video> */}
         {/* <motion.div
           style={{ scale: scale4 }}
           className={
