@@ -92,7 +92,7 @@ function Preloader({ ready, setVis }) {
           transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
           className="w-20 p-2  rounded-full"
         >
-          <Logo style="w-full bg-primary" />
+          <Logo src={'/logo.svg'} style="w-full bg-primary" />
         </motion.div>
 
         <div

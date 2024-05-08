@@ -60,7 +60,7 @@ function LogoGimmick() {
         style={{ translateY, scale, rotate, translateX }}
         className="h-fit transition-transform ease-linear delay-0"
       >
-        <Logo style={"h-[700px] bg-primary"} />
+        <Logo src={'/logo.svg'} style={"h-[700px] bg-primary"} />
       </motion.div>
     </div>
   );
