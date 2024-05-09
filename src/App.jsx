@@ -12,7 +12,7 @@ import { ColorState } from "./context/ColorContext";
 
 function App() {
 
-
+  
   document.body.style.overflowX = "hidden";
 
   document.body.style.width =
