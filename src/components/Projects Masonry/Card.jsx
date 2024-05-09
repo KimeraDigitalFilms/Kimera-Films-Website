@@ -14,12 +14,12 @@ function Card({ setSelected, item,style }) {
   // const scale=useTransform(scrollYProgress,[0,0.3,0.8,1],[0,1,1,0])
 // const [loaded,setLoaded]=useState(false)
 
-useEffect(()=>{
-  document.getElementById(item.id).addEventListener('click',()=>{
-    setSelected(item)
-    console.log(item.id)
-  })
-},[])
+// useEffect(()=>{
+//   document.getElementById(item.id).addEventListener('click',()=>{
+//     setSelected(item)
+//     console.log(item.id)
+//   })
+// },[])
 
   return (
     <>
@@ -47,9 +47,9 @@ useEffect(()=>{
         // style={{opacity,scale}} transition={{ease:easeOut,type:'spring'}} ref={ref}
           // className={`flex justify-center items-center mx-auto justify-self-center place-items-center `}
         >
-          {/* <motion.img
-            layout
-            layoutId={item.id}
+          <motion.img
+            // layout
+            // layoutId={item.id}
        
             whileTap={{ scale: 0.95 }}
       
@@ -57,10 +57,10 @@ useEffect(()=>{
               setSelected(item);
             }}
             className="mx-auto inline  w-fit overflow-hidden hover:cursor-pointer"
-            src={item.img}
+            src={item.poster}
             alt=""
-          /> */}
-          <motion.video 
+          />
+          {/* <motion.video 
           muted
           loop
           onCanPlayThrough={()=>{
@@ -89,19 +89,19 @@ console.log(loaded)
           onClick={() => {
             setSelected(item);
           }}
-          src={item.vid}/>
+          src={item.vid}/> */}
          
-          {/* <motion.div style={{position:'relative',padding:'28%'}}
+          {/* <motion.div style={{position:'relative',padding:'66.67%'}}
           whileTap={{ scale: 0.95 }}
-          className="z-50 overflow-hidden hover:cursor-pointer"
+          className="z-50 overflow-hidden bg-blue-500 hover:cursor-pointer"
           onClick={() => {
             setSelected(item);
             console.log('hi')
           }}>
           
-          <motion.iframe
-          layout
-          layoutId={item.id}
+          <iframe
+          // layout
+          // layoutId={item.id}
           id={item.id}
             src={`${item.vid}&background=1&title=0&byline=0&&controls=0&playsinline=1`}
             style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}
@@ -111,7 +111,7 @@ console.log(loaded)
             webkitallowfullscreen 
             mozallowfullscreen
             allowfullscreen
-            ></motion.iframe>
+            ></iframe>
             </motion.div> */}
         </motion.div>
       </div>

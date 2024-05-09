@@ -17,7 +17,7 @@ const ShowReel = ({ viewRef, scale }) => {
         className="z-40 relative w-[25vw] h-[25vh] overflow-hidden "
       >
         {/* {!isOpen &&<Video />}  */}
-        <Video isOpen={isOpen}/>
+        <Video isOpen={isOpen} />
       </motion.section>
       {/* {isOpen && <ShowReelModal isOpen={isOpen} setIsOpen={setIsOpen} />} */}
       <ShowReelModal isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -25,7 +25,7 @@ const ShowReel = ({ viewRef, scale }) => {
   );
 };
 
-const Video = ({isOpen}) => {
+const Video = ({ isOpen }) => {
   const [hovered, setHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -55,19 +55,18 @@ const Video = ({isOpen}) => {
       navRef.current?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  let reel;
+  let player;
+  useEffect(() => {
+    reel = document.getElementById("reel");
+    player = new Vimeo.Player("reel");
+  });
 
-  let reel
-  let player
-useEffect(()=>{
- reel=document.getElementById('reel')
- player=new Vimeo.Player('reel')
-})
-
-useEffect(()=>{
-  if (!isOpen){
-    player.play()
-  }
-},[isOpen])
+  useEffect(() => {
+    if (!isOpen) {
+      player.play();
+    }
+  }, [isOpen]);
 
   return (
     <div
@@ -80,23 +79,39 @@ useEffect(()=>{
     >
       <div className="glass-nav flex items-center justify-between h-full w-full">
         <Cursor hovered={hovered} scope={scope} />
-   
-          <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important",overflowX:'hidden' }}
+
+        <div
+          style={{
+            position: "relative",
+            paddingLeft: "50%",
+            paddingBottom: "35%",
+            paddingTop: "35%",
+            paddingRight: "50%",
+            width: "25vw !important",
+            height: "25vh !important",
+            overflowX: "hidden",
+          }}
           className="-z-10"
-          >
+        >
           <iframe
-          id="reel"
+            id="reel"
             src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&background=1&title=0&byline=0&muted=1&controls=0"
             // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
-            style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+            }}
             // className="w-full h-full"
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
-            webkitallowfullscreen 
+            webkitallowfullscreen
             mozallowfullscreen
             allowfullscreen
-            ></iframe>
-            </div>
+          ></iframe>
+        </div>
         {/* <video
           style={{ width: "25vw !important", height: "25vh !important" }}
           muted={true}

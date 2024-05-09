@@ -22,7 +22,7 @@ function Modal({ selected, setSelected }) {
           onClick={(e) => e.stopPropagation()} // .stopPropagation() method prevents parent event from bubbling/affecting/calling from children
           className="w-full min-[1120px]:max-w-[1000px] min-[825px]:max-w-[750px] max-w-[500px] h-max-[50vh] mx-auto my-12 px-8 cursor-default"
         >
-          <motion.div>
+          {/* <motion.div>
             <motion.video
               muted
               loop
@@ -35,7 +35,40 @@ function Modal({ selected, setSelected }) {
               src={selected.vid}
               alt="vid"
             />
-          </motion.div>
+          </motion.div> */}
+
+          <div
+            style={{
+              position: "relative",
+              paddingLeft: "50%",
+              paddingBottom: "35%",
+              paddingTop: "35%",
+              paddingRight: "50%",
+              width: "25vw !important",
+              height: "25vh !important",
+              overflowX: "hidden",
+            }}
+            className=""
+          >
+            <iframe
+              id="reel"
+              src={`${selected.vid}&autoplay=1&title=0&byline=0&muted=1&controls=1`}
+              // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "100%",
+                height: "100%",
+              }}
+              // className="w-full h-full"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
 
           <motion.div
             initial={{
