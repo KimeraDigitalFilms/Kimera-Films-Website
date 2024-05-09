@@ -40,7 +40,7 @@ export default {
       main: { 
          'primary': '#ED6E0B',
          'secondary1': '#C9D9EE',
-         'primaryBg': '#241c18',
+         'primaryBg': '#211106',
         //  'primaryBg': "#0A0A0A",
          'primaryFg': "#282724",
       },

@@ -243,7 +243,7 @@ const Colors = () => {
           type="radio"
           name="color"
           // data-bg="#241c18"
-          data-color="#2b1b11"
+          data-color="#211106"
           id="main"
           data-canvascolor="#ED6E0B"
           data-loadcolor="#C9D9EE"

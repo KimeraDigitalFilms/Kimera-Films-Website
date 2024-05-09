@@ -6,7 +6,7 @@ export default colorContext;
 
 export const ColorState = (props) =>{
 
-const [canvasBg,setCanvasBg]=useState('#2b1b11')
+const [canvasBg,setCanvasBg]=useState('#1a0b00')
    const [canvasColor,setCanvasColor]=useState('#ED6E0B')
    const [loadColor,setLoadColor]=useState('#C9D9EE')
 
