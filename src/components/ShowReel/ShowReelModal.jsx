@@ -11,10 +11,10 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => {
-            document.body.style.overflow = "scroll";
+            document.body.style.overflowY = "scroll";
             setIsOpen(false);
           }}
-          className="bg-slate-900/20 backdrop-blur-xl p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
+          className="bg-slate-900/20 backdrop-blur-xl p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer overflow-x-hidden"
         >
           <motion.div
             initial={{ scale: 0, rotate: "12.5deg" }}
