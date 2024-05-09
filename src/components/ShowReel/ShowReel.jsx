@@ -70,7 +70,7 @@ const Video = () => {
       <div className="glass-nav flex items-center justify-between h-full w-full">
         <Cursor hovered={hovered} scope={scope} />
    
-          <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important",overflowX:'hidden' }}
+          <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'30%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important",overflowX:'hidden' }}
           className="-z-10"
           >
           <iframe
