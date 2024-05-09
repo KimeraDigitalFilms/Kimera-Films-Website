@@ -20,7 +20,10 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
             initial={{ scale: 0, rotate: "12.5deg" }}
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
-            onClick={(e) => e.stopPropagation()}
+            // onClick={
+            //   (e) => 
+            //     e.stopPropagation()
+            // }
             className=" text-white p-2 bg-primary
              rounded-lg w-[800px] shadow-xl cursor-default relative "
           >
@@ -36,11 +39,9 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
                 src="/videos/random3.mp4"
                 className="w-full hover:cursor-pointer h-full"
               ></video> */}
-              <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "25vw !important", height: "25vh !important",overflowX:'hidden' }}
-          className="-z-10"
-          >
+              <div style={{position:'relative',paddingLeft:'50%', paddingBottom:'35%',paddingTop:'35%',paddingRight:'50%', width: "100%", height: "100%",overflowX:'hidden' }}
+          className="">
           <iframe
-          id="reel"
             src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&autoplay=1&loop=1&title=0&byline=0&muted=0&controls=1"
             // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
             style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}

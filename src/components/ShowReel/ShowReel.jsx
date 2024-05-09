@@ -16,14 +16,16 @@ const ShowReel = ({ viewRef, scale }) => {
         }}
         className="z-40 relative w-[25vw] h-[25vh] overflow-hidden "
       >
-        <Video />
+        {/* {!isOpen &&<Video />}  */}
+        <Video isOpen={isOpen}/>
       </motion.section>
+      {/* {isOpen && <ShowReelModal isOpen={isOpen} setIsOpen={setIsOpen} />} */}
       <ShowReelModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };
 
-const Video = () => {
+const Video = ({isOpen}) => {
   const [hovered, setHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -53,13 +55,22 @@ const Video = () => {
       navRef.current?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+
+  let reel
+  let player
+useEffect(()=>{
+ reel=document.getElementById('reel')
+ player=new Vimeo.Player('reel')
+})
+
+useEffect(()=>{
+  if (!isOpen){
+    player.play()
+  }
+},[isOpen])
+
   return (
     <div
-      // onClick={() => {
-      //   const vid = document.getElementById("reel");
-      //   vid.play();
-      //   vid.muted = !vid.muted;
-      // }}
       ref={navRef}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -75,7 +86,7 @@ const Video = () => {
           >
           <iframe
           id="reel"
-            src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&autoplay=1&loop=1&title=0&byline=0&muted=1&controls=0"
+            src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&background=1&title=0&byline=0&muted=1&controls=0"
             // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
             style={{position:"absolute",top:"0",left:"0",width:"100%",height:"100%"}}
             // className="w-full h-full"
