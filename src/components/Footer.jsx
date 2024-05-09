@@ -82,10 +82,7 @@ function Footer() {
   return (
     <div
       ref={ref}
-      style={{
-        height: "100vh",
-        // scrollSnapAlign: "center",
-      }}
+   className="h-screen"
     >
       <motion.div
         // variants={variants}

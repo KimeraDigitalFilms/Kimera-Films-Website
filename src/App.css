@@ -1,10 +1,14 @@
+* {
+  box-sizing:border-box
+}
+
 html {
   scroll-behavior: smooth;
 }
 body{
   overflow-x: hidden;
   margin: 0 !important;
-    background-color: #0A0A0A ; 
+    background-color: #241c18 ; 
         /* background-color: #da1b1b !important;  */
        
     width: 100%;

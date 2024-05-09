@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "./Logo/Logo";
 import { useScroll, motion, useTransform, easeOut, useMotionValueEvent } from "framer-motion";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
+
 function LogoGimmick() {
   const ref = useRef(null);
   
@@ -51,12 +51,12 @@ function LogoGimmick() {
     <div
       id="logoGimmick"
       ref={ref}
-      className="h-[200vh] mb-[200px] relative "
+      className="h-[200vh] mb-[200px]  relative "
     >
       <motion.div 
       transition={{ease:'linear',delay:0}}
       //  style={{y:divY}}
-       className="transition-all ease-linear delay-0  sticky top-[10%]">
+       className="transition-all ease-linear delay-0 overflow-hidden h-screen sticky top-0">
 
       <motion.h1 
         transition={{ ease: "linear",delay:0 }}
