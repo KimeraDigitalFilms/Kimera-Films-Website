@@ -69,7 +69,9 @@ function Preloader({ ready, setVis }) {
   useEffect(() => {
     // console.log(document.readyState)
     if (ready === 1) {
-      loaderAnimate2();
+      setTimeout(() => {
+        loaderAnimate2();
+      }, 2400);
       // console.log(ready)
     } else {
       loaderAnimate1();
@@ -80,7 +82,7 @@ function Preloader({ ready, setVis }) {
     <motion.div
       ref={scope2}
       id="preloader"
-      className={`flex justify-center  items-center flex-nowrap bg-neutral-700 h-screen w-screen absolute z-[200] top-0 `}
+      className={`flex justify-center  items-center flex-nowrap bg-neutral-700 h-screen w-screen absolute z-[2000] top-0 `}
     >
       <motion.div
         variants={variants}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Ticker from "../components/Ticker";
 import Preloader from "../components/Preloader";
 import Services from "../components/Services";
@@ -15,12 +15,11 @@ import PageTransition from "../components/PageTransition";
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
-  document.addEventListener("readystatechange", (e) => {
-    if (e.target.readyState === "complete") {
-      setTimeout(() => {
-        setReady(1);
-      }, 2400);
-    }
+  
+  document.addEventListener("readystatechange", (e) => { 
+    setReady(1);
+      // setTimeout(() => {
+      // }, 2400);
   });
 
   return (
