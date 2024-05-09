@@ -1,14 +1,15 @@
 import React, { useState,useEffect } from "react";
 import Button from "./components/Button";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {WrappedProjects} from "./pages/Projects";
+import {WrappedHome} from "./pages/Home";
+// import Home from "./pages/Home";
+// import Projects from "./pages/Projects";
 import './App.css'
-import Projects from "./pages/Projects";
 import Dummy from "./pages/Dummy";
 import { ColorState } from "./context/ColorContext";
-
+import { AnimatePresence } from "framer-motion";
 
 function App() {
 
@@ -25,32 +26,29 @@ function App() {
 document.body.style.scrollBehavior='smooth'
   window.addEventListener("resize", notify);
 
-
+const location=useLocation()
   return (
+    <>
     <ColorState>
-    <Router>
       <Navbar />
-      <Routes>
+        <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         <Route
-          exact
+          // index
           path="/"
           element={
-            <>
-              <Home />
-            </>
+            <WrappedHome />
+            // <Home/>
           }
           />
         <Route
-          exact
           path="/gallery"
           element={
-            <>
-              <Projects />
-            </>
+            <WrappedProjects />
+            // <Projects/>
           }
-          />
-        
-        {/* <Route
+          />   
+        <Route
           exact
           path="/services"
           element={
@@ -58,11 +56,12 @@ document.body.style.scrollBehavior='smooth'
             <Dummy />
             </>
           }
-        /> */}
+        />
 
       </Routes>
-    </Router>
+        </AnimatePresence>
         </ColorState>
+        </>
   );
 }
 

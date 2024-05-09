@@ -8,33 +8,39 @@ import LogoGimmick from "../components/LogoGimmick";
 import Featured from "../components/ShowReel/Featured";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import PageTransition from "../components/PageTransition";
+
+
 
 function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
-  // document.addEventListener("readystatechange", (e) => {
-  //   if (e.target.readyState === "interactive") {
-  //     setReady(1);
-  //   } else if (e.target.readyState === "complete") {
-  //     setTimeout(() => {
-  //       setReady(2);
-  //     }, 500);
-  //   }
-  // });
+  document.addEventListener("readystatechange", (e) => {
+    if (e.target.readyState === "complete") {
+      setTimeout(() => {
+        setReady(1);
+      }, 2400);
+    }
+  });
 
   return (
     <>
+
       <div
         className=""
         id="home"
-        onLoad={() => {
-          setTimeout(() => {
-            setReady(1);
-            // console.log("yo")
-          }, 2400);
-        }}
+        // onLoad={() => {
+        //   setReady(1);
+        //   setTimeout(() => {
+            
+        //   }, 2400);
+        // }}
       >
-        {/* {!vis 
+        
+        {/* {!vis ? (
+          <Preloader ready={ready} setVis={setVis} />
+        ) : ( */}
+        {!vis 
         ? 
         (
           sessionStorage.getItem("preloaded") ? (
@@ -42,12 +48,9 @@ function Home() {
           ) : (
             <Preloader ready={ready} setVis={setVis} />
           )
-        ) : ( */}
-        {!vis ? (
-          <Preloader ready={ready} setVis={setVis} />
         ) : (
-          <>
-          <Hero/>
+           <>      
+              <Hero/>
           <ScrollTopButton/>
             <Services />
             <Featured />
@@ -67,4 +70,12 @@ function Home() {
   );
 }
 
-export default Home;
+
+
+// export default Home
+
+const WrappedHome = PageTransition(Home)
+
+export  {WrappedHome}
+
+

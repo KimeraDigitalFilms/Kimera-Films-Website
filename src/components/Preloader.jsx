@@ -5,6 +5,7 @@ import { motion, useAnimate } from "framer-motion";
 import Button from "./Button";
 import colorContext from "../context/ColorContext";
 
+
 function Preloader({ ready, setVis }) {
 
   const {loadColor}=useContext(colorContext)
@@ -50,6 +51,7 @@ function Preloader({ ready, setVis }) {
     );
     setEnter(true);
     revealAnimate();
+    sessionStorage.setItem("preloaded", "true");
   }
 
   //remove preloader towards top

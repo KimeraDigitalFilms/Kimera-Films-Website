@@ -2,6 +2,8 @@ import React from "react";
 import GridComponent from "../components/Projects Masonry/GridComponent";
 import { easeIn, easeOut, motion } from "framer-motion";
 import { useEffect } from "react";
+import PageTransition from "../components/PageTransition";
+
 function Projects() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -107,4 +109,10 @@ function Projects() {
   );
 }
 
-export default Projects;
+
+
+const WrappedProjects = PageTransition(Projects)
+
+export  {WrappedProjects}
+
+// export default Projects;

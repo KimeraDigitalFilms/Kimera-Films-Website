@@ -64,17 +64,17 @@ function Distortion({src,containerId,imageId}) {
 `;
 
 
-  scene = new THREE.Scene();
 
-  // camera setup
-  camera = new THREE.PerspectiveCamera(
-    80,
-    window.innerWidth / window.innerHeight,
-    0.01,
-    10
-  );
-  camera.position.z = 1;
+scene = new THREE.Scene();
 
+// camera setup
+camera = new THREE.PerspectiveCamera(
+  80,
+  window.innerWidth / window.innerHeight,
+  0.01,
+  10
+);
+camera.position.z = 1;
   function initializeScene(texture) {
     //   scene creation
     //   uniforms
@@ -171,7 +171,7 @@ function Distortion({src,containerId,imageId}) {
       80,
       imageContainer.offsetWidth / imageContainer.offsetHeight,
       0.01,
-      10
+      100
     );
     camera.position.z = 1;
 
@@ -180,38 +180,38 @@ function Distortion({src,containerId,imageId}) {
     animateScene();
   }, []);
 
-  window.addEventListener(
-    "resize",
-    useEffect(() => {
-      let w = imageContainer.offsetWidth;
-      let h = imageContainer.offsetHeight;
-      renderer.setSize(w, h);
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-    }, [])
-  );
+  // window.addEventListener(
+  //   "resize",
+  //   useEffect(() => {
+  //     let w = imageContainer.offsetWidth;
+  //     let h = imageContainer.offsetHeight;
+  //     renderer.setSize(w, h);
+  //     camera.aspect = w / h;
+  //     camera.updateProjectionMatrix();
+  //   }, [])
+  // );
 
   
   return (
-    <div className="flex justify-center relative w-[300px] h-[400px] items-center">
+    <div className="">
       <div
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         id={containerId}
-        className="imageContainer flex items-center justify-center  w-full h-full"
+        className="imageContainer"
       >
-        <div className=" inset-0 z-[10] flex justify-center w-full h-full">
-        {/* <h1 
+        {/* <div className=" inset-0 z-[10] flex justify-center w-full h-full">
+        <h1 
         id="heroText"
-            className="absolute text-white z-[10] pointer-events-none text-7xl block mx-auto font-serif  w-fit h-fit">Unseen. Unknown. Unmatched.</h1> */}
-        </div>
+            className="absolute text-white z-[10] pointer-events-none text-7xl block mx-auto font-serif  w-fit h-fit">Unseen. Unknown. Unmatched.</h1>
+        </div> */}
         <img
           id={imageId}
           // src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"
           // src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
           src={src}
-          className="myImage w-full  object-cover"
+          className="myImage "
         />
       </div>
     </div>

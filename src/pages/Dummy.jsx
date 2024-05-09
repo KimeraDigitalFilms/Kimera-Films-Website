@@ -5,6 +5,10 @@ import Featured from "../components/ShowReel/Featured";
 import ShowReel from "../components/ShowReel/ShowReel";
 import Accordion from "../components/Service_Accordian/Accordion.jsx";
 import Hero from '../components/Hero.jsx';
+import Ticker from "../components/Ticker.jsx";
+import Footer from "../components/Footer.jsx";
+import Team from "../components/Team.jsx";
+import Services from "../components/Services.jsx";
 
 function Dummy() {
   useEffect(()=>{
@@ -12,22 +16,31 @@ function Dummy() {
   },[])
   return (
     <div>
+       {/* <Hero/> */}
+          {/* <ScrollTopButton/> */}
+            {/* <Services />
+            <Featured />
+            <Team />
+            <LogoGimmick />
+            <Ticker />
+            <Footer/> */}
+{/*           
+      <Featured />
+      <LogoGimmick/> */}
+      {/* <ShowReel/> */}
+      {/* <Hero/> */}
       {/* <Distortion
         containerId={"1"}
         imageId={"1img"}
         src={"https://pixlr.com/images/index/ai-image-generator-one.webp"}
-      />
-      <Distortion
+      /> */}
+      {/* <Distortion
         containerId={"2"}
         imageId={"2img"}
         src={
           "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         }
       /> */}
-      {/* <LogoGimmick/> */}
-      {/* <Featured /> */}
-      {/* <ShowReel/> */}
-      <Hero/>
     </div>
   );
 }
