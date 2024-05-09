@@ -44,10 +44,10 @@ export default {
          'primaryFg': "#282724",
       },
       alt1: { 
-         'primary': '#75B0AC',
-         'secondary1': '#000000',
-         'primaryBg': "#F6F6F6",
-         'primaryFg': "#282724",
+        'primary': '#f2b200',
+        'secondary1': '#cdfaf4',
+        'primaryBg': "#1B1A55",
+        'primaryFg': "#282724",
       },
       alt2: { 
          'primary': '#C4B2BC',

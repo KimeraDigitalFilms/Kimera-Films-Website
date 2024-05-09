@@ -10,9 +10,11 @@ const {canvasBg,canvasColor}=useContext(colorContext)
   useEffect(() => {
     webGLFluidEnhanced.simulation(canvasRef.current, {
       SIM_RESOLUTION: 256,
-      DENSITY_DISSIPATION: 0.8,
+      DENSITY_DISSIPATION: 1.5,
+      PRESSURE: 0.8,
       PRESSURE_ITERATIONS: 30,
       HOVER: true,
+      BRIGHTNESS:0.7,
       BLOOM: false,
       CURL: 0,
       BACK_COLOR:canvasBg,

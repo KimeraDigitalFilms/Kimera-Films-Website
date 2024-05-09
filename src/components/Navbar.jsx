@@ -254,10 +254,10 @@ const Colors = () => {
           type="radio"
           name="color"
           id="alt1"
-          data-canvascolor="#75B0AC"
-          data-loadcolor="#C9D9EE"
-          data-color="#F6F6F6"
-          className="bg-[#75B0AC] rounded-full cursor-pointer p-2"
+          data-canvascolor="#f2b200"
+          data-loadcolor="#535C91"
+          data-color="#1B1A55"
+          className="bg-[#1B1A55] rounded-full cursor-pointer p-2"
         />
         <div
           onClick={handleRadio}
