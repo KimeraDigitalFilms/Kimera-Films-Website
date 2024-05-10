@@ -33,8 +33,9 @@ const Accordion = () => {
         >
           What We Do
         </motion.h1>
+        <p className="text-secondary1 text-2xl mt-5 text-center">In order to create something new, one needs to pay attention and listen to what makes it stand out.</p>
       </div>
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[600px] w-full max-w-6xl mx-auto  overflow-hidden">
+      <div className="flex flex-col lg:flex-row h-fit lg:h-[600px] w-full max-w-7xl mx-auto  overflow-hidden">
         {items.map((item) => {
           return (
             <Panel
@@ -97,7 +98,7 @@ letterSpacing:'1px'
             // WebkitBackdropFilter:'blur(10px)',
             //   backdropFilter:'blur(10px)'
             // }}
-            className="w-full h-full overflow-hidden relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur flex flex-nowrap justify-center items-center "
+            className="w-full h-full overflow-hidden relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur flex flex-nowrap justify-center gap-x-10 items-center "
             >
             
           <motion.div
@@ -178,9 +179,9 @@ letterSpacing:'1px'
               exit="closed"
               
               transition={{ duration: 0.1 }}
-              className="container w-[500px] relative flex flex-col h-[450px] justify-start items-start overflow-scroll text-secondary1"
+              className="container w-[550px] relative flex flex-col h-[300px] justify-start items-start overflow-y-scroll overflow-x-hidden text-secondary1"
               >
-              <div className="py-[50%] ">
+              <div className="py-[25%] ">
                 {list.map((phrase, id) => {
                   return <Reveal refP={refP} content={phrase} key={id} />;
                 })}

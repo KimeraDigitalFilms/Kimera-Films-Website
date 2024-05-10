@@ -15,13 +15,13 @@ function Reveal({ content, refP }) {
     container: refP,
     offset: [`start end`, `end start`],
   });
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8], [0.3, 1, 0.3]);
   // const [opacity,setOpacity]=useState(0.3)
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.3]);
+  const fontSize = useTransform(scrollYProgress, [0.3, 0.5, 0.8], ['100%', '250%', '100%']);
   const x = useTransform(
     scrollYProgress,
-    [0, 0.4, 0.5, 0.6, 1],
-    [-80, 85, 117, 85, -80]
+    [0, 0.3, 0.5, 0.7, 1],
+    [0, 60, 80, 60, 0]
   );
 
   //   useMotionValueEvent(scrollYProgress,'change', (latest)=>{
@@ -34,10 +34,10 @@ function Reveal({ content, refP }) {
   return (
     <>
       <motion.div
-        style={{ opacity, scale, x }}
+        style={{ opacity, x,fontSize:fontSize }}
         transition={{ delay: 0 }}
         ref={ref}
-        className="w-[400px] text-left font-Dancing text-3xl transition-opacity duration-200 py-[1px] font-bold "
+        className="w-full text-left font-Dancing text-3xl py-[10px] font-bold "
       >
         {content}
       </motion.div>
