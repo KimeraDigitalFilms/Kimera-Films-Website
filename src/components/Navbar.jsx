@@ -80,7 +80,7 @@ function Navbar() {
                 </span>
               </Link>
 
-              <nav className="gap-x-8 w-fit flex flex-wrap text-neutral-400 items-center text-base justify-center">
+              <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
                 <Colors />
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 {/* <Anchor colorStyle={``} content={"About"} href={"/about"} /> */}

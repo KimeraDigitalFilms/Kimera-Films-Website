@@ -49,13 +49,13 @@ export default {
         'primary': '#f2b200',
         'secondary1': '#cdfaf4',
         'primaryBg': "#1B1A55",
-        'primaryFg': "#282724",
+        'primaryFg': "#060426",
       },
       alt2: { 
          'primary': '#C4B2BC',
          'secondary1': '#D8D4F2',
          'primaryBg': "#123524",
-         'primaryFg': "#282724",
+         'primaryFg': "#021a0b",
       },
    })
   ],
