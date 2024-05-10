@@ -85,11 +85,11 @@ function Navbar() {
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 {/* <Anchor colorStyle={``} content={"About"} href={"/about"} /> */}
                 <Anchor colorStyle={``} content={"Gallery"} href={"/gallery"} />
-                <Anchor
+                {/* <Anchor
                   colorStyle={``}
                   content={"Services"}
                   href={"/services"}
-                />
+                /> */}
               </nav>
             </div>
           </motion.header>

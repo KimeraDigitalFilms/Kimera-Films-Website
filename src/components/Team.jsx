@@ -25,7 +25,7 @@ function Team() {
       </div>
 
       <div className="flex flex-col gap-y-[250px] mt-20">
-        <div className="flex flex-nowrap justify-evenly items-center w-full">
+        <div className="flex flex-wrap gap-y-14 justify-evenly items-center w-full">
           <Card
             name={"Hassaan Ahmed"}
             desig={"Head of Content Development"}
