@@ -42,7 +42,7 @@ export default {
          'secondary1': '#C9D9EE',
          'primaryBg': '#211106',
         //  'primaryBg': "#0A0A0A",
-         'primaryFg': "#282724",
+         'primaryFg': "#2b190a",
       },
       alt1: { 
         'primary': '#f2b200',

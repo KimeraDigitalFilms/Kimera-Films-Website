@@ -2,6 +2,7 @@ import React from "react";
 import { motion, easeOut } from "framer-motion";
 import Distortion from "./Distortion/Distortion.jsx";
 // import Polaroid from "./Polaroid";
+import { FiCloudLightning } from "react-icons/fi";
 
 function Team() {
   return (
@@ -24,8 +25,30 @@ function Team() {
       </div>
 
       <div className="flex flex-col gap-y-[250px] mt-20">
-        <div className="flex flex-nowrap justify-evenly items-center gap-x-10 w-full">
-          <div>
+        <div className="flex flex-nowrap justify-evenly items-center w-full">
+          <Card
+            name={"Hassaan Ahmed"}
+            desig={"Head of Content Development"}
+            content={
+              "A self-trained dual blade wielder, trained in the arts of Writing and Direction. Hassaan is responsible for ideation, conceptualisation, and spearheading the process of pre-production while overwatching parts of production and post production."
+            }
+          />
+          <Card
+            name={"Tushar Singh"}
+            desig={"Head of Production & Marketing"}
+            content={
+              "A true magician with people. From marketing to casting to overseeing enormous crews, he makes it all look effortless. With years of experience both in front and behind the camera, Tushar is Leading the way for Kimera’s marketing, Production and Sales."
+            }
+          />
+
+          <Card
+            name={"Bashar Parvez"}
+            desig={"Head of Post-Production"}
+            content={
+              "The powerhouse cyborg of Kimera. The machines are sentient beings but with his superior technical prowess and knowledge under his rule they listen to him. Bashar has honed and mastered all the domains of Post Production, be it Editing, Animation or SFX."
+            }
+          />
+          {/* <div>
             <Distortion
               containerId={"Hassaan"}
               imageId={"HassaanImg"}
@@ -74,7 +97,7 @@ function Team() {
             but with his superior technical prowess and knowledge under his rule
             they listen to him. Bashar has honed and mastered all the domains of
             Post Production, be it Editing, Animation or SFX.
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -82,3 +105,38 @@ function Team() {
 }
 
 export default Team;
+
+const Example = () => {
+  return (
+    <div className="bg-slate-950 px-4 py-12">
+      <ShimmerBorderCard />
+    </div>
+  );
+};
+
+const Card = ({ content, name, desig }) => {
+  return (
+    <div className="group relative  w-full max-w-sm overflow-hidden rounded-lg bg-primaryFg p-0.5 transition-all duration-500 border border-secondary1 shadow-xl shadow-neutral-700">
+      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px]  p-8 transition-colors duration-500 bg-primaryFg ">
+        {/* <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" /> */}
+        <Distortion
+          containerId={name.split()[0]}
+          imageId={name.split()[0] + "Img"}
+          src={
+            "https://akm-img-a-in.tosshub.com/indiatoday/images/story/media_bank/202309/elon-musk-252648408-16x9.jpg?VersionId=9KYZpqpoY3WvH8eVZg54mmkpTGfvPCWj&size=690:388"
+          }
+        />
+
+        <h4 className="relative z-10 mb-3 mt-3 w-full text-3xl font-bold text-center text-primary">
+          {name}
+        </h4>
+        <h4 className="relative z-10 mb-3 w-full text-lg text-center  font-semibold text-secondary1">
+          {desig}
+        </h4>
+        <p className="relative z-10 text-base text-secondary1 font-thin text-center">
+          {content}
+        </p>
+      </div>
+    </div>
+  );
+};

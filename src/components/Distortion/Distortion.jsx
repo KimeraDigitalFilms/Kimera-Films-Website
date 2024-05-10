@@ -8,14 +8,14 @@ function Distortion({src,containerId,imageId}) {
   let imageContainer = document.getElementById(containerId);
   let imageElement = document.getElementById(imageId);
 
-  let easeFactor = 0.02;
+  let easeFactor = 0.07;
   let scene, camera, renderer, planeMesh;
-  let mousePosition = { x: 0.5, y: 0.5 };
-  let targetMousePosition = { x: 0.5, y: 0.5 };
+  let mousePosition = { x: 0.8, y: 0.8 };
+  let targetMousePosition = { x: 0.8, y: 0.8 };
   let mouseStopTimeout;
   let aberrationIntensity = 0.0;
   let lastPosition = { x: 0.5, y: 0.5 };
-  let prevPosition = { x: 0.5, y: 0.5 };
+  let prevPosition = { x: 0.8, y: 0.8 };
 
   // shaders
   const vertexShader = `
@@ -52,7 +52,7 @@ function Distortion({src,containerId,imageId}) {
         float pixelDistanceToMouse = length(pixelToMouseDirection);
         float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
 
-        vec2 uvOffset = strength * - mouseDirection * 0.2;
+        vec2 uvOffset = strength * - mouseDirection * 0.3;
         vec2 uv = vUv - uvOffset;
 
         vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
@@ -87,7 +87,7 @@ camera.position.z = 1;
 
     //   creating a plane mesh with materials
     planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(1.3, 1.71),
+      new THREE.PlaneGeometry(2, 1.71),
       new THREE.ShaderMaterial({
         uniforms: shaderUniforms,
         vertexShader,
@@ -112,8 +112,8 @@ camera.position.z = 1;
   function animateScene() {
     requestAnimationFrame(animateScene);
 
-    mousePosition.x += (targetMousePosition.x - mousePosition.x) * easeFactor;
-    mousePosition.y += (targetMousePosition.y - mousePosition.y) * easeFactor;
+    mousePosition.x += (targetMousePosition.x - mousePosition.x) * easeFactor*1.2;
+    mousePosition.y += (targetMousePosition.y - mousePosition.y) * easeFactor*1.2;
 
     planeMesh.material.uniforms.u_mouse.value.set(
       mousePosition.x,
@@ -134,7 +134,7 @@ camera.position.z = 1;
   }
 
   function handleMouseMove(event) {
-    easeFactor = 0.04; //increase to increase speed of distortion
+    easeFactor = 0.09; //increase to increase speed of distortion
     let rect = imageContainer.getBoundingClientRect();
     prevPosition = { ...targetMousePosition };
 
@@ -145,7 +145,7 @@ camera.position.z = 1;
   }
 
   function handleMouseEnter(event) {
-    easeFactor = 0.01;
+    easeFactor = 0.05;
     let rect = imageContainer.getBoundingClientRect();
 
     mousePosition.x = targetMousePosition.x =

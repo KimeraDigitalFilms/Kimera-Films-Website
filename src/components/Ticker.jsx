@@ -125,3 +125,6 @@ const LogoItemsBottom = () => (
 );
 
 export default Ticker;
+
+
+
