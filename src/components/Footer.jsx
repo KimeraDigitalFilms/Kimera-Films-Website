@@ -260,7 +260,7 @@ function Footer() {
         className="block h-[50px] overflow-hidden bg-secondary1 font-medium"
       >
         <motion.div whileHover={{ y: -50 }}>
-          <span className="flex items-center h-[50px] justify-center text-2xl text-primary font-semibold uppercase">Submit</span>
+          <span className="flex items-center h-[50px] justify-center text-2xl text-primary font-semibold font-AvenirBook uppercase">Submit</span>
           <span className="font-Dancing text-3xl mx-auto flex items-center justify-center h-[50px] text-primary">
             Submit
           </span>

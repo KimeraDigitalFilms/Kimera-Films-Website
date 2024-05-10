@@ -75,7 +75,7 @@ function Navbar() {
                   style={{ color: "#5900ff" }}
                 ></i> */}
                 {/* <img src="" alt="logo" /> */}
-                <span className="ml-3 text-2xl uppercase font-bold font-Oswald text-primary">
+                <span className="ml-3 text-2xl uppercase font-bold font-AvenirBook text-primary">
                   Kimera Films
                 </span>
               </Link>

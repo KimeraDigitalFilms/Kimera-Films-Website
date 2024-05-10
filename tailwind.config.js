@@ -32,6 +32,7 @@ export default {
       fontFamily: {
         Oswald: ["Oswald", "sans-serif"],
         Dancing: ["Dancing Script", "cursive"],
+        AvenirBook:["Avenir-Book","sans-serif"],
       },
     },
   },

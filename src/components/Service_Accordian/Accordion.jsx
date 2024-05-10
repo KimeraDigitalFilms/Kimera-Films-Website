@@ -29,13 +29,13 @@ const Accordion = () => {
             msUserSelect: "none",
             userSelect: "none",
           }}
-          className="font-serif font-weight text-center text-secondary1 text-7xl "
+          className="font-AvenirBook font-weight text-center text-secondary1 text-7xl "
         >
           What We Do
         </motion.h1>
-        <p className="text-secondary1 text-2xl mt-5 text-center">In order to create something new, one needs to pay attention and listen to what makes it stand out.</p>
       </div>
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[600px] w-full max-w-7xl mx-auto  overflow-hidden">
+        <p className="text-secondary1 text-2xl mb-10 text-center">In order to create something new, one needs to pay attention and listen to what makes it stand out.</p>
+      <div className="flex flex-col  h-fit  w-full max-w-7xl mx-auto  overflow-hidden">
         {items.map((item) => {
           return (
             <Panel
@@ -70,11 +70,11 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list,desc }) => {
       >
         <span
           style={{
-            writingMode: 'vertical-lr',
-textOrientation: 'upright',
-letterSpacing:'1px'
+//             writingMode: 'vertical-lr',
+// textOrientation: 'upright',
+// letterSpacing:'1px'
           }}
-          className="hidden lg:block text-xl font-Oswald text-wrap"
+          className="hidden lg:block text-3xl font-Oswald text-wrap"
         >
           {title}
         </span>
@@ -90,7 +90,8 @@ letterSpacing:'1px'
           <>
           <motion.div
             key={`panel-${id}`}
-            variants={width && width > 1024 ? panelVariants : panelVariantsSm}
+            // variants={width && width > 1024 ? panelVariants : panelVariantsSm}
+            variants={panelVariantsSm}
             initial="closed"
             animate="open"
             exit="closed"
@@ -98,7 +99,7 @@ letterSpacing:'1px'
             // WebkitBackdropFilter:'blur(10px)',
             //   backdropFilter:'blur(10px)'
             // }}
-            className="w-full h-full overflow-hidden relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur flex flex-nowrap justify-center gap-x-10 items-center "
+            className="w-full h-full overflow-hidden relative bg-gradient-to-br from-white/20 to-white/5 backdrop-blur "
             >
             
           <motion.div
@@ -106,7 +107,7 @@ letterSpacing:'1px'
               initial="closed"
               animate="open"
               exit="closed"
-              className="px-4 py-2  w-full absolute overflow-hidden top-0 left-0 text-secondary1"
+              className="px-4 py-2 w-full absolute overflow-hidden bottom-9 left-0 text-secondary1"
             >
               <p>{desc}</p>
             </motion.div>
@@ -122,7 +123,7 @@ letterSpacing:'1px'
             initial="closed"
             animate="open"
             exit="closed"
-            className="absolute bottom-10 right-14">
+            className="absolute top-14 right-14">
               <motion.div
                 style={{ rotate: "45deg" }}
                 initial={{ y: 0, opacity: 1 }}
@@ -139,21 +140,22 @@ letterSpacing:'1px'
                 ></motion.div>
               <motion.div className="absolute border-t-secondary1 border-l-secondary1 border-t-2 border-l-2 p-[7px] rotate-45"></motion.div>
             </motion.div>
+<div className="w-full h-full flex flex-nowrap justify-center gap-x-10 py-10">
 
             <motion.div
              variants={{
-              open: {
-                opacity: 1,
-                // visibility: "visible"
-              },
-              closed: {
-                opacity: 0,
-                // visibility: "hidden"
-              },
-            }}
-            initial="closed"
-            animate="open"
-            exit="closed"
+               open: {
+                 opacity: 1,
+                 // visibility: "visible"
+                },
+                closed: {
+                  opacity: 0,
+                  // visibility: "hidden"
+                },
+              }}
+              initial="closed"
+              animate="open"
+              exit="closed"
               className="w-[400px] h-[300px] ml-10 rounded-lg"
               style={{
                 backgroundImage: `url(${imgSrc})`,
@@ -187,9 +189,8 @@ letterSpacing:'1px'
                 })}
               </div>
             </motion.div>
+                </div>
 
-
-            
           </motion.div>
                 </>
         )}
@@ -219,7 +220,7 @@ const panelVariants = {
 const panelVariantsSm = {
   open: {
     width: "100%",
-    height: "400px",
+    height: "500px",
 
   },
   closed: {

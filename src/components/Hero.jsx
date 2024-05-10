@@ -29,7 +29,7 @@ const {canvasBg,canvasColor}=useContext(colorContext)
   <canvas ref={canvasRef} className='transition-colors duration-500' style={{ width: '100vw', height: '100vh' }} />
   <div className='absolute top-[45%] w-screen flex flex-col gap-y-7'>
 <h1 className='text-secondary1 text-7xl text-center font-semibold font-Dancing'>Bringing bold narratives to life</h1>
-<h1 className=' text-secondary1 text-3xl text-center font-semibold font-Oswald'>Elevating brands in the digital realm</h1>
+<h1 className=' text-secondary1 text-3xl text-center font-semibold font-AvenirBook'>Elevating brands in the digital realm</h1>
   </div>
   {/* <button onClick={()=>{
     if (bgColor==='#0A0A0A'){

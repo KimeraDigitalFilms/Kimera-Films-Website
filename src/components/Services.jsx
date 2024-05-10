@@ -3,7 +3,7 @@ import Accordian from './Service_Accordian/Accordion'
 
 function Services() {
   return (
-    <div>
+    <div className='h-[110vh]'>
       <Accordian/>
     </div>
   )

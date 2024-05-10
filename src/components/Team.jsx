@@ -18,7 +18,7 @@ function Team() {
             msUserSelect: "none",
             userSelect: "none",
           }}
-          className="font-serif font-weight text-center text-secondary1 text-7xl "
+          className="font-AvenirBook font-weight text-center text-secondary1 text-7xl "
         >
           Our Team
         </motion.h1>

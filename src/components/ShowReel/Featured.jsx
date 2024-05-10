@@ -165,7 +165,7 @@ function Featured() {
             msUserSelect: "none",
             userSelect: "none",
           }}
-          className="font-serif font-weight text-center text-secondary1 text-7xl "
+          className="font-AvenirBook font-weight text-center text-secondary1 text-7xl "
         >
           Featured Projects
         </motion.h1>
