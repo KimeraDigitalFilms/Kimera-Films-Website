@@ -50,9 +50,9 @@ function Distortion({src,containerId,imageId}) {
 
         vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
         float pixelDistanceToMouse = length(pixelToMouseDirection);
-        float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
+        float strength = smoothstep(0.5, 0.0, pixelDistanceToMouse);
 
-        vec2 uvOffset = strength * - mouseDirection * 0.3;
+        vec2 uvOffset = strength * - mouseDirection * 0.12;
         vec2 uv = vUv - uvOffset;
 
         vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
