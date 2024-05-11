@@ -23,9 +23,9 @@ function Home() {
   //     // setTimeout(() => {
   //     // }, 2400);
   // });
-  useEffect(()=>{
-    setReady(1);
-  })
+  // useEffect(()=>{
+  //   setReady(1);
+  // },[])
 
   return (
     <>

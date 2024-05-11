@@ -5,10 +5,8 @@ import { motion, useAnimate } from "framer-motion";
 import Button from "./Button";
 import colorContext from "../context/ColorContext";
 
-
 function Preloader({ ready, setVis }) {
-
-  const {loadColor}=useContext(colorContext)
+  const { loadColor } = useContext(colorContext);
 
   const [scope, animate] = useAnimate();
   const [scope2, animate2] = useAnimate();
@@ -68,14 +66,18 @@ function Preloader({ ready, setVis }) {
 
   useEffect(() => {
     // console.log(document.readyState)
-    if (ready === 1) {
-      setTimeout(() => {
-        loaderAnimate2();
-      }, 2400);
-      // console.log(ready)
-    } else {
-      loaderAnimate1();
-    }
+    // if (ready === 1) {
+    //   setTimeout(() => {
+    //     loaderAnimate2();
+    //   }, 2400);
+    //   // console.log(ready)
+    // } else {
+    //   loaderAnimate1();
+    // }
+    loaderAnimate1();
+    setTimeout(() => {
+      loaderAnimate2();
+    }, 2400);
   }, [ready]);
 
   return (
@@ -96,7 +98,7 @@ function Preloader({ ready, setVis }) {
           transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
           className="w-20 p-2  rounded-full"
         >
-          <Logo src={'/logo.svg'} style="w-full bg-primary" />
+          <Logo src={"/logo.svg"} style="w-full bg-primary" />
         </motion.div>
 
         <div
