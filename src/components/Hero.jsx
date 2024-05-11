@@ -18,6 +18,7 @@ const {canvasBg,canvasColor}=useContext(colorContext)
       BLOOM: false,
       CURL: 0,
       BACK_COLOR:canvasBg,
+      // BACK_COLOR:'rgba(255, 99, 71, 0)',
       // TRANSPARENT: true,
       SPLAT_RADIUS: 0.5,
       // COLOR_PALETTE: ['#61dafb', '#a8dadc', '#457b9d', '#1d3557', '#f1faee'],
@@ -26,20 +27,11 @@ const {canvasBg,canvasColor}=useContext(colorContext)
   }, [canvasColor]);
 
   return (<>
-  <canvas ref={canvasRef} className='transition-colors duration-500' style={{ width: '100vw', height: '100vh' }} />
-  <div className='absolute top-[45%] w-screen flex flex-col gap-y-7'>
+  <canvas ref={canvasRef} className='transition-colors duration-500 ' style={{ width: '100vw', height: '100vh' }} />
+  <div className='absolute top-[45%] w-screen flex flex-col  gap-y-7'>
 <h1 className='text-secondary1 text-7xl text-center font-semibold font-Dancing'>Bringing bold narratives to life</h1>
 <h1 className=' text-secondary1 text-3xl text-center font-semibold font-AvenirBook'>Elevating brands in the digital realm</h1>
   </div>
-  {/* <button onClick={()=>{
-    if (bgColor==='#0A0A0A'){
-    setBgColor('#32a852')
-    setColor('#cc1bbd')
-  }else{
-    setBgColor('#0A0A0A')
-    setColor('#ED6E0B')
-  }
-    }} className='text-white text-xl'>change</button> */}
   </>
   )
 };

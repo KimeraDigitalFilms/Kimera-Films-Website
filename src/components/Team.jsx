@@ -116,7 +116,7 @@ const Example = () => {
 
 const Card = ({ content, name, desig }) => {
   return (
-    <div className="group relative  w-full max-w-sm overflow-hidden rounded-lg bg-primaryFg p-0.5 transition-all duration-500 border border-secondary1 shadow-xl shadow-neutral-700">
+    <div className="group relative  w-full max-w-sm overflow-hidden rounded-lg bg-primaryFg p-0.5 transition-all duration-500 border border-secondary1 ">
       <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px]  p-8 transition-colors duration-500 bg-primaryFg ">
         {/* <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" /> */}
         <Distortion

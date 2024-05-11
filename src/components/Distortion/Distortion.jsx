@@ -8,7 +8,7 @@ function Distortion({src,containerId,imageId}) {
   let imageContainer = document.getElementById(containerId);
   let imageElement = document.getElementById(imageId);
 
-  let easeFactor = 0.07;
+  let easeFactor = 0.06;
   let scene, camera, renderer, planeMesh;
   let mousePosition = { x: 0.8, y: 0.8 };
   let targetMousePosition = { x: 0.8, y: 0.8 };
@@ -43,8 +43,8 @@ function Distortion({src,containerId,imageId}) {
     uniform float u_aberrationIntensity;
 
     void main() {
-      vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
-      vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
+      vec2 gridUV = floor(vUv * vec2(8.0, 8.0)) / vec2(8.0, 8.0);
+      vec2 centerOfPixel = gridUV + vec2(1.0/8.0, 1.0/8.0);
 
         vec2 mouseDirection = u_mouse - u_prevMouse;
 
@@ -134,7 +134,7 @@ camera.position.z = 1;
   }
 
   function handleMouseMove(event) {
-    easeFactor = 0.09; //increase to increase speed of distortion
+    easeFactor = 0.06; //increase to increase speed of distortion
     let rect = imageContainer.getBoundingClientRect();
     prevPosition = { ...targetMousePosition };
 
@@ -145,7 +145,7 @@ camera.position.z = 1;
   }
 
   function handleMouseEnter(event) {
-    easeFactor = 0.05;
+    easeFactor = 0.03;
     let rect = imageContainer.getBoundingClientRect();
 
     mousePosition.x = targetMousePosition.x =
@@ -155,7 +155,7 @@ camera.position.z = 1;
   }
 
   function handleMouseLeave() {
-    easeFactor = 0.05;
+    easeFactor = 0.03;
     targetMousePosition = { ...prevPosition };
   }
 
