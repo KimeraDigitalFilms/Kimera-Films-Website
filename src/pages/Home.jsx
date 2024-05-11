@@ -16,13 +16,16 @@ function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
   
-  document.addEventListener("readystatechange", (e) => {
-    if (document.readyState==='complete'){
-      setReady(1);
-    } 
-      // setTimeout(() => {
-      // }, 2400);
-  });
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   setReady(1);
+  //   // if (document.readyState==='complete'){
+  //   // } 
+  //     // setTimeout(() => {
+  //     // }, 2400);
+  // });
+  useEffect(()=>{
+    setReady(1);
+  })
 
   return (
     <>
