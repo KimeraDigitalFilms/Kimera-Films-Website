@@ -149,7 +149,7 @@ function Featured() {
       </div>
     </div>
 
-    <div className="my-20 flex flex-col justify-start gap-y-16 h-[70vh] items-center">
+    <div className="mt-20 flex flex-col justify-start gap-y-16 h-[55vh] items-center">
     <h2 className="text-secondary1 w-1/2">
     WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF INDUSTRIES, INCLUDING BROADCAST, FILM, GAMES, BRANDS, EXPERIENTIAL, AND THEMED ENTERTAINMENT.
 

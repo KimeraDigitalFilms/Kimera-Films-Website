@@ -106,13 +106,6 @@ function Team() {
 
 export default Team;
 
-const Example = () => {
-  return (
-    <div className="bg-slate-950 px-4 py-12">
-      <ShimmerBorderCard />
-    </div>
-  );
-};
 
 const Card = ({ content, name, desig }) => {
   return (

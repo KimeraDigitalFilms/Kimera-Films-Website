@@ -9,6 +9,7 @@ import Featured from "../components/ShowReel/Featured";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import PageTransition from "../components/PageTransition";
+import About from "../components/About/About";
 
 
 
@@ -58,6 +59,7 @@ function Home() {
           <ScrollTopButton/>
             <Services />
             <Featured />
+            <About/>
             <Team />
             <LogoGimmick />
             <Ticker />

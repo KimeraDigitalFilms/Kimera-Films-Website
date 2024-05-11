@@ -22,6 +22,11 @@ body{
   }
 
 
-video[poster]{
+/* video[poster]{
   object-fit:initial;
-} 
+}  */
+
+.about3d{
+  width: 200px !important; 
+  height: 200px !important;
+}
