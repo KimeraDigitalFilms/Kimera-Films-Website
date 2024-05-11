@@ -16,8 +16,10 @@ function Home() {
   const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
   
-  document.addEventListener("readystatechange", (e) => { 
-    setReady(1);
+  document.addEventListener("readystatechange", (e) => {
+    if (document.readyState==='complete'){
+      setReady(1);
+    } 
       // setTimeout(() => {
       // }, 2400);
   });
