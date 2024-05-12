@@ -14,7 +14,7 @@ import About from "../components/About/About";
 
 
 function Home() {
-  const [ready, setReady] = useState(0);
+  // const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false);
   
   // document.addEventListener("DOMContentLoaded", () => {
@@ -27,6 +27,9 @@ function Home() {
   // useEffect(()=>{
   //   setReady(1);
   // },[])
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <>
@@ -51,7 +54,7 @@ function Home() {
           sessionStorage.getItem("preloaded") ? (
             <>{setVis(true)}</>
           ) : (
-            <Preloader ready={ready} setVis={setVis} />
+            <Preloader  setVis={setVis} />
           )
         ) : (
            <>      

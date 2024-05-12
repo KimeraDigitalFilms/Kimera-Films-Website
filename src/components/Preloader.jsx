@@ -5,7 +5,9 @@ import { motion, useAnimate } from "framer-motion";
 import Button from "./Button";
 import colorContext from "../context/ColorContext";
 
-function Preloader({ ready, setVis }) {
+function Preloader({  setVis }) {
+  // const [ready, setReady] = useState(0);
+
   const { loadColor } = useContext(colorContext);
 
   const [scope, animate] = useAnimate();
@@ -78,7 +80,7 @@ function Preloader({ ready, setVis }) {
     setTimeout(() => {
       loaderAnimate2();
     }, 2400);
-  }, [ready]);
+  }, []);
 
   return (
     <motion.div
