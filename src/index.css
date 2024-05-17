@@ -11,3 +11,8 @@
     font-family: Avenir-Book;
     src: url(/fonts/avenir-book.ttf);
 }
+
+@font-face {
+    font-family: Dancing;
+    src: url(/fonts/DancingScript-Regular.otf);
+}

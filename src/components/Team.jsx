@@ -27,6 +27,7 @@ function Team() {
       <div className="flex flex-col gap-y-[250px] mt-20">
         <div className="flex flex-wrap gap-y-14 justify-evenly items-center w-full">
           <Card
+          src={'/Hassaan_1x1.jpg'}
             name={"Hassaan Ahmed"}
             desig={"Head of Content Development"}
             content={
@@ -36,6 +37,7 @@ function Team() {
           <Card
             name={"Tushar Singh"}
             desig={"Head of Production & Marketing"}
+            src={'/Tushar_1x1.jpg'}
             content={
               "A true magician with people. From marketing to casting to overseeing enormous crews, he makes it all look effortless. With years of experience both in front and behind the camera, Tushar is Leading the way for Kimera’s marketing, Production and Sales."
             }
@@ -44,6 +46,7 @@ function Team() {
           <Card
             name={"Bashar Parvez"}
             desig={"Head of Post-Production"}
+            src={'/Bashar_1x1.jpg'}
             content={
               "The powerhouse cyborg of Kimera. The machines are sentient beings but with his superior technical prowess and knowledge under his rule they listen to him. Bashar has honed and mastered all the domains of Post Production, be it Editing, Animation or SFX."
             }
@@ -107,7 +110,7 @@ function Team() {
 export default Team;
 
 
-const Card = ({ content, name, desig }) => {
+const Card = ({ content, name, desig,src }) => {
   return (
     <div className="group relative  w-full max-w-sm overflow-hidden rounded-lg bg-primaryFg p-0.5 transition-all duration-500 border border-secondary1 ">
       <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px]  p-8 transition-colors duration-500 bg-primaryFg ">
@@ -116,7 +119,7 @@ const Card = ({ content, name, desig }) => {
           containerId={name.split()[0]}
           imageId={name.split()[0] + "Img"}
           src={
-            "https://akm-img-a-in.tosshub.com/indiatoday/images/story/media_bank/202309/elon-musk-252648408-16x9.jpg?VersionId=9KYZpqpoY3WvH8eVZg54mmkpTGfvPCWj&size=690:388"
+            src
           }
         />
 

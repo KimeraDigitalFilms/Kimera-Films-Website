@@ -8,7 +8,7 @@ function Distortion({src,containerId,imageId}) {
   let imageContainer = document.getElementById(containerId);
   let imageElement = document.getElementById(imageId);
 
-  let easeFactor = 0.06;
+  let easeFactor = 0.04;
   let scene, camera, renderer, planeMesh;
   let mousePosition = { x: 0.8, y: 0.8 };
   let targetMousePosition = { x: 0.8, y: 0.8 };
@@ -87,7 +87,7 @@ camera.position.z = 1;
 
     //   creating a plane mesh with materials
     planeMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(2, 1.71),
+      new THREE.PlaneGeometry(1.7, 1.7),
       new THREE.ShaderMaterial({
         uniforms: shaderUniforms,
         vertexShader,
@@ -134,7 +134,7 @@ camera.position.z = 1;
   }
 
   function handleMouseMove(event) {
-    easeFactor = 0.06; //increase to increase speed of distortion
+    easeFactor = 0.05; //increase to increase speed of distortion
     let rect = imageContainer.getBoundingClientRect();
     prevPosition = { ...targetMousePosition };
 
