@@ -20,7 +20,7 @@ function Modal({ selected, setSelected }) {
         {/* inset-0 just covers whole screen */}
         <div
           onClick={(e) => e.stopPropagation()} // .stopPropagation() method prevents parent event from bubbling/affecting/calling from children
-          className="w-full min-[1120px]:max-w-[1000px] min-[825px]:max-w-[750px] max-w-[500px] h-max-[50vh] mx-auto my-12 px-8 cursor-default"
+          className="w-full min-[1120px]:max-w-[1000px] min-[825px]:max-w-[750px] max-w-[500px] h-max-[50vh] mx-auto  mt-24 px-8 cursor-default"
         >
           {/* <motion.div>
             <motion.video
@@ -39,31 +39,39 @@ function Modal({ selected, setSelected }) {
 
           <div
             style={{
+              width: "100%",
               position: "relative",
-              paddingLeft: "50%",
-              paddingBottom: "35%",
-              paddingTop: "35%",
-              paddingRight: "50%",
-              width: "25vw !important",
-              height: "25vh !important",
-              overflowX: "hidden",
+              // position: "relative",
+              // paddingLeft: "50%",
+              // paddingBottom: "35%",
+              // paddingTop: "35%",
+              // paddingRight: "50%",
+              // // width: "25vw !important",
+              // // height: "25vh !important",
+              // overflowX: "hidden",
             }}
             className=""
           >
             <iframe
-              id="reel"
-              src={`${selected.vid}&autoplay=1&title=0&byline=0&muted=1&controls=1`}
+              // id="reel"
+              // src={`${selected.vid}&autoplay=1&title=0&byline=0&muted=1&controls=1`}
+              src={selected.vid}
               // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
-              style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "100%",
-                height: "100%",
-              }}
+              className="aspect-video w-full"
+              style={
+                {
+                  // position: "absolute",
+                  // top: "0",
+                  // left: "0",
+                  // width: "100%",
+                  // height: "100%",
+                }
+              }
               // className="w-full h-full"
               frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
+              // allow="autoplay; fullscreen; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               webkitallowfullscreen
               mozallowfullscreen
               allowfullscreen
@@ -84,7 +92,7 @@ function Modal({ selected, setSelected }) {
             }}
             className={` bg-transparent text-white p-2 `}
           >
-            <h3 className="mb-2 font-bold text-3xl font-Dancing text-primary">
+            <h3 className="mt-3 font-bold text-4xl font-Dancing text-primary">
               {selected.title}
             </h3>
             {/* <div className="inline-flex flex-wrap mt-1 justify-center gap-3">

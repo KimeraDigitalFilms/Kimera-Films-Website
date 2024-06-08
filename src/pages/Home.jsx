@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Ticker from "../components/Ticker";
 import Preloader from "../components/Preloader";
-import Services from "../components/Services";
+// import Services from "../components/Services";
 import ScrollTopButton from "../components/ScrollTopButton";
 import Team from "../components/Team";
 import LogoGimmick from "../components/LogoGimmick";
@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import PageTransition from "../components/PageTransition";
 import About from "../components/About/About";
-
+import Accordion from "../components/Service_Accordian/Accordion";
 
 
 function Home() {
@@ -60,7 +60,7 @@ function Home() {
            <>      
               <Hero/>
           <ScrollTopButton/>
-            <Services />
+            <Accordion />
             <Featured />
             <About/>
             <Team />

@@ -8,7 +8,7 @@ import Hero from '../components/Hero.jsx';
 import Ticker from "../components/Ticker.jsx";
 import Footer from "../components/Footer.jsx";
 import Team from "../components/Team.jsx";
-import Services from "../components/Services.jsx";
+// import Services from "../components/Services.jsx";
 
 function Dummy() {
   useEffect(()=>{
