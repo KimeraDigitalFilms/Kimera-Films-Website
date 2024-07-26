@@ -53,7 +53,6 @@ function Modal({ selected, setSelected }) {
             className=""
           >
             <iframe
-              // id="reel"
               // src={`${selected.vid}&autoplay=1&title=0&byline=0&muted=1&controls=1`}
               src={selected.vid}
               // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
@@ -68,7 +67,7 @@ function Modal({ selected, setSelected }) {
                 }
               }
               // className="w-full h-full"
-              frameborder="0"
+              frameBorder="0"
               // allow="autoplay; fullscreen; picture-in-picture"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
@@ -90,7 +89,7 @@ function Modal({ selected, setSelected }) {
             transition={{
               duration: 0.5,
             }}
-            className={` bg-transparent text-white p-2 `}
+            className={`p-2`}
           >
             <h3 className="mt-3 font-bold text-4xl font-Dancing text-primary">
               {selected.title}

@@ -25,7 +25,6 @@ function Card({ setSelected, item,style }) {
     <>
       <div className={`box-content w-full ${style}`}>
         <motion.div 
-        key={item.id}
         variants={{
           hidden: {
             opacity: 0,
