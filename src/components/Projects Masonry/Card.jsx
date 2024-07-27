@@ -49,7 +49,7 @@ function Card({ setSelected, item,style }) {
           <motion.img
             // layout
             // layoutId={item.id}
-       
+       loading="lazy"
             whileTap={{ scale: 0.95 }}
       
             onClick={() => {
