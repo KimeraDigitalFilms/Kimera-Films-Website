@@ -123,12 +123,12 @@ const Card = ({ content, name, desig,src }) => {
           }
         />
 
-        <h4 className="relative z-10 mb-3 mt-3 w-full text-3xl font-bold text-center text-primary">
+        <h2 className="relative z-10 mb-3 mt-3 w-full text-3xl font-bold text-center text-primary">
           {name}
-        </h4>
-        <h4 className="relative z-10 mb-3 w-full text-lg text-center  font-semibold text-secondary1">
+        </h2>
+        <h3 className="relative z-10 mb-3 w-full text-lg text-center  font-semibold text-secondary1">
           {desig}
-        </h4>
+        </h3>
         <p className="relative z-10 text-base text-secondary1 font-thin text-center">
           {content}
         </p>

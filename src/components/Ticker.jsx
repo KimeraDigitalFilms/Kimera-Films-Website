@@ -1,4 +1,4 @@
-import { motion,easeOut } from "framer-motion";
+import { motion, easeOut } from "framer-motion"
 import {
   SiNike,
   Si3M,
@@ -20,13 +20,13 @@ import {
   SiEpicgames,
   SiGenius,
   SiGodaddy,
-} from "react-icons/si";
+} from "react-icons/si"
 // import { IconType } from "react-icons";
 
 const Ticker = () => {
   return (
-    <section className=" py-4">
-      <div className="overflow-hidden mb-10">
+    <section className="py-4">
+      <div className="mb-10 overflow-hidden">
         <motion.h1
           initial={{ y: "100%" }}
           whileInView={{ y: 0 }}
@@ -37,12 +37,12 @@ const Ticker = () => {
             msUserSelect: "none",
             userSelect: "none",
           }}
-          className="font-AvenirBook font-weight text-center text-secondary1 text-7xl "
+          className="font-weight text-center font-AvenirBook text-7xl text-secondary1"
         >
           Brands We've Worked With
         </motion.h1>
       </div>
-      <div className="flex  overflow-hidden">
+      <div className="flex overflow-hidden">
         <TranslateWrapper>
           <LogoItemsTop />
         </TranslateWrapper>
@@ -53,7 +53,7 @@ const Ticker = () => {
           <LogoItemsTop />
         </TranslateWrapper>
       </div>
-      <div className="flex overflow-hidden mt-4">
+      <div className="mt-4 flex overflow-hidden">
         <TranslateWrapper reverse>
           <LogoItemsBottom />
         </TranslateWrapper>
@@ -65,8 +65,8 @@ const Ticker = () => {
         </TranslateWrapper>
       </div>
     </section>
-  );
-};
+  )
+}
 
 const TranslateWrapper = ({ children, reverse }) => {
   return (
@@ -78,8 +78,8 @@ const TranslateWrapper = ({ children, reverse }) => {
     >
       {children}
     </motion.div>
-  );
-};
+  )
+}
 
 const LogoItem = ({ Icon }) => {
   return (
@@ -87,41 +87,44 @@ const LogoItem = ({ Icon }) => {
       href="/"
       rel="nofollow"
       target="_blank"
-      className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center text-secondary1 transition-colors"
+      className="flex h-16 w-16 items-center justify-center px-2 text-secondary1 transition-colors md:h-24 md:w-24"
     >
-      <Icon className="text-4xl md:text-5xl" />
+      {/* <Icon className="text-4xl md:text-5xl" /> */}
+      <img src={Icon} alt="clientLogo" />
     </div>
-  );
-};
+  )
+}
 
 const LogoItemsTop = () => (
   <>
-    <LogoItem Icon={SiNike} />
-    <LogoItem Icon={Si3M} />
-    <LogoItem Icon={SiAbstract} />
-    <LogoItem Icon={SiAdobe} />
-    <LogoItem Icon={SiAirtable} />
-    <LogoItem Icon={SiAmazon} />
-    <LogoItem Icon={SiBox} />
-    <LogoItem Icon={SiBytedance} />
-    <LogoItem Icon={SiChase} />
-    <LogoItem Icon={SiCloudbees} />
+    <LogoItem Icon={"/client logos/Media.Monks_idx7Tjoce-_1.png"} />
+    <LogoItem Icon={"/client logos/Burgundy Logo.png"} />
+    <LogoItem Icon={"/client logos/Balaji_Telefilms_Logo.png"} />
+    <LogoItem Icon={"/client logos/dal cheeni logo 2.png"} />
+    <LogoItem Icon={"/client logos/bhandarkarentertainment_logo.jpeg"} />
+    <LogoItem Icon={"/client logos/colors tv logo.png"} />
+    <LogoItem Icon={"/client logos/BJ Logo.png"} />
+    <LogoItem Icon={"/client logos/G.D GOENLA GLOBAL SCHOOL NOIDA.png"} />
+    <LogoItem Icon={"/client logos/KK JEWELLERS  logo) copy.png"} />
+    <LogoItem Icon={"/client logos/KeyWest-07.jpg"} />
   </>
-);
+)
 
 const LogoItemsBottom = () => (
   <>
-    <LogoItem Icon={SiBmw} />
-    <LogoItem Icon={SiBurton} />
-    <LogoItem Icon={SiBuildkite} />
-    <LogoItem Icon={SiCouchbase} />
-    <LogoItem Icon={SiDailymotion} />
-    <LogoItem Icon={SiDeliveroo} />
-    <LogoItem Icon={SiEpicgames} />
-    <LogoItem Icon={SiGenius} />
-    <LogoItem Icon={SiGodaddy} />
-    <LogoItem Icon={SiHeroku} />
+    <LogoItem
+      Icon={"/client logos/hell-energy-drink-logo-A1B6479A6F-seeklogo.com.png"}
+    />
+    <LogoItem Icon={"/client logos/RAMAGYA SPORTS ACADEMY.png"} />
+    <LogoItem Icon={"/client logos/logo ip.png"} />
+    <LogoItem Icon={"/client logos/YRF LOGO.png"} />
+    <LogoItem Icon={"/client logos/RAMAGYA SCHOOL.png"} />
+    <LogoItem Icon={"/client logos/unnamed.png"} />
+    <LogoItem Icon={"/client logos/SARVJAN.png"} />
+    <LogoItem Icon={"/client logos/RAMAGYA FOUNDATION.png"} />
+    <LogoItem Icon={"/client logos/SWeety crush logo.jpeg"} />
+    <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.png"} />
   </>
-);
+)
 
-export default Ticker;
+export default Ticker

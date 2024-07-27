@@ -1,14 +1,14 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
+import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { motion, useInView } from 'framer-motion'
 // import emailjs from "@emailjs/browser";
 
 function Footer() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+    name: '',
+    email: '',
+    message: '',
+  })
 
   // const handleChange = (e) => {
   //   const { id, value } = e.target; //name= name attribute of element that triggered event and same with value
@@ -18,8 +18,8 @@ function Footer() {
   //   });
   // };
 
-  const form = useRef();
-  const [error, setError] = useState(null);
+  const form = useRef()
+  const [error, setError] = useState(null)
 
   // const sendEmail = (e) => {
   //   e.preventDefault();
@@ -55,13 +55,13 @@ function Footer() {
   //     );
   // };
 
-  const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
+  const ref = useRef()
+  const isInView = useInView(ref, { margin: '-100px' })
 
   const smallAnimations = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-  };
+  }
 
   const variants = {
     initial: {
@@ -77,40 +77,39 @@ function Footer() {
         staggerChildren: 0.1,
       },
     },
-  };
+  }
 
   return (
-    <div
-      ref={ref}
-   className="h-screen"
-    >
+    <div ref={ref} className="h-screen">
       <motion.div
         // variants={variants}
         // initial="initial"
         // whileInView="animate"
-        className="text-secondary1 h-full flex [@media(max-width:715px)]:flex-wrap flex-row [@media(max-width:970px)]:w-5/6 [@media(max-width:715px)]:!justify-around justify-between items-center m-auto w-2/3 "
+        className="m-auto flex h-full w-2/3 flex-row items-center justify-between text-secondary1 [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6"
       >
         <motion.div
-          className="flex flex-col flex-nowrap [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px] gap-y-[40px]"
+          className="flex flex-col flex-nowrap gap-y-[40px] [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px]"
           // variants={variants}
         >
           <motion.h1
-            className="font-extrabold [@media(max-width:715px)]:text-4xl text-6xl [@media(max-width:715px)]:text-center"
+            className="text-6xl font-extrabold [@media(max-width:715px)]:text-center [@media(max-width:715px)]:text-4xl"
             // variants={variants}
           >
             Let's Work Together
           </motion.h1>
 
-          <motion.div 
+          <motion.div
           // variants={variants}
           >
-            <h1 className="font-semibold text-lg [@media(max-width:715px)]:text-center">
+            <h1 className="text-lg font-semibold [@media(max-width:715px)]:text-center">
               Address
             </h1>
-            <span className="text-gray-500">I-2, Golf City, Plot 11, Sector 75, Noida, Uttar Pradesh</span>
+            <span className="text-gray-500">
+              I-2, Golf City, Plot 11, Sector 75, Noida, Uttar Pradesh
+            </span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
           // variants={variants}
           >
             <h1 className="text-lg font-semibold [@media(max-width:715px)]:text-center">
@@ -119,17 +118,17 @@ function Footer() {
             <span className="text-gray-500">info@kimerafilms.art</span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
           // variants={variants}
           >
-            <h1 className="font-semibold text-lg [@media(max-width:715px)]:text-center ">
+            <h1 className="text-lg font-semibold [@media(max-width:715px)]:text-center">
               Phone
             </h1>
             <span className="text-gray-500">+91 88822 64140</span>
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap [@media(max-width:345px)]:gap-x-5 gap-x-6 gap-y-6"
+            className="flex flex-wrap gap-x-6 gap-y-6 [@media(max-width:345px)]:gap-x-5"
             // variants={variants}
           >
             {/* <Link target="_blank" to="https://github.com/Inquisitor820">
@@ -145,22 +144,22 @@ function Footer() {
             >
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: "spring", duration: 0.4 }}
+                transition={{ type: 'spring', duration: 0.4 }}
                 className="fa-brands fa-square-facebook fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://www.instagram.com/aiz.3d/">
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: "spring", duration: 0.4 }}
+                transition={{ type: 'spring', duration: 0.4 }}
                 className="fa-brands fa-square-instagram fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://twitter.com/aizventurer">
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: "spring", duration: 0.4 }}
-                className=" fa-brands fa-square-x-twitter fa-2xl text-secondary1"
+                transition={{ type: 'spring', duration: 0.4 }}
+                className="fa-brands fa-square-x-twitter fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             {/* <Link target="_blank" to="https://www.behance.net/shadowz123">
@@ -176,15 +175,14 @@ function Footer() {
             >
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: "spring", duration: 0.4 }}
-                className=" fa-brands fa-linkedin fa-2xl text-secondary1"
+                transition={{ type: 'spring', duration: 0.4 }}
+                className="fa-brands fa-linkedin fa-2xl text-secondary1"
               ></motion.i>
             </Link>
           </motion.div>
-         
         </motion.div>
 
-        <div className="w-[500px] relative">
+        <div className="relative w-[500px]">
           {/* <motion.div
             className="absolute m-auto -z-10 w-1/2"
             initial={{ opacity: 1 }}
@@ -222,22 +220,21 @@ function Footer() {
             // whileInView={{ opacity: 1 }}
             // transition={{ duration: 1, delay: 1 }}
             // viewport={{ once: true }}
-            className="flex flex-col flex-nowrap gap-y-5  m-auto w-full"
+            className="m-auto flex w-full flex-col flex-nowrap gap-y-5"
           >
             <input
               required
               id="name"
               name="name"
-              className="text-secondary1 placeholder:text-gray-500 px-3 py-2 outline-secondary1 bg-transparent outline outline-1"
+              className="bg-transparent px-3 py-2 text-secondary1 outline outline-1 outline-secondary1 placeholder:text-gray-500"
               color="white"
               placeholder="Username"
             ></input>
             <input
-   
               required
-     id="email"
+              id="email"
               name="email"
-              className="text-secondary1  placeholder:text-gray-500 px-3 py-2 outline-secondary1 bg-transparent outline outline-1"
+              className="bg-transparent px-3 py-2 text-secondary1 outline outline-1 outline-secondary1 placeholder:text-gray-500"
               placeholder="Email"
             ></input>
             <textarea
@@ -245,7 +242,7 @@ function Footer() {
               rows={5}
               name="message"
               id="message"
-              className=" outline-secondary1 text-secondary placeholder:text-gray-500 p-3 bg-transparent outline outline-1"
+              className="text-secondary bg-transparent p-3 outline outline-1 outline-secondary1 placeholder:text-gray-500"
               placeholder="Message"
             ></textarea>
             {/* <input
@@ -255,17 +252,19 @@ function Footer() {
               className="rounded-none bg-secondary py-2 hover:cursor-pointer"
             /> */}
             <button
-// onClick={sendEmail}
+              // onClick={sendEmail}
 
-        className="block h-[50px] overflow-hidden bg-secondary1 font-medium"
-      >
-        <motion.div whileHover={{ y: -50 }}>
-          <span className="flex items-center h-[50px] justify-center text-2xl text-primary font-semibold font-AvenirBook uppercase">Submit</span>
-          <span className="font-Dancing text-3xl mx-auto flex items-center justify-center h-[50px] text-primary">
-            Submit
-          </span>
-        </motion.div>
-      </button>
+              className="block h-[50px] overflow-hidden bg-secondary1 font-medium"
+            >
+              <motion.div whileHover={{ y: -50 }}>
+                <span className="flex h-[50px] items-center justify-center font-AvenirBook text-2xl font-semibold uppercase text-primary">
+                  Submit
+                </span>
+                <span className="mx-auto flex h-[50px] items-center justify-center font-Dancing text-3xl text-primary">
+                  Submit
+                </span>
+              </motion.div>
+            </button>
 
             {error === null && <span>&nbsp;</span>}
             {error === false && (
@@ -282,18 +281,18 @@ function Footer() {
         initial="hidden"
         whileInView="visible"
         transition={{ staggerChildren: 0.05 }}
-        className="block mb-4 pl-1 text-sm md:text-sm text-primary relative bottom-12 [@media(max-width:715px)]:bottom-6 left-6 font-medium"
+        className="relative bottom-12 left-6 mb-4 block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
       >
-        {"Designed by Robin Sen".split("").map((char, i) => {
+        {'Designed by Robin Sen'.split('').map((char, i) => {
           return (
             <motion.span variants={smallAnimations} key={i}>
               {char}
             </motion.span>
-          );
+          )
         })}
       </motion.span>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
