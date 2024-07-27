@@ -1,45 +1,39 @@
-import React from "react";
+import React from "react"
 import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
   Stage,
   TrackballControls,
- 
-} from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import degrees_to_radians from "../../utils";
-import * as THREE from "three";
-import { GlassModel } from "./Model";
+} from "@react-three/drei"
+import { useFrame } from "@react-three/fiber"
+import { useRef } from "react"
+import degrees_to_radians from "../../utils"
+import * as THREE from "three"
+import { GlassModel } from "./Model"
 
 function ModelElement() {
-
   return (
     <>
       <PerspectiveCamera makeDefault position={[1, 0, 4]} />
-      <TrackballControls noPan noZoom rotateSpeed={3}/>
+      <TrackballControls noPan noZoom rotateSpeed={3} />
 
-
-          {/* <spotLight
+      {/* <spotLight
         args={["blue", 25, 0, degrees_to_radians(45), 0.4]}
         position={[-2.5, 2, 0]}
         castShadow
       /> */}
-         <directionalLight
-        args={["white",15]}
+      <directionalLight
+        args={["white", 15]}
         position={[-1.5, 1, 0]}
-        // castShadow 
-        /> 
-    <ambientLight args={["white", 1]} />
-    {/* <Stage preset={'upfront'} adjustCamera={5} environment={'warehouse'} >
+        // castShadow
+      />
+      <ambientLight args={["orange", 10]} />
+      {/* <Stage preset={'upfront'} adjustCamera={5} environment={'warehouse'} ></Stage> */}
 
-    </Stage> */}
-
-
-      <GlassModel/> 
-    <Environment background={false} preset="warehouse"/>
-{/*  
+      <GlassModel />
+      <Environment background={false} preset="warehouse" />
+      {/*  
       <Environment >
         <mesh>
           <sphereGeometry args={[50, 100, 100]} />
@@ -51,7 +45,7 @@ function ModelElement() {
         </mesh>
       </Environment>  */}
     </>
-  );
+  )
 }
 
-export default ModelElement;
+export default ModelElement

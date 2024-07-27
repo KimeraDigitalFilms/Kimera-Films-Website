@@ -66,7 +66,7 @@ function Home() {
           <Ticker />
           <Footer />
         </>
-        {/* )} */}
+         )} 
         {/* <Services/>
           
        <Team/>
