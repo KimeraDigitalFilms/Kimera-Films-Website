@@ -1,26 +1,26 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import React from "react"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 function Modal({ selected, setSelected }) {
   if (!selected) {
-    return <></>;
+    return <></>
   } else {
-    document.body.style.overflowY = "hidden";
+    document.body.style.overflowY = "hidden"
   }
   return (
     <div className="">
       <div
         onClick={() => {
-          setSelected(null);
-          document.body.style.overflowY = "auto";
+          setSelected(null)
+          document.body.style.overflowY = "auto"
         }}
-        className="fixed inset-0  bg-black/75 z-[150] cursor-pointer overflow-y-scroll"
+        className="fixed inset-0 z-[150] cursor-pointer overflow-y-scroll bg-black/75"
       >
         {/* inset-0 just covers whole screen */}
         <div
           onClick={(e) => e.stopPropagation()} // .stopPropagation() method prevents parent event from bubbling/affecting/calling from children
-          className="w-full min-[1120px]:max-w-[1000px] min-[825px]:max-w-[750px] max-w-[500px] h-max-[50vh] mx-auto  mt-24 px-8 cursor-default"
+          className="h-max-[50vh] mx-auto mt-24 w-full max-w-[500px] cursor-default px-8 min-[825px]:max-w-[750px] min-[1120px]:max-w-[1000px]"
         >
           {/* <motion.div>
             <motion.video
@@ -55,6 +55,7 @@ function Modal({ selected, setSelected }) {
             <iframe
               // src={`${selected.vid}&autoplay=1&title=0&byline=0&muted=1&controls=1`}
               src={selected.vid}
+              loading="lazy"
               // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
               className="aspect-video w-full"
               style={
@@ -66,9 +67,7 @@ function Modal({ selected, setSelected }) {
                   // height: "100%",
                 }
               }
-              // className="w-full h-full"
               frameBorder="0"
-              // allow="autoplay; fullscreen; picture-in-picture"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               webkitallowfullscreen
@@ -91,7 +90,7 @@ function Modal({ selected, setSelected }) {
             }}
             className={`p-2`}
           >
-            <h3 className="mt-3 font-bold text-4xl font-Dancing text-primary">
+            <h3 className="mt-3 font-Dancing text-4xl font-bold text-primary">
               {selected.title}
             </h3>
             {/* <div className="inline-flex flex-wrap mt-1 justify-center gap-3">
@@ -122,7 +121,7 @@ function Modal({ selected, setSelected }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Modal;
+export default Modal
