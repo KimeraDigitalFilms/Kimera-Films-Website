@@ -90,40 +90,42 @@ const LogoItem = ({ Icon }) => {
       className="flex h-16 w-16 items-center justify-center px-2 md:h-24 md:w-24"
     >
       {/* <Icon className="text-4xl md:text-5xl" /> */}
-      <img src={Icon} alt="clientLogo" />
+      <img src={Icon} alt="clientLogo" className="w-full" />
     </div>
   )
 }
 
 const LogoItemsTop = () => (
   <>
-    <LogoItem Icon={"/client logos/Media.Monks_idx7Tjoce-_1.png"} />
-    <LogoItem Icon={"/client logos/Burgundy Logo.png"} />
-    <LogoItem Icon={"/client logos/Balaji_Telefilms_Logo.png"} />
-    <LogoItem Icon={"/client logos/dal cheeni logo 2.png"} />
-    <LogoItem Icon={"/client logos/bhandarkarentertainment_logo.jpeg"} />
-    <LogoItem Icon={"/client logos/colors tv logo.png"} />
-    <LogoItem Icon={"/client logos/BJ Logo.png"} />
-    <LogoItem Icon={"/client logos/G.D GOENLA GLOBAL SCHOOL NOIDA.png"} />
-    <LogoItem Icon={"/client logos/KK JEWELLERS  logo) copy.png"} />
-    <LogoItem Icon={"/client logos/KeyWest-07.jpg"} />
+    <LogoItem Icon={"/client logos/Media.Monks_idx7Tjoce-_1.webp"} />
+    <LogoItem Icon={"/client logos/Burgundy Logo.webp"} />
+    <LogoItem Icon={"/client logos/Balaji_Telefilms_Logo.webp"} />
+    <LogoItem Icon={"/client logos/dal cheeni logo 2.webp"} />
+    <LogoItem Icon={"/client logos/bhandarkarentertainment_logo.webp"} />
+    <LogoItem Icon={"/client logos/colors tv logo.webp"} />
+    <LogoItem Icon={"/client logos/BJ Logo.webp"} />
+    <LogoItem Icon={"/client logos/G.D GOENLA GLOBAL SCHOOL NOIDA.webp"} />
+    <LogoItem Icon={"/client logos/KK JEWELLERS.webp"} />
+    <LogoItem Icon={"/client logos/KeyWest-07.webp"} />
+    <LogoItem Icon={"/client logos/NDTV INDIA.webp"} />
   </>
 )
 
 const LogoItemsBottom = () => (
   <>
     <LogoItem
-      Icon={"/client logos/hell-energy-drink-logo-A1B6479A6F-seeklogo.com.png"}
+      Icon={"/client logos/hell-energy-drink-logo-A1B6479A6F-seeklogo.com.webp"}
     />
-    <LogoItem Icon={"/client logos/RAMAGYA SPORTS ACADEMY.png"} />
-    <LogoItem Icon={"/client logos/logo ip.png"} />
-    <LogoItem Icon={"/client logos/YRF LOGO.png"} />
-    <LogoItem Icon={"/client logos/RAMAGYA SCHOOL.png"} />
-    <LogoItem Icon={"/client logos/unnamed.png"} />
-    <LogoItem Icon={"/client logos/SARVJAN.png"} />
-    <LogoItem Icon={"/client logos/RAMAGYA FOUNDATION.png"} />
-    <LogoItem Icon={"/client logos/SWeety crush logo.jpeg"} />
-    <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.png"} />
+    <LogoItem Icon={"/client logos/RAMAGYA SPORTS ACADEMY.webp"} />
+    <LogoItem Icon={"/client logos/logo ip.webp"} />
+    <LogoItem Icon={"/client logos/YRF LOGO.webp"} />
+    <LogoItem Icon={"/client logos/RAMAGYA SCHOOL.webp"} />
+    <LogoItem Icon={"/client logos/unnamed.webp"} />
+    <LogoItem Icon={"/client logos/SARVJAN.webp"} />
+    <LogoItem Icon={"/client logos/RAMAGYA FOUNDATION.webp"} />
+    <LogoItem Icon={"/client logos/SWeety crush logo.webp"} />
+    <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.webp"} />
+    <LogoItem Icon={"/public/client logos/Viacom18.webp"} />
   </>
 )
 

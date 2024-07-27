@@ -48,7 +48,7 @@ function Home() {
         {/* {!vis ? (
           <Preloader ready={ready} setVis={setVis} />
         ) : ( */}
-        {!vis 
+        {/* {!vis 
         ? 
         (
           sessionStorage.getItem("preloaded") ? (
@@ -56,7 +56,7 @@ function Home() {
           ) : (
             <Preloader  setVis={setVis} />
           )
-        ) : (
+        ) : ( */}
            <>      
               <Hero/>
           <ScrollTopButton/>
@@ -68,7 +68,7 @@ function Home() {
             <Ticker />
             <Footer/>
           </>
-        )}
+        {/* )} */}
         {/* <Services/>
           
        <Team/>
