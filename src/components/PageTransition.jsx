@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "framer-motion"
 
 function PageTransition(OGComponent) {
   return () => (
@@ -21,11 +21,9 @@ function PageTransition(OGComponent) {
       >
         <h1 className="text-5xl text-white">
           {
-            ['GFG_1', 'GeeksForGeeks', 'Geeks', 'Computer Science Portal'][
+            ["Text1", "Text2", "Text3", "Text4"][
               Math.floor(
-                Math.random() *
-                  ['GFG_1', 'GeeksForGeeks', 'Geeks', 'Computer Science Portal']
-                    .length
+                Math.random() * ["Text1", "Text2", "Text3", "Text4"].length
               )
             ]
           }
