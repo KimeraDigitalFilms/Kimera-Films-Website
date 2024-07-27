@@ -55,18 +55,18 @@ const Video = ({ isOpen }) => {
       navRef.current?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  let reel;
-  let player;
-  useEffect(() => {
-    reel = document.getElementById("reel");
-    player = new Vimeo.Player("reel");
-  });
+  // let reel;
+  // let player;
+  // useEffect(() => {
+  //   reel = document.getElementById("reel");
+  //   player = new Vimeo.Player("reel");
+  // },[]);
 
-  useEffect(() => {
-    if (!isOpen) {
-      player.play();
-    }
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (!isOpen) {
+  //     player.play();
+  //   }
+  // }, [isOpen]);
 
   return (
     <div
@@ -94,8 +94,10 @@ const Video = ({ isOpen }) => {
           className="-z-10"
         >
           <iframe
+            title="reel"
             id="reel"
-            src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&background=1&title=0&byline=0&muted=1&controls=0"
+            src="https://www.youtube-nocookie.com/embed/cnoM8scJZ98?si=DkhtAp6qt8s0wNrX&amp;controls=0&amp;mute=1&amp;autoplay=1&amp;loop=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" 
+            // src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&background=1&title=0&byline=0&muted=1&controls=0"
             // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
             style={{
               position: "absolute",
@@ -105,12 +107,12 @@ const Video = ({ isOpen }) => {
               height: "100%",
             }}
             // className="w-full h-full"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
+            frameBorder="0"
+            // allow="autoplay; fullscreen; picture-in-picture"
             webkitallowfullscreen
             mozallowfullscreen
             allowfullscreen
-          ></iframe>
+          />
         </div>
         {/* <video
           style={{ width: "25vw !important", height: "25vh !important" }}
@@ -148,9 +150,8 @@ const Cursor = ({ hovered, scope }) => {
       initial={false}
       animate={{
         opacity: hovered ? 1 : 0,
-        transform: `scale(${
-          hovered ? 1 : 0
-        }) translateX(-50%) translateY(-50%)`,
+        transform: `scale(${hovered ? 1 : 0
+          }) translateX(-50%) translateY(-50%)`,
       }}
       transition={{ duration: 0.15 }}
       ref={scope}

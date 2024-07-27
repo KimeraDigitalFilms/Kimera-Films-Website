@@ -55,7 +55,7 @@ function Card({ setSelected, item,style }) {
             onClick={() => {
               setSelected(item);
             }}
-            className="mx-auto inline  w-fit overflow-hidden hover:cursor-pointer"
+            className="mx-auto inline w-fit overflow-hidden hover:cursor-pointer"
             src={item.poster}
             alt=""
           />
