@@ -111,6 +111,6 @@ function Projects() {
 
 const WrappedProjects = PageTransition(Projects);
 
-export { WrappedProjects };
+export default WrappedProjects ;
 
 // export default Projects;

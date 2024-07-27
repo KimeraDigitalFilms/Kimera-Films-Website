@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, Suspense, lazy } from "react"
 import Button from "./components/Button"
 import Navbar from "./components/Navbar"
 import {
@@ -7,9 +7,10 @@ import {
   Route,
   useLocation,
 } from "react-router-dom"
-import { WrappedProjects } from "./pages/Projects"
-import { WrappedHome } from "./pages/Home"
+// import  WrappedProjects  from "./pages/Projects"
+const WrappedProjects = lazy(() => import("./pages/Projects"))
 // import Home from "./pages/Home";
+import WrappedHome from "./pages/Home"
 // import Projects from "./pages/Projects";
 import "./App.css"
 import Dummy from "./pages/Dummy"
@@ -39,15 +40,14 @@ function App() {
             <Route
               // index
               path="/"
-              element={
-                <WrappedHome />
-                // <Home/>
-              }
+              element={<WrappedHome />}
             />
             <Route
               path="/gallery"
               element={
-                <WrappedProjects />
+                <Suspense>
+                  <WrappedProjects />
+                </Suspense>
                 // <Projects/>
               }
             />
