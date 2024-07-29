@@ -125,7 +125,7 @@ const LogoItemsBottom = () => (
     <LogoItem Icon={"/client logos/RAMAGYA FOUNDATION.webp"} />
     <LogoItem Icon={"/client logos/SWeety crush logo.webp"} />
     <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.webp"} />
-    <LogoItem Icon={"/public/client logos/Viacom18.webp"} />
+    <LogoItem Icon={"/client logos/Viacom18.webp"} />
   </>
 )
 
