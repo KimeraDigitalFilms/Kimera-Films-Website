@@ -1,12 +1,12 @@
-import React from "react";
-import { motion, easeOut } from "framer-motion";
-import Distortion from "./Distortion/Distortion.jsx";
+import React from "react"
+import { motion, easeOut } from "framer-motion"
+import Distortion from "./Distortion/Distortion.jsx"
 // import Polaroid from "./Polaroid";
-import { FiCloudLightning } from "react-icons/fi";
+import { FiCloudLightning } from "react-icons/fi"
 
 function Team() {
   return (
-    <div className="my-24">
+    <div className="mt-24">
       <div className="overflow-hidden">
         <motion.h1
           initial={{ y: "100%" }}
@@ -18,16 +18,16 @@ function Team() {
             msUserSelect: "none",
             userSelect: "none",
           }}
-          className="font-AvenirBook font-weight text-center text-secondary1 text-7xl "
+          className="font-weight text-center font-AvenirBook text-7xl text-secondary1"
         >
           Our Team
         </motion.h1>
       </div>
 
-      <div className="flex flex-col gap-y-[250px] mt-20">
-        <div className="flex flex-wrap gap-y-14 justify-evenly items-center w-full">
+      <div className="mt-20 flex flex-col gap-y-[250px]">
+        <div className="flex w-full flex-wrap items-center justify-evenly gap-y-14">
           <Card
-          src={'/Hassaan_1x1.webp'}
+            src={"/Hassaan_1x1.webp"}
             name={"Hassaan Ahmed"}
             desig={"Head of Content Development"}
             content={
@@ -37,7 +37,7 @@ function Team() {
           <Card
             name={"Tushar Singh"}
             desig={"Head of Production & Marketing"}
-            src={'/Tushar_1x1.webp'}
+            src={"/Tushar_1x1.webp"}
             content={
               "A true magician with people. From marketing to casting to overseeing enormous crews, he makes it all look effortless. With years of experience both in front and behind the camera, Tushar is Leading the way for Kimera’s marketing, Production and Sales."
             }
@@ -46,7 +46,7 @@ function Team() {
           <Card
             name={"Bashar Parvez"}
             desig={"Head of Post-Production"}
-            src={'/Bashar_1x1.webp'}
+            src={"/Bashar_1x1.webp"}
             content={
               "The powerhouse cyborg of Kimera. The machines are sentient beings but with his superior technical prowess and knowledge under his rule they listen to him. Bashar has honed and mastered all the domains of Post Production, be it Editing, Animation or SFX."
             }
@@ -104,35 +104,32 @@ function Team() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Team;
+export default Team
 
-
-const Card = ({ content, name, desig,src }) => {
+const Card = ({ content, name, desig, src }) => {
   return (
-    <div className="group relative  w-full max-w-sm overflow-hidden rounded-lg bg-primaryFg p-0.5 transition-all duration-500 border border-secondary1 ">
-      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px]  p-8 transition-colors duration-500 bg-primaryFg ">
+    <div className="group relative w-full max-w-sm overflow-hidden rounded-lg border-[0.3px] border-secondary1  p-0.5 shadow-xl shadow-gray-800 transition-all duration-500 bg-primaryBg">
+      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px] p-8 transition-colors duration-500 bg-primaryBg">
         {/* <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" /> */}
         <Distortion
           containerId={name.split()[0]}
           imageId={name.split()[0] + "Img"}
-          src={
-            src
-          }
+          src={src}
         />
 
-        <h2 className="relative z-10 mb-3 mt-3 w-full text-3xl font-bold text-center text-primary">
+        <h2 className="relative z-10 mb-3 mt-3 w-full text-center text-3xl font-bold text-primary">
           {name}
         </h2>
-        <h3 className="relative z-10 mb-3 w-full text-lg text-center  font-semibold text-secondary1">
+        <h3 className="relative z-10 mb-3 w-full text-center text-lg font-semibold text-secondary1">
           {desig}
         </h3>
-        <p className="relative z-10 text-base text-secondary1 font-thin text-center">
+        <p className="relative z-10 text-center text-base font-thin text-secondary1">
           {content}
         </p>
       </div>
     </div>
-  );
-};
+  )
+}

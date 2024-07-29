@@ -90,7 +90,7 @@ const LogoItem = ({ Icon }) => {
       className="flex h-16 w-16 items-center justify-center px-2 md:h-24 md:w-24"
     >
       {/* <Icon className="text-4xl md:text-5xl" /> */}
-      <img src={Icon} alt="clientLogo" className="w-full" loading="lazy"/>
+      <img src={Icon} alt="clientLogo" className="w-full grayscale brightness-125" loading="lazy"/>
     </div>
   )
 }

@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { motion, useInView } from 'framer-motion'
+import React, { useRef, useState } from "react"
+import { Link } from "react-router-dom"
+import { motion, useInView } from "framer-motion"
 // import emailjs from "@emailjs/browser";
 
 function Footer() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   })
 
   // const handleChange = (e) => {
@@ -56,7 +56,7 @@ function Footer() {
   // };
 
   const ref = useRef()
-  const isInView = useInView(ref, { margin: '-100px' })
+  const isInView = useInView(ref, { margin: "-100px" })
 
   const smallAnimations = {
     hidden: { opacity: 0 },
@@ -80,7 +80,7 @@ function Footer() {
   }
 
   return (
-    <div ref={ref} className="h-screen">
+    <div ref={ref} className="h-screen" id="contact">
       <motion.div
         // variants={variants}
         // initial="initial"
@@ -144,21 +144,21 @@ function Footer() {
             >
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: 'spring', duration: 0.4 }}
+                transition={{ type: "spring", duration: 0.4 }}
                 className="fa-brands fa-square-facebook fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://www.instagram.com/aiz.3d/">
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: 'spring', duration: 0.4 }}
+                transition={{ type: "spring", duration: 0.4 }}
                 className="fa-brands fa-square-instagram fa-2xl text-secondary1"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://twitter.com/aizventurer">
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: 'spring', duration: 0.4 }}
+                transition={{ type: "spring", duration: 0.4 }}
                 className="fa-brands fa-square-x-twitter fa-2xl text-secondary1"
               ></motion.i>
             </Link>
@@ -175,7 +175,7 @@ function Footer() {
             >
               <motion.i
                 whileHover={{ scale: 2 }}
-                transition={{ type: 'spring', duration: 0.4 }}
+                transition={{ type: "spring", duration: 0.4 }}
                 className="fa-brands fa-linkedin fa-2xl text-secondary1"
               ></motion.i>
             </Link>
@@ -283,7 +283,7 @@ function Footer() {
         transition={{ staggerChildren: 0.05 }}
         className="relative bottom-12 left-6 mb-4 block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
       >
-        {'Designed by Robin Sen'.split('').map((char, i) => {
+        {"Designed by Robin Sen".split("").map((char, i) => {
           return (
             <motion.span variants={smallAnimations} key={i}>
               {char}

@@ -39,7 +39,7 @@ const Accordion = () => {
         In order to create something new, one needs to pay attention and listen
         to what makes it stand out.
       </p>
-      <div className="mx-auto flex h-fit w-full max-w-7xl flex-col overflow-hidden">
+      <div className="mx-auto flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-gray-800">
         {items.map((item) => {
           return (
             <Panel
@@ -104,19 +104,20 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, desc }) => {
               // WebkitBackdropFilter:'blur(10px)',
               //   backdropFilter:'blur(10px)'
               // }}
-              className="relative h-full w-full overflow-hidden bg-gradient-to-br from-white/20 to-white/5 backdrop-blur"
+              // className="relative h-full w-full overflow-hidden bg-gradient-to-br from-white/20 to-white/5 backdrop-blur"
+              className="relative h-full w-full overflow-hidden"
             >
               <motion.div
                 variants={descriptionVariants}
                 initial="closed"
                 animate="open"
                 exit="closed"
-                className="absolute bottom-9 left-0 w-full overflow-hidden px-4 py-2 text-secondary1"
+                className="w-full overflow-hidden px-4 py-2 text-secondary1"
               >
                 <p>{desc}</p>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 variants={{
                   open: {
                     opacity: 1,
@@ -145,7 +146,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, desc }) => {
                   className="absolute border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"
                 ></motion.div>
                 <motion.div className="absolute rotate-45 border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"></motion.div>
-              </motion.div>
+              </motion.div>*/}
               <div className="flex h-full w-full flex-nowrap justify-center gap-x-10 py-10">
                 <motion.div
                   variants={{

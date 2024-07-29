@@ -1,21 +1,26 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react"
 
-const colorContext = createContext();
+const colorContext = createContext()
 
-export default colorContext;
+export default colorContext
 
-export const ColorState = (props) =>{
+export const ColorState = (props) => {
+  const [canvasBg, setCanvasBg] = useState("#0A0A0A")
+  const [canvasColor, setCanvasColor] = useState("#ED6E0B")
+  const [loadColor, setLoadColor] = useState("#C9D9EE")
 
-const [canvasBg,setCanvasBg]=useState('#100700')
-   const [canvasColor,setCanvasColor]=useState('#ED6E0B')
-   const [loadColor,setLoadColor]=useState('#C9D9EE')
-
-  
-    
-
-    return(
-        <colorContext.Provider value={{canvasBg,setCanvasBg,canvasColor,setCanvasColor,loadColor,setLoadColor}}>
-            {props.children}
-        </colorContext.Provider>
-    )
+  return (
+    <colorContext.Provider
+      value={{
+        canvasBg,
+        setCanvasBg,
+        canvasColor,
+        setCanvasColor,
+        loadColor,
+        setLoadColor,
+      }}
+    >
+      {props.children}
+    </colorContext.Provider>
+  )
 }

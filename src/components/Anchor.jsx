@@ -1,32 +1,33 @@
+import React, { useState } from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-
-const Anchor = ({ content, colorStyle, href, }) => {
+const Anchor = ({ content, colorStyle, href, onClick }) => {
   return (
-    <div className="">
-      <FlyoutLink href={href} colorStyle={colorStyle} >
-        {content}
-      </FlyoutLink>
-    </div>
-  );
-};
+    <>
+      <div className="">
+        <FlyoutLink href={href} colorStyle={colorStyle} onClick={onClick}>
+          {content}
+        </FlyoutLink>
+      </div>
+    </>
+  )
+}
 
-const FlyoutLink = ({ children, href, colorStyle, }) => {
-  const location = useLocation();
-  const [open, setOpen] = useState(false);
-
+const FlyoutLink = ({ children, href, colorStyle, onClick }) => {
+  const location = useLocation()
+  const [open, setOpen] = useState(false)
 
   return (
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="relative w-fit h-fit"
+      className="relative h-fit w-fit"
     >
       <Link
         to={href}
-        className={`relative transition-colors duration-200  ${
-          location.pathname === href && "hover:cursor-default text-primary"
+        onClick={onClick}
+        className={`relative transition-colors duration-200 ${
+          location.pathname === href && "text-primary hover:cursor-default"
         } ${colorStyle}`}
       >
         {children}
@@ -40,7 +41,52 @@ const FlyoutLink = ({ children, href, colorStyle, }) => {
         )}
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Anchor;
+const AnchorButton = () => {
+  const location = useLocation()
+  const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+  return (
+    <div
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      className="relative h-fit w-fit"
+    >
+      <button
+        type="button"
+        onClick={() => {
+          return new Promise((resolve) => {
+            navigate("/")
+            if (location.pathname === "/") {
+              resolve()
+            } else {
+              setTimeout(() => {
+                resolve()
+              }, 1500)
+            }
+          }).then(() => {
+            window.scrollTo(0, document.getElementById("contact").offsetTop)
+          })
+          // window.scrollTo({
+          //   left: 0,
+          //   top: document.body.scrollHeight,
+          //   behavior: "smooth",
+          // })
+        }}
+      >
+        Contact
+        <span
+          style={{
+            transform: open ? "scaleX(1)" : "scaleX(0)",
+          }}
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-primary transition-transform duration-300 ease-out"
+        />
+      </button>
+    </div>
+  )
+}
+
+export default Anchor
+export { AnchorButton }

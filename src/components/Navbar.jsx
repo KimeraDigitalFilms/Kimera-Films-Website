@@ -1,52 +1,55 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import {
   AnimatePresence,
   easeInOut,
   motion,
   useMotionValueEvent,
   useScroll,
-} from "framer-motion";
-import { Link } from "react-router-dom";
-import Anchor from "./Anchor";
-import colorContext from "../context/ColorContext";
+} from "framer-motion"
+import { Link } from "react-router-dom"
+import Anchor from "./Anchor"
+import { AnchorButton } from "./Anchor"
+import colorContext from "../context/ColorContext"
 
 function Navbar() {
-  const location = useLocation();
+  const location = useLocation()
   if (location.pathname === "/") {
     // document.body.style.background = "#ffffff";
   }
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll()
+  const [hidden, setHidden] = useState(false)
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const prev = scrollY.getPrevious();
+    const prev = scrollY.getPrevious()
     if (latest > prev && latest > 150) {
-      setHidden(true);
+      setHidden(true)
     } else {
-      setHidden(false);
+      setHidden(false)
     }
-  });
+  })
 
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = useState(false)
 
   const handleSidebar = () => {
-    setActive(!isActive);
-  };
-  const [mobile, setMobile] = useState(window.innerWidth <= 460 ? 1 : 0);
+    setActive(!isActive)
+  }
+  const [mobile, setMobile] = useState(window.innerWidth <= 460 ? 1 : 0)
 
   useEffect(() => {
-    setMobile(window.innerWidth <= 460 ? 1 : 0);
-  }, [window.innerWidth]);
+    setMobile(window.innerWidth <= 460 ? 1 : 0)
+  }, [window.innerWidth])
 
   //change nav bg color on scroll
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest < 55) {
-      document.getElementById("nav").style.backgroundColor = "transparent";
+      document.getElementById("nav").style.backgroundColor = "transparent"
     } else {
-      document.getElementById("nav").style.backgroundColor = "rgba(0,0,0,0.70)";
+      document.getElementById("nav").style.backgroundColor = "rgba(0,0,0,0.70)"
     }
-  });
+  })
+
+  const navigate = useNavigate()
   return (
     <>
       {!mobile ? (
@@ -63,33 +66,28 @@ function Navbar() {
             id="nav"
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font fixed w-full transition-colors duration-300 top-0  z-50 px-7`}
+            className={`body-font fixed top-0 z-50 w-full px-7 transition-colors duration-300`}
           >
-            <div className="container h-full mx-auto justify-between flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <div className="container mx-auto flex h-full flex-col flex-wrap items-center justify-between p-5 md:flex-row">
               <Link
                 to={"/"}
-                className={`flex title-font font-medium  items-center  mb-4 md:mb-0`}
+                className={`title-font mb-4 flex items-center font-medium md:mb-0`}
               >
                 {/* <i
                   className="fa-sharp fa-solid fa-photo-film fa-2xl"
                   style={{ color: "#5900ff" }}
                 ></i> */}
                 {/* <img src="" alt="logo" /> */}
-                <span className="ml-3 text-2xl uppercase font-bold font-AvenirBook text-primary">
+                <span className="ml-3 font-AvenirBook text-2xl font-bold uppercase text-primary">
                   Kimera Films
                 </span>
               </Link>
 
-              <nav className="gap-x-8 w-fit flex flex-wrap text-white items-center text-base justify-center">
+              <nav className="flex w-fit flex-wrap items-center justify-center gap-x-8 text-base text-white">
                 <Colors />
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
-                {/* <Anchor colorStyle={``} content={"About"} href={"/about"} /> */}
                 <Anchor colorStyle={``} content={"Gallery"} href={"/gallery"} />
-                {/* <Anchor
-                  colorStyle={``}
-                  content={"Services"}
-                  href={"/services"}
-                /> */}
+                <AnchorButton />
               </nav>
             </div>
           </motion.header>
@@ -99,7 +97,7 @@ function Navbar() {
           {" "}
           <motion.button
             onClick={handleSidebar}
-            className="p-0 fixed top-3 right-5 z-[100] flex items-center justify-center bg-secondary1 h-12 w-12 focus:outline-none hover:cursor-pointer rounded-[50%] gap-y-[5px] flex-col flex-nowrap"
+            className="fixed right-5 top-3 z-[100] flex h-12 w-12 flex-col flex-nowrap items-center justify-center gap-y-[5px] rounded-[50%] bg-secondary1 p-0 hover:cursor-pointer focus:outline-none"
           >
             <motion.div
               variants={{
@@ -113,7 +111,7 @@ function Navbar() {
               transition={{
                 duration: 0.5,
               }}
-              className="bg-black h-[1.5px] m-0 p-0 w-6"
+              className="m-0 h-[1.5px] w-6 bg-black p-0"
             ></motion.div>
 
             <motion.div
@@ -125,7 +123,7 @@ function Navbar() {
               transition={{
                 duration: 0.5,
               }}
-              className="bg-black h-[1.5px] p-0 m-0 w-6"
+              className="m-0 h-[1.5px] w-6 bg-black p-0"
             ></motion.div>
           </motion.button>
           <AnimatePresence>
@@ -134,18 +132,18 @@ function Navbar() {
         </>
       )}
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
 
 function Dropdown({ setActive }) {
   const navLinks = [
     { title: "Home", href: "/" },
-    { title: "About", href: "/about" },
+    // { title: "About", href: "/about" },
     { title: "Gallery", href: "/gallery" },
-    { title: "Services", href: "/services" },
-  ];
+    // { title: "Services", href: "/services" },
+  ]
 
   return (
     <motion.div
@@ -170,21 +168,21 @@ function Dropdown({ setActive }) {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="fixed top-0 origin-top left-0 w-full h-screen pb-10 px-10 pt-6 text-black bg-primary z-[80]"
+      className="fixed left-0 top-0 z-[80] h-screen w-full origin-top bg-primary px-10 pb-10 pt-6 text-black"
     >
       <div className="flex h-full flex-col">
         <div className="flex justify-between">
-          <h1 className="text-2xl font-semibold  text-black">Menu</h1>
+          <h1 className="text-2xl font-semibold text-black">Menu</h1>
         </div>
 
-        <div className="flex flex-col h-full justify-center font-serif items-center gap-4 uppercase text-4xl text-black">
+        <div className="flex h-full flex-col items-center justify-center gap-4 font-serif text-4xl uppercase text-black">
           {navLinks.map((link, i) => {
             return (
               <motion.div
                 key={i}
                 className="overflow-hidden"
                 onClick={() => {
-                  setActive(false);
+                  setActive(false)
                 }}
               >
                 <motion.div
@@ -209,33 +207,32 @@ function Dropdown({ setActive }) {
                   <Link to={link.href}>{link.title}</Link>
                 </motion.div>
               </motion.div>
-            );
+            )
           })}
         </div>
         <div>
-          <p className="underline underline-offset-4 decoration-solid decoration-black text-black text-lg text-center">
+          <p className="text-center text-lg text-black underline decoration-black decoration-solid underline-offset-4">
             info@kimerafilms.art
           </p>
         </div>
       </div>
     </motion.div>
-  );
+  )
 }
 
 const Colors = () => {
-  const { setCanvasBg, setCanvasColor, setLoadColor } =
-    useContext(colorContext);
+  const { setCanvasBg, setCanvasColor, setLoadColor } = useContext(colorContext)
 
   const handleRadio = (e) => {
-    document.documentElement.setAttribute("data-theme", e.target.id);
-    document.body.style.backgroundColor = e.target.getAttribute("data-color");
-    setCanvasColor(e.target.getAttribute("data-canvasColor"));
-    setCanvasBg(e.target.getAttribute("data-color"));
-    setLoadColor(e.target.getAttribute("data-loadcolor"));
-  };
+    document.documentElement.setAttribute("data-theme", e.target.id)
+    document.body.style.backgroundColor = e.target.getAttribute("data-color")
+    setCanvasColor(e.target.getAttribute("data-canvasColor"))
+    setCanvasBg(e.target.getAttribute("data-color"))
+    setLoadColor(e.target.getAttribute("data-loadcolor"))
+  }
   return (
     <div>
-      <div className="flex justify-center items-center gap-x-3">
+      <div className="flex items-center justify-center gap-x-3">
         {/* <div className="rounded-full p-2 bg-"></div> */}
         <div
           defaultChecked
@@ -243,11 +240,11 @@ const Colors = () => {
           type="radio"
           name="color"
           // data-bg="#241c18"
-          data-color="#100700"
           id="main"
-          data-canvascolor="#ED6E0B"
-          data-loadcolor="#C9D9EE"
-          className="bg-[#ED6E0B] rounded-full p-2 cursor-pointer"
+          data-color="#0A0A0A" //Bg of page other canvas
+          data-canvascolor="#ED6E0B" // Primary color in cansvas
+          data-loadcolor="#C9D9EE" // Color of loader in preloader
+          className="cursor-pointer rounded-full bg-[#ED6E0B] p-2"
         />
         <div
           onClick={handleRadio}
@@ -257,7 +254,7 @@ const Colors = () => {
           data-canvascolor="#f2b200"
           data-loadcolor="#535C91"
           data-color="#1B1A55"
-          className="bg-[#1B1A55] rounded-full cursor-pointer p-2"
+          className="cursor-pointer rounded-full bg-[#1B1A55] p-2"
         />
         <div
           onClick={handleRadio}
@@ -268,9 +265,9 @@ const Colors = () => {
           data-color="#123524"
           data-loadcolor="#D8D4F2"
           data-canvascolor="#C4B2BC"
-          className="bg-[#C4B2BC] p-2 rounded-full cursor-pointer"
+          className="cursor-pointer rounded-full bg-[#C4B2BC] p-2"
         />
       </div>
     </div>
-  );
-};
+  )
+}
