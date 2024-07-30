@@ -1,6 +1,6 @@
 import React from "react"
-import ModelElement from "./ModelElement"
-import { Canvas } from "@react-three/fiber"
+// import ModelElement from "./About/ModelElement" 
+// import { Canvas } from "@react-three/fiber"
 import { motion, easeOut } from "framer-motion"
 function About() {
   return (

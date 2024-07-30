@@ -9,7 +9,7 @@ import Featured from "../components/ShowReel/Featured"
 import Footer from "../components/Footer"
 import Hero from "../components/Hero"
 import PageTransition from "../components/PageTransition"
-import About from "../components/About/About"
+import About from "../components/About"
 import Accordion from "../components/Service_Accordian/Accordion"
 
 

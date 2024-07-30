@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef } from "react"
 import webGLFluidEnhanced from "webgl-fluid-enhanced"
 import colorContext from "../context/ColorContext"
 
