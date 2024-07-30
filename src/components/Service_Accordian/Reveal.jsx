@@ -19,13 +19,13 @@ function Reveal({ content, refP }) {
   // const [opacity,setOpacity]=useState(0.3)
   const fontSize = useTransform(
     scrollYProgress,
-    [0.3, 0.5, 0.8],
-    ["100%", "230%", "100%"]
+    [0.4, 0.5, 0.7],
+    ["40%", "250%", "40%"]
   );
   const x = useTransform(
     scrollYProgress,
     [0, 0.3, 0.5, 0.7, 1],
-    [0, 60, 80, 60, 0]
+    [0, 60, 70, 60, 0]
   );
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -41,7 +41,7 @@ function Reveal({ content, refP }) {
         style={{ opacity, x, fontSize: fontSize, fontFamily: font }}
         transition={{ delay: 0 }}
         ref={ref}
-        className="w-full text-left text-3xl py-[10px] font-bold "
+        className="w-full text-left text-3xl py-[2px] my-3 font-bold "
       >
         {content}
       </motion.div>

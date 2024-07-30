@@ -45,6 +45,7 @@ export default {
         //  'primaryBg': '#211106',
         primaryBg: "#0A0A0A",
         primaryFg: "#2b190a",
+        shadow: "#26211e",
       },
       alt1: {
         primary: "#f2b200",

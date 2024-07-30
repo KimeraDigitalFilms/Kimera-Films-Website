@@ -27,7 +27,7 @@ function About() {
         </div>
       </div>
       <div className="mt-4 flex flex-col gap-y-10 text-xl font-thin text-secondary1">
-        <div className="w-3/4 rounded-lg border-[0.5px] p-3 shadow-lg shadow-gray-800">
+        <div className="w-3/4 rounded-lg border-[0.5px] p-3 shadow-xl shadow-shadow">
           Welcome to KIMERA, where creativity is our DNA. We are a living,
           breathing fusion of artistic minds. Just like the creature from Greek
           mythology, Kimera represents the convergence of diverse talents —
@@ -40,13 +40,13 @@ function About() {
           its heads.
         </div>
 
-        <div className="flex w-3/4 self-end rounded-lg border-[0.5px] p-3 text-right shadow-lg shadow-gray-800">
+        <div className="flex w-3/4 self-end rounded-lg border-[0.5px] p-3 text-right shadow-xl shadow-shadow">
           At Kimera, we boldly defy creative norms and celebrate the art of
           finesse. We're the preferred choice for leading brands because we
           understand their language while continuously pushing boundaries.
         </div>
 
-        <div className="w-3/4 rounded-lg border-[0.5px] p-3 shadow-lg shadow-gray-800">
+        <div className="w-3/4 rounded-lg border-[0.5px] p-3 shadow-xl shadow-shadow">
           Our process begins with uncovering the essence of your idea or brand,
           crafting it into a compelling and strategic narrative, and expertly
           executing your brand vision. Each step of this journey is fueled by

@@ -39,7 +39,7 @@ const Accordion = () => {
         In order to create something new, one needs to pay attention and listen
         to what makes it stand out.
       </p>
-      <div className="mx-auto flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-gray-800">
+      <div className="mx-auto flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
         {items.map((item) => {
           return (
             <Panel
@@ -188,7 +188,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, desc }) => {
                   transition={{ duration: 0.1 }}
                   className="container relative flex h-[300px] w-[550px] flex-col items-start justify-start overflow-x-hidden overflow-y-scroll text-secondary1"
                 >
-                  <div className="py-[25%]">
+                  <div className="py-[22%]">
                     {list.map((phrase, id) => {
                       return <Reveal refP={refP} content={phrase} key={id} />
                     })}
