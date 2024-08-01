@@ -27,11 +27,15 @@ const App = () => {
   }, [canvasColor])
 
   return (
-    <>
+    <div className="relative">
       <canvas
+        id="webglCanvas"
         ref={canvasRef}
-        className="transition-colors duration-500"
-        style={{ width: "100vw", height: "100vh" }}
+        className=""
+        style={{
+          width: "100vw",
+          height: "100vh",
+        }}
       />
       <div className="absolute top-[45%] z-10 flex w-screen flex-col gap-y-7">
         <h1 className="text-center font-Dancing text-7xl font-semibold text-secondary1">
@@ -41,7 +45,7 @@ const App = () => {
           Elevating brands in the digital realm
         </h1>
       </div>
-    </>
+    </div>
   )
 }
 
