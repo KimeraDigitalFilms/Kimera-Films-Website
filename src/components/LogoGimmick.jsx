@@ -24,9 +24,9 @@ function LogoGimmick() {
         <motion.h1 //text
           transition={{ ease: "linear", delay: 0 }}
           style={{ translateX: textX }}
-          className="absolute top-[50%] text-6xl font-bold text-secondary1 transition-transform delay-0 ease-linear"
+          className="absolute top-[50%] w-full text-6xl font-bold text-secondary1 transition-transform delay-0 ease-linear"
         >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Innovate. Create. Engage.
         </motion.h1>
         <motion.div
           transition={{ ease: "linear", delay: 0 }}
