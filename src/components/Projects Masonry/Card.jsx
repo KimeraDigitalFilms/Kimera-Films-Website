@@ -42,7 +42,7 @@ function Card({ setSelected, item,style }) {
         }}
         initial="hidden"
         whileInView="visible"
-        // viewport={{once:true}}
+        viewport={{once:true}}
         // style={{opacity,scale}} transition={{ease:easeOut,type:'spring'}} ref={ref}
           // className={`flex justify-center items-center mx-auto justify-self-center place-items-center `}
         >
