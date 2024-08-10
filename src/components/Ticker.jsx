@@ -81,7 +81,7 @@ const TranslateWrapper = ({ children, reverse }) => {
   )
 }
 
-const LogoItem = ({ Icon, zoom = false, bright = false }) => {
+const LogoItem = ({ Icon, zoom = 1, bright = 1 }) => {
   return (
     <div
       href="/"
@@ -93,12 +93,17 @@ const LogoItem = ({ Icon, zoom = false, bright = false }) => {
       <img
         src={Icon}
         alt="clientLogo"
-        className={`w-full grayscale ${zoom && `scale-[${zoom}]`} ${bright && `brightness-[${bright}]`}`}
+        style={{
+          filter: `grayscale(100%) brightness(${bright})`,
+          transform: `scale(${zoom})`,
+        }}
+        className={`w-full`}
         loading="lazy"
       />
     </div>
   )
 }
+// ${zoom && `scale-[${zoom}]`} ${bright && `brightness-[${bright}]`}
 
 const LogoItemsTop = () => (
   <>
