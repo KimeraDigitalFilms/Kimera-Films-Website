@@ -49,7 +49,7 @@ const Accordion = () => {
               id={item.id}
               // Icon={item.Icon}
               title={item.title}
-              imgSrc={item.imgSrc}
+              vid={item.vid}
               list={item.list}
               desc={item.desc}
             />
@@ -60,7 +60,7 @@ const Accordion = () => {
   )
 }
 
-const Panel = ({ open, setOpen, id, title, imgSrc, list, desc }) => {
+const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
   const { width } = useWindowSize()
   const isOpen = open === id
   const refP = useRef(null)
@@ -148,7 +148,10 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, desc }) => {
                 <motion.div className="absolute rotate-45 border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"></motion.div>
               </motion.div>*/}
               <div className="flex h-full w-full flex-nowrap justify-center gap-x-10 py-10">
-                <motion.div
+                <motion.video
+                  src={vid}
+                  autoPlay
+                  loop
                   variants={{
                     open: {
                       opacity: 1,
@@ -162,13 +165,8 @@ const Panel = ({ open, setOpen, id, title, imgSrc, list, desc }) => {
                   initial="closed"
                   animate="open"
                   exit="closed"
-                  className="ml-10 h-[300px] w-[400px] rounded-lg"
-                  style={{
-                    backgroundImage: `url(${imgSrc})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                ></motion.div>
+                  className="ml-10 mt-5 h-[225px] w-[400px] rounded-lg"
+                ></motion.video>
 
                 <motion.div
                   ref={refP}
@@ -253,8 +251,7 @@ const items = [
     id: 1,
     title: "BRAND FORGE",
     // Icon: FiDollarSign,
-    imgSrc:
-      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    vid: "/service_videos/Brand Forge 2.webm",
     list: [
       "Brand Positioning",
       "Tone of Voice",
@@ -264,7 +261,6 @@ const items = [
       "Messaging Architecture",
       "Verbal Branding",
       "Tagline Development",
-
       "Creative Conceptualization",
       "Visual Identity Design",
       "Logo Design",
@@ -273,7 +269,6 @@ const items = [
       "Art Direction",
       "Stationery Design",
       "Signage Design",
-
       "Copywriting",
       "Website Copywriting",
       "Social Media Copy",
@@ -285,16 +280,13 @@ const items = [
     id: 2,
     title: "MOTION CANVAS",
     // Icon: FiPlay,
-    imgSrc:
-      "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
+    vid: "/service_videos/Motion canvas 2.webm",
     list: [
       "AD Film Production",
       "Music Video Production",
       "Feature Films and TV Series",
-
       "Animation",
       "Visual Effects",
-
       "Editorial Production",
       "Social Media Asset Production",
       "Printing",
@@ -307,12 +299,10 @@ const items = [
     id: 3,
     title: "MARKETING MOMENTUM",
     // Icon: FiBell,
-    imgSrc:
-      "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    vid: "/service_videos/Marketing Momentum 2.webm",
     list: [
       "Competitor Analysis",
       "Audience Research",
-
       "Creative Strategy",
       "Brand Strategy Development",
       "Website Design",
@@ -322,7 +312,6 @@ const items = [
       "Search Engine Optimization",
       "Search Engine Marketing",
       "Augmented Reality Filters",
-
       "Advertising Campaigns",
       "Digital Marketing",
       "User Experience",
@@ -331,18 +320,4 @@ const items = [
     ],
     desc: "Amplifying your brand's reach and impact through strategic marketing solutions designed to maximize exposure and engagement. From targeted campaigns to engaging content, we craft creative strategies that propel your brand forward and unlock new opportunities for growth.",
   },
-  //   {
-  //     id: 4,
-  //     title: "Grow faster",
-  //     // Icon: FiBarChart,
-  //     imgSrc:
-  //       "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-  // list:[
-  //   "Design",
-  //   "User Interface",
-  //   "User Experience",
-  //   "Search Engine Optimization",
-  //   "Web Design",
-  // ]
-  //   },
 ]

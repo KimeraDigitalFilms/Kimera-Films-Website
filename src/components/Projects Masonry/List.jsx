@@ -119,9 +119,8 @@ function List({ setSelected }) {
       vid: "https://www.youtube.com/embed/gvK_HBJOhZQ?si=qnN08VIJXxNUcC2k",
       title: "Project 21",
       poster: "/thumbnails/Pilates.webp",
-    }
+    },
   ]
-
 
   return (
     <>
