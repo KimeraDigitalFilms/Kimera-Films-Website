@@ -1,26 +1,26 @@
 import { motion, easeOut } from "framer-motion"
-import {
-  SiNike,
-  Si3M,
-  SiAbstract,
-  SiAdobe,
-  SiAirtable,
-  SiAmazon,
-  SiBox,
-  SiBytedance,
-  SiChase,
-  SiCloudbees,
-  SiBurton,
-  SiBmw,
-  SiHeroku,
-  SiBuildkite,
-  SiCouchbase,
-  SiDailymotion,
-  SiDeliveroo,
-  SiEpicgames,
-  SiGenius,
-  SiGodaddy,
-} from "react-icons/si"
+// import {
+//   SiNike,
+//   Si3M,
+//   SiAbstract,
+//   SiAdobe,
+//   SiAirtable,
+//   SiAmazon,
+//   SiBox,
+//   SiBytedance,
+//   SiChase,
+//   SiCloudbees,
+//   SiBurton,
+//   SiBmw,
+//   SiHeroku,
+//   SiBuildkite,
+//   SiCouchbase,
+//   SiDailymotion,
+//   SiDeliveroo,
+//   SiEpicgames,
+//   SiGenius,
+//   SiGodaddy,
+// } from "react-icons/si"
 // import { IconType } from "react-icons";
 
 const Ticker = () => {
