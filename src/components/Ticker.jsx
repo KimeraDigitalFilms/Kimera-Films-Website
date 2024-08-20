@@ -81,7 +81,7 @@ const TranslateWrapper = ({ children, reverse }) => {
   )
 }
 
-const LogoItem = ({ Icon, zoom = 1, bright = 1 }) => {
+const LogoItem = ({ Icon, zoom = 1, bright = 1, invert = 0 }) => {
   return (
     <div
       href="/"
@@ -94,7 +94,7 @@ const LogoItem = ({ Icon, zoom = 1, bright = 1 }) => {
         src={Icon}
         alt="clientLogo"
         style={{
-          filter: `grayscale(100%) brightness(${bright})`,
+          filter: `grayscale(100%) brightness(${bright}) invert(${invert}%)`,
           transform: `scale(${zoom})`,
         }}
         className={`w-full`}
@@ -107,22 +107,40 @@ const LogoItem = ({ Icon, zoom = 1, bright = 1 }) => {
 
 const LogoItemsTop = () => (
   <>
-    <LogoItem Icon={"/client logos/Media.Monks_idx7Tjoce-_1.webp"} bright={2} />
+    <LogoItem
+      Icon={"/client logos/Media.Monks_idx7Tjoce-_1.webp"}
+      bright={2}
+      invert={100}
+    />
     {/* <LogoItem Icon={"/client logos/Media.Monks.svg"} /> */}
     <LogoItem Icon={"/client logos/Burgundy Logo.webp"} zoom={1.5} />
     <LogoItem Icon={"/client logos/Balaji_Telefilms_Logo.webp"} />
-    <LogoItem Icon={"/client logos/dal cheeni logo 2.webp"} />
-    <LogoItem Icon={"/client logos/bhandarkarentertainment_logo.webp"} />
-    <LogoItem Icon={"/client logos/colors tv logo.webp"} />
-    <LogoItem Icon={"/client logos/BJ Logo.webp"} bright={2} zoom={1.5} />
+    <LogoItem
+      Icon={"/client logos/dal cheeni logo 2.webp"}
+      invert={100}
+      bright={0.5}
+      zoom={1.5}
+    />
+    <LogoItem
+      Icon={"/client logos/bhandarkarentertainment_logo.webp"}
+      invert={100}
+    />
+    <LogoItem Icon={"/client logos/colors tv logo.webp"} invert={100} />
+    <LogoItem
+      Icon={"/client logos/BJ Logo.webp"}
+      bright={1}
+      zoom={1.2}
+      invert={100}
+    />
     <LogoItem
       Icon={"/client logos/G.D GOENLA GLOBAL SCHOOL NOIDA.webp"}
       zoom={2.1}
-      bright={2}
+      bright={0.8}
+      invert={100}
     />
     <LogoItem Icon={"/client logos/KK JEWELLERS.webp"} />
-    <LogoItem Icon={"/client logos/KeyWest-07.webp"} zoom={1.5} />
-    <LogoItem Icon={"/client logos/NDTV INDIA.webp"} />
+    <LogoItem Icon={"/client logos/KeyWest-07.webp"} zoom={1.5} bright={1.25} />
+    <LogoItem Icon={"/client logos/NDTV INDIA.webp"} invert={100} />
   </>
 )
 
@@ -136,10 +154,10 @@ const LogoItemsBottom = () => (
     <LogoItem Icon={"/client logos/YRF LOGO.webp"} />
     <LogoItem Icon={"/client logos/RAMAGYA SCHOOL.webp"} bright={2} />
     <LogoItem Icon={"/client logos/unnamed.webp"} />
-    <LogoItem Icon={"/client logos/SARVJAN.webp"} />
+    <LogoItem Icon={"/client logos/SARVJAN.webp"} invert={100} />
     <LogoItem Icon={"/client logos/RAMAGYA FOUNDATION.webp"} bright={2} />
-    <LogoItem Icon={"/client logos/SWeety crush logo.webp"} />
-    <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.webp"} />
+    <LogoItem Icon={"/client logos/SWeety crush logo.webp"} invert={100} />
+    <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.webp"} zoom={1.25} />
     <LogoItem Icon={"/client logos/Viacom18.webp"} bright={1.5} />
   </>
 )

@@ -152,6 +152,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   src={vid}
                   autoPlay
                   loop
+                  muted
                   variants={{
                     open: {
                       opacity: 1,
@@ -162,6 +163,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                       // visibility: "hidden"
                     },
                   }}
+                  // preload="none"
                   initial="closed"
                   animate="open"
                   exit="closed"
