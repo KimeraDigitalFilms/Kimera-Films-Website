@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @font-face {
-    font-family: Avenir-Book;
-    src: url(/fonts/avenir-book.ttf);
+  font-family: Avenir-Book;
+  src: url(/fonts/avenir-book.ttf);
 }
 
 @font-face {
-    font-family: Dancing;
-    src: url(/fonts/DancingScript-Regular.otf);
+  font-family: Dancing;
+  src: url(/fonts/DancingScript-Regular.otf);
+}
+
+@font-face {
+  font-family: Salisbury;
+  src: url(/fonts/salisburybold-pvzxr.ttf);
+}
+
+@font-face {
+  font-family: Overused Grotesk;
+  src: url(/public/fonts/OverusedGrotesk-Bold.ttf);
 }

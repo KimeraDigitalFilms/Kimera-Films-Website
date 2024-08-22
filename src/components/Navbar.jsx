@@ -14,9 +14,9 @@ import colorContext from "../context/ColorContext"
 
 function Navbar() {
   const location = useLocation()
-  if (location.pathname === "/") {
-    // document.body.style.background = "#ffffff";
-  }
+  // if (location.pathname === "/") {
+  //   // document.body.style.background = "#ffffff";
+  // }
   const { scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
 

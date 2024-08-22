@@ -37,14 +37,25 @@ const App = () => {
           height: "100vh",
         }}
       />
-      <div className="absolute top-[45%] z-10 flex w-screen flex-col gap-y-7">
-        <h1 className="text-center font-Dancing text-7xl font-semibold text-secondary1">
-          Bringing bold narratives to life
-        </h1>
-        <h1 className="text-center font-AvenirBook text-3xl font-semibold text-secondary1">
-          Elevating brands in the digital realm
+      {/* Content in Hero Section */}
+      {/* <div className="absolute top-0 z-10 flex w-full flex-col gap-y-7">  */}
+      <h3 className="absolute left-[65%] top-[20%] text-xl font-base text-secondary1 w-[400px] font-InclusiveSans">
+        A catalyst for digital evolution, KIMERA seamlessly blends
+        creativity,strategy,and technology to build poweful narrations and
+        immersive visual experiences that captivate and connect.
+      </h3>
+      <h2 className="absolute left-[5%] top-[40%] text-4xl font-bold text-secondary1 font-Salisbury">
+        Elevating brands in the digital
+        <br />
+        realm
+      </h2>
+      <div className="absolute left-[25%] top-[65%] flex w-fit flex-nowrap items-center text-center font-AvenirBook text-3xl font-extrabold text-secondary1 gap-x-4">
+        <img src="/logo.svg" alt="" className="w-40" />
+         <h1 className="text-9xl font-extrabold uppercase select-none font-OverusedGroteskBold">
+          Kimera<sup className="absolute top-2 text-4xl">TM</sup>
         </h1>
       </div>
+      {/* </div> */}
     </div>
   )
 }
