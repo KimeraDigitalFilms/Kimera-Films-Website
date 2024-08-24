@@ -31,7 +31,8 @@ function LogoGimmick() {
           style={{ translateX: textX }}
           className="text-secondary2 font-FoundersGrotesk absolute top-[50%] w-full text-8xl tracking-wider transition-transform delay-0 ease-linear"
         >
-          Innovate. Create. Engage.
+          Where Creativity Converges,
+          <br /> Boundaries Dissolve.
         </motion.h1>
         <motion.div
           transition={{ ease: "linear", delay: 0 }}

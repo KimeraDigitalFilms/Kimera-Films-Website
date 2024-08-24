@@ -8,21 +8,23 @@ function Heading({ text }) {
     target: ref,
     offset: [`start end`, `end start`],
   })
-  const opacity = useTransform(scrollYProgress, [0.7, 1], [1, 0.1])
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.7, 1],
+    [0.1, 1, 1, 0.1]
+  )
   return (
     <>
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-[300px] text-secondary1 leading-[120px]"
+        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-[300px] leading-[120px] text-secondary1"
       >
-   BRANDS <br /> <span className="text-[130px]">We've Worked With</span> 
+        BRANDS <br /> <span className="text-[130px]">We've Worked With</span>
       </motion.h1>
     </>
   )
 }
-
-
 
 const Ticker = () => {
   return (
@@ -44,7 +46,7 @@ const Ticker = () => {
         </motion.h1>
       </div> */}
 
-<Heading/>
+      <Heading />
 
       <div className="flex overflow-hidden">
         <TranslateWrapper>

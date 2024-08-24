@@ -24,7 +24,7 @@ function Team() {
           Our Team
         </motion.h1>
       </div> */}
-      <Heading text={'OUR TEAM'}/>
+      <Heading text={"OUR TEAM"} />
 
       <div className="mt-20 flex flex-col gap-y-[250px]">
         <div className="flex w-full flex-wrap items-center justify-evenly gap-y-14">
@@ -33,7 +33,7 @@ function Team() {
             name={"Hassaan Ahmed"}
             desig={"Head of Content Development"}
             content={
-              "A self-trained dual blade wielder, trained in the arts of Writing and Direction. Hassaan is responsible for ideation, conceptualisation, and spearheading the process of pre-production while overwatching parts of production and post production."
+              "The creative force behind Kimera’s storytelling magic, Hassaan shapes brand narratives, guiding projects from concept to completion with a keen eye for detail. His expertise in crafting compelling scripts and overseeing creative direction ensures that every project not only aligns with the vision but also captivates and resonates with our audience. Hassaan’s leadership keeps Kimera’s creative spirit alive, turning ideas into impactful, cohesive stories."
             }
           />
           <Card
@@ -41,7 +41,7 @@ function Team() {
             desig={"Head of Production & Marketing"}
             src={"/Tushar_1x1.webp"}
             content={
-              "A true magician with people. From marketing to casting to overseeing enormous crews, he makes it all look effortless. With years of experience both in front and behind the camera, Tushar is Leading the way for Kimera’s marketing, Production and Sales."
+              "The orchestrator of Kimera’s operational excellence, Tushar expertly balances strategic planning with seamless execution across marketing, production, and sales. His leadership ensures that every project aligns with Kimera’s vision while maintaining smooth and efficient operations. Tushar's ability to manage complex logistics and large teams transforms creative concepts into successful, well-executed initiatives."
             }
           />
 
@@ -50,7 +50,7 @@ function Team() {
             desig={"Head of Post-Production"}
             src={"/Bashar_1x1.webp"}
             content={
-              "The powerhouse cyborg of Kimera. The machines are sentient beings but with his superior technical prowess and knowledge under his rule they listen to him. Bashar has honed and mastered all the domains of Post Production, be it Editing, Animation or SFX."
+              "The catalyst for Kimera’s technological brilliance, Bashar blends technical mastery with artistic insight, driving innovation in post-production, animation, VFX, SFX & brand design. His expertise turns creative ideas into cutting-edge realities, ensuring that every project leverages the latest advancements to achieve high-impact results. Bashar’s role bridges technology and creativity, pushing the boundaries of what’s possible."
             }
           />
           {/* <div>
@@ -113,7 +113,7 @@ export default Team
 
 const Card = ({ content, name, desig, src }) => {
   return (
-    <div className="shadow-shadow group relative w-full max-w-sm overflow-hidden rounded-lg border-[0.3px] border-secondary1 bg-primaryBg p-0.5 shadow-xl transition-all duration-500">
+    <div className="group relative w-full max-w-sm overflow-hidden rounded-lg border-[0.3px] border-secondary1 bg-primaryBg p-0.5 shadow-xl shadow-shadow transition-all duration-500">
       <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500">
         {/* <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" /> */}
         <Distortion
@@ -122,13 +122,13 @@ const Card = ({ content, name, desig, src }) => {
           src={src}
         />
 
-        <h2 className="relative z-10 mb-1 mt-3 w-full text-center font-NeueMontreal text-3xl font-bold text-primary">
+        <h2 className="font-NeueMontreal relative z-10 mb-1 mt-3 w-full text-center text-3xl font-bold text-primary">
           {name}
         </h2>
-        <h3 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-lg font-semibold text-secondary2">
+        <h3 className="font-NeueMontreal text-secondary2 relative z-10 mb-3 w-full text-center text-lg font-semibold">
           {desig}
         </h3>
-        <p className="relative z-10 text-center text-base font-NeueMontrealLight text-secondary2">
+        <p className="font-NeueMontrealLight text-secondary2 relative z-10 text-center text-base">
           {content}
         </p>
       </div>
