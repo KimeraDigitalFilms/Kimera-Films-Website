@@ -9,6 +9,7 @@ import {
 import { useRef } from "react"
 import ShowReel from "./ShowReel"
 import { Link } from "react-router-dom"
+import Heading from "../Heading"
 
 function Featured() {
   const ref = useRef(null)
@@ -26,33 +27,33 @@ function Featured() {
   const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8])
   const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9])
 
-  const pictures = [
+  const videos = [
     {
       src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKnGZQfGZl7AaWeLFEUphgLqbbGYGOvwyvA&usqp=CAU",
       scale: scale4,
     },
     {
-      src: "https://t3.ftcdn.net/jpg/02/70/35/00/360_F_270350073_WO6yQAdptEnAhYKM5GuA9035wbRnVJSr.jpg",
+      src: "/public/featured_videos/2.mp4",
       scale: scale5,
     },
     {
-      src: "https://pixlr.com/images/index/ai-image-generator-one.webp",
+      src: "/public/featured_videos/1.webm",
       scale: scale6,
     },
     {
-      src: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVsaGl8ZW58MHx8MHx8fDA%3D",
+      src: "/public/featured_videos/3.webm",
       scale: scale5,
     },
     {
-      src: "https://images.freeimages.com/images/large-previews/c31/colors-1383652.jpg?fmt=webp&w=500",
+      src: "/public/featured_videos/5.webm",
       scale: scale6,
     },
     {
-      src: "https://www.befunky.com/images/prismic/1f427434-7ca0-46b2-b5d1-7d31843859b6_funky-focus-red-flower-field-after.jpeg?auto=avif,webp&format=jpg&width=863",
+      src: "/public/featured_videos/4.webm",
       scale: scale8,
     },
     {
-      src: "https://deepai.org/static/images/cyberpunkdolphin.png",
+      src: "/public/featured_videos/6.webm",
       scale: scale9,
     },
   ]
@@ -78,7 +79,7 @@ function Featured() {
         >
           <div ref={videoRef} className={" relative w-[25vw] h-[25vh]"}>
             <motion.video playsInline id="reel" muted autoPlay loop src="/videos/random1.mp4" className="w-full h-full z-50"></motion.video>
-            <img src={pictures[0].src} alt="image" className="object-cover w-full h-full"/>
+            <img src={videos[0].src} alt="image" className="object-cover w-full h-full"/>
           </div>
         </motion.div> */}
           <motion.div
@@ -97,9 +98,12 @@ function Featured() {
             <div
               className={"relative -top-[30vh] left-[5vw] h-[30vh] w-[35vw]"}
             >
-              <img
-                src={pictures[1].src}
-                alt="image"
+              <video
+                muted
+                autoPlay
+                loop
+                src={videos[1].src}
+                alt="video"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -114,9 +118,12 @@ function Featured() {
             <div
               className={"relative -left-[25vw] -top-[10vh] h-[45vh] w-[20vw]"}
             >
-              <img
-                src={pictures[2].src}
-                alt="image"
+              <video
+                muted
+                autoPlay
+                loop
+                src={videos[2].src}
+                alt="video"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -129,9 +136,12 @@ function Featured() {
             }
           >
             <div className={"relative left-[27.5vw] h-[25vh] w-[25vw]"}>
-              <img
-                src={pictures[3].src}
-                alt="image"
+              <video
+                muted
+                autoPlay
+                loop
+                src={videos[3].src}
+                alt="video"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -146,9 +156,12 @@ function Featured() {
             <div
               className={"relative left-[5vw] top-[27.5vh] h-[25vh] w-[20vw]"}
             >
-              <img
-                src={pictures[4].src}
-                alt="image"
+              <video
+                muted
+                autoPlay
+                loop
+                src={videos[4].src}
+                alt="video"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -165,9 +178,12 @@ function Featured() {
                 "relative -left-[22.5vw] top-[27.5vh] h-[25vh] w-[30vw]"
               }
             >
-              <img
-                src={pictures[5].src}
-                alt="image"
+              <video
+                muted
+                autoPlay
+                loop
+                src={videos[5].src}
+                alt="video"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -182,9 +198,12 @@ function Featured() {
             <div
               className={"relative left-[25vw] top-[22.5vh] h-[15vh] w-[15vw]"}
             >
-              <img
-                src={pictures[6].src}
-                alt="image"
+              <video
+                muted
+                autoPlay
+                loop
+                src={videos[6].src}
+                alt="video"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -192,13 +211,7 @@ function Featured() {
         </div>
       </div>
 
-      <div className="mt-20 flex h-[55vh] flex-col items-center justify-start gap-y-16">
-        <h2 className="w-1/2 text-secondary1">
-          WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF INDUSTRIES,
-          INCLUDING BROADCAST, FILM, GAMES, BRANDS, EXPERIENTIAL, AND THEMED
-          ENTERTAINMENT.
-        </h2>
-        <div className="overflow-hidden py-1">
+      {/* <div className="overflow-hidden py-1">
           <motion.h1
             initial={{ y: "100%" }}
             whileInView={{ y: 0 }}
@@ -213,33 +226,23 @@ function Featured() {
           >
             Featured Projects
           </motion.h1>
-        </div>
-        <motion.div
-          whileTap={{ scale: 1.2 }}
-          className="w-fit rounded-lg bg-white px-3 py-1 text-xl"
+        </div> */}
+      <Heading text={"FEATURED PROJECTS"} />
+      <div className="mb-40 mt-10 flex flex-col items-center justify-start gap-y-10">
+        <h2 className="text-secondary2 font-NeueMontrealLight mx-auto w-4/5 text-center text-2xl">
+          WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF INDUSTRIES,
+          INCLUDING BROADCAST, FILM, GAMES, BRANDS, EXPERIENTIAL, AND THEMED
+          ENTERTAINMENT.
+        </h2>
+        <Link
+          to="/gallery"
+          className="bg-buttonBg font-NeueMontrealLight scale-100 rounded-full px-5 py-2 text-4xl uppercase tracking-wide text-primary transition-all hover:scale-110 active:scale-95"
         >
-          <NavLink text={"View Gallery"} />
-        </motion.div>
+          View Gallery
+        </Link>
       </div>
     </>
   )
 }
 
 export default Featured
-
-const NavLink = ({ text }) => {
-  return (
-    <Link
-      to="/gallery"
-      // rel="nofollow"
-      className="block h-[30px] overflow-hidden font-medium"
-    >
-      <motion.div whileHover={{ y: -30 }}>
-        <span className="flex h-[30px] items-center text-primary">{text}</span>
-        <span className="mx-auto flex h-[30px] items-center justify-center font-Dancing text-2xl text-primary">
-          {text}
-        </span>
-      </motion.div>
-    </Link>
-  )
-}

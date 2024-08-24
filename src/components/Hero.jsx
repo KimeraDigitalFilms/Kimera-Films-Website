@@ -41,10 +41,10 @@ const App = () => {
       {/* <div className="absolute top-0 z-10 flex w-full flex-col gap-y-7">  */}
       <h3 className="absolute left-[65%] top-[20%] text-xl font-base text-secondary1 w-[400px] font-InclusiveSans">
         A catalyst for digital evolution, KIMERA seamlessly blends
-        creativity,strategy,and technology to build poweful narrations and
+        creativity, strategy and technology to build powerful narratives and
         immersive visual experiences that captivate and connect.
       </h3>
-      <h2 className="absolute left-[5%] top-[40%] text-4xl font-bold text-secondary1 font-Salisbury">
+      <h2 className="absolute left-[5%] top-[40%] text-4xl font-bold text-secondary1 font-Recoleta">
         Elevating brands in the digital
         <br />
         realm

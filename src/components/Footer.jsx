@@ -80,12 +80,12 @@ function Footer() {
   }
 
   return (
-    <div ref={ref} className="h-screen" id="contact">
+    <footer ref={ref} className="h-screen" id="contact">
       <motion.div
         // variants={variants}
         // initial="initial"
         // whileInView="animate"
-        className="m-auto flex h-full w-2/3 flex-row items-center justify-between text-secondary1 [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6"
+        className="text-secondary2 m-auto flex h-full w-2/3 flex-row items-center justify-between [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6"
       >
         <motion.div
           className="flex flex-col flex-nowrap gap-y-[40px] [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px]"
@@ -145,21 +145,21 @@ function Footer() {
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-square-facebook fa-2xl text-secondary1"
+                className="fa-brands fa-square-facebook fa-2xl"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://www.instagram.com/aiz.3d/">
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-square-instagram fa-2xl text-secondary1"
+                className="fa-brands fa-square-instagram fa-2xl"
               ></motion.i>
             </Link>
             <Link target="_blank" to="https://twitter.com/aizventurer">
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-square-x-twitter fa-2xl text-secondary1"
+                className="fa-brands fa-square-x-twitter fa-2xl"
               ></motion.i>
             </Link>
             {/* <Link target="_blank" to="https://www.behance.net/shadowz123">
@@ -176,7 +176,7 @@ function Footer() {
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-linkedin fa-2xl text-secondary1"
+                className="fa-brands fa-linkedin fa-2xl"
               ></motion.i>
             </Link>
           </motion.div>
@@ -254,16 +254,9 @@ function Footer() {
             <button
               // onClick={sendEmail}
 
-              className="block h-[50px] overflow-hidden bg-secondary1 font-medium"
+              className="bg-buttonBg font-NeueMontrealLight scale-100 px-4 py-1 text-3xl uppercase tracking-wider text-primary transition-all hover:scale-110 active:scale-95"
             >
-              <motion.div whileHover={{ y: -50 }}>
-                <span className="flex h-[50px] items-center justify-center font-AvenirBook text-2xl font-semibold uppercase text-primary">
-                  Submit
-                </span>
-                <span className="mx-auto flex h-[50px] items-center justify-center font-Dancing text-3xl text-primary">
-                  Submit
-                </span>
-              </motion.div>
+              Submit
             </button>
 
             {error === null && <span>&nbsp;</span>}
@@ -291,7 +284,7 @@ function Footer() {
           )
         })}
       </motion.span>
-    </div>
+    </footer>
   )
 }
 

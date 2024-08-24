@@ -31,12 +31,15 @@ export default {
         // "secondary-light": "#8161dd",
       },
       fontFamily: {
-        Oswald: ["Oswald", "sans-serif"],
-        Dancing: ["Dancing Script", "cursive"],
-        AvenirBook: ["Avenir-Book", "sans-serif"],
+        // Oswald: ["Oswald", "sans-serif"],
+        // Dancing: ["Dancing Script", "cursive"],
+        // AvenirBook: ["Avenir-Book", "sans-serif"],
         OverusedGroteskBold: ["Overused Grotesk", "sans-serif"],
-        Salisbury: ["Salisbury", "sans-serif"],
+        Recoleta: ["Recoleta", "sans-serif"],
+        NeueMontreal: ["Neue Montreal", "sans-serif"],
+        NeueMontrealLight: ["Neue Montreal-Light", "sans-serif"],
         InclusiveSans: ["Inclusive Sans", "sans-serif"],
+        FoundersGrotesk: ["Founders Grotesk", "sans-serif"],
       },
     },
   },
@@ -44,11 +47,13 @@ export default {
     createThemes({
       main: {
         primary: "#ED6E0B",
-        secondary1: "#C9D9EE",
+        secondary1: "#ffffff",
+        secondary2: "#C9D9EE",
         //  'primaryBg': '#211106',
         primaryBg: "#0A0A0A",
         primaryFg: "#2b190a",
         shadow: "#26211e",
+        buttonBg:'#383838'
       },
       alt1: {
         primary: "#f2b200",

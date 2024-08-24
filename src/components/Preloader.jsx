@@ -18,7 +18,7 @@ function Preloader({ setVis }) {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   }
-  async function loaderAnimate1() {
+  async function loaderAnimate() {
     await animate(
       scope.current,
       { scaleX: 0 },
@@ -39,10 +39,6 @@ function Preloader({ setVis }) {
       { scaleX: 0.78 },
       { duration: 1, type: "spring", ease: "easeInOut" }
     )
-  }
-
-  async function loaderAnimate2() {
-    // console.log('hi')
     await animate(
       scope.current,
       { scaleX: 1 },
@@ -75,10 +71,11 @@ function Preloader({ setVis }) {
     // } else {
     //   loaderAnimate1();
     // }
-    loaderAnimate1()
-    setTimeout(() => {
-      loaderAnimate2()
-    }, 2400)
+    // loaderAnimate1()
+    // setTimeout(() => {
+    //   loaderAnimate2()
+    // }, 2400)
+    loaderAnimate()
   }, [])
 
   return (

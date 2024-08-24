@@ -19,23 +19,30 @@ function LogoGimmick() {
   })
 
   return (
-    <div id="logoGimmick" ref={ref} className="relative mb-[200px] h-[200vh]">
+    <div
+      id="logoGimmick"
+      ref={ref}
+      className="relative top-[-60px] mb-[100px] h-[200vh]"
+    >
+      {/* <div className="w-full h-full absolute  bg-blue-500"> */}
       <motion.div className="sticky top-0 h-screen overflow-hidden transition-all delay-0 ease-linear">
         <motion.h1 //text
           transition={{ ease: "linear", delay: 0 }}
           style={{ translateX: textX }}
-          className="absolute top-[50%] w-full text-6xl font-bold text-secondary1 transition-transform delay-0 ease-linear"
+          className="text-secondary2 font-FoundersGrotesk absolute top-[50%] w-full text-8xl tracking-wider transition-transform delay-0 ease-linear"
         >
-Innovate. Create. Engage.
+          Innovate. Create. Engage.
         </motion.h1>
         <motion.div
           transition={{ ease: "linear", delay: 0 }}
           style={{ scale, rotate, translateX }}
           className="h-fit transition-transform delay-0 ease-linear"
         >
-          <Logo src={"/logo.svg"} style={"h-[700px] bg-primary ml-10"} />          {/*logo */}
+          <Logo src={"/logo.svg"} style={"h-[650px] bg-primary ml-10 mt-10"} />{" "}
+          {/*logo */}
         </motion.div>
       </motion.div>
+      {/* </div> */}
     </div>
   )
 }

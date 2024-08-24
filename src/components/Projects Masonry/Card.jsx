@@ -3,14 +3,14 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef, useState } from "react"
 
 function Card({ setSelected, item, style }) {
-  // const ref=useRef(null)
-  // const {scrollYProgress}=useScroll({
-  //   target:ref,
-  //   offset:['start end','end start']
-  // })
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
 
   // const opacity=useTransform(scrollYProgress,[0,0.2,0.8,1],[0,1,1,0])
-  // const scale=useTransform(scrollYProgress,[0,0.3,0.8,1],[0,1,1,0])
+  const scale = useTransform(scrollYProgress, [0, 0.3], [0, 1])
   // const [loaded,setLoaded]=useState(false)
 
   // useEffect(()=>{
@@ -24,26 +24,28 @@ function Card({ setSelected, item, style }) {
     <>
       <div className={`box-content w-full ${style}`}>
         <motion.div
-          variants={{
-            hidden: {
-              opacity: 0,
-              scale: 0,
-            },
-            visible: {
-              opacity: 1,
-              scale: 1,
-              transition: {
-                // delay: 0.1 * k,
-                // type:'spring',
-                ease: "easeIn",
-              },
-            },
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          // style={{opacity,scale}} transition={{ease:easeOut,type:'spring'}} ref={ref}
-          // className={`flex justify-center items-center mx-auto justify-self-center place-items-center `}
+          // variants={{
+          //   hidden: {
+          //     opacity: 0,
+          //     scale: 0,
+          //   },
+          //   visible: {
+          //     opacity: 1,
+          //     scale: 1,
+          //     transition: {
+          //       // delay: 0.1 * k,
+          //       // type:'spring',
+          //       ease: "easeIn",
+          //     },
+          //   },
+          // }}
+          // initial="hidden"
+          // whileInView="visible"
+          // viewport={{ once: true }}
+          style={{ scale }}
+          transition={{ ease: "easeOut", type: "spring" }}
+          ref={ref}
+          className={`mx-auto flex place-items-center items-center justify-center justify-self-center`}
         >
           <motion.img
             // layout

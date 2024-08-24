@@ -10,14 +10,14 @@ function PageTransition(OGComponent) {
         initial={{ scaleY: 1 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       ></motion.div>
       <motion.div
         className="fixed left-0 top-0 z-[1000] flex h-screen w-full origin-top items-center justify-center bg-black"
         initial={{ scaleY: 0 }}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       >
         <h1 className="w-5/6 text-center text-5xl text-white">
           {

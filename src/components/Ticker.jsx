@@ -1,32 +1,33 @@
-import { motion, easeOut } from "framer-motion"
-// import {
-//   SiNike,
-//   Si3M,
-//   SiAbstract,
-//   SiAdobe,
-//   SiAirtable,
-//   SiAmazon,
-//   SiBox,
-//   SiBytedance,
-//   SiChase,
-//   SiCloudbees,
-//   SiBurton,
-//   SiBmw,
-//   SiHeroku,
-//   SiBuildkite,
-//   SiCouchbase,
-//   SiDailymotion,
-//   SiDeliveroo,
-//   SiEpicgames,
-//   SiGenius,
-//   SiGodaddy,
-// } from "react-icons/si"
-// import { IconType } from "react-icons";
+import React, { useRef } from "react"
+import { useScroll, useTransform, motion } from "framer-motion"
+
+function Heading({ text }) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    // layoutEffect: false,
+    target: ref,
+    offset: [`start end`, `end start`],
+  })
+  const opacity = useTransform(scrollYProgress, [0.7, 1], [1, 0.1])
+  return (
+    <>
+      <motion.h1
+        style={{ opacity }}
+        ref={ref}
+        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-[300px] text-secondary1 leading-[120px]"
+      >
+   BRANDS <br /> <span className="text-[130px]">We've Worked With</span> 
+      </motion.h1>
+    </>
+  )
+}
+
+
 
 const Ticker = () => {
   return (
     <section className="py-4">
-      <div className="mb-10 overflow-hidden">
+      {/* <div className="mb-10 overflow-hidden">
         <motion.h1
           initial={{ y: "100%" }}
           whileInView={{ y: 0 }}
@@ -41,7 +42,10 @@ const Ticker = () => {
         >
           Brands We've Worked With
         </motion.h1>
-      </div>
+      </div> */}
+
+<Heading/>
+
       <div className="flex overflow-hidden">
         <TranslateWrapper>
           <LogoItemsTop />
@@ -159,6 +163,7 @@ const LogoItemsBottom = () => (
     <LogoItem Icon={"/client logos/SWeety crush logo.webp"} invert={100} />
     <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.webp"} zoom={1.25} />
     <LogoItem Icon={"/client logos/Viacom18.webp"} bright={1.5} />
+    <LogoItem Icon={"/client logos/VW Logo.webp"} />
   </>
 )
 

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import "./Accordion.css"
 import { useRef } from "react"
 import Reveal from "./Reveal"
+import Heading from "../Heading"
 
 const Accordion = () => {
   const [open, setOpen] = useState(items[0].id)
@@ -19,7 +20,7 @@ const Accordion = () => {
       // }}
       className="screen-padding mt-[150px]"
     >
-      <div className="mb-10 overflow-hidden">
+      {/* <div className="mb-10 overflow-hidden">
         <motion.h1
           initial={{ y: "100%" }}
           whileInView={{ y: 0 }}
@@ -34,12 +35,13 @@ const Accordion = () => {
         >
           What We Do
         </motion.h1>
-      </div>
-      <p className="mb-10 text-center text-2xl text-secondary1">
+      </div> */}
+      <Heading text={'WHAT WE DO'}/>
+      {/* <p className="mb-10 text-center text-2xl text-secondary1">
         In order to create something new, one needs to pay attention and listen
         to what makes it stand out.
-      </p>
-      <div className="mx-auto flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
+      </p> */}
+      <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
         {items.map((item) => {
           return (
             <Panel
@@ -79,7 +81,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
               // letterSpacing:'1px'
             }
           }
-          className="hidden text-wrap font-Oswald text-3xl lg:block"
+          className="font-NeueMontreal hidden text-wrap text-3xl lg:block"
         >
           {title}
         </span>
@@ -114,7 +116,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                 exit="closed"
                 className="w-full overflow-hidden px-4 py-2 text-secondary1"
               >
-                <p>{desc}</p>
+                <p className="text-secondary2">{desc}</p>
               </motion.div>
 
               {/* <motion.div
@@ -147,7 +149,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                 ></motion.div>
                 <motion.div className="absolute rotate-45 border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"></motion.div>
               </motion.div>*/}
-              <div className="flex h-full w-full flex-nowrap justify-center gap-x-10 py-10">
+              <div className="ml-20 flex h-full w-full flex-nowrap justify-center gap-x-10 py-10">
                 <motion.video
                   src={vid}
                   autoPlay
@@ -186,9 +188,9 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   animate="open"
                   exit="closed"
                   transition={{ duration: 0.1 }}
-                  className="container relative flex h-[300px] w-[550px] flex-col items-start justify-start overflow-x-hidden overflow-y-scroll text-secondary1"
+                  className="container relative flex h-[225px] w-[650px] flex-col items-start justify-start overflow-x-hidden overflow-y-scroll text-secondary1"
                 >
-                  <div className="py-[22%]">
+                  <div className="py-[9.5%]">
                     {list.map((phrase, id) => {
                       return <Reveal refP={refP} content={phrase} key={id} />
                     })}

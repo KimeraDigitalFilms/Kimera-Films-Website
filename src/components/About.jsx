@@ -1,20 +1,16 @@
 import React from "react"
-// import ModelElement from "./About/ModelElement" 
-// import { Canvas } from "@react-three/fiber"
-import { motion, easeOut } from "framer-motion"
+import { motion } from "framer-motion"
+import Heading from "./Heading"
 function About() {
   return (
-    <div className="screen-padding mb-36">
-      <div className="flex flex-nowrap items-center justify-center">
-        {/* <Canvas className="about3d">
-          <ModelElement />
-        </Canvas> */}
+    <div className="screen-padding mx-auto mb-36 w-11/12">
+      {/* <div className="flex flex-nowrap items-center justify-center">
         <div className="pointer-events-none overflow-hidden">
           <motion.h1
             initial={{ y: "100%" }}
             whileInView={{ y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.4, ease: easeOut }}
+            transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
             style={{
               WebkitUserSelect: "none",
               msUserSelect: "none",
@@ -24,37 +20,38 @@ function About() {
           >
             About Us
           </motion.h1>
-        </div>
       </div>
-      <div className="mt-4 flex flex-col gap-y-10 text-xl font-thin text-secondary1">
-        <div className="w-3/4 rounded-lg border-[0.5px] p-3 shadow-xl shadow-shadow">
-          Welcome to KIMERA, where creativity is our DNA. We are a living,
-          breathing fusion of artistic minds. Just like the creature from Greek
-          mythology, Kimera represents the convergence of diverse talents —
-          directors, designers, analysts, Vfx artists, writers, web developers,
-          growth strategists, cinematographers, sound artists, performance
-          marketers and more.
-          {/* <br /> */}
-          {/* <br/><br/> */}
-          And like the creature it embodies, Kimera only plans to keep growing
-          its heads.
-        </div>
+        </div> */}
+        <Heading text={'ABOUT US'}/>
 
-        <div className="flex w-3/4 self-end rounded-lg border-[0.5px] p-3 text-right shadow-xl shadow-shadow">
+      <div className="text-secondary2 font-NeueMontrealLight mt-4 w-full p-3 text-2xl">
+        Welcome to KIMERA, where creativity is our DNA. We are a living,
+        breathing fusion of artistic minds. Just like the creature from Greek
+        mythology, Kimera represents the convergence of diverse talents —
+        directors, designers, analysts, Vfx artists, writers, web developers,
+        growth strategists, cinematographers, sound artists, performance
+        marketers and more.
+        {/* <br /> */}
+        {/* <br/><br/> */}
+        And like the creature it embodies, Kimera only plans to keep growing its
+        heads.
+      </div>
+
+      <div className="text-secondary2 font-NeueMontrealLight flex w-full flex-nowrap p-3 text-2xl gap-x-7">
+        <div className="w-1/2">
+        <video src="/About_Us.webm" loop muted autoPlay className=""></video>
+        </div>
+        <p className="w-1/2">
           At Kimera, we boldly defy creative norms and celebrate the art of
           finesse. We're the preferred choice for leading brands because we
-          understand their language while continuously pushing boundaries.
-        </div>
-
-        <div className="w-3/4 rounded-lg border-[0.5px] p-3 shadow-xl shadow-shadow">
+          understand their language while continuously pushing boundaries.{" "}
+          <br />
+          <br />
           Our process begins with uncovering the essence of your idea or brand,
           crafting it into a compelling and strategic narrative, and expertly
           executing your brand vision. Each step of this journey is fueled by
           passion, innovation, and an unwavering commitment to distinction.
-        </div>
-        {/* <Canvas className="about3d">
-            <ModelElement />
-          </Canvas> */}
+        </p>
       </div>
     </div>
   )

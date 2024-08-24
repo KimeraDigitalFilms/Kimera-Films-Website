@@ -3,11 +3,12 @@ import { motion, easeOut } from "framer-motion"
 import Distortion from "./Distortion/Distortion.jsx"
 // import Polaroid from "./Polaroid";
 import { FiCloudLightning } from "react-icons/fi"
+import Heading from "./Heading.jsx"
 
 function Team() {
   return (
     <div className="mt-24">
-      <div className="overflow-hidden">
+      {/* <div className="overflow-hidden">
         <motion.h1
           initial={{ y: "100%" }}
           whileInView={{ y: 0 }}
@@ -22,7 +23,8 @@ function Team() {
         >
           Our Team
         </motion.h1>
-      </div>
+      </div> */}
+      <Heading text={'OUR TEAM'}/>
 
       <div className="mt-20 flex flex-col gap-y-[250px]">
         <div className="flex w-full flex-wrap items-center justify-evenly gap-y-14">
@@ -120,13 +122,13 @@ const Card = ({ content, name, desig, src }) => {
           src={src}
         />
 
-        <h2 className="relative z-10 mb-3 mt-3 w-full text-center text-3xl font-bold text-primary">
+        <h2 className="relative z-10 mb-1 mt-3 w-full text-center font-NeueMontreal text-3xl font-bold text-primary">
           {name}
         </h2>
-        <h3 className="relative z-10 mb-3 w-full text-center text-lg font-semibold text-secondary1">
+        <h3 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-lg font-semibold text-secondary2">
           {desig}
         </h3>
-        <p className="relative z-10 text-center text-base font-thin text-secondary1">
+        <p className="relative z-10 text-center text-base font-NeueMontrealLight text-secondary2">
           {content}
         </p>
       </div>
