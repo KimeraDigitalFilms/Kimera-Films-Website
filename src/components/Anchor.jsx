@@ -64,7 +64,7 @@ const AnchorButton = () => {
             } else {
               setTimeout(() => {
                 resolve()
-              }, 1500)
+              }, 1850)
             }
           }).then(() => {
             window.scrollTo(0, document.getElementById("contact").offsetTop)

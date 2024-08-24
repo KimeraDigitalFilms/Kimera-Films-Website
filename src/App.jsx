@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from "react"
-import Button from "./components/Button"
+// import Button from "./components/Button"
 import Navbar from "./components/Navbar"
 import {
   BrowserRouter as Router,
