@@ -33,27 +33,27 @@ function Featured() {
       scale: scale4,
     },
     {
-      src: "/public/featured_videos/2.mp4",
+      src: "/featured_videos/2.mp4",
       scale: scale5,
     },
     {
-      src: "/public/featured_videos/1.webm",
+      src: "/featured_videos/1.webm",
       scale: scale6,
     },
     {
-      src: "/public/featured_videos/3.webm",
+      src: "/featured_videos/3.webm",
       scale: scale5,
     },
     {
-      src: "/public/featured_videos/5.webm",
+      src: "/featured_videos/5.webm",
       scale: scale6,
     },
     {
-      src: "/public/featured_videos/4.webm",
+      src: "/featured_videos/4.webm",
       scale: scale8,
     },
     {
-      src: "/public/featured_videos/6.webm",
+      src: "/featured_videos/6.webm",
       scale: scale9,
     },
   ]
