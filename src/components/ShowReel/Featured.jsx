@@ -1,15 +1,8 @@
-import React, { useEffect } from "react"
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useInView,
-  easeOut,
-} from "framer-motion"
-import { useRef } from "react"
+import React, { useRef } from "react"
+import { useScroll, useTransform, motion, useInView } from "framer-motion"
 import ShowReel from "./ShowReel"
 import { Link } from "react-router-dom"
-import Heading from "../Heading"
+// import Heading from "../Heading"
 
 function Featured() {
   const ref = useRef(null)
@@ -227,7 +220,7 @@ function Featured() {
             Featured Projects
           </motion.h1>
         </div> */}
-      <Heading text={"FEATURED PROJECTS"} />
+      <Heading/>
       <div className="mb-40 mt-10 flex flex-col items-center justify-start gap-y-10">
         <h2 className="text-secondary2 font-NeueMontrealLight mx-auto w-4/5 text-center text-2xl">
           WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF INDUSTRIES,
@@ -246,3 +239,27 @@ function Featured() {
 }
 
 export default Featured
+
+function Heading() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`start end`, `end start`],
+  })
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.7, 1],
+    [0.1, 1, 1, 0.1]
+  )
+  return (
+    <>
+      <motion.h1
+        style={{ opacity }}
+        ref={ref}
+        className='font-FoundersGrotesk mt-3 w-full py-5 text-center text-[300px] leading-[200px] text-secondary1 select-none'
+      >
+        <span className="text-[310px] pl-2">FEATURED</span><br />PROJECTS
+      </motion.h1>
+    </>
+  )
+}
