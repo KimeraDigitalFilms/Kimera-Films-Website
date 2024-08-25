@@ -24,7 +24,7 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
             //   (e) =>
             //     e.stopPropagation()
             // }
-            className="relative w-[800px] cursor-default rounded-lg bg-primary p-2 text-white shadow-xl"
+            className="relative w-full max-w-[1000px] cursor-default rounded-lg bg-primary p-2 text-white shadow-xl"
           >
             <div className="relative z-10 h-full w-full object-cover">
               {/* <video
