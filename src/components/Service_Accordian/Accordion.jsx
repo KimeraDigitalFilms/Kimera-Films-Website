@@ -188,6 +188,11 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   animate="open"
                   exit="closed"
                   transition={{ duration: 0.1 }}
+                  style={{
+                    scrollSnapType: "y mandatory",
+                    scrollBehavior: "smooth",
+                    scrollSnapPointsY: "repeat(10px)"
+                  }}
                   className="container relative flex h-[225px] w-[650px] flex-col items-start justify-start overflow-x-hidden overflow-y-scroll text-secondary1"
                 >
                   <div className="py-[9.5%]">

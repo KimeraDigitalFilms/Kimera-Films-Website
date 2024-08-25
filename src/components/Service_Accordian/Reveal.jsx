@@ -39,7 +39,8 @@ function Reveal({ content, refP }) {
   return (
     <>
       <motion.div
-        style={{ opacity, x, fontStyle: font }}
+        style={{ opacity, x, fontStyle: font, 
+          scrollSnapAlign: "center", }}
         transition={{ delay: 0 }}
         ref={ref}
         className="font-NeueMontrealLight my-3 w-full py-5 text-left text-4xl"
