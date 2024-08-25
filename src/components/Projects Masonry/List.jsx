@@ -1,9 +1,7 @@
 import React from "react"
 import Card from "./Card"
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
 import "./List.css"
-import { easeOut } from "framer-motion/dom"
 
 function List({ setSelected }) {
   const list = [
@@ -11,7 +9,7 @@ function List({ setSelected }) {
       // vid: "https://www.youtube.com/embed/WWituJt63Nk?si=E_0VK8xBIahGiQzr",
       vid: "https://www.youtube.com/embed/P1G1WaRVLDs?si=E8BH5trsbpUicpYP",
       title: "Project 1",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Project1.webp",
     },
     {
       vid: "https://www.youtube.com/embed/rOvfSnJDLVw?si=wyrp31prNJefGdhW",
@@ -28,7 +26,7 @@ function List({ setSelected }) {
       // vid: "https://player.vimeo.com/video/21066530?h=1183d78d8b",
       vid: "https://www.youtube.com/embed/44Agu6gBS84?si=kJulzN-AqRVBH8uR",
       title: "Project 4",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Project4.webp",
     },
     {
       // vid: "https://player.vimeo.com/video/394673541?h=3e4e45cb06",
@@ -40,7 +38,7 @@ function List({ setSelected }) {
       // vid: "https://player.vimeo.com/video/253316833?h=0363f35d21",
       vid: "https://www.youtube.com/embed/IQvC50eAUyc?si=fYiJ-3sMQ8KaXu8X",
       title: "Project 6",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Doggy 1.00_00_25_25.Still002.webp",
     },
     {
       vid: "https://www.youtube.com/embed/G5VODLMa0L8?si=kfwk_-Fqg0tSRSHd",
@@ -78,22 +76,22 @@ function List({ setSelected }) {
     {
       vid: "https://www.youtube.com/embed/FeVfiTgfsyE?si=X2cxau-KyXZ6lzDN",
       title: "Project 13",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Project13.webp",
     },
     {
       vid: "https://www.youtube.com/embed/0MWLJoOxN-I?si=ulxqcZPJyR110E_b",
       title: "Project 14",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Project14.webp",
     },
     {
       vid: "https://www.youtube.com/embed/4vxrRiY4cNo?si=3X-1GkPqt8FVHgIj",
       title: "Project 15",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Project15.webp",
     },
     {
       vid: "https://www.youtube.com/embed/2_YFjkCWbPY?si=iQb3qdVJxxY4YSOs",
       title: "Project 16",
-      poster: "/thumbnails/Crossfit.webp",
+      poster: "/thumbnails/Project16.webp",
     },
     {
       vid: "https://www.youtube.com/embed/rJVnNfREh2c?si=-oiyoJ6YOl4trQEb", //ye sahi hai
@@ -120,13 +118,43 @@ function List({ setSelected }) {
       title: "Project 21",
       poster: "/thumbnails/Pilates.webp",
     },
+    {
+      vid: "https://www.youtube.com/embed/FEkP1gIjYrg?si=MjEm12mVfWagj9xw",
+      title: "Project 22",
+      poster: "/thumbnails/Crossfit.webp",
+    },
+    {
+      vid: "https://www.youtube.com/embed/lafqwHugfEk?si=i7erhLRxxCIwRd_B",
+      title: "Project 23",
+      poster: "/thumbnails/Ladies 3.00_00_26_27.Still001.webp",
+    },
+    {
+      vid: "https://www.youtube.com/embed/7ev0oJxYnN8?si=mhahyPiMGFoYKpsu",
+      title: "Project 24",
+      poster: "/thumbnails/Crossfit.webp",
+    },
+    {
+      vid: "https://www.youtube.com/embed/nTUEDnHsxvA?si=E8veK-MIHzUaMVjM",
+      title: "Project 25",
+      poster: "/thumbnails/Crossfit.webp",
+    },
+    {
+      vid: "https://www.youtube.com/embed/aAmCkozIr-I?si=765uXYOZdTwGvlc1",
+      title: "Project 26",
+      poster: "/thumbnails/Ladies 2.00_00_15_14.Still001.webp",
+    },
+    {
+      vid: "https://www.youtube.com/embed/9QRWpmsx3Ws?si=WOuOu0KmkX_QjUb0",
+      title: "Project 27",
+      poster: "/thumbnails/Crossfit.webp",
+    },
   ]
 
   return (
     <>
       <motion.div
         id="grid"
-        className="screen-padding h-[670vh] w-full gap-x-4 gap-y-7"
+        className="screen-padding h-[870vh] w-full gap-x-4 gap-y-7"
         // className="columns-1 md:columns-2 xl:columns-3  gap-x-0"
       >
         <Card setSelected={setSelected} item={list[0]} style={"col-span-4"} />
@@ -226,6 +254,36 @@ function List({ setSelected }) {
           setSelected={setSelected}
           item={list[20]}
           style={"col-span-3 row-start-[44] col-start-4"}
+        />
+        <Card
+          setSelected={setSelected}
+          item={list[21]}
+          style={"col-span-3 row-start-[45] col-start-9"}
+        />
+        <Card
+          setSelected={setSelected}
+          item={list[22]}
+          style={"col-span-4 row-start-[48] col-start-2"}
+        />
+        <Card
+          setSelected={setSelected}
+          item={list[23]}
+          style={"col-span-4 row-start-[50] col-start-10"}
+        />
+        <Card
+          setSelected={setSelected}
+          item={list[24]}
+          style={"col-span-3 row-start-[52] col-start-1"}
+        />
+        <Card
+          setSelected={setSelected}
+          item={list[25]}
+          style={"col-span-2 row-start-[53] col-start-8"}
+        />
+        <Card
+          setSelected={setSelected}
+          item={list[26]}
+          style={"col-span-5 row-start-[56] col-start-4"}
         />
       </motion.div>
     </>

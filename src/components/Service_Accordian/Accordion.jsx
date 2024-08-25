@@ -36,7 +36,7 @@ const Accordion = () => {
           What We Do
         </motion.h1>
       </div> */}
-      <Heading text={'WHAT WE DO'} style={'text-[350px] leading-[230px]'}/>
+      <Heading text={"WHAT WE DO"} style={"text-[350px] leading-[230px]"} />
       {/* <p className="mb-10 text-center text-2xl text-secondary1">
         In order to create something new, one needs to pay attention and listen
         to what makes it stand out.
@@ -191,7 +191,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   style={{
                     scrollSnapType: "y mandatory",
                     scrollBehavior: "smooth",
-                    scrollSnapPointsY: "repeat(10px)"
+                    scrollSnapPointsY: "repeat(10px)",
                   }}
                   className="container relative flex h-[225px] w-[650px] flex-col items-start justify-start overflow-x-hidden overflow-y-scroll text-secondary1"
                 >
