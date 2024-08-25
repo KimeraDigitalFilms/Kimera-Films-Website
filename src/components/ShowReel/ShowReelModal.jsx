@@ -55,7 +55,7 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
                   title="reelModal"
                   loading="lazy"
                   // src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&autoplay=1&loop=1&title=0&byline=0&muted=0&controls=1"
-                  src="https://www.youtube-nocookie.com/embed/uJq2hcVeHPQ?si=hgdTn5_QzqoL8u9z&amp;playlist=uJq2hcVeHPQ&amp;mute=0&amp;controls=1&amp;autoplay=1&amp;loop=1"
+                  src="https://www.youtube-nocookie.com/embed/co3oF61Lm6k?si=obnDMZmXGPns34Tj&amp;playlist=co3oF61Lm6k&amp;mute=0&amp;controls=1&amp;autoplay=1&amp;loop=1"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
