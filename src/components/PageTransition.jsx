@@ -19,7 +19,7 @@ function PageTransition(OGComponent) {
         exit={{ scaleY: 1 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       >
-        <h1 className="w-5/6 text-center text-5xl text-white">
+        <h1 className="w-5/6 text-center text-5xl text-white font-NeueMontreal">
           {
             [
               "Here's looking at you, kid.",

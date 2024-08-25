@@ -116,7 +116,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                 exit="closed"
                 className="w-full overflow-hidden px-4 py-2 text-secondary1"
               >
-                <p className="text-secondary2">{desc}</p>
+                <p className="text-secondary2 text-lg">{desc}</p>
               </motion.div>
 
               {/* <motion.div
@@ -235,7 +235,7 @@ const panelVariantsSm = {
 const descriptionVariants = {
   open: {
     opacity: 1,
-    y: "0%",
+    y: "7%",
     transition: {
       delay: 0.125,
     },
