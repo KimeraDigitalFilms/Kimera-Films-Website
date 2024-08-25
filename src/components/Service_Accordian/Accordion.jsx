@@ -36,7 +36,7 @@ const Accordion = () => {
           What We Do
         </motion.h1>
       </div> */}
-      <Heading text={'WHAT WE DO'}/>
+      <Heading text={'WHAT WE DO'} style={'text-[350px] leading-[230px]'}/>
       {/* <p className="mb-10 text-center text-2xl text-secondary1">
         In order to create something new, one needs to pay attention and listen
         to what makes it stand out.

@@ -140,7 +140,7 @@ function Footer() {
             </Link> */}
             <Link
               target="_blank"
-              to="https://www.facebook.com/profile.php?id=100093481406011"
+              to="https://www.facebook.com/profile.php?id=100091328288195"
             >
               <motion.i
                 whileHover={{ scale: 2 }}
@@ -148,14 +148,17 @@ function Footer() {
                 className="fa-brands fa-square-facebook fa-2xl"
               ></motion.i>
             </Link>
-            <Link target="_blank" to="https://www.instagram.com/aiz.3d/">
+            <Link
+              target="_blank"
+              to="https://www.instagram.com/kimerafilms?igsh=ZnN3c2FrcDgwdW9o"
+            >
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
                 className="fa-brands fa-square-instagram fa-2xl"
               ></motion.i>
             </Link>
-            <Link target="_blank" to="https://twitter.com/aizventurer">
+            <Link target="_blank" to="https://x.com/FilmsByKimera">
               <motion.i
                 whileHover={{ scale: 2 }}
                 transition={{ type: "spring", duration: 0.4 }}
@@ -171,7 +174,7 @@ function Footer() {
             </Link> */}
             <Link
               target="_blank"
-              to="https://www.linkedin.com/in/ahzam-irshad-92ba671b8/"
+              to="https://www.linkedin.com/company/kimera-films21/"
             >
               <motion.i
                 whileHover={{ scale: 2 }}

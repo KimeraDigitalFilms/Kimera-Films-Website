@@ -1,18 +1,18 @@
-import React from "react";
-import GridComponent from "../components/Projects Masonry/GridComponent";
-import { easeIn, easeOut, motion } from "framer-motion";
-import { useEffect } from "react";
-import PageTransition from "../components/PageTransition";
+import React from "react"
+import GridComponent from "../components/Projects Masonry/GridComponent"
+import { easeIn, easeOut, motion } from "framer-motion"
+import { useEffect } from "react"
+import PageTransition from "../components/PageTransition"
 
 function Projects() {
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, []);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+  }, [])
   return (
-    <div className="w-full flex flex-col">
-      <div className="w-full  h-[80vh] mt-24 justify-around flex flex-nowrap mb-20">
-        <div className="screen-padding  w-1/3 flex justify-center gap-y-3 flex-col items-start">
-          <div className="overflow-hidden ">
+    <div className="flex w-full flex-col">
+      <div className="mb-20 mt-24 flex h-[80vh] w-full flex-nowrap items-center justify-around">
+        <div className="screen-padding flex w-1/3 flex-col items-start justify-center gap-y-3">
+          <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -22,13 +22,13 @@ function Projects() {
                 msUserSelect: "none",
                 userSelect: "none",
               }}
-              className="font-serif font-weight text-secondary1 text-7xl "
+              className="font-weight font-serif text-7xl text-secondary1"
             >
               Creative,
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden ">
+          <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -38,13 +38,13 @@ function Projects() {
                 msUserSelect: "none",
                 userSelect: "none",
               }}
-              className="font-serif font-weight text-secondary1 text-7xl "
+              className="font-weight font-serif text-7xl text-secondary1"
             >
               Aesthetic,
             </motion.h1>
           </div>
 
-          <div className="overflow-hidden ">
+          <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -54,13 +54,13 @@ function Projects() {
                 msUserSelect: "none",
                 userSelect: "none",
               }}
-              className="font-serif font-weight pb-1 text-secondary1  text-7xl "
+              className="font-weight pb-1 font-serif text-7xl text-secondary1"
             >
               Impactful.
             </motion.h1>
           </div>
         </div>
-        <div className="w-1/2 flex justify-center items-center">
+        {/* <div className="w-1/2 flex justify-center items-center">
           <motion.img
             initial={{ x: -200, y: -70, opacity: 0 }}
             whileInView={{ x: -200, y: -100, opacity: 1 }}
@@ -88,7 +88,8 @@ function Projects() {
             alt=""
             className="w-[350px] object-cover absolute rounded-lg h-[200px]"
           />
-        </div>
+        </div> */}
+        <video src="/Gallery.webm" autoPlay muted loop className="w-[400px]" />
       </div>
 
       <GridComponent />
@@ -106,11 +107,11 @@ function Projects() {
         ~ the end ~
       </motion.h1> */}
     </div>
-  );
+  )
 }
 
-const WrappedProjects = PageTransition(Projects);
+const WrappedProjects = PageTransition(Projects)
 
-export default WrappedProjects ;
+export default WrappedProjects
 
 // export default Projects;
