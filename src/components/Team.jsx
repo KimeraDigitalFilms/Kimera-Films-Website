@@ -114,7 +114,7 @@ export default Team
 const Card = ({ content, name, desig, src }) => {
   return (
     <div className="group relative w-full max-w-sm overflow-hidden rounded-lg border-[0.3px] border-secondary1 bg-primaryBg p-0.5 shadow-xl shadow-shadow transition-all duration-500">
-      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500">
+      <div className="relative z-10 flex flex-col items-center justify-start overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500 h-[730px]">
         {/* <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" /> */}
         <Distortion
           containerId={name.split()[0]}
