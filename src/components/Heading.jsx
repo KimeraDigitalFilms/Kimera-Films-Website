@@ -16,7 +16,7 @@ function Heading({ text, style }) {
   return (
     <>
       <motion.h1
-      initial={{}}
+      style={{opacity}}
         // style={{
         //   background: 'linear-gradient(to bottom, #FFF 100%, #FFF 60%, #FFF 40%, #FFF 20%)',
         //   backgroundSize: '200 % auto',
