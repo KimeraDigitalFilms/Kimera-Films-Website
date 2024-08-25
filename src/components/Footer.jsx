@@ -150,7 +150,7 @@ function Footer() {
             </Link>
             <Link
               target="_blank"
-              to="https://www.instagram.com/kimerafilms?igsh=ZnN3c2FrcDgwdW9o"
+              to="https://www.instagram.com/kimeraadvertisement_?igsh=MTYyMDAyY2owNHNoMQ=="
             >
               <motion.i
                 whileHover={{ scale: 2 }}
