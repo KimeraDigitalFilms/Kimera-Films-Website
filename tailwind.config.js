@@ -36,6 +36,7 @@ export default {
         // AvenirBook: ["Avenir-Book", "sans-serif"],
         OverusedGroteskBold: ["Overused Grotesk", "sans-serif"],
         Recoleta: ["Recoleta", "sans-serif"],
+        RecoletaBold:["Recoleta-Bold", "sans-serif"],
         NeueMontreal: ["Neue Montreal", "sans-serif"],
         NeueMontrealLight: ["Neue Montreal-Light", "sans-serif"],
         InclusiveSans: ["Inclusive Sans", "sans-serif"],

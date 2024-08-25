@@ -29,7 +29,7 @@ function LogoGimmick() {
         <motion.h1 //text
           transition={{ ease: "linear", delay: 0 }}
           style={{ translateX: textX }}
-          className="text-secondary2 font-OverusedGroteskBold absolute top-[50%] w-full text-8xl tracking-wider transition-transform delay-0 ease-linear"
+          className="text-secondary2 font-RecoletaBold absolute top-[50%] w-full text-6xl tracking-wider transition-transform delay-0 ease-linear"
         >
           Where Creativity Converges,
           <br /> Boundaries Dissolve.

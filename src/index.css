@@ -22,6 +22,11 @@
 }
 
 @font-face {
+  font-family: Recoleta-Bold;
+  src: url(/fonts/Recoleta-Bold.ttf);
+}
+
+@font-face {
   font-family: Overused Grotesk;
   src: url(/fonts/OverusedGrotesk-Bold.ttf);
 }
