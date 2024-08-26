@@ -14,7 +14,8 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
             document.body.style.overflowY = "scroll"
             setIsOpen(false)
           }}
-          className="fixed inset-0 z-50 grid cursor-pointer place-items-center overflow-x-hidden overflow-y-scroll bg-slate-900/20 p-8 backdrop-blur-xl" data-lenis-prevent
+          className="fixed inset-0 z-50 grid cursor-pointer place-items-center overflow-x-hidden overflow-y-scroll bg-slate-900/20 p-8 backdrop-blur-xl"
+          data-lenis-prevent
         >
           <motion.div
             initial={{ scale: 0, rotate: "12.5deg" }}

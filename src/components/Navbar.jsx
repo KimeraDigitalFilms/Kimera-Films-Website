@@ -224,11 +224,16 @@ const Colors = () => {
   const { setCanvasBg, setCanvasColor, setLoadColor } = useContext(colorContext)
 
   const handleRadio = (e) => {
-    document.documentElement.setAttribute("data-theme", e.target.id)
-    document.body.style.backgroundColor = e.target.getAttribute("data-color")
-    setCanvasColor(e.target.getAttribute("data-canvasColor"))
-    setCanvasBg(e.target.getAttribute("data-color"))
-    setLoadColor(e.target.getAttribute("data-loadcolor"))
+    if (e.target.id === "alt2") {
+      document.body.style.filter = "grayscale(100%)"
+    } else {
+      document.body.style.filter = ""
+      document.documentElement.setAttribute("data-theme", e.target.id)
+      document.body.style.backgroundColor = e.target.getAttribute("data-color")
+      setCanvasColor(e.target.getAttribute("data-canvasColor"))
+      setCanvasBg(e.target.getAttribute("data-color"))
+      setLoadColor(e.target.getAttribute("data-loadcolor"))
+    }
   }
   return (
     <div>
