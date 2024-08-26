@@ -249,7 +249,7 @@ const Colors = () => {
           data-color="#0A0A0A" //Bg of page other canvas
           data-canvascolor="#ED6E0B" // Primary color in cansvas
           data-loadcolor="#C9D9EE" // Color of loader in preloader
-          className="cursor-pointer rounded-full bg-[#ED6E0B] p-2"
+          className="cursor-pointer rounded-full bg-black p-2"
         />
         <div
           onClick={handleRadio}
@@ -259,7 +259,7 @@ const Colors = () => {
           data-canvascolor="#ED6E0B"
           data-loadcolor="#535C91"
           data-color="#ffffff"
-          className="cursor-pointer rounded-full bg-[#1B1A55] p-2"
+          className="cursor-pointer rounded-full bg-white p-2"
         />
         <div
           onClick={handleRadio}
@@ -270,7 +270,7 @@ const Colors = () => {
           data-color="#123524"
           data-loadcolor="#D8D4F2"
           data-canvascolor="#C4B2BC"
-          className="cursor-pointer rounded-full bg-[#C4B2BC] p-2"
+          className="cursor-pointer rounded-full bg-[#880808] p-2"
         />
       </div>
     </div>

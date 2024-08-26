@@ -27,7 +27,7 @@ const App = () => {
   }, [canvasColor,canvasBg])
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <canvas
         id="webglCanvas"
         ref={canvasRef}
@@ -39,7 +39,7 @@ const App = () => {
       />
       {/* Content in Hero Section */}
       {/* <div className="absolute top-0 z-10 flex w-full flex-col gap-y-7">  */}
-      <h3 className="absolute left-[65%] top-[20%] text-xl font-base text-secondary1 w-[400px] font-InclusiveSans">
+      <h3 className="absolute left-[65%] top-[20%] text-xl font-base text-secondary1 w-[400px] font-InclusiveSans ">
         A catalyst for digital evolution, KIMERA seamlessly blends
         creativity, strategy and technology to build powerful narratives and
         immersive visual experiences that captivate and connect.
