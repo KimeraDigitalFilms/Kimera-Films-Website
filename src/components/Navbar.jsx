@@ -225,9 +225,9 @@ const Colors = () => {
 
   const handleRadio = (e) => {
     if (e.target.id === "alt2") {
-      document.body.style.filter = "grayscale(100%)"
+      document.documentElement.style.filter = "grayscale(100%)"
     } else {
-      document.body.style.filter = ""
+      document.documentElement.style.filter = ""
       document.documentElement.setAttribute("data-theme", e.target.id)
       document.body.style.backgroundColor = e.target.getAttribute("data-color")
       setCanvasColor(e.target.getAttribute("data-canvasColor"))
