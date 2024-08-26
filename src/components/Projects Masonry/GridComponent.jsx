@@ -10,7 +10,7 @@ function GridComponent() {
   return (
     <>
       <div className="my-5 w-full">
-        <div className={`absolute left-0 top-[100vh] -z-40 h-[940vh] w-full`}>
+        <div className={`absolute left-0 top-[100vh] -z-40 h-[830vh] w-full`}>
           <Logo
             src={"/logo.svg"}
             style={` bg-primary/60 w-[500px] sticky left-[30%] top-[25%] -z-40 `}

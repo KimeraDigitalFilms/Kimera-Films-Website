@@ -41,7 +41,7 @@ function Team() {
             desig={"Head of Production & Marketing"}
             src={"/Tushar_1x1.webp"}
             content={
-              "The orchestrator of Kimera’s operational excellence, Tushar expertly balances strategic planning with seamless execution across marketing, production, and sales. His leadership ensures that every project aligns with Kimera’s vision while maintaining smooth and efficient operations. Tushar's ability to manage complex logistics and large teams transforms creative concepts into successful, well-executed initiatives."
+              "The orchestrator of Kimera’s operational excellence, Tushar expertly balances strategic planning with seamless execution across marketing, production, and sales. His leadership ensures that every project aligns with Kimera’s vision while maintaining smooth and efficient operations. Tushar's ability to manage complex logistics and large teams transforms creative concepts into successful, well-executed initiatives that exceed expectations."
             }
           />
 
@@ -50,7 +50,7 @@ function Team() {
             desig={"Head of Post-Production"}
             src={"/Bashar_1x1.webp"}
             content={
-              "The catalyst for Kimera’s technological brilliance, Bashar blends technical mastery with artistic insight, driving innovation in post-production, animation, VFX, SFX & brand design. His expertise turns creative ideas into cutting-edge realities, ensuring that every project leverages the latest advancements to achieve high-impact results. Bashar’s role bridges technology and creativity, pushing the boundaries of what’s possible."
+              "The catalyst for Kimera’s technological brilliance, Bashar blends technical mastery with artistic insight, driving innovation in post-production, animation, VFX, SFX & brand design. His expertise turns creative ideas into cutting-edge realities, ensuring that every project leverages the latest advancements to achieve high-impact results. Bashar’s role bridges technology and creativity, pushing the boundaries of what’s possible in the most remarkable ways."
             }
           />
           {/* <div>
