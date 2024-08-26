@@ -1,6 +1,6 @@
-import React, { useRef } from "react"
+import React, { useContext, useRef } from "react"
 import { useScroll, useTransform, motion } from "framer-motion"
-
+import colorContext from "../context/ColorContext"
 function Heading({ text }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -87,7 +87,14 @@ const TranslateWrapper = ({ children, reverse }) => {
   )
 }
 
-const LogoItem = ({ Icon, zoom = 1, bright = 1, invert = 0 }) => {
+const LogoItem = ({
+  Icon,
+  zoom = 1,
+  bright = 1,
+  invert = 0,
+  invertInWhite = 0,
+}) => {
+  const { canvasBg } = useContext(colorContext)
   return (
     <div
       href="/"
@@ -96,16 +103,29 @@ const LogoItem = ({ Icon, zoom = 1, bright = 1, invert = 0 }) => {
       className="flex h-16 w-16 items-center justify-center px-2 md:h-24 md:w-24"
     >
       {/* <Icon className="text-4xl md:text-5xl" /> */}
-      <img
-        src={Icon}
-        alt="clientLogo"
-        style={{
-          filter: `grayscale(100%) brightness(${bright}) invert(${invert}%)`,
-          transform: `scale(${zoom})`,
-        }}
-        className={`w-full`}
-        loading="lazy"
-      />
+      {canvasBg !== "#ffffff" ? (
+        <img
+          src={Icon}
+          alt="clientLogo"
+          style={{
+            filter: `grayscale(100%) brightness(${bright}) invert(${invert}%)`,
+            transform: `scale(${zoom})`,
+          }}
+          className={`w-full`}
+          loading="lazy"
+        />
+      ) : (
+        <img
+          src={Icon}
+          alt="clientLogo"
+          style={{
+            filter: `grayscale(100%) invert(${invertInWhite}%)`,
+            transform: `scale(${zoom})`,
+          }}
+          className="w-full"
+          loading="lazy"
+        />
+      )}
     </div>
   )
 }
@@ -119,7 +139,11 @@ const LogoItemsTop = () => (
       invert={100}
     />
     {/* <LogoItem Icon={"/client logos/Media.Monks.svg"} /> */}
-    <LogoItem Icon={"/client logos/Burgundy Logo.webp"} zoom={1.5} />
+    <LogoItem
+      Icon={"/client logos/Burgundy Logo.webp"}
+      zoom={1.5}
+      invertInWhite={100}
+    />
     <LogoItem Icon={"/client logos/Balaji_Telefilms_Logo.webp"} />
     <LogoItem
       Icon={"/client logos/dal cheeni logo 2.webp"}
@@ -144,8 +168,13 @@ const LogoItemsTop = () => (
       bright={0.8}
       invert={100}
     />
-    <LogoItem Icon={"/client logos/KK JEWELLERS.webp"} />
-    <LogoItem Icon={"/client logos/KeyWest-07.webp"} zoom={1.5} bright={1.25} />
+    <LogoItem Icon={"/client logos/KK JEWELLERS.webp"} invertInWhite={100} />
+    <LogoItem
+      Icon={"/client logos/KeyWest-07.webp"}
+      zoom={1.5}
+      bright={1.25}
+      invertInWhite={100}
+    />
     <LogoItem Icon={"/client logos/NDTV INDIA.webp"} invert={100} />
   </>
 )
@@ -163,9 +192,13 @@ const LogoItemsBottom = () => (
     <LogoItem Icon={"/client logos/SARVJAN.webp"} invert={100} />
     <LogoItem Icon={"/client logos/RAMAGYA FOUNDATION.webp"} bright={2} />
     <LogoItem Icon={"/client logos/SWeety crush logo.webp"} invert={100} />
-    <LogoItem Icon={"/client logos/SWAMI_LOGO_FIX.webp"} zoom={1.25} />
+    <LogoItem
+      Icon={"/client logos/SWAMI_LOGO_FIX.webp"}
+      zoom={1.25}
+      invertInWhite={100}
+    />
     <LogoItem Icon={"/client logos/Viacom18.webp"} bright={1.5} />
-    <LogoItem Icon={"/client logos/VW Logo.webp"} />
+    <LogoItem Icon={"/client logos/VW Logo.webp"} invertInWhite={100} />
   </>
 )
 
