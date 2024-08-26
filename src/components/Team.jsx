@@ -128,7 +128,7 @@ const Card = ({ content, name, desig, src }) => {
         <h3 className="font-NeueMontreal text-secondary2 relative z-10 mb-3 w-full text-center text-lg font-semibold">
           {desig}
         </h3>
-        <p className="font-InclusiveSans text-secondary2 relative z-10 text-center text-base">
+        <p className="font-InclusiveSans text-justify text-secondary2 relative z-10  text-base">
           {content}
         </p>
       </div>

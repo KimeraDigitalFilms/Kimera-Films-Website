@@ -2,9 +2,11 @@ import React, { useRef } from "react"
 import { useScroll, useTransform, motion, useInView } from "framer-motion"
 import ShowReel from "./ShowReel"
 import { Link } from "react-router-dom"
-// import Heading from "../Heading"
+
 
 function Featured() {
+
+
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -204,22 +206,6 @@ function Featured() {
         </div>
       </div>
 
-      {/* <div className="overflow-hidden py-1">
-          <motion.h1
-            initial={{ y: "100%" }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.4, ease: easeOut }}
-            style={{
-              WebkitUserSelect: "none",
-              msUserSelect: "none",
-              userSelect: "none",
-            }}
-            className="font-weight text-center font-AvenirBook text-7xl text-secondary1"
-          >
-            Featured Projects
-          </motion.h1>
-        </div> */}
       <Heading/>
       <div className="mb-40 mt-10 flex flex-col items-center justify-start gap-y-10">
         <h2 className="text-secondary2 font-NeueMontrealLight mx-auto w-4/5 text-center text-2xl">

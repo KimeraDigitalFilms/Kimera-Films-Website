@@ -1,6 +1,6 @@
 import React from "react"
 import GridComponent from "../components/Projects Masonry/GridComponent"
-import { easeIn, easeOut, motion } from "framer-motion"
+import { easeOut, motion } from "framer-motion"
 import { useEffect } from "react"
 import PageTransition from "../components/PageTransition"
 
@@ -9,8 +9,8 @@ function Projects() {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" })
   }, [])
   return (
-    <div className="flex w-full flex-col">
-      <div className="mb-20 mt-24 flex h-[80vh] w-full flex-nowrap items-center justify-around">
+    <div  className="flex w-full flex-col ">
+      <div className=" mb-20 mt-24 flex h-[80vh] w-full flex-nowrap items-center justify-around">
         <div className="screen-padding flex w-1/3 flex-col items-start justify-center gap-y-3">
           <div className="overflow-hidden">
             <motion.h1

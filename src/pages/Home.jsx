@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Ticker from "../components/Ticker"
 import Preloader from "../components/Preloader"
-// import Services from "../components/Services";
 import ScrollTopButton from "../components/ScrollTopButton"
 import Team from "../components/Team"
 import LogoGimmick from "../components/LogoGimmick"
@@ -11,7 +10,6 @@ import Hero from "../components/Hero"
 import PageTransition from "../components/PageTransition"
 import About from "../components/About"
 import Accordion from "../components/Service_Accordian/Accordion"
-
 
 function Home() {
   // const [ready, setReady] = useState(0);
@@ -46,32 +44,25 @@ function Home() {
         {/* {!vis ? (
           <Preloader ready={ready} setVis={setVis} />
         ) : ( */}
-        {!vis 
-        ? 
-        (
+        {!vis ? (
           sessionStorage.getItem("preloaded") ? (
             <>{setVis(true)}</>
           ) : (
-            <Preloader  setVis={setVis} />
+            <Preloader setVis={setVis} />
           )
         ) : (
-        <>
-          <Hero />
-          <ScrollTopButton />
-          <Accordion />
-          <Featured />
-          <About />
-          <Team />
-          <LogoGimmick />
-          <Ticker />
-          <Footer />
-        </>
-         )} 
-        {/* <Services/>
-          
-       <Team/>
-<LogoGimmick/>
-            <Ticker/> */}
+          <>
+            <Hero />
+            <ScrollTopButton />
+            <Accordion />
+            <Featured />
+            <About />
+            <Team />
+            <LogoGimmick />
+            <Ticker />
+            <Footer />
+          </>
+        )}
       </div>
     </>
   )

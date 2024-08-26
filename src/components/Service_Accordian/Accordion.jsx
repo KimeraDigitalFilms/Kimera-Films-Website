@@ -7,9 +7,11 @@ import { useRef } from "react"
 import Reveal from "./Reveal"
 import Heading from "../Heading"
 
-const Accordion = () => {
-  const [open, setOpen] = useState(items[0].id)
 
+const Accordion = () => {
+
+
+  const [open, setOpen] = useState(items[0].id)
   return (
     <section
       // style={{

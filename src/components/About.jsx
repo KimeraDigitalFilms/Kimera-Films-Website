@@ -22,9 +22,9 @@ function About() {
           </motion.h1>
       </div>
         </div> */}
-        <Heading text={'ABOUT US'}/>
+      <Heading text={"ABOUT US"} />
 
-      <div className="text-secondary2 font-NeueMontrealLight mt-4 w-full p-3 text-2xl">
+      <div className="text-secondary2 font-NeueMontrealLight mt-4 w-full text-justify p-3 text-2xl">
         Welcome to KIMERA, where creativity is our DNA. We are a living,
         breathing fusion of artistic minds. Just like the creature from Greek
         mythology, Kimera represents the convergence of diverse talents —
@@ -37,9 +37,9 @@ function About() {
         heads.
       </div>
 
-      <div className="text-secondary2 font-NeueMontrealLight flex w-full flex-nowrap p-3 text-2xl gap-x-7">
+      <div className="text-secondary2 text-justify font-NeueMontrealLight flex w-full flex-nowrap gap-x-7 p-3 text-2xl">
         <div className="w-1/2">
-        <video src="/About_Us.webm" loop muted autoPlay className=""></video>
+          <video src="/About_Us.webm" loop muted autoPlay className=""></video>
         </div>
         <p className="w-1/2">
           At Kimera, we boldly defy creative norms and celebrate the art of
