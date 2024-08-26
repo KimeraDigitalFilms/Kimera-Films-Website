@@ -100,7 +100,7 @@ const AnchorButton = () => {
           //   behavior: "smooth",
           // })
         }}
-        className={`${onBlack ? "text-white" : "text-secondary1"} transition-color`}
+        className={`${onBlack ? "text-white" : "text-secondary1"} transition-colors`}
       >
         Contact
         <span
