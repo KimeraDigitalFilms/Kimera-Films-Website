@@ -36,12 +36,6 @@ export default {
         primaryFg: "#060426",
         buttonBg: "#383838",
       },
-      alt2: {
-        primary: "#C4B2BC",
-        secondary1: "#D8D4F2",
-        primaryBg: "#123524",
-        primaryFg: "#021a0b",
-      },
     }),
   ],
 }
