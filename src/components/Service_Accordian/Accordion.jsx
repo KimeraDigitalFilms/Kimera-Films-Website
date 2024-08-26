@@ -7,10 +7,7 @@ import { useRef } from "react"
 import Reveal from "./Reveal"
 import Heading from "../Heading"
 
-
 const Accordion = () => {
-
-
   const [open, setOpen] = useState(items[0].id)
   return (
     <section
@@ -191,11 +188,12 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   exit="closed"
                   transition={{ duration: 0.1 }}
                   style={{
-                    scrollSnapType: "y mandatory",
-                    scrollBehavior: "smooth",
+                    scrollSnapType: "y mandatory !important",
+                    scrollBehavior: "smooth !important",
                     scrollSnapPointsY: "repeat(10px)",
                   }}
                   className="container relative flex h-[225px] w-[650px] flex-col items-start justify-start overflow-x-hidden overflow-y-scroll text-secondary1"
+                  data-lenis-prevent
                 >
                   <div className="py-[9.5%]">
                     {list.map((phrase, id) => {
