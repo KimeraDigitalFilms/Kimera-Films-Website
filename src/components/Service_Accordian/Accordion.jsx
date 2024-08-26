@@ -40,7 +40,7 @@ const Accordion = () => {
         In order to create something new, one needs to pay attention and listen
         to what makes it stand out.
       </p> */}
-      <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
+      <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow ">
         {items.map((item) => {
           return (
             <Panel

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useMotionValueEvent, useScroll } from "framer-motion"
 
 const Anchor = ({ content, colorStyle, href, onClick }) => {
   return (
@@ -16,7 +17,15 @@ const Anchor = ({ content, colorStyle, href, onClick }) => {
 const FlyoutLink = ({ children, href, colorStyle, onClick }) => {
   const location = useLocation()
   const [open, setOpen] = useState(false)
-
+  const { scrollY } = useScroll()
+  const [onBlack, setOnBlack] = useState(false)
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 55) {
+      setOnBlack(false)
+    } else {
+      setOnBlack(true)
+    }
+  })
   return (
     <div
       onMouseEnter={() => setOpen(true)}
@@ -26,8 +35,13 @@ const FlyoutLink = ({ children, href, colorStyle, onClick }) => {
       <Link
         to={href}
         onClick={onClick}
+        id="navLink"
         className={`relative transition-colors duration-200 ${
-          location.pathname === href && "text-primary hover:cursor-default"
+          location.pathname === href
+            ? "text-primary hover:cursor-default"
+            : onBlack
+              ? "text-white"
+              : "text-secondary1"
         } ${colorStyle}`}
       >
         {children}
@@ -47,6 +61,16 @@ const FlyoutLink = ({ children, href, colorStyle, onClick }) => {
 const AnchorButton = () => {
   const location = useLocation()
   const [open, setOpen] = useState(false)
+  const { scrollY } = useScroll()
+  const [onBlack, setOnBlack] = useState(false)
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 55) {
+      setOnBlack(false)
+    } else {
+      setOnBlack(true)
+    }
+  })
+
   const navigate = useNavigate()
   return (
     <div
@@ -55,6 +79,7 @@ const AnchorButton = () => {
       className="relative h-fit w-fit"
     >
       <button
+        id="contactButton"
         type="button"
         onClick={() => {
           return new Promise((resolve) => {
@@ -75,6 +100,7 @@ const AnchorButton = () => {
           //   behavior: "smooth",
           // })
         }}
+        className={`${onBlack ? "text-white" : "text-secondary1"} transition-color`}
       >
         Contact
         <span

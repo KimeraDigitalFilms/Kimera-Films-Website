@@ -24,7 +24,7 @@ const App = () => {
       // COLOR_PALETTE: ['#61dafb', '#a8dadc', '#457b9d', '#1d3557', '#f1faee'],
       COLOR_PALETTE: [canvasColor],
     })
-  }, [canvasColor])
+  }, [canvasColor,canvasBg])
 
   return (
     <div className="relative">

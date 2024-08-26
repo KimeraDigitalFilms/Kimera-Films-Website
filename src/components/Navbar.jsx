@@ -251,9 +251,9 @@ const Colors = () => {
           type="radio"
           name="color"
           id="alt1"
-          data-canvascolor="#f2b200"
+          data-canvascolor="#ED6E0B"
           data-loadcolor="#535C91"
-          data-color="#1B1A55"
+          data-color="#ffffff"
           className="cursor-pointer rounded-full bg-[#1B1A55] p-2"
         />
         <div
@@ -261,7 +261,7 @@ const Colors = () => {
           type="radio"
           name="color"
           id="alt2"
-          data-bg=""
+          data-text=""
           data-color="#123524"
           data-loadcolor="#D8D4F2"
           data-canvascolor="#C4B2BC"
