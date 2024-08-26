@@ -89,10 +89,14 @@ const AnchorButton = () => {
             } else {
               setTimeout(() => {
                 resolve()
-              }, 1850)
+              }, 2200)
             }
           }).then(() => {
-            window.scrollTo(0, document.getElementById("contact").offsetTop)
+            window.scrollTo({
+              left: 0,
+              top: document.getElementById("contact").offsetTop,
+              behavior: "smooth",
+            })
           })
           // window.scrollTo({
           //   left: 0,
