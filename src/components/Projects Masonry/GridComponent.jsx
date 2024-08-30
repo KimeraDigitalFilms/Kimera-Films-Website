@@ -10,10 +10,12 @@ function GridComponent() {
   return (
     <>
       <div className="my-5 w-full">
-        <div className={`absolute left-0 top-[100vh] -z-40 h-[830vh] w-full`}>
+        <div
+          className={`absolute left-0 top-[100vh] -z-40 h-[310vh] w-full [@media(min-width:536px)]:h-[380vh] [@media(min-width:601px)]:h-[480vh] [@media(min-width:701px)]:h-[550vh] [@media(min-width:801px)]:h-[830vh]`}
+        >
           <Logo
             src={"/logo.svg"}
-            style={` bg-primary/60 w-[500px] sticky left-[30%] top-[25%] -z-40 `}
+            style={` bg-primary/60 [@media(min-width:680px)]:w-[500px] [@media(min-width:555px)]:w-[400px] w-[300px] sticky left-[20%] [@media(min-width:900px)]:left-[30%] [@media(min-width:555px)]:top-[25%] top-[35%] -z-40 `}
           />
         </div>
         <List setSelected={setSelected} />

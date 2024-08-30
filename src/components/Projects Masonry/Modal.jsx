@@ -20,23 +20,8 @@ function Modal({ selected, setSelected }) {
         {/* inset-0 just covers whole screen */}
         <div
           onClick={(e) => e.stopPropagation()} // .stopPropagation() method prevents parent event from bubbling/affecting/calling from children
-          className="h-max-[50vh] mx-auto mt-24 w-full max-w-[500px] cursor-default px-8 min-[825px]:max-w-[750px] min-[1120px]:max-w-[1000px]"
+          className="h-max-[50vh] mx-auto mt-40 w-full max-w-[500px] cursor-default px-8 [@media(max-width:1119px)]:max-w-[750px] [@media(min-width:1120px)]:max-w-[1000px] [@media(min-width:500px)]:mt-24"
         >
-          {/* <motion.div>
-            <motion.video
-              muted
-              loop
-              autoPlay
-              controls
-              layout
-              layoutId={selected.id}
-              id="a"
-              className="w-full"
-              src={selected.vid}
-              alt="vid"
-            />
-          </motion.div> */}
-
           <div
             style={{
               width: "100%",
@@ -90,9 +75,9 @@ function Modal({ selected, setSelected }) {
             }}
             className={`p-2`}
           >
-            <h3 className="mt-3 font-Dancing text-4xl font-bold text-primary">
+            {/* <h3 className="mt-3 font-Dancing text-4xl font-bold text-primary">
               {selected.title}
-            </h3>
+            </h3> */}
             {/* <div className="inline-flex flex-wrap mt-1 justify-center gap-3">
               {selected.tags.map((tag) => {
                 return (

@@ -1,33 +1,38 @@
-import React from "react"
-import { motion, easeOut } from "framer-motion"
+import React, { useRef } from "react"
 import Distortion from "./Distortion/Distortion.jsx"
-// import Polaroid from "./Polaroid";
-import { FiCloudLightning } from "react-icons/fi"
-import Heading from "./Heading.jsx"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useWindowSize } from "../utils/useWindowSize.jsx"
+
+function Heading({ text }) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`start end`, `end start`],
+  })
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.7, 1],
+    [0.1, 1, 1, 0.1]
+  )
+  return (
+    <>
+      <motion.h1
+        style={{ opacity }}
+        ref={ref}
+        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-[200px] leading-[150px] text-secondary1 min-[510px]:text-[250px] min-[510px]:leading-[180px] min-[685px]:text-[350px] min-[685px]:leading-[230px]"
+      >
+        {text}
+      </motion.h1>
+    </>
+  )
+}
 
 function Team() {
   return (
     <div className="mt-24">
-      {/* <div className="overflow-hidden">
-        <motion.h1
-          initial={{ y: "100%" }}
-          whileInView={{ y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.4, ease: easeOut }}
-          style={{
-            WebkitUserSelect: "none",
-            msUserSelect: "none",
-            userSelect: "none",
-          }}
-          className="font-weight text-center font-AvenirBook text-7xl text-secondary1"
-        >
-          Our Team
-        </motion.h1>
-      </div> */}
       <Heading text={"OUR TEAM"} />
-
-      <div className="mt-20 flex flex-col gap-y-[250px]">
-        <div className="flex w-full flex-wrap items-center justify-evenly gap-y-14">
+      <div className="screen-padding mt-20 flex flex-col gap-y-[250px]">
+        <div className="flex w-full flex-wrap items-center justify-evenly gap-x-7 gap-y-14">
           <Card
             src={"/Hassaan_1x1.webp"}
             name={"Hassaan Ahmed"}
@@ -53,56 +58,6 @@ function Team() {
               "The catalyst for Kimera’s technological brilliance, Bashar blends technical mastery with artistic insight, driving innovation in post-production, animation, VFX, SFX & brand design. His expertise turns creative ideas into cutting-edge realities, ensuring that every project leverages the latest advancements to achieve high-impact results. Bashar’s role bridges technology and creativity, pushing the boundaries of what’s possible in the most remarkable ways."
             }
           />
-          {/* <div>
-            <Distortion
-              containerId={"Hassaan"}
-              imageId={"HassaanImg"}
-              src={
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZCldKgmO2Hs0UGk6nRClAjATKoF9x2liYYA&usqp=CAU"
-              }
-            />
-          </div>
-
-          <div className="font-Dancing text-secondary1 w-1/3 text-3xl">
-            A self-trained dual blade wielder, trained in the arts of Writing
-            and Direction. Hassaan is responsible for ideation,
-            conceptualisation, and spearheading the process of pre-production
-            while overwatching parts of production and post production.
-          </div>
-        </div>
-
-        <div className="flex flex-nowrap justify-evenly items-center gap-x-10 w-full">
-          <div className="font-Dancing text-secondary1 w-1/3 text-3xl">
-            A true magician with people. From marketing to casting to overseeing
-            enormous crews, he makes it all look effortless. With years of
-            experience both in front and behind the camera, Tushar is Leading
-            the way for Kimera’s marketing, Production and Sales.
-          </div>
-
-          <Distortion
-            containerId={"Tushar"}
-            imageId={"TusharImg"}
-            src={
-              "https://hips.hearstapps.com/hmg-prod/images/robert-downey-jr-attends-the-96th-oscars-nominees-luncheon-news-photo-1708713684.jpg"
-            }
-          />
-        </div>
-
-        <div className="flex flex-nowrap justify-evenly items-center gap-x-10 w-full">
-          <Distortion
-            containerId={"Bashar"}
-            imageId={"BasharImg"}
-            src={
-              "https://akm-img-a-in.tosshub.com/indiatoday/images/story/media_bank/202309/elon-musk-252648408-16x9.jpg?VersionId=9KYZpqpoY3WvH8eVZg54mmkpTGfvPCWj&size=690:388"
-            }
-          />
-
-          <div className="font-Dancing text-secondary1 w-1/3 text-3xl">
-            The powerhouse cyborg of Kimera. The machines are sentient beings
-            but with his superior technical prowess and knowledge under his rule
-            they listen to him. Bashar has honed and mastered all the domains of
-            Post Production, be it Editing, Animation or SFX.
-          </div> */}
         </div>
       </div>
     </div>
@@ -112,15 +67,19 @@ function Team() {
 export default Team
 
 const Card = ({ content, name, desig, src }) => {
+  const { width } = useWindowSize()
   return (
     <div className="group relative w-full max-w-sm overflow-hidden rounded-lg border-[0.3px] border-secondary1 bg-primaryBg p-0.5 shadow-xl shadow-shadow transition-all duration-500">
-      <div className="relative z-10 flex flex-col items-center justify-start overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500 h-[730px]">
-        {/* <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" /> */}
-        <Distortion
-          containerId={name.split()[0]}
-          imageId={name.split()[0] + "Img"}
-          src={src}
-        />
+      <div className="relative z-10 flex h-[670px] flex-col items-center justify-start overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500 min-[796px]:h-[730px]">
+        {width >= 750 ? (
+          <Distortion
+            containerId={name.split()[0]}
+            imageId={name.split()[0] + "Img"}
+            src={src}
+          />
+        ) : (
+          <img src={src} alt="name" className="object-contain" />
+        )}
 
         <h2 className="font-NeueMontreal relative z-10 mb-1 mt-3 w-full text-center text-3xl font-bold text-primary">
           {name}
@@ -128,7 +87,7 @@ const Card = ({ content, name, desig, src }) => {
         <h3 className="font-NeueMontreal text-secondary2 relative z-10 mb-3 w-full text-center text-lg font-semibold">
           {desig}
         </h3>
-        <p className="font-InclusiveSans text-justify text-secondary2 relative z-10  text-base">
+        <p className="font-InclusiveSans text-secondary2 relative z-10 text-justify text-sm min-[796px]:text-base">
           {content}
         </p>
       </div>

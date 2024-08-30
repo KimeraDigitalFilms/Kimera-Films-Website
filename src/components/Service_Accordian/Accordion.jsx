@@ -1,46 +1,39 @@
-// import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
-import { AnimatePresence, delay, motion, easeOut } from "framer-motion"
-import { useWindowSize } from "./useWindowSize"
-import { useEffect, useState } from "react"
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
+import { useWindowSize } from "../../utils/useWindowSize"
+import { useState, useRef } from "react"
 import "./Accordion.css"
-import { useRef } from "react"
 import Reveal from "./Reveal"
-import Heading from "../Heading"
+
+function Heading({ text }) {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`start end`, `end start`],
+  })
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.7, 1],
+    [0.1, 1, 1, 0.1]
+  )
+  return (
+    <>
+      <motion.h1
+        style={{ opacity }}
+        ref={ref}
+        className={`font-FoundersGrotesk mt-3 w-full py-5 text-center text-[180px] leading-[150px] text-secondary1 [@media(min-width:524px)]:text-[250px] [@media(min-width:524px)]:leading-[200px] [@media(min-width:630px)]:text-[300px] [@media(min-width:630px)]:leading-[230px] [@media(min-width:720px)]:text-[350px]`}
+      >
+        {text}
+      </motion.h1>
+    </>
+  )
+}
 
 const Accordion = () => {
   const [open, setOpen] = useState(items[0].id)
   return (
-    <section
-      // style={{
-      //   backgroundImage: "url(https://img.freepik.com/premium-photo/photo-abstract-line-background_931878-84749.jpg)",
-      //   backgroundRepeat: 'no-repeat',
-      //   backgroundPosition: 'center',
-      //   backgroundSize: 'cover',
-      // }}
-      className="screen-padding mt-[150px]"
-    >
-      {/* <div className="mb-10 overflow-hidden">
-        <motion.h1
-          initial={{ y: "100%" }}
-          whileInView={{ y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.4, ease: easeOut }}
-          style={{
-            WebkitUserSelect: "none",
-            msUserSelect: "none",
-            userSelect: "none",
-          }}
-          className="font-weight text-center font-AvenirBook text-7xl text-secondary1"
-        >
-          What We Do
-        </motion.h1>
-      </div> */}
-      <Heading text={"WHAT WE DO"} style={"text-[350px] leading-[230px]"} />
-      {/* <p className="mb-10 text-center text-2xl text-secondary1">
-        In order to create something new, one needs to pay attention and listen
-        to what makes it stand out.
-      </p> */}
-      <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow ">
+    <section className="screen-padding mt-[150px]">
+      <Heading text={"WHAT WE DO"} />
+      <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
         {items.map((item) => {
           return (
             <Panel
@@ -48,7 +41,6 @@ const Accordion = () => {
               open={open}
               setOpen={setOpen}
               id={item.id}
-              // Icon={item.Icon}
               title={item.title}
               vid={item.vid}
               list={item.list}

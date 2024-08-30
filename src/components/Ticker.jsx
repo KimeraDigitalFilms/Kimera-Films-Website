@@ -18,9 +18,12 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-[300px] leading-[120px] text-secondary1"
+        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-9xl leading-[45px] text-secondary1 min-[645px]:text-[230px] min-[645px]:leading-[90px] min-[830px]:text-[300px] min-[830px]:leading-[120px]"
       >
-        BRANDS <br /> <span className="text-[130px]">We've Worked With</span>
+        BRANDS <br />{" "}
+        <span className="text-[55px] min-[645px]:text-[100px] min-[830px]:text-[130px]">
+          We've Worked With
+        </span>
       </motion.h1>
     </>
   )

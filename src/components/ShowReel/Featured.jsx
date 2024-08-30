@@ -2,11 +2,9 @@ import React, { useRef } from "react"
 import { useScroll, useTransform, motion, useInView } from "framer-motion"
 import ShowReel from "./ShowReel"
 import { Link } from "react-router-dom"
-
+import { useWindowSize } from "../../utils/useWindowSize"
 
 function Featured() {
-
-
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -53,14 +51,7 @@ function Featured() {
     },
   ]
 
-  //  useEffect(()=>{
-  // const vid=document.getElementById('reel')
-  // if (isInView){
-  //     vid.play()
-  // }else{
-  //     vid.pause()
-  // }
-  //  },[isInView])
+  const { width } = useWindowSize()
 
   return (
     <>
@@ -205,21 +196,24 @@ function Featured() {
           </motion.div>
         </div>
       </div>
-
-      <Heading/>
-      <div className="mb-40 mt-10 flex flex-col items-center justify-start gap-y-10">
-        <h2 className="text-secondary2 font-NeueMontrealLight mx-auto w-4/5 text-center text-2xl">
-          WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF INDUSTRIES,
-          INCLUDING BROADCAST, FILM, GAMES, BRANDS, EXPERIENTIAL, AND THEMED
-          ENTERTAINMENT.
-        </h2>
-        <Link
-          to="/gallery"
-          className="bg-buttonBg font-NeueMontrealLight scale-100 rounded-full px-5 py-2 text-4xl uppercase tracking-wide text-primary transition-all hover:scale-110 active:scale-95"
-        >
-          View Gallery
-        </Link>
-      </div>
+      {width >= 1120 && (
+        <>
+          <Heading />
+          <div className="mb-40 mt-10 flex flex-col items-center justify-start gap-y-10">
+            <h2 className="text-secondary2 font-NeueMontrealLight mx-auto w-4/5 text-center text-2xl">
+              WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF
+              INDUSTRIES, INCLUDING BROADCAST, FILM, GAMES, BRANDS,
+              EXPERIENTIAL, AND THEMED ENTERTAINMENT.
+            </h2>
+            <Link
+              to="/gallery"
+              className="bg-buttonBg font-NeueMontrealLight scale-100 rounded-full px-5 py-2 text-4xl uppercase tracking-wide text-primary transition-all hover:scale-110 active:scale-95"
+            >
+              View Gallery
+            </Link>
+          </div>
+        </>
+      )}
     </>
   )
 }
@@ -242,9 +236,11 @@ function Heading() {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className='font-FoundersGrotesk mt-3 w-full py-5 text-center text-[300px] leading-[200px] text-secondary1 select-none'
+        className="font-FoundersGrotesk mt-3 w-full select-none py-5 text-center text-[300px] leading-[200px] text-secondary1"
       >
-        <span className="text-[310px] pl-2">FEATURED</span><br />PROJECTS
+        <span className="pl-2 text-[310px]">FEATURED</span>
+        <br />
+        PROJECTS
       </motion.h1>
     </>
   )

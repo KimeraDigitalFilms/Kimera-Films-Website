@@ -157,7 +157,7 @@ function List({ setSelected }) {
     <>
       <motion.div
         id="grid"
-        className="screen-padding h-[830vh] w-full gap-x-4 gap-y-7"
+        className="screen-padding [@media(min-width:801px)]:h-[830vh] [@media(min-width:701px)]:h-[550vh] [@media(min-width:601px)]:h-[480vh] [@media(min-width:536px)]:h-[380vh] h-[310vh] w-full gap-x-4 gap-y-7"
         // className="columns-1 md:columns-2 xl:columns-3  gap-x-0"
       >
         <Card
