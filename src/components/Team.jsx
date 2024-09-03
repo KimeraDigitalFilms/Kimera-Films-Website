@@ -19,7 +19,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-[200px] leading-[150px] text-secondary1 min-[510px]:text-[250px] min-[510px]:leading-[180px] min-[685px]:text-[350px] min-[685px]:leading-[230px]"
+        className="mt-3 w-full py-5 text-center font-FoundersGrotesk text-[200px] leading-[150px] text-secondary1 [@media(min-width:510px)]:text-[250px] [@media(min-width:510px)]:leading-[180px] [@media(min-width:685px)]:text-[350px] [@media(min-width:685px)]:leading-[230px]"
       >
         {text}
       </motion.h1>
@@ -69,8 +69,8 @@ export default Team
 const Card = ({ content, name, desig, src }) => {
   const { width } = useWindowSize()
   return (
-    <div className="group relative w-full max-w-sm overflow-hidden rounded-lg border-[0.3px] border-secondary1 bg-primaryBg p-0.5 shadow-xl shadow-shadow transition-all duration-500">
-      <div className="relative z-10 flex h-[670px] flex-col items-center justify-start overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500 min-[796px]:h-[730px]">
+    <div className="group relative w-full max-w-[300px] overflow-hidden rounded-lg border-[0.3px] border-secondary1 bg-primaryBg p-0.5 shadow-xl shadow-shadow transition-all duration-500 [@media(min-width:455px)]:max-w-sm">
+      <div className="relative z-10 flex h-[600px] flex-col items-center justify-start overflow-hidden rounded-[7px] bg-primaryBg p-8 transition-colors duration-500 min-[796px]:h-[730px] [@media(min-width:455px)]:h-[670px]">
         {width >= 750 ? (
           <Distortion
             containerId={name.split()[0]}
@@ -81,13 +81,13 @@ const Card = ({ content, name, desig, src }) => {
           <img src={src} alt="name" className="object-contain" />
         )}
 
-        <h2 className="font-NeueMontreal relative z-10 mb-1 mt-3 w-full text-center text-3xl font-bold text-primary">
+        <h2 className="relative z-10 mb-1 mt-3 w-full text-center font-NeueMontreal text-3xl font-bold text-primary">
           {name}
         </h2>
-        <h3 className="font-NeueMontreal text-secondary2 relative z-10 mb-3 w-full text-center text-lg font-semibold">
+        <h4 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-lg font-semibold text-secondary2">
           {desig}
-        </h3>
-        <p className="font-InclusiveSans text-secondary2 relative z-10 text-justify text-sm min-[796px]:text-base">
+        </h4>
+        <p className="relative z-10 text-justify font-InclusiveSans text-xs text-secondary2 min-[796px]:text-base [@media(min-width:455px)]:text-sm">
           {content}
         </p>
       </div>

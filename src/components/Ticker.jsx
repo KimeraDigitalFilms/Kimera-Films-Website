@@ -1,10 +1,10 @@
 import React, { useContext, useRef } from "react"
 import { useScroll, useTransform, motion } from "framer-motion"
 import colorContext from "../context/ColorContext"
-function Heading({ text }) {
+
+function Heading() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
-    // layoutEffect: false,
     target: ref,
     offset: [`start end`, `end start`],
   })
@@ -18,10 +18,10 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="font-FoundersGrotesk mt-3 w-full py-5 text-center text-9xl leading-[45px] text-secondary1 min-[645px]:text-[230px] min-[645px]:leading-[90px] min-[830px]:text-[300px] min-[830px]:leading-[120px]"
+        className="mt-3 w-full py-5 text-center font-FoundersGrotesk text-9xl leading-[45px] text-secondary1 [@media(min-width:645px)]:text-[230px] [@media(min-width:645px)]:leading-[90px] [@media(min-width:830px)]:text-[300px] [@media(min-width:830px)]:leading-[120px]"
       >
         BRANDS <br />{" "}
-        <span className="text-[55px] min-[645px]:text-[100px] min-[830px]:text-[130px]">
+        <span className="text-[55px] [@media(min-width:645px)]:text-[100px] [@media(min-width:830px)]:text-[130px]">
           We've Worked With
         </span>
       </motion.h1>

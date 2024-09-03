@@ -1,0 +1,105 @@
+#h3 {
+  left: 15%;
+  top: 40%;
+  width: 300px;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+}
+
+@media (min-width: 405px) {
+  #h3 {
+    left: 20%;
+  }
+}
+
+@media (min-width: 525px) {
+  #h3 {
+    width: 400px;
+    font-size: 1rem /* 16px */;
+    line-height: 1.5rem /* 22px */;
+  }
+}
+
+@media (min-width: 700px) {
+  #h3 {
+    left: 30%;
+  }
+}
+
+@media (min-width: 970px) {
+  #h3 {
+    left: 60%;
+    top: 25%;
+  }
+}
+
+@media (min-width: 1120px) {
+  #h3 {
+    left: 65%;
+  }
+}
+
+@media (min-width: 970px) and (max-width: 1169px) {
+  #h3 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1170px) {
+  #h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* className="absolute left-[15%] top-[20%] font-Recoleta text-2xl font-bold text-secondary1 [@media(min-width:1000px)]:top-[40%] [@media(min-width:1120px)]:text-4xl [@media(min-width:405px)]:left-[20%] [@media(min-width:525px)]:text-3xl [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[5%] [@media(min-width:970px)]:top-[45%] [@media(min-width:970px)]:text-2xl" */
+
+#h2 {
+  left: 15%;
+  top: 20%;
+  font-size: 1.5rem ;
+  line-height: 2rem ;
+}
+
+@media (min-width: 405px) {
+  #h2 {
+    left: 20%;
+  }
+}
+
+@media (min-width: 525px) {
+  #h2 {
+    font-size: 2rem ;
+    line-height: 2.5rem ;
+  }
+}
+
+@media (min-width: 700px) {
+  #h2 {
+    left: 30%;
+  }
+}
+
+@media (min-width: 970px) {
+  #h2 {
+    left: 5%;
+    top: 45%;
+      font-size: 1.5rem ;
+  line-height: 2rem ;
+  }
+}
+
+@media (min-width: 1000px) {
+  #h2 {
+    top: 40%;
+  }
+}
+
+@media (min-width: 1120px) {
+  #h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+

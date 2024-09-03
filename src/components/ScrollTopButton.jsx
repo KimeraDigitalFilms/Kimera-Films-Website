@@ -34,7 +34,7 @@ function ScrollTopButton() {
       }}
       animate={vis ? "visible" : "hidden"}
       transition={{ duration: 0.6 }}
-      className="flex hover:cursor-pointer z-[300] items-center justify-center rounded-[50%] fixed bg-primary h-[40px] w-[40px] right-5 bottom-5"
+      className="flex hover:cursor-pointer z-[100] items-center justify-center rounded-[50%] fixed bg-primary h-[40px] w-[40px] right-5 bottom-5"
     >
       <i className="fa-solid fa-angle-up" style={{ color: "#000000" }}></i>
     </motion.div>

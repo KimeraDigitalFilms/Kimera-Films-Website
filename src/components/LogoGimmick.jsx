@@ -22,14 +22,14 @@ function LogoGimmick() {
     <div
       id="logoGimmick"
       ref={ref}
-      className="relative top-[-60px] mb-[100px] h-[200vh]"
+      className="relative top-[-60px] [@media(min-width:1190px)]:mb-[100px] h-[150vh] [@media(min-width:1190px)]:h-[200vh]"
     >
       {/* <div className="w-full h-full absolute  bg-blue-500"> */}
       <motion.div className="sticky top-0 h-screen overflow-hidden transition-all delay-0 ease-linear">
         <motion.h1 //text
           transition={{ ease: "linear", delay: 0 }}
           style={{ translateX: textX }}
-          className="text-secondary2 font-RecoletaBold absolute top-[50%] w-full text-6xl tracking-wider transition-transform delay-0 ease-linear"
+          className="absolute top-[40%] [@media(min-width:1190px)]:top-[50%] w-full font-RecoletaBold text-4xl [@media(min-width:1005px)]:text-5xl tracking-wider text-secondary2 transition-transform delay-0 ease-linear [@media(min-width:1280px)]:text-6xl"
         >
           Where Creativity Converges,
           <br /> Boundaries Dissolve.
@@ -37,9 +37,14 @@ function LogoGimmick() {
         <motion.div
           transition={{ ease: "linear", delay: 0 }}
           style={{ scale, rotate, translateX }}
-          className="h-fit transition-transform delay-0 ease-linear"
+          className=" transition-transform delay-0 ease-linear"
         >
-          <Logo src={"/logo.svg"} style={"h-[650px] bg-primary ml-10 mt-10"} />{" "}
+          <Logo
+            src={"/logo.svg"}
+            style={
+              "h-[500px] [@media(min-width:1190px)]:h-[650px] bg-primary ml-10 mt-10"
+            }
+          />{" "}
           {/*logo */}
         </motion.div>
       </motion.div>

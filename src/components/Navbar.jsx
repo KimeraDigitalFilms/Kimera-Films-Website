@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+// import { useLocation, useNavigate } from "react-router-dom"
+
+import { useWindowSize } from "../utils/useWindowSize"
 import {
   AnimatePresence,
   easeInOut,
@@ -13,7 +15,7 @@ import { AnchorButton } from "./Anchor"
 import colorContext from "../context/ColorContext"
 
 function Navbar() {
-  const location = useLocation()
+  // const location = useLocation()
   // if (location.pathname === "/") {
   //   // document.body.style.background = "#ffffff";
   // }
@@ -34,11 +36,11 @@ function Navbar() {
   const handleSidebar = () => {
     setActive(!isActive)
   }
-  const [mobile, setMobile] = useState(window.innerWidth <= 460 ? 1 : 0)
+  // const [mobile, setMobile] = useState(window.innerWidth <= 460 ? 1 : 0)
 
-  useEffect(() => {
-    setMobile(window.innerWidth <= 460 ? 1 : 0)
-  }, [window.innerWidth])
+  // useEffect(() => {
+  //   setMobile(window.innerWidth <= 460 ? 1 : 0)
+  // }, [window.innerWidth])
 
   //change nav bg color on scroll
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -49,88 +51,87 @@ function Navbar() {
     }
   })
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
+
+  const { width } = useWindowSize()
   return (
     <>
-      {!mobile ? (
-        <>
-          <motion.header
-            variants={{
-              visible: {
-                y: 0,
-              },
-              hidden: {
-                y: "-100%",
-              },
-            }}
-            id="nav"
-            animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: easeInOut }}
-            className={`body-font fixed top-0 z-50 w-full px-7 transition-colors duration-300`}
+      {/* {!mobile ? (
+        <> */}
+      <motion.header
+        variants={{
+          visible: {
+            y: 0,
+          },
+          hidden: {
+            y: "-100%",
+          },
+        }}
+        id="nav"
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: easeInOut }}
+        className={`body-font fixed top-0 z-[300] w-full px-3 transition-colors duration-300 [@media(min-width:455px)]:px-7`}
+      >
+        <div className=" mx-auto flex h-full flex-wrap items-center justify-between p-5">
+          <Link
+            to={"/"}
+            className={`title-font mb-0 flex items-center font-medium`}
           >
-            <div className="container mx-auto flex h-full flex-col flex-wrap items-center justify-between p-5 md:flex-row">
-              <Link
-                to={"/"}
-                className={`title-font mb-4 flex items-center font-medium md:mb-0`}
-              >
-                {/* <i
-                  className="fa-sharp fa-solid fa-photo-film fa-2xl"
-                  style={{ color: "#5900ff" }}
-                ></i> */}
-                {/* <img src="" alt="logo" /> */}
-                <span className="ml-3 font-AvenirBook text-2xl font-bold uppercase text-primary">
-                  Kimera Films
-                </span>
-              </Link>
+            <span className="ml-3 text-xl font-bold uppercase text-primary [@media(min-width:455px)]:text-2xl">
+              Kimera Films
+            </span>
+          </Link>
 
-              <nav className="flex w-fit flex-wrap items-center justify-center gap-x-8 text-base text-white">
-                <Colors />
+          <nav className="flex w-fit flex-wrap items-center justify-center gap-x-8 text-base text-white">
+            <Colors />
+            {width >= 655 ? (
+              <>
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 <Anchor colorStyle={``} content={"Gallery"} href={"/gallery"} />
                 <AnchorButton />
-              </nav>
-            </div>
-          </motion.header>
-        </>
-      ) : (
-        <>
-          {" "}
-          <motion.button
-            onClick={handleSidebar}
-            className="fixed right-5 top-3 z-[100] flex h-12 w-12 flex-col flex-nowrap items-center justify-center gap-y-[5px] rounded-[50%] bg-secondary1 p-0 hover:cursor-pointer focus:outline-none"
-          >
-            <motion.div
-              variants={{
-                active: {
-                  rotate: "45deg",
-                  y: 2.5,
-                },
-                notActive: { rotate: "0deg", y: 0 },
-              }}
-              animate={isActive ? "active" : "notActive"}
-              transition={{
-                duration: 0.5,
-              }}
-              className="m-0 h-[1.5px] w-6 bg-black p-0"
-            ></motion.div>
+              </>
+            ) : (
+              <>
+                {" "}
+                <motion.button
+                  onClick={handleSidebar}
+                  className="z-[100] flex h-12 w-12 flex-col flex-nowrap items-center justify-center gap-y-[5px] rounded-[50%] bg-secondary1 p-0 hover:cursor-pointer focus:outline-none"
+                >
+                  <motion.div
+                    variants={{
+                      active: {
+                        rotate: "45deg",
+                        y: 2.5,
+                      },
+                      notActive: { rotate: "0deg", y: 0 },
+                    }}
+                    animate={isActive ? "active" : "notActive"}
+                    transition={{
+                      duration: 0.5,
+                    }}
+                    className="m-0 h-[1.5px] w-6 bg-black p-0"
+                  ></motion.div>
 
-            <motion.div
-              variants={{
-                active: { rotate: "-45deg", y: -2.5 },
-                notActive: { rotate: "0deg", y: 0 },
-              }}
-              animate={isActive ? "active" : "notActive"}
-              transition={{
-                duration: 0.5,
-              }}
-              className="m-0 h-[1.5px] w-6 bg-black p-0"
-            ></motion.div>
-          </motion.button>
-          <AnimatePresence>
-            {isActive && <Dropdown setActive={setActive} />}
-          </AnimatePresence>
-        </>
-      )}
+                  <motion.div
+                    variants={{
+                      active: { rotate: "-45deg", y: -2.5 },
+                      notActive: { rotate: "0deg", y: 0 },
+                    }}
+                    animate={isActive ? "active" : "notActive"}
+                    transition={{
+                      duration: 0.5,
+                    }}
+                    className="m-0 h-[1.5px] w-6 bg-black p-0"
+                  ></motion.div>
+                </motion.button>
+                <AnimatePresence>
+                  {isActive && <Dropdown setActive={setActive} />}
+                </AnimatePresence>
+              </>
+            )}
+          </nav>
+        </div>
+      </motion.header>
     </>
   )
 }
