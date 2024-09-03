@@ -72,7 +72,7 @@ function Navbar() {
         transition={{ duration: 0.35, ease: easeInOut }}
         className={`body-font fixed top-0 z-[300] w-full px-3 transition-colors duration-300 [@media(min-width:455px)]:px-7`}
       >
-        <div className=" mx-auto flex h-full flex-wrap items-center justify-between p-5">
+        <div className="mx-auto flex h-full flex-wrap items-center justify-between p-5">
           <Link
             to={"/"}
             className={`title-font mb-0 flex items-center font-medium`}

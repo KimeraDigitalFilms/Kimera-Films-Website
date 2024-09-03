@@ -1,0 +1,71 @@
+/* className="absolute left-[5%] top-[40%] w-full font-RecoletaBold text-3xl tracking-wider text-secondary2 transition-transform delay-0 ease-linear [@media(min-width:1005px)]:text-5xl [@media(min-width:1190px)]:top-[50%] [@media(min-width:1280px)]:text-6xl [@media(min-width:750px)]:left-[10%] [@media(min-width:839px)]:left-[5%] [@media(min-width:839px)]:text-4xl [@media(min-width:969px)]:left-0" */
+
+#gimmickText {
+  left: 5%;
+  top: 40%;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  transition: transform 0.5s ease-linear;
+}
+
+@media (min-width: 1005px) and (max-width: 1189px) {
+  #gimmickText {
+    font-size: 3rem /* 48px */;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1190px) and (max-width: 1279px) {
+  #gimmickText {
+    top: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  #gimmickText {
+    font-size: 3.75rem /* 60px */;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 838px) {
+  #gimmickText {
+    left: 10%;
+  }
+}
+
+@media (min-width: 839px) and (max-width: 968px) {
+  #gimmickText {
+    left: 5%;
+    font-size: 2.25rem /* 36px */;
+    line-height: 2.5rem /* 40px */;
+  }
+}
+
+@media (min-width: 969px) and (max-width: 1004px) {
+  #gimmickText {
+    left: 0;
+  }
+}
+
+#gimmickLogo {
+  height: 400px;
+}
+
+@media (min-width: 770px) and (max-width: 1189px) {
+  #gimmickLogo {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1190px) {
+  #gimmickLogo {
+    height: 600px;
+  }
+}
+
+@media (min-width:770px) {
+    #gimmickLogo {
+        margin-top: 2.5rem /* 40px */;
+    }
+}
