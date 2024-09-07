@@ -17,7 +17,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className={`font-FoundersGrotesk min-[1072]:text-[300px] mt-3 w-full py-5 text-center min-[737px]:text-[200px] text-[100px] min-[546px]:text-[150px] min-[897px]:text-[250px] text-secondary1`}
+        className={`min-[1072]:text-[300px] min-[737px]:text-[200px] min-[546px]:text-[150px] min-[897px]:text-[250px] mt-3 w-full py-5 text-center font-FoundersGrotesk text-[100px] text-secondary1`}
       >
         {text}
       </motion.h1>
@@ -27,10 +27,10 @@ function Heading({ text }) {
 
 function About() {
   return (
-    <div className="screen-padding mx-auto mb-36 w-11/12 min-[546px]:text-2xl text-xl">
+    <div className="screen-padding mx-auto mb-36 w-11/12 text-xl [@media(min-width:546px)]:text-2xl">
       <Heading text={"ABOUT US"} />
 
-      <div className="text-secondary2 font-NeueMontrealLight mt-4 w-full p-3 text-justify ">
+      <div className="mt-4 w-full p-3 text-justify font-NeueMontrealLight text-secondary2">
         Welcome to KIMERA, where creativity is our DNA. We are a living,
         breathing fusion of artistic minds. Just like the creature from Greek
         mythology, Kimera represents the convergence of diverse talents —
@@ -40,11 +40,11 @@ function About() {
         to keep growing its heads.
       </div>
 
-      <div className="text-secondary2 font-NeueMontrealLight min-[1000px]:flex-nowrap flex w-full gap-x-7 p-3 text-justify flex-wrap gap-y-5">
-        <div className="min-[1000px]:w-1/2">
+      <div className="flex w-full flex-wrap gap-x-7 gap-y-5 p-3 text-justify font-NeueMontrealLight text-secondary2 [@media(min-width:1000px)]:flex-nowrap">
+        <div className="[@media(min-width:1000px)]:w-1/2">
           <video src="/About_Us.webm" loop muted autoPlay className="" />
         </div>
-        <p className="min-[1000px]:w-1/2">
+        <p className="[@media(min-width:1000px)]:w-1/2">
           At Kimera, we boldly defy creative norms and celebrate the art of
           finesse. We're the preferred choice for leading brands because we
           understand their language while continuously pushing boundaries.{" "}
