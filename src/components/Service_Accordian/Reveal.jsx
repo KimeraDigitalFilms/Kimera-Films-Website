@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
 import {
-  easeOut,
   motion,
   useScroll,
   useTransform,
@@ -17,12 +16,7 @@ function Reveal({ content, refP }) {
     offset: [`start end`, `end start`],
   })
   const opacity = useTransform(scrollYProgress, [0.3, 0.5, 0.8], [0.3, 1, 0.3])
-  // const [opacity,setOpacity]=useState(0.3)
-  const fontSize = useTransform(
-    scrollYProgress,
-    [0.4, 0.5, 0.7],
-    ["40%", "250%", "40%"]
-  )
+
   const x = useTransform(
     scrollYProgress,
     [0.1, 0.3, 0.5, 0.7, 0.9],
@@ -39,11 +33,10 @@ function Reveal({ content, refP }) {
   return (
     <>
       <motion.div
-        style={{ opacity, x, fontStyle: font, 
-          scrollSnapAlign: "center", }}
+        style={{ opacity, x, fontStyle: font, scrollSnapAlign: "center" }}
         transition={{ delay: 0 }}
         ref={ref}
-        className="font-NeueMontrealLight my-3 w-full py-5 text-left text-4xl"
+        className="text-2xl my-3 w-full py-5 text-left font-NeueMontrealLight [@media(min-width:1130px)]:text-4xl [@media(min-width:1065px)]:text-3xl"
       >
         {content}
       </motion.div>

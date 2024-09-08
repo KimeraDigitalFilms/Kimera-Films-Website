@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
+import { useState, useRef, useEffect } from "react"
 import { useWindowSize } from "../../utils/useWindowSize"
-import { useState, useRef } from "react"
 import "./Accordion.css"
 import Reveal from "./Reveal"
 
@@ -20,7 +20,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className={`font-FoundersGrotesk mt-3 w-full py-5 text-center text-[180px] leading-[150px] text-secondary1 [@media(min-width:524px)]:text-[250px] [@media(min-width:524px)]:leading-[200px] [@media(min-width:630px)]:text-[300px] [@media(min-width:630px)]:leading-[230px] [@media(min-width:720px)]:text-[350px]`}
+        className={`mt-3 w-full py-5 text-center font-FoundersGrotesk text-[180px] leading-[150px] text-secondary1 [@media(min-width:524px)]:text-[250px] [@media(min-width:524px)]:leading-[200px] [@media(min-width:630px)]:text-[300px] [@media(min-width:630px)]:leading-[230px] [@media(min-width:720px)]:text-[350px]`}
       >
         {text}
       </motion.h1>
@@ -30,31 +30,116 @@ function Heading({ text }) {
 
 const Accordion = () => {
   const [open, setOpen] = useState(items[0].id)
+
+  const { width } = useWindowSize()
   return (
     <section className="screen-padding mt-[150px]">
       <Heading text={"WHAT WE DO"} />
-      <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
-        {items.map((item) => {
-          return (
-            <Panel
-              key={item.id}
-              open={open}
-              setOpen={setOpen}
-              id={item.id}
-              title={item.title}
-              vid={item.vid}
-              list={item.list}
-              desc={item.desc}
-            />
-          )
-        })}
+      {width >= 1058 ? (
+        <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
+          {items.map((item) => {
+            return (
+              <Panel
+                key={item.id}
+                open={open}
+                setOpen={setOpen}
+                id={item.id}
+                title={item.title}
+                vid={item.vid}
+                list={item.list}
+                desc={item.desc}
+              />
+            )
+          })}
+        </div>
+      ) : (
+        <MobileServices />
+      )}
+    </section>
+  )
+}
+
+const MobileServices = () => {
+  const targetRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  })
+
+  const { width } = useWindowSize()
+  const [scroll, setScroll] = useState(
+    width >= 940
+      ? "-35%"
+      : width >= 860
+        ? "-40%"
+        : width >= 860
+          ? "-50%"
+          : width >= 425
+            ? "-60%"
+            : "-65%"
+  )
+  useEffect(() => {
+    setScroll(
+      width >= 940
+        ? "-35%"
+        : width >= 860
+          ? "-40%"
+          : width >= 860
+            ? "-50%"
+            : width >= 425
+              ? "-60%"
+              : "-65%"
+    )
+  }, [width])
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", scroll])
+
+  return (
+    <section ref={targetRef} className="relative h-[300vh]">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <motion.div style={{ x }} className="flex gap-10">
+          {items.map((item, i) => {
+            return <Card item={item} key={i} />
+          })}
+        </motion.div>
       </div>
     </section>
   )
 }
 
+const Card = ({ item }) => {
+  return (
+    <>
+      <div className="flex w-[300px] flex-col text-secondary1 [@media(min-width:445px)]:w-[350px] [@media(min-width:570px)]:w-[450px]">
+        <video
+          src={item.vid}
+          autoPlay
+          loop
+          muted
+          className="mb-5 h-[169px] w-[300px] rounded-lg [@media(min-width:570px)]:h-[225px] [@media(min-width:570px)]:w-[400px]"
+        ></video>
+        <h2 className="mb-4 text-2xl font-semibold uppercase [@media(min-width:570px)]:text-3xl">
+          {item.title}
+        </h2>
+        <ul
+        //  className="marker:text-secondary1 list-disc"
+        >
+          {item.list.map((service, i) => {
+            return (
+              <li
+                key={i}
+                className="text-sm font-medium [@media(min-width:680px)]:text-base"
+              >
+                {service}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </>
+  )
+}
+
 const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
-  const { width } = useWindowSize()
   const isOpen = open === id
   const refP = useRef(null)
 
@@ -64,23 +149,10 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
         className="group relative flex flex-row-reverse flex-wrap items-center border-b-[1px] border-r-[1px] border-slate-200 bg-white p-3 transition-colors hover:cursor-default"
         onMouseEnter={() => setOpen(id)}
       >
-        <span
-          style={
-            {
-              //             writingMode: 'vertical-lr',
-              // textOrientation: 'upright',
-              // letterSpacing:'1px'
-            }
-          }
-          className="font-NeueMontreal hidden text-wrap text-3xl lg:block"
-        >
+        <span className="hidden text-wrap font-NeueMontreal text-3xl lg:block">
           {title}
         </span>
         <span className="block text-xl font-light lg:hidden">{title}</span>
-        {/* <div className="w-6 lg:w-full aspect-square bg-indigo-600 text-white grid place-items-center">
-          <Icon />
-        </div> */}
-        {/* <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-slate-200 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20" /> */}
       </button>
 
       <AnimatePresence>
@@ -88,16 +160,10 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
           <>
             <motion.div
               key={`panel-${id}`}
-              // variants={width && width > 1024 ? panelVariants : panelVariantsSm}
-              variants={panelVariantsSm}
+              variants={panelVariants}
               initial="closed"
               animate="open"
               exit="closed"
-              // style={{background:'linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0))',
-              // WebkitBackdropFilter:'blur(10px)',
-              //   backdropFilter:'blur(10px)'
-              // }}
-              // className="relative h-full w-full overflow-hidden bg-gradient-to-br from-white/20 to-white/5 backdrop-blur"
               className="relative h-full w-full overflow-hidden"
             >
               <motion.div
@@ -107,39 +173,11 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                 exit="closed"
                 className="w-full overflow-hidden px-4 py-2 text-secondary1"
               >
-                <p className="text-secondary2 text-lg">{desc}</p>
+                <p className="text-base text-secondary2 [@media(min-width:1065px)]:text-lg">
+                  {desc}
+                </p>
               </motion.div>
 
-              {/* <motion.div
-                variants={{
-                  open: {
-                    opacity: 1,
-                  },
-                  closed: {
-                    opacity: 0,
-                  },
-                }}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                className="absolute right-14 top-14"
-              >
-                <motion.div
-                  style={{ rotate: "45deg" }}
-                  initial={{ y: 0, opacity: 1 }}
-                  animate={{ y: -30, opacity: 1 }}
-                  transition={{ repeat: Infinity, duration: 1, delay: 0.7 }}
-                  className="absolute border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"
-                ></motion.div>
-                <motion.div
-                  style={{ rotate: "45deg" }}
-                  initial={{ y: 0, opacity: 1 }}
-                  animate={{ y: -15, opacity: 1 }}
-                  transition={{ repeat: Infinity, duration: 1, delay: 0.7 }}
-                  className="absolute border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"
-                ></motion.div>
-                <motion.div className="absolute rotate-45 border-l-2 border-t-2 border-l-secondary1 border-t-secondary1 p-[7px]"></motion.div>
-              </motion.div>*/}
               <div className="ml-20 flex h-full w-full flex-nowrap justify-center gap-x-10 py-10">
                 <motion.video
                   src={vid}
@@ -149,14 +187,11 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   variants={{
                     open: {
                       opacity: 1,
-                      // visibility: "visible"
                     },
                     closed: {
                       opacity: 0,
-                      // visibility: "hidden"
                     },
                   }}
-                  // preload="none"
                   initial="closed"
                   animate="open"
                   exit="closed"
@@ -168,11 +203,9 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   variants={{
                     open: {
                       opacity: 1,
-                      // visibility: "visible"
                     },
                     closed: {
                       opacity: 0,
-                      // visibility: "hidden"
                     },
                   }}
                   initial="closed"
@@ -205,20 +238,6 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
 export default Accordion
 
 const panelVariants = {
-  open: {
-    width: "100%",
-    height: "100%",
-
-    // opacity:'1'
-  },
-  closed: {
-    // opacity:'0',
-    width: "0%",
-    height: "100%",
-  },
-}
-
-const panelVariantsSm = {
   open: {
     width: "100%",
     height: "500px",

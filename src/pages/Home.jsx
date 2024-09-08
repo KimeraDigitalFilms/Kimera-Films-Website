@@ -12,38 +12,15 @@ import About from "../components/About"
 import Accordion from "../components/Service_Accordian/Accordion"
 
 function Home() {
-  // const [ready, setReady] = useState(0);
   const [vis, setVis] = useState(false)
 
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   setReady(1);
-  //   // if (document.readyState==='complete'){
-  //   // }
-  //     // setTimeout(() => {
-  //     // }, 2400);
-  // });
-  // useEffect(()=>{
-  //   setReady(1);
-  // },[])
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" })
   }, [])
 
   return (
     <>
-      <div
-        className=""
-        id="home"
-        // onLoad={() => {
-        //   setReady(1);
-        //   setTimeout(() => {
-
-        //   }, 2400);
-        // }}
-      >
-        {/* {!vis ? (
-          <Preloader ready={ready} setVis={setVis} />
-        ) : ( */}
+      <div id="home">
         {!vis ? (
           sessionStorage.getItem("preloaded") ? (
             <>{setVis(true)}</>

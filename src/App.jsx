@@ -14,7 +14,7 @@ import WrappedHome from "./pages/Home"
 import "./App.css"
 import { ColorState } from "./context/ColorContext"
 import { AnimatePresence } from "framer-motion"
-import SmoothScroll from "./components/SmoothSroll.jsx"
+import SmoothScroll from "./components/SmoothScroll.jsx"
 
 function App() {
   document.body.style.overflowX = "hidden"
