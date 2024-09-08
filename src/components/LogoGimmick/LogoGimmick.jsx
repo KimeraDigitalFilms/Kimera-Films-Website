@@ -24,7 +24,7 @@ function LogoGimmick() {
     <>
       {width >= 728 && (
         <div
-          id="logoGimmick"
+          // id="logoGimmick"
           ref={ref}
           className="relative top-[-60px] h-[150vh] [@media(min-width:1190px)]:mb-[100px] [@media(min-width:1190px)]:h-[200vh]"
         >
