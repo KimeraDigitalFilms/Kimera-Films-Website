@@ -15,10 +15,7 @@ import { AnchorButton } from "./Anchor"
 import colorContext from "../context/ColorContext"
 
 function Navbar() {
-  // const location = useLocation()
-  // if (location.pathname === "/") {
-  //   // document.body.style.background = "#ffffff";
-  // }
+
   const { scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
 
@@ -36,11 +33,11 @@ function Navbar() {
   const handleSidebar = () => {
     setActive(!isActive)
   }
-  // const [mobile, setMobile] = useState(window.innerWidth <= 460 ? 1 : 0)
+  const [mobile, setMobile] = useState(window.innerWidth < 655 ? 1 : 0)
 
-  // useEffect(() => {
-  //   setMobile(window.innerWidth <= 460 ? 1 : 0)
-  // }, [window.innerWidth])
+  useEffect(() => {
+    setMobile(window.innerWidth < 655 ? 1 : 0)
+  }, [window.innerWidth])
 
   //change nav bg color on scroll
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -53,7 +50,7 @@ function Navbar() {
 
   // const navigate = useNavigate()
 
-  const { width } = useWindowSize()
+  // const { width } = useWindowSize()
   return (
     <>
       {/* {!mobile ? (
@@ -84,7 +81,7 @@ function Navbar() {
 
           <nav className="flex w-fit flex-wrap items-center justify-center gap-x-8 text-base text-white">
             <Colors />
-            {width >= 655 ? (
+            {!mobile ? (
               <>
                 <Anchor colorStyle={``} content={"Home"} href={"/"} />
                 <Anchor colorStyle={``} content={"Gallery"} href={"/gallery"} />

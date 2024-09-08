@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState,useEffect } from "react"
 import Logo from "../Logo/Logo"
 import { useScroll, motion, useTransform, easeOut } from "framer-motion"
 import { useWindowSize } from "../../utils/useWindowSize"
@@ -19,12 +19,19 @@ function LogoGimmick() {
   let textX = useTransform(scrollYProgress, [0.6, 0.8], ["-100%", "30%"], {
     ease: easeOut,
   })
-  const { width } = useWindowSize()
+
+  const [mobile, setMobile] = useState(window.innerWidth < 728 ? 1 : 0)
+
+  useEffect(() => {
+    setMobile(window.innerWidth < 728 ? 1 : 0)
+  }, [window.innerWidth])
+
+  // const { width } = useWindowSize()
   return (
     <>
-      {width >= 728 && (
+      {!mobile && (
         <div
-          // id="logoGimmick"
+          id="logoGimmick"
           ref={ref}
           className="relative top-[-60px] h-[150vh] [@media(min-width:1190px)]:mb-[100px] [@media(min-width:1190px)]:h-[200vh]"
         >
