@@ -82,13 +82,13 @@ function Preloader({ setVis }) {
     <motion.div
       ref={scope2}
       id="preloader"
-      className={`absolute top-0 z-[2000] flex h-screen w-screen items-center justify-center bg-black`}
+      className={`screen-padding absolute top-0 z-[2000] flex h-screen w-screen items-center justify-center bg-black`}
     >
       <motion.div
         variants={variants}
         animate={enter ? "hidden" : "visible"}
         transition={{ duration: 0.4 }}
-        className="flex h-fit w-full flex-wrap items-center justify-center gap-x-4 gap-y-5"
+        className="flex h-fit w-full flex-col flex-nowrap items-center justify-center gap-x-4 gap-y-5 [@media(min-width:1080px)]:flex-row"
       >
         <motion.div
           initial={{ rotate: "0deg" }}
@@ -135,17 +135,19 @@ const Text = () => {
   return (
     <div className="block overflow-hidden">
       <motion.div ref={scope} className="h-[40px] text-white">
-        <span className="flex h-[40px] items-center text-3xl">
+        <span className="flex h-[40px] items-center text-3xl [@media(max-width:1079px)]:justify-center">
           Brand Design
         </span>
-        <span className="flex h-[40px] items-center text-3xl">
+        <span className="flex h-[40px] items-center text-3xl [@media(max-width:1079px)]:justify-center">
           Film Production
         </span>
-        <span className="flex h-[40px] items-center text-3xl">
+        <span className="flex h-[41px] items-center text-3xl [@media(max-width:1079px)]:justify-center">
           Digital Marketing
         </span>
-        <span className="flex h-[40px] items-center text-3xl">Animation</span>
-        <span className="flex h-[40px] items-center text-3xl">
+        <span className="flex h-[40px] items-center text-3xl [@media(max-width:1079px)]:justify-center">
+          Animation
+        </span>
+        <span className="flex h-[40px] items-center text-3xl [@media(max-width:1079px)]:justify-center">
           Brand Design
         </span>
       </motion.div>

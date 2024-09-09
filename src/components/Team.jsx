@@ -19,7 +19,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="mt-3 w-full py-5 text-center font-FoundersGrotesk text-[200px] leading-[150px] text-secondary1 [@media(min-width:510px)]:text-[250px] [@media(min-width:510px)]:leading-[180px] [@media(min-width:685px)]:text-[350px] [@media(min-width:685px)]:leading-[230px]"
+        className="mt-3 w-full py-5 text-center font-FoundersGrotesk text-[150px] text-secondary1 [@media(min-width:305px)]:leading-[110px] [@media(min-width:395px)]:text-[200px] [@media(min-width:510px)]:text-[250px] [@media(min-width:510px)]:leading-[180px] [@media(min-width:685px)]:text-[350px] [@media(min-width:685px)]:leading-[230px]"
       >
         {text}
       </motion.h1>
@@ -30,9 +30,9 @@ function Heading({ text }) {
 function Team() {
   const { width } = useWindowSize()
   return (
-    <div className="mt-24">
+    <div className="mt-0 [@media(min-width:405px)]:mt-24">
       <Heading text={"OUR TEAM"} />
-      <div className="screen-padding mt-20 flex flex-col gap-y-[250px]">
+      <div className="screen-padding flex flex-col gap-y-[250px] [@media(min-width:405px)]:mt-20">
         {width >= 860 ? (
           <>
             <div className="flex w-full flex-wrap items-center justify-evenly gap-x-7 gap-y-14">
@@ -80,10 +80,24 @@ const MobileCarousel = () => {
   })
   const { width } = useWindowSize()
   const [scroll, setScroll] = useState(
-    width >= 585 ? "-45%" : width >= 433 ? "-60%" : "-65%"
+    width >= 585
+      ? "-45%"
+      : width >= 433
+        ? "-60%"
+        : width >= 380
+          ? "-65%"
+          : "-70%"
   )
   useEffect(() => {
-    setScroll(width >= 585 ? "-45%" : width >= 433 ? "-60%" : "-65%")
+    setScroll(
+      width >= 585
+        ? "-45%"
+        : width >= 433
+          ? "-60%"
+          : width >= 380
+            ? "-65%"
+            : "-70%"
+    )
   }, [width])
   const x = useTransform(scrollYProgress, [0, 1], ["1%", scroll])
 
@@ -155,7 +169,7 @@ const Card = ({ content, name, desig, src }) => {
         <h2 className="relative z-10 mb-1 mt-3 w-full text-center font-NeueMontreal text-3xl font-bold text-primary">
           {name}
         </h2>
-        <h4 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-base [@media(min-width:670px)]:text-lg font-semibold text-secondary2">
+        <h4 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-base font-semibold text-secondary2 [@media(min-width:670px)]:text-lg">
           {desig}
         </h4>
         <p className="relative z-10 text-justify font-InclusiveSans text-xs text-secondary2 [@media(min-width:680px)]:text-sm">

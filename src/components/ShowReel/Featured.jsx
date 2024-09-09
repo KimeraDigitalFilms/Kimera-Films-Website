@@ -55,7 +55,7 @@ function Featured() {
 
   return (
     <>
-      <div ref={ref} className={"relative mx-auto mt-20 h-[300vh]"}>
+      <div ref={ref} className={"[@media(max-width:1119px)]:mb-40 relative mx-auto mt-20 h-[300vh]"}>
         <div className={"sticky top-0 h-[100vh] overflow-hidden"}>
           {/* <motion.div
           style={{ scale: scale4 }}

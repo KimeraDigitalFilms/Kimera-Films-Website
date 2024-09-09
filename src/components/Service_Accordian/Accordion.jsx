@@ -20,7 +20,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className={`mt-3 w-full py-5 text-center font-FoundersGrotesk text-[180px] leading-[150px] text-secondary1 [@media(min-width:524px)]:text-[250px] [@media(min-width:524px)]:leading-[200px] [@media(min-width:630px)]:text-[300px] [@media(min-width:630px)]:leading-[230px] [@media(min-width:720px)]:text-[350px]`}
+        className={`mt-3 w-full py-5 text-center font-FoundersGrotesk text-[150px] leading-[150px] text-secondary1 [@media(min-width:376px)]:text-[180px] [@media(min-width:524px)]:text-[250px] [@media(min-width:524px)]:leading-[200px] [@media(min-width:630px)]:text-[300px] [@media(min-width:630px)]:leading-[230px] [@media(min-width:720px)]:text-[350px]`}
       >
         {text}
       </motion.h1>
@@ -75,7 +75,9 @@ const MobileServices = () => {
           ? "-50%"
           : width >= 425
             ? "-60%"
-            : "-65%"
+            : width >= 375
+              ? "-65%"
+              : "-70%"
   )
   useEffect(() => {
     setScroll(
@@ -87,7 +89,9 @@ const MobileServices = () => {
             ? "-50%"
             : width >= 425
               ? "-60%"
-              : "-65%"
+              : width >= 375
+                ? "-65%"
+                : "-70%"
     )
   }, [width])
 

@@ -85,14 +85,14 @@ function Footer() {
         // variants={variants}
         // initial="initial"
         // whileInView="animate"
-        className="text-secondary2 m-auto flex h-full w-2/3 flex-row items-center justify-between [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6"
+        className="m-auto flex h-full w-2/3 flex-row items-center justify-between gap-y-5 text-secondary2 [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6"
       >
         <motion.div
-          className="flex flex-col flex-nowrap gap-y-[40px] [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px]"
+          className="flex flex-col gap-y-[40px] [@media(max-width:412px)]:gap-y-[10px] [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px]"
           // variants={variants}
         >
           <motion.h1
-            className="text-6xl font-extrabold [@media(max-width:715px)]:text-center [@media(max-width:715px)]:text-4xl"
+            className="text-6xl font-extrabold [@media(max-width:362px)]:text-3xl [@media(max-width:715px)]:text-center [@media(max-width:715px)]:text-4xl"
             // variants={variants}
           >
             Let's Work Together
@@ -101,10 +101,10 @@ function Footer() {
           <motion.div
           // variants={variants}
           >
-            <h1 className="text-lg font-semibold [@media(max-width:715px)]:text-center">
+            <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Address
             </h1>
-            <span className="text-gray-500">
+            <span className="[@media(min-width:362px)]:text-xs text-gray-500 text-[10px] [@media(min-width:412px)]:text-sm [@media(min-width:461px)]:text-base">
               I-2, Golf City, Plot 11, Sector 75, Noida, Uttar Pradesh
             </span>
           </motion.div>
@@ -112,19 +112,23 @@ function Footer() {
           <motion.div
           // variants={variants}
           >
-            <h1 className="text-lg font-semibold [@media(max-width:715px)]:text-center">
+            <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Mail
             </h1>
-            <span className="text-gray-500">info@kimerafilms.art</span>
+            <span className="text-xs text-gray-500 [@media(min-width:362px)]:text-sm [@media(min-width:461px)]:text-base">
+              info@kimerafilms.art
+            </span>
           </motion.div>
 
           <motion.div
           // variants={variants}
           >
-            <h1 className="text-lg font-semibold [@media(max-width:715px)]:text-center">
+            <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Phone
             </h1>
-            <span className="text-gray-500">+91 88822 64140</span>
+            <span className="text-xs text-gray-500 [@media(min-width:362px)]:text-sm [@media(min-width:461px)]:text-base">
+              +91 88822 64140
+            </span>
           </motion.div>
 
           <motion.div
@@ -186,7 +190,6 @@ function Footer() {
         </motion.div>
 
         <div className="relative w-[500px]">
-
           <motion.form
             // onSubmit={sendEmail}
             ref={form}
@@ -229,7 +232,7 @@ function Footer() {
             <button
               // onClick={sendEmail}
 
-              className="bg-buttonBg font-NeueMontrealLight scale-100 px-4 py-1 text-3xl uppercase tracking-wider text-primary transition-all hover:scale-110 active:scale-95"
+              className="scale-100 bg-buttonBg px-4 py-1 font-NeueMontrealLight text-3xl uppercase tracking-wider text-primary transition-all hover:scale-110 active:scale-95"
             >
               Submit
             </button>

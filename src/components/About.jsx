@@ -17,7 +17,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className={`min-[1072]:text-[300px] min-[737px]:text-[200px] min-[546px]:text-[150px] min-[897px]:text-[250px] mt-3 w-full py-5 text-center font-FoundersGrotesk text-[100px] text-secondary1`}
+        className={`mt-3 w-full py-5 text-center font-FoundersGrotesk text-[80px] text-secondary1 [@media(min-width:1072px)]:text-[300px] [@media(min-width:370px)]:text-[100px] [@media(min-width:546px)]:text-[150px] [@media(min-width:737px)]:text-[200px] [@media(min-width:897px)]:text-[250px]`}
       >
         {text}
       </motion.h1>
@@ -27,7 +27,7 @@ function Heading({ text }) {
 
 function About() {
   return (
-    <div className="screen-padding mx-auto mb-36 w-11/12 text-xl [@media(min-width:546px)]:text-2xl">
+    <div className="screen-padding mx-auto [@media(min-width:405px)]:mb-36 w-11/12 text-lg [@media(min-width:405px)]:text-xl [@media(min-width:546px)]:text-2xl">
       <Heading text={"ABOUT US"} />
 
       <div className="mt-4 w-full p-3 text-justify font-NeueMontrealLight text-secondary2">
