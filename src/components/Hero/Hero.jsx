@@ -44,8 +44,8 @@ const Hero = () => {
         visual experiences that captivate and connect.
       </h3>
       <h2 id="h2"
-        // className="absolute font-Recoleta font-bold text-secondary1 "
-        className="absolute left-[15%] top-[20%] font-Recoleta text-2xl font-bold text-secondary1 [@media(min-width:1000px)]:top-[40%] [@media(min-width:1120px)]:text-4xl [@media(min-width:405px)]:left-[20%] [@media(min-width:525px)]:text-3xl [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[5%] [@media(min-width:970px)]:top-[45%] [@media(min-width:970px)]:text-2xl"
+        className="absolute font-Recoleta font-bold text-secondary1 "
+        // className="absolute left-[15%] top-[20%] font-Recoleta text-2xl font-bold text-secondary1 [@media(min-width:1000px)]:top-[40%] [@media(min-width:1120px)]:text-4xl [@media(min-width:405px)]:left-[20%] [@media(min-width:525px)]:text-3xl [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[5%] [@media(min-width:970px)]:top-[45%] [@media(min-width:970px)]:text-2xl"
       >
         Elevating brands in the digital
         <br />
@@ -53,7 +53,7 @@ const Hero = () => {
       </h2>
       <div
         id="mainLogoContainer"
-        className="font-AvenirBook absolute left-[10%] top-[60%] [@media(min-width:400px)]:left-[15%] flex w-fit flex-nowrap items-center gap-x-4 text-center font-extrabold text-secondary1 [@media(max-width:970px)]:flex-col [@media(max-width:970px)]:justify-center [@media(min-width:405px)]:left-[20%] [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[25%] [@media(min-width:970px)]:top-[65%]"
+        className="font-AvenirBook absolute left-[10%] top-[50%] [@media(min-width:400px)]:left-[15] flex w-fit flex-nowrap items-center gap-x-4 text-center font-extrabold text-secondary1 [@media(max-width:970px)]:flex-col [@media(max-width:970px)]:justify-center [@media(min-width:405px)]:left-[20%] [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[25%] [@media(min-width:970px)]:top-[65%]"
       >
         <img
           src="/logo.svg"
