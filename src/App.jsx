@@ -19,15 +19,15 @@ import SmoothScroll from "./components/SmoothScroll.jsx"
 function App() {
   document.body.style.overflowX = "hidden"
 
-  document.body.style.width =
-    document.documentElement.clientWidth.toString() + "px"
+  // document.body.style.width =
+  //   document.documentElement.clientWidth.toString() + "px"
 
-  function notify() {
-    document.body.style.width =
-      document.documentElement.clientWidth.toString() + "px"
-  }
-  document.body.style.scrollBehavior = "smooth"
-  window.addEventListener("resize", notify)
+  // function notify() {
+  //   document.body.style.width =
+  //     document.documentElement.clientWidth.toString() + "px"
+  // }
+  // document.body.style.scrollBehavior = "smooth"
+  // window.addEventListener("resize", notify)
 
   const location = useLocation()
 

@@ -67,9 +67,9 @@ function Navbar() {
         id="nav"
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: easeInOut }}
-        className={`body-font fixed top-0 z-[300] w-full px-3 transition-colors duration-300 [@media(min-width:455px)]:px-7`}
+        className={`body-font fixed top-0 z-[300] w-full pr-3 transition-colors duration-300 [@media(min-width:455px)]:px-7`}
       >
-        <div className="mx-auto flex h-full flex-wrap items-center justify-between p-5">
+        <div className="mx-auto flex h-full flex-wrap items-center justify-between [@media(min-width:455px)]:p-5 py-2">
           <Link
             to={"/"}
             className={`title-font mb-0 flex items-center font-medium`}
@@ -92,7 +92,7 @@ function Navbar() {
                 {" "}
                 <motion.button
                   onClick={handleSidebar}
-                  className="z-[100] flex h-12 w-12 flex-col flex-nowrap items-center justify-center gap-y-[5px] rounded-[50%] bg-secondary1 p-0 hover:cursor-pointer focus:outline-none"
+                  className="z-[100] flex h-12 w-12 flex-col flex-nowrap items-center justify-center gap-y-[5px] rounded-[50%] bg-gray-300 p-0 hover:cursor-pointer focus:outline-none"
                 >
                   <motion.div
                     variants={{

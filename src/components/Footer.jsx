@@ -249,7 +249,7 @@ function Footer() {
         initial="hidden"
         whileInView="visible"
         transition={{ staggerChildren: 0.05 }}
-        className="relative bottom-12 left-6 mb-4 block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
+        className="relative bottom-12 left-6 mb-4 inline-block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
       >
         {"Designed by Robin Sen".split("").map((char, i) => {
           return (
