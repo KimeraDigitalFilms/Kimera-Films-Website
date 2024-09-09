@@ -82,13 +82,13 @@ function Preloader({ setVis }) {
     <motion.div
       ref={scope2}
       id="preloader"
-      className={`screen-padding absolute top-0 z-[2000] flex h-screen w-screen items-center justify-center bg-black`}
+      className={`px-2 absolute top-0 z-[2000] flex h-screen w-screen items-center justify-center bg-black`}
     >
       <motion.div
         variants={variants}
         animate={enter ? "hidden" : "visible"}
         transition={{ duration: 0.4 }}
-        className="flex h-fit w-full flex-col flex-nowrap items-center justify-center gap-x-4 gap-y-5 [@media(min-width:1080px)]:flex-row"
+        className="flex h-fit w-full flex-col flex-nowrap items-center justify-center gap-x-4 gap-y-5 [@media(min-width:1080px)]:flex-row "
       >
         <motion.div
           initial={{ rotate: "0deg" }}

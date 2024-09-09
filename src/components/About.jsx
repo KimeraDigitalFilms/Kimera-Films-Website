@@ -17,7 +17,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className={`mt-3 w-full py-5 text-center font-FoundersGrotesk text-[80px] text-secondary1 [@media(min-width:1072px)]:text-[300px] [@media(min-width:370px)]:text-[100px] [@media(min-width:546px)]:text-[150px] [@media(min-width:737px)]:text-[200px] [@media(min-width:897px)]:text-[250px]`}
+        className={`mt-3 [@media(min-width:546px)]:mb-20 w-full py-5 text-center font-FoundersGrotesk text-[80px] text-secondary1 [@media(min-width:1072px)]:text-[300px] [@media(min-width:370px)]:text-[100px] [@media(min-width:546px)]:text-[150px] [@media(min-width:737px)]:text-[200px] [@media(min-width:897px)]:text-[250px]`}
       >
         {text}
       </motion.h1>
