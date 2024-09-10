@@ -12,7 +12,7 @@
   }
 }
 
-@media (min-width: 405px) {
+@media (min-width: 446px) {
   #h3 {
     left: 20%;
   }
@@ -23,6 +23,12 @@
     width: 400px;
     font-size: 1rem /* 16px */;
     line-height: 1.5rem /* 22px */;
+  }
+}
+
+@media (min-width: 526px) and (max-width:599px) {
+  #h3 {
+    left: 15%;
   }
 }
 
@@ -59,7 +65,7 @@
   }
 }
 
-/* className="absolute left-[15%] top-[20%] font-Recoleta text-2xl font-bold text-secondary1 [@media(min-width:1000px)]:top-[40%] [@media(min-width:1120px)]:text-4xl [@media(min-width:405px)]:left-[20%] [@media(min-width:525px)]:text-3xl [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[5%] [@media(min-width:970px)]:top-[45%] [@media(min-width:970px)]:text-2xl" */
+
 
 #h2 {
   left: 10%;
@@ -74,7 +80,7 @@
   }
 }
 
-@media (min-width: 405px) {
+@media (min-width: 446px) {
   #h2 {
     left: 20%;
   }
@@ -84,6 +90,12 @@
   #h2 {
     font-size: 2rem;
     line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 526px) and (max-width:599px) {
+  #h2 {
+    left: 15%;
   }
 }
 
@@ -112,5 +124,13 @@
   #h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
+  }
+}
+
+
+
+@media (min-width: 526px) and (max-width:599px) {
+  #mainLogoContainer {
+    left: 15%;
   }
 }
