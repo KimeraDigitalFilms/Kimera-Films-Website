@@ -20,10 +20,10 @@ function LogoGimmick() {
     ease: easeOut,
   })
 
-  const [mobile, setMobile] = useState(window.innerWidth < 728 ? 1 : 0)
+  const [mobile, setMobile] = useState(window.innerWidth < 700 ? 1 : 0)
 
   useEffect(() => {
-    setMobile(window.innerWidth < 728 ? 1 : 0)
+    setMobile(window.innerWidth < 700 ? 1 : 0)
   }, [window.innerWidth])
 
   // const { width } = useWindowSize()
@@ -41,7 +41,7 @@ function LogoGimmick() {
               id="gimmickText"
               transition={{ ease: "linear", delay: 0 }}
               style={{ translateX: textX }}
-              className="absolute left-[5%] top-[40%] w-full font-RecoletaBold tracking-wider text-secondary2 transition-transform delay-0 ease-linear"
+              className="absolute left-[5%] top-[40%] w-full font-RecoletaBold tracking-wider text-secondary2 transition-transform delay-0 ease-linear "
             >
               Where Creativity Converges,
               <br /> Boundaries Dissolve.
@@ -49,7 +49,7 @@ function LogoGimmick() {
             <motion.div
               transition={{ ease: "linear", delay: 0 }}
               style={{ scale, rotate, translateX }}
-              className="mt10 transition-transform delay-0 ease-linear"
+              className="mt-10 transition-transform delay-0 ease-linear"
             >
               <Logo
                 id={"gimmickLogo"}

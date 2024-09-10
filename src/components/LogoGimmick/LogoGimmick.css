@@ -1,5 +1,3 @@
-/* className="absolute left-[5%] top-[40%] w-full font-RecoletaBold text-3xl tracking-wider text-secondary2 transition-transform delay-0 ease-linear [@media(min-width:1005px)]:text-5xl [@media(min-width:1190px)]:top-[50%] [@media(min-width:1280px)]:text-6xl [@media(min-width:750px)]:left-[10%] [@media(min-width:839px)]:left-[5%] [@media(min-width:839px)]:text-4xl [@media(min-width:969px)]:left-0" */
-
 #gimmickText {
   left: 5%;
   top: 40%;
@@ -8,16 +6,21 @@
   transition: transform 0.5s ease-linear;
 }
 
-@media (min-width: 1005px) and (max-width: 1189px) {
+@media (max-width: 1079px) {
   #gimmickText {
-    font-size: 3rem /* 48px */;
-    line-height: 1;
+    top: 40%;
+    left: 15%;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
-@media (min-width: 1190px) and (max-width: 1279px) {
+@media (min-width: 1080px) and (max-width: 1279px) {
   #gimmickText {
-    top: 50%;
+    top: 40%;
+    left: 10%;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -28,23 +31,26 @@
   }
 }
 
-@media (min-width: 750px) and (max-width: 838px) {
+@media (min-width: 700px) and (max-width: 804px) {
   #gimmickText {
-    left: 10%;
+    left: 22%;
+    font-size: 1.3rem;
+    line-height: 2rem;
   }
 }
 
-@media (min-width: 839px) and (max-width: 968px) {
+@media (min-width: 805px) and (max-width: 860px) {
   #gimmickText {
-    left: 5%;
-    font-size: 2.25rem /* 36px */;
-    line-height: 2.5rem /* 40px */;
+    left: 20%;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
   }
 }
-
-@media (min-width: 969px) and (max-width: 1004px) {
+@media (min-width: 861px) and (max-width: 968px) {
   #gimmickText {
-    left: 0;
+    left: 17%;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -52,7 +58,12 @@
   height: 400px;
 }
 
-@media (min-width: 770px) and (max-width: 1189px) {
+@media (min-width: 770px) and (max-width: 968px) {
+  #gimmickLogo {
+    height: 450px;
+  }
+}
+@media (min-width: 969px) and (max-width: 1189px) {
   #gimmickLogo {
     height: 500px;
   }
@@ -64,8 +75,8 @@
   }
 }
 
-@media (min-width:770px) {
-    #gimmickLogo {
-        margin-top: 2.5rem /* 40px */;
-    }
+@media (min-width: 770px) {
+  #gimmickLogo {
+    margin-top: 2.5rem /* 40px */;
+  }
 }
