@@ -82,7 +82,7 @@ function Preloader({ setVis }) {
     <motion.div
       ref={scope2}
       id="preloader"
-      className={`px-2 absolute top-0 z-[2000] flex h-screen w-screen items-center justify-center bg-black`}
+      className={`px-2 absolute top-0 z-[2000] flex h-screen w-screen items-center justify-center bg-black overflow-hidden`}
     >
       <motion.div
         variants={variants}

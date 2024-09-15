@@ -21,9 +21,9 @@ const HorizontalScrollCarousel = ({ setSelected }) => {
   })
 
   const { width } = useWindowSize()
-  const [scroll, setScroll] = useState(width >= 517 ? "-95%" : "-97.5%")
+  const [scroll, setScroll] = useState(width >= 517 ? "-95%" : "-98%")
   useEffect(() => {
-    setScroll(width >= 517 ? "-95%" : "-97.5%")
+    setScroll(width >= 517 ? "-95%" : "-98%")
   }, [width])
   const x = useTransform(scrollYProgress, [0, 1], ["0%", scroll])
 
