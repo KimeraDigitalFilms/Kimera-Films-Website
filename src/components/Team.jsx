@@ -19,7 +19,7 @@ function Heading({ text }) {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="mt-3 w-full py-5 text-center font-FoundersGrotesk text-[150px] text-secondary1 [@media(min-width:305px)]:leading-[110px] [@media(min-width:395px)]:leading-[150px] [@media(min-width:395px)]:text-[200px] [@media(min-width:510px)]:text-[250px] [@media(min-width:510px)]:leading-[180px] [@media(min-width:685px)]:text-[350px] [@media(min-width:685px)]:leading-[230px]"
+        className="mt-3 w-full py-5 text-center font-FoundersGrotesk text-[150px] text-secondary1 [@media(min-width:305px)]:leading-[110px] [@media(min-width:395px)]:text-[200px] [@media(min-width:395px)]:leading-[150px] [@media(min-width:510px)]:text-[250px] [@media(min-width:510px)]:leading-[180px] [@media(min-width:685px)]:text-[350px] [@media(min-width:685px)]:leading-[230px]"
       >
         {text}
       </motion.h1>
@@ -37,19 +37,19 @@ function Team() {
           <>
             <div className="flex w-full flex-wrap items-center justify-evenly gap-x-7 gap-y-14">
               <Card
-                src={"/Hassaan_1x1.webp"}
-                name={"Hassaan Ahmed"}
-                desig={"Head of Content Development"}
-                content={
-                  "The creative force behind Kimera’s storytelling magic, Hassaan shapes brand narratives, guiding projects from concept to completion with a keen eye for detail. His expertise in crafting compelling scripts and overseeing creative direction ensures that every project not only aligns with the vision but also captivates and resonates with our audience. Hassaan’s leadership keeps Kimera’s creative spirit alive, turning ideas into impactful, cohesive stories."
-                }
-              />
-              <Card
                 name={"Tushar Singh"}
                 desig={"Head of Production & Marketing"}
                 src={"/Tushar_1x1.webp"}
                 content={
                   "The orchestrator of Kimera’s operational excellence, Tushar expertly balances strategic planning with seamless execution across marketing, production, and sales. His leadership ensures that every project aligns with Kimera’s vision while maintaining smooth and efficient operations. Tushar's ability to manage complex logistics and large teams transforms creative concepts into successful, well-executed initiatives that exceed expectations."
+                }
+              />
+              <Card
+                src={"/Hassaan_1x1.webp"}
+                name={"Hassaan Ahmad"}
+                desig={"Head of Content Development"}
+                content={
+                  "The creative force behind Kimera’s storytelling magic, Hassaan shapes brand narratives, guiding projects from concept to completion with a keen eye for detail. His expertise in crafting compelling scripts and overseeing creative direction ensures that every project not only aligns with the vision but also captivates and resonates with our audience. Hassaan’s leadership keeps Kimera’s creative spirit alive, turning ideas into impactful, cohesive stories."
                 }
               />
 
