@@ -80,7 +80,7 @@ function Footer() {
   }
 
   return (
-    <footer ref={ref} className="h-screen" id="contact">
+    <footer ref={ref} className="flex h-fit min-h-screen" id="contact">
       <motion.div
         // variants={variants}
         // initial="initial"
@@ -104,7 +104,7 @@ function Footer() {
             <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Address
             </h1>
-            <span className="[@media(min-width:362px)]:text-xs text-gray-500 text-[10px] [@media(min-width:412px)]:text-sm [@media(min-width:461px)]:text-base">
+            <span className="text-[10px] text-gray-500 [@media(min-width:362px)]:text-xs [@media(min-width:412px)]:text-sm [@media(min-width:461px)]:text-base">
               I-2, Golf City, Plot 11, Sector 75, Noida, Uttar Pradesh
             </span>
           </motion.div>
@@ -154,7 +154,7 @@ function Footer() {
             </Link>
             <Link
               target="_blank"
-              to="https://www.instagram.com/kimeraadvertisement_?igsh=MTYyMDAyY2owNHNoMQ=="
+              to="https://www.instagram.com/kimerafilms?igsh=ZnN3c2FrcDgwdW9o"
             >
               <motion.i
                 whileHover={{ scale: 2 }}
@@ -247,21 +247,22 @@ function Footer() {
           </motion.form>
         </div>
       </motion.div>
-
-      <motion.span
-        initial="hidden"
-        whileInView="visible"
-        transition={{ staggerChildren: 0.05 }}
-        className="relative bottom-12 left-6 mb-4 inline-block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
-      >
-        {"Designed by Robin Sen".split("").map((char, i) => {
-          return (
-            <motion.span variants={smallAnimations} key={i}>
-              {char}
-            </motion.span>
-          )
-        })}
-      </motion.span>
+      {window.innerWidth >= 600 && (
+        <motion.span
+          initial="hidden"
+          whileInView="visible"
+          transition={{ staggerChildren: 0.05 }}
+          className="absolute bottom-5 left-6 inline-block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
+        >
+          {"Designed by Robin Sen".split("").map((char, i) => {
+            return (
+              <motion.span variants={smallAnimations} key={i}>
+                {char}
+              </motion.span>
+            )
+          })}
+        </motion.span>
+      )}
     </footer>
   )
 }
