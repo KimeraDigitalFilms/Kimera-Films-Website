@@ -1,6 +1,5 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
 
 function Modal({ selected, setSelected }) {
   if (!selected) {
@@ -9,12 +8,12 @@ function Modal({ selected, setSelected }) {
     document.body.style.overflowY = "hidden"
   }
   return (
-    <div className="">
+    <div data-lenis-prevent>
       <div
         onClick={() => {
           setSelected(null)
           document.body.style.overflowY = "auto"
-        }}
+        }} 
         className="fixed inset-0 z-[150] cursor-pointer overflow-y-scroll bg-black/75"
       >
         {/* inset-0 just covers whole screen */}
