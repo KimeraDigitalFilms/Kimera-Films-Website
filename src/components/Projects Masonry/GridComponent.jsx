@@ -22,7 +22,7 @@ function GridComponent() {
         >
           <Logo
             src={"/logo.svg"}
-            style={` bg-primary/60 [@media(min-width:680px)]:w-[500px] [@media(min-width:555px)]:w-[400px] w-[300px] sticky left-[20%] [@media(min-width:900px)]:left-[30%] [@media(min-width:555px)]:top-[25%] top-[35%] -z-40 `}
+            style={` bg-primary/60 [@media(min-width:680px)]:w-[500px] [@media(min-width:555px)]:w-[400px] w-[300px] sticky left-[5%] [@media(min-width:400px)]:left-[13%] [@media(min-width:900px)]:left-[30%] [@media(min-width:555px)]:top-[25%] top-[35%] -z-40 `}
           />
         </div>
         {mobile ? (
