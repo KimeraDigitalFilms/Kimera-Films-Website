@@ -37,19 +37,19 @@ function Team() {
           <>
             <div className="flex w-full flex-wrap items-center justify-evenly gap-x-7 gap-y-14">
               <Card
-                name={"Tushar Singh"}
-                desig={"Head of Production & Marketing"}
-                src={"/Tushar_1x1.webp"}
-                content={
-                  "The orchestrator of Kimera’s operational excellence, Tushar expertly balances strategic planning with seamless execution across marketing, production, and sales. His leadership ensures that every project aligns with Kimera’s vision while maintaining smooth and efficient operations. Tushar's ability to manage complex logistics and large teams transforms creative concepts into successful, well-executed initiatives that exceed expectations."
-                }
-              />
-              <Card
                 src={"/Hassaan_1x1.webp"}
                 name={"Hassaan Ahmad"}
                 desig={"Head of Content Development"}
                 content={
                   "The creative force behind Kimera’s storytelling magic, Hassaan shapes brand narratives, guiding projects from concept to completion with a keen eye for detail. His expertise in crafting compelling scripts and overseeing creative direction ensures that every project not only aligns with the vision but also captivates and resonates with our audience. Hassaan’s leadership keeps Kimera’s creative spirit alive, turning ideas into impactful, cohesive stories."
+                }
+              />
+              <Card
+                name={"Tushar Singh"}
+                desig={"Head of Production & Marketing"}
+                src={"/Tushar_1x1.webp"}
+                content={
+                  "The orchestrator of Kimera’s operational excellence, Tushar expertly balances strategic planning with seamless execution across marketing, production, and sales. His leadership ensures that every project aligns with Kimera’s vision while maintaining smooth and efficient operations. Tushar's ability to manage complex logistics and large teams transforms creative concepts into successful, well-executed initiatives that exceed expectations."
                 }
               />
 
@@ -161,10 +161,10 @@ const Card = ({ content, name, desig, src }) => {
           />
         )}
 
-        <h2 className="relative z-10 mb-1 mt-3 w-full text-center font-NeueMontreal text-3xl font-bold text-primary">
+        <h2 className="relative z-10 mb-1 mt-3 w-full text-center font-NeueMontreal text-xl font-bold text-primary [@media(min-width:500px)]:text-3xl">
           {name}
         </h2>
-        <h4 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-base font-semibold text-secondary2 [@media(min-width:670px)]:text-lg">
+        <h4 className="relative z-10 mb-3 w-full text-center font-NeueMontreal text-sm font-semibold text-secondary2 [@media(min-width:500px)]:text-base [@media(min-width:670px)]:text-lg">
           {desig}
         </h4>
         <p className="relative z-10 text-justify font-InclusiveSans text-xs text-secondary2 [@media(min-width:680px)]:text-sm">

@@ -53,15 +53,15 @@ const Hero = () => {
       </h2>
       <div
         id="mainLogoContainer"
-        className="font-AvenirBook absolute left-[10%] top-[50%] [@media(min-width:400px)]:left-[15%] flex w-fit flex-nowrap items-center gap-x-4 text-center font-extrabold text-secondary1 [@media(max-width:970px)]:flex-col [@media(max-width:970px)]:justify-center [@media(min-width:446px)]:left-[20%] [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[25%] [@media(min-width:970px)]:top-[65%]"
+        className="font-AvenirBook absolute left-[10%] top-[50%] [@media(min-width:400px)]:left-[15%] flex w-fit flex-nowrap items-center gap-x-4 text-center font-extrabold text-secondary1 [@media(max-width:970px)]:flex-col [@media(max-width:970px)]:justify-center [@media(min-width:446px)]:left-[20%] [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[25%] [@media(min-width:970px)]:top-[65%] [@media(min-width:1800px)]:"
       >
-        <img
+        <img id="heroLogo"
           src="/logo.svg"
-          alt=""
-          className="w-44 [@media(min-width:1120px)]:w-40 [@media(min-width:970px)]:w-32"
+          alt="logo"
+          className="w-44  [@media(min-width:1120px)]:w-40 [@media(min-width:970px)]:w-32"
         />
 
-        <h1 className="select-none font-OverusedGroteskBold text-7xl font-extrabold uppercase [@media(min-width:1120px)]:text-9xl">
+        <h1 className="select-none font-OverusedGroteskBold text-7xl font-extrabold uppercase [@media(min-width:1120px)]:text-9xl [@media(min-width:1800px)]:text-[170px]">
           Kimera
           <span className="absolute text-4xl [@media(min-width:1120px)]:top-2 [@media(min-width:970px)]:top-5">
             TM

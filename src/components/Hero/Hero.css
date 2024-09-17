@@ -26,7 +26,7 @@
   }
 }
 
-@media (min-width: 526px) and (max-width:599px) {
+@media (min-width: 526px) and (max-width: 599px) {
   #h3 {
     left: 15%;
   }
@@ -65,8 +65,6 @@
   }
 }
 
-
-
 #h2 {
   left: 10%;
   top: 15%;
@@ -93,7 +91,7 @@
   }
 }
 
-@media (min-width: 526px) and (max-width:599px) {
+@media (min-width: 526px) and (max-width: 599px) {
   #h2 {
     left: 15%;
   }
@@ -127,10 +125,44 @@
   }
 }
 
-
-
-@media (min-width: 526px) and (max-width:599px) {
+@media (min-width: 526px) and (max-width: 599px) {
   #mainLogoContainer {
     left: 15%;
+  }
+}
+
+/* For Larger Screens */
+@media (min-width: 1800px) {
+  #h3 {
+    width: 600px;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+  #heroLogo {
+    width: 250px;
+  }
+
+  #h2 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+}
+
+@media (min-width: 2255px) {
+  #h3 {
+    width: 800px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+
+  #h2 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+}
+
+@media (min-width: 2305px) {
+  #mainLogoContainer {
+    left: 35%;
   }
 }
