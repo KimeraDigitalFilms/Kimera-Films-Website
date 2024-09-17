@@ -36,7 +36,7 @@ const Accordion = () => {
     <section className="screen-padding mt-[150px]">
       <Heading text={"WHAT WE DO"} />
       {width >= 1058 ? (
-        <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow">
+        <div className="mx-auto mt-20 flex h-fit w-full max-w-7xl flex-col overflow-hidden rounded-lg shadow-xl shadow-shadow [@media(min-width:1800px)]:max-w-[1500px] [@media(min-width:2100px)]:max-w-[1700px] [@media(min-width:2300px)]:max-w-[2000px]">
           {items.map((item) => {
             return (
               <Panel
@@ -182,7 +182,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                 </p>
               </motion.div>
 
-              <div className="ml-20 flex h-full w-full flex-nowrap justify-center gap-x-10 py-10">
+              <div className="ml-20 flex h-full w-full flex-nowrap justify-center gap-x-10 py-10 [@media(min-width:1800px)]:gap-x-32 [@media(min-width:2100px)]:gap-x-52">
                 <motion.video
                   src={vid}
                   autoPlay
@@ -199,7 +199,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   initial="closed"
                   animate="open"
                   exit="closed"
-                  className="ml-10 mt-5 h-[225px] w-[400px] rounded-lg"
+                  className="ml-10 mt-5 h-[225px] w-[400px] rounded-lg [@media(min-width:2100px)]:w-[500px] [@media(min-width:2300px)]:w-[700px]"
                 ></motion.video>
 
                 <motion.div

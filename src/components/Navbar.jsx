@@ -74,7 +74,7 @@ function Navbar() {
             to={"/"}
             className={`title-font mb-0 flex items-center font-medium`}
           >
-            <span className="ml-3 text-xl font-bold uppercase text-primary [@media(min-width:455px)]:text-2xl">
+            <span className="ml-3 text-xl font-bold uppercase text-primary [@media(min-width:455px)]:text-2xl [@media(min-width:2125px)]:text-4xl">
               Kimera Films
             </span>
           </Link>
