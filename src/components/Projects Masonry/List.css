@@ -28,9 +28,22 @@
   }
 }
 
-@media only screen and (min-width: 1060px) {
+@media (min-width: 1060px) and (max-width: 1499px){
   #grid {
     grid-template-columns: 10;
     grid-auto-rows: 90px;
   }
 }
+
+@media (min-width: 1500px) and (max-width:2074px){
+  #grid {
+    grid-auto-rows: 150px;
+  }
+}
+
+@media (min-width: 2075px) {
+  #grid {
+    grid-auto-rows: 180px;
+  }
+}
+
