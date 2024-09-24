@@ -66,7 +66,8 @@ function Projects() {
           autoPlay
           muted
           loop
-          className="w-[200px] [@media(max-width:600px)]:w-[300px] [@media(min-width:640px)]:w-[300px] [@media(min-width:905px)]:w-[400px]"
+          playsInline
+          className="w-[200px] select-none [@media(max-width:600px)]:w-[300px] [@media(min-width:640px)]:w-[300px] [@media(min-width:905px)]:w-[400px]"
         />
       </div>
 

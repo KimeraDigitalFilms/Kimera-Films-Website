@@ -55,7 +55,12 @@ function Featured() {
 
   return (
     <>
-      <div ref={ref} className={"[@media(max-width:1119px)]:mb-20 relative mx-auto mt-20 h-[300vh]"}>
+      <div
+        ref={ref}
+        className={
+          "relative mx-auto mt-20 h-[300vh] [@media(max-width:1119px)]:mb-20"
+        }
+      >
         <div className={"sticky top-0 h-[100vh] overflow-hidden"}>
           {/* <motion.div
           style={{ scale: scale4 }}
@@ -88,9 +93,10 @@ function Featured() {
                 muted
                 autoPlay
                 loop
+                playsInline
                 src={videos[1].src}
                 alt="video"
-                className="h-full w-full object-cover"
+                className="h-full w-full select-none object-cover"
               />
             </div>
           </motion.div>
@@ -108,9 +114,10 @@ function Featured() {
                 muted
                 autoPlay
                 loop
+                playsInline
                 src={videos[2].src}
                 alt="video"
-                className="h-full w-full object-cover"
+                className="h-full w-full select-none object-cover"
               />
             </div>
           </motion.div>
@@ -125,10 +132,11 @@ function Featured() {
               <video
                 muted
                 autoPlay
+                playsInline
                 loop
                 src={videos[3].src}
                 alt="video"
-                className="h-full w-full object-cover"
+                className="h-full w-full select-none object-cover"
               />
             </div>
           </motion.div>
@@ -146,9 +154,10 @@ function Featured() {
                 muted
                 autoPlay
                 loop
+                playsInline
                 src={videos[4].src}
                 alt="video"
-                className="h-full w-full object-cover"
+                className="h-full w-full select-none object-cover"
               />
             </div>
           </motion.div>
@@ -167,10 +176,11 @@ function Featured() {
               <video
                 muted
                 autoPlay
+                playsInline
                 loop
                 src={videos[5].src}
                 alt="video"
-                className="h-full w-full object-cover"
+                className="h-full w-full select-none object-cover"
               />
             </div>
           </motion.div>
@@ -188,9 +198,10 @@ function Featured() {
                 muted
                 autoPlay
                 loop
+                playsInline
                 src={videos[6].src}
                 alt="video"
-                className="h-full w-full object-cover"
+                className="h-full w-full select-none object-cover"
               />
             </div>
           </motion.div>
@@ -200,14 +211,14 @@ function Featured() {
         <>
           <Heading />
           <div className="mb-40 mt-10 flex flex-col items-center justify-start gap-y-10">
-            <h2 className="text-secondary2 font-NeueMontrealLight mx-auto w-4/5 text-center text-2xl">
+            <h2 className="mx-auto w-4/5 text-center font-NeueMontrealLight text-2xl text-secondary2">
               WE CRAFT IMPACTFUL CONTENT FOR CLIENTS ACROSS A RANGE OF
               INDUSTRIES, INCLUDING BROADCAST, FILM, GAMES, BRANDS,
               EXPERIENTIAL, AND THEMED ENTERTAINMENT.
             </h2>
             <Link
               to="/gallery"
-              className="bg-buttonBg font-NeueMontrealLight scale-100 rounded-full px-5 py-2 text-4xl uppercase tracking-wide text-primary transition-all hover:scale-110 active:scale-95"
+              className="scale-100 rounded-full bg-buttonBg px-5 py-2 font-NeueMontrealLight text-4xl uppercase tracking-wide text-primary transition-all hover:scale-110 active:scale-95"
             >
               View Gallery
             </Link>
@@ -236,7 +247,7 @@ function Heading() {
       <motion.h1
         style={{ opacity }}
         ref={ref}
-        className="font-FoundersGrotesk mt-3 w-full select-none py-5 text-center text-[300px] leading-[200px] text-secondary1"
+        className="mt-3 w-full select-none py-5 text-center font-FoundersGrotesk text-[300px] leading-[200px] text-secondary1"
       >
         <span className="pl-2 text-[310px]">FEATURED</span>
         <br />

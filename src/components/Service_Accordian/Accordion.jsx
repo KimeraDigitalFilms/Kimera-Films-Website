@@ -119,7 +119,8 @@ const Card = ({ item }) => {
           autoPlay
           loop
           muted
-          className="mb-5 h-[169px] w-[300px] rounded-lg [@media(min-width:570px)]:h-[225px] [@media(min-width:570px)]:w-[400px]"
+          playsInline
+          className="mb-5 h-[169px] w-[300px] rounded-lg [@media(min-width:570px)]:h-[225px] [@media(min-width:570px)]:w-[400px] select-none"
         ></video>
         <h2 className="mb-4 text-2xl font-semibold uppercase [@media(min-width:570px)]:text-3xl">
           {item.title}
@@ -188,6 +189,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   autoPlay
                   loop
                   muted
+                  playsInline
                   variants={{
                     open: {
                       opacity: 1,
@@ -199,7 +201,7 @@ const Panel = ({ open, setOpen, id, title, vid, list, desc }) => {
                   initial="closed"
                   animate="open"
                   exit="closed"
-                  className="ml-10 mt-5 h-[225px] w-[400px] rounded-lg [@media(min-width:2100px)]:w-[500px] [@media(min-width:2300px)]:w-[700px]"
+                  className="select-none ml-10 mt-5 h-[225px] w-[400px] rounded-lg [@media(min-width:2100px)]:w-[500px] [@media(min-width:2300px)]:w-[700px]"
                 ></motion.video>
 
                 <motion.div

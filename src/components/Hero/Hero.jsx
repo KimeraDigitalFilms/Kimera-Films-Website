@@ -8,7 +8,7 @@ const Hero = () => {
 
   const { canvasBg, canvasColor } = useContext(colorContext)
   const [sensitivity, setSensitivity] = useState(
-    window.innerWidth >= 500 ? 1.5 : 3
+    window.innerWidth >= 500 ? 1.5 : 4.5
   )
 
   // useEffect(() => {

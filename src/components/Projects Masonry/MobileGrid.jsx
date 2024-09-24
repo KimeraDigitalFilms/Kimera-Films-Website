@@ -28,7 +28,7 @@ const HorizontalScrollCarousel = ({ setSelected }) => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", scroll])
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[400vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex h-2/3 gap-x-10">
           {list.map((card, i) => {
