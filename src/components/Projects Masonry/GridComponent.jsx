@@ -18,7 +18,7 @@ function GridComponent() {
     <>
       <div className="my-5 w-full">
         <div
-          className={`absolute left-0 top-[100vh] -z-40 ${mobile ? "h-[400vh]" : "h-[300vh]"} w-full [@media(min-width:2075px)]:h-[980vh] [@media(min-width:701px)]:h-[550vh] [@media(min-width:801px)]:h-[830vh]`}
+          className={`absolute left-0 top-[100vh] -z-40 ${mobile ? "h-[500vh]" : "h-[300vh]"} w-full [@media(min-width:2075px)]:h-[980vh] [@media(min-width:701px)]:h-[550vh] [@media(min-width:801px)]:h-[830vh]`}
         >
           <Logo
             src={"/logo.svg"}
