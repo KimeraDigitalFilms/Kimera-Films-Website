@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-// import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import { useWindowSize } from "../utils/useWindowSize"
 import {
@@ -11,11 +11,9 @@ import {
 } from "framer-motion"
 import { Link } from "react-router-dom"
 import Anchor from "./Anchor"
-import { AnchorButton } from "./Anchor"
 import colorContext from "../context/ColorContext"
 
 function Navbar() {
-
   const { scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
 
@@ -69,12 +67,12 @@ function Navbar() {
         transition={{ duration: 0.35, ease: easeInOut }}
         className={`body-font fixed top-0 z-[300] w-full pr-3 transition-colors duration-300 [@media(min-width:455px)]:px-7`}
       >
-        <div className="mx-auto flex h-full flex-wrap items-center justify-between [@media(min-width:455px)]:p-5 py-2">
+        <div className="mx-auto flex h-full flex-wrap items-center justify-between py-2 [@media(min-width:455px)]:p-5">
           <Link
             to={"/"}
             className={`title-font mb-0 flex items-center font-medium`}
           >
-            <span className="ml-3 text-xl font-bold uppercase text-primary [@media(min-width:455px)]:text-2xl [@media(min-width:2125px)]:text-4xl">
+            <span className="ml-3 text-xl font-bold uppercase text-primary [@media(min-width:2125px)]:text-4xl [@media(min-width:455px)]:text-2xl">
               Kimera Films
             </span>
           </Link>
@@ -140,7 +138,7 @@ function Dropdown({ setActive }) {
     { title: "Home", href: "/" },
     // { title: "About", href: "/about" },
     { title: "Gallery", href: "/gallery" },
-    // { title: "Services", href: "/services" },
+    { title: "Contact", href: "#contact" },
   ]
 
   return (
@@ -202,7 +200,11 @@ function Dropdown({ setActive }) {
                   animate="open"
                   exit="exit"
                 >
-                  <Link to={link.href}>{link.title}</Link>
+                  {link.title == "Contact" ? (
+                    <ContactButton />
+                  ) : (
+                    <Link to={link.href}>{link.title}</Link>
+                  )}
                 </motion.div>
               </motion.div>
             )
@@ -267,6 +269,70 @@ const Colors = () => {
           className="cursor-pointer rounded-full bg-[#880808] p-2"
         />
       </div>
+    </div>
+  )
+}
+
+
+
+const ContactButton = () => {
+  const location = useLocation()
+  const [open, setOpen] = useState(false)
+  const { scrollY } = useScroll()
+  // const [onBlack, setOnBlack] = useState(false)
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   if (latest < 55) {
+  //     setOnBlack(false)
+  //   } else {
+  //     setOnBlack(true)
+  //   }
+  // })
+
+  const navigate = useNavigate()
+  return (
+    <div
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      className="relative h-fit w-fit"
+    >
+      <button
+        // id="contactButton"
+        type="button"
+        onClick={() => {
+          return new Promise((resolve) => {
+            navigate("/")
+            if (location.pathname === "/") {
+              setTimeout(() => {
+                resolve()
+              }, 800)
+            } else {
+              setTimeout(() => {
+                resolve()
+              }, 1000)
+            }
+          }).then(() => {
+            window.scrollTo({
+              left: 0,
+              top: document.getElementById("contact").offsetTop,
+              behavior: "smooth",
+            })
+          })
+          // window.scrollTo({
+          //   left: 0,
+          //   top: document.body.scrollHeight,
+          //   behavior: "smooth",
+          // })
+        }}
+        className="uppercase"
+      >
+        Contact
+        <span
+          style={{
+            transform: open ? "scaleX(1)" : "scaleX(0)",
+          }}
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-primary transition-transform duration-300 ease-out"
+        />
+      </button>
     </div>
   )
 }
