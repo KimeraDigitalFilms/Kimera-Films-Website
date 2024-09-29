@@ -206,7 +206,7 @@ function Footer() {
               name="name"
               className="bg-transparent px-3 py-2 text-secondary1 outline outline-1 outline-secondary1 placeholder:text-gray-500"
               color="white"
-              placeholder="Username"
+              placeholder="Name"
             ></input>
             <input
               required

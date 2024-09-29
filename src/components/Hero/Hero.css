@@ -6,7 +6,7 @@
   line-height: 1.25rem /* 20px */;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 426px) {
   #h3 {
     left: 15%;
   }
@@ -72,7 +72,7 @@
   line-height: 2rem;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 426px) {
   #h2 {
     left: 15%;
   }

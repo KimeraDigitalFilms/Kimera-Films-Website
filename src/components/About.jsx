@@ -42,7 +42,7 @@ function About() {
 
       <div className="flex w-full flex-wrap gap-x-7 gap-y-5 p-3 text-justify font-NeueMontrealLight text-secondary2 [@media(min-width:1000px)]:flex-nowrap">
         <div className="[@media(min-width:1000px)]:w-1/2">
-          <video src="/About_Us.webm" loop muted autoPlay className="" />
+          <video src="/About_Us.webm" loop muted autoPlay playsInline className="select-none" />
         </div>
         <p className="[@media(min-width:1000px)]:w-1/2">
           At Kimera, we boldly defy creative norms and celebrate the art of
