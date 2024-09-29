@@ -11,6 +11,7 @@ import {
 } from "framer-motion"
 import { Link } from "react-router-dom"
 import Anchor from "./Anchor"
+import { AnchorButton } from "./Anchor"
 import colorContext from "../context/ColorContext"
 
 function Navbar() {
