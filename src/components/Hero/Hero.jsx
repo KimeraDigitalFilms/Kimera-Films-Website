@@ -65,7 +65,7 @@ const Hero = () => {
       </h2>
       <div
         id="mainLogoContainer"
-        className="font-AvenirBook  absolute left-[10%] top-[50%] flex w-fit flex-nowrap items-center gap-x-4 text-center font-extrabold text-secondary1 [@media(max-width:970px)]:flex-col [@media(max-width:970px)]:justify-center [@media(min-width:426px)]:left-[15%] [@media(min-width:446px)]:left-[20%] [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[25%] [@media(min-width:970px)]:top-[65%]"
+        className="font-AvenirBook  absolute left-[10%] top-[50%] flex w-fit flex-nowrap items-center gap-x-4 text-center font-extrabold text-secondary1 [@media(max-width:970px)]:flex-col [@media(max-width:970px)]:justify-center [@media(min-width:426px)]:left-[15%] [@media(min-width:474px)]:left-[20%] [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[25%] [@media(min-width:970px)]:top-[65%]"
       >
         <img
           id="heroLogo"
