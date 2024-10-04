@@ -202,7 +202,14 @@ function Dropdown({ setActive }) {
                   {link.title == "Contact" ? (
                     <ContactButton />
                   ) : (
-                    <Link to={link.href}>{link.title}</Link>
+                    <Link
+                      to={link.href}
+                      onClick={() => {
+                        document.documentElement.style.overflow = "visible"
+                      }}
+                    >
+                      {link.title}
+                    </Link>
                   )}
                 </motion.div>
               </motion.div>
@@ -275,15 +282,6 @@ const Colors = () => {
 const ContactButton = () => {
   const location = useLocation()
   const [open, setOpen] = useState(false)
-  const { scrollY } = useScroll()
-  // const [onBlack, setOnBlack] = useState(false)
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   if (latest < 55) {
-  //     setOnBlack(false)
-  //   } else {
-  //     setOnBlack(true)
-  //   }
-  // })
 
   const navigate = useNavigate()
   return (
@@ -293,9 +291,9 @@ const ContactButton = () => {
       className="relative h-fit w-fit"
     >
       <button
-        // id="contactButton"
         type="button"
         onClick={() => {
+          document.documentElement.style.overflow = "visible"
           return new Promise((resolve) => {
             navigate("/")
             if (location.pathname === "/") {
