@@ -76,7 +76,7 @@ const Hero = () => {
 
         <h1 className="select-none font-OverusedGroteskBold text-7xl font-extrabold uppercase [@media(min-width:1120px)]:text-9xl [@media(min-width:1800px)]:text-[170px]">
           Kimera
-          <span className="absolute text-2xl [@media(min-width:1120px)]:top-2 [@media(min-width:970px)]:top-5">
+          <span className="absolute text-2xl [@media(min-width:815px)]:text-4xl  [@media(min-width:1120px)]:top-2 [@media(min-width:970px)]:top-5">
             TM
           </span>
         </h1>
