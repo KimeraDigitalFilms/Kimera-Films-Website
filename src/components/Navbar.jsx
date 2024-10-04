@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-
-import { useWindowSize } from "../utils/useWindowSize"
 import {
   AnimatePresence,
   easeInOut,
@@ -29,8 +27,13 @@ function Navbar() {
 
   const [isActive, setActive] = useState(false)
 
-  const handleSidebar = () => {
+  const handleDropdown = () => {
     setActive(!isActive)
+    if (!isActive) {
+      document.documentElement.style.overflow = "hidden"
+    } else {
+      document.documentElement.style.overflow = "visible"
+    }
   }
   const [mobile, setMobile] = useState(window.innerWidth < 655 ? 1 : 0)
 
@@ -46,14 +49,8 @@ function Navbar() {
       document.getElementById("nav").style.backgroundColor = "rgba(0,0,0,0.70)"
     }
   })
-
-  // const navigate = useNavigate()
-
-  // const { width } = useWindowSize()
   return (
     <>
-      {/* {!mobile ? (
-        <> */}
       <motion.header
         variants={{
           visible: {
@@ -90,7 +87,7 @@ function Navbar() {
               <>
                 {" "}
                 <motion.button
-                  onClick={handleSidebar}
+                  onClick={handleDropdown}
                   className="z-[100] flex h-12 w-12 flex-col flex-nowrap items-center justify-center gap-y-[5px] rounded-[50%] bg-gray-300 p-0 hover:cursor-pointer focus:outline-none"
                 >
                   <motion.div
@@ -162,10 +159,11 @@ function Dropdown({ setActive }) {
           },
         },
       }}
+      data-lenis-prevent
       initial="initial"
       animate="animate"
       exit="exit"
-      className="fixed left-0 top-0 z-[80] h-screen w-full origin-top bg-primary px-10 pb-10 pt-6 text-black"
+      className="fixed left-0 top-0 z-[80] h-screen w-full origin-top overflow-hidden bg-primary px-10 pb-10 pt-6 text-black"
     >
       <div className="flex h-full flex-col">
         <div className="flex justify-between">
@@ -273,8 +271,6 @@ const Colors = () => {
     </div>
   )
 }
-
-
 
 const ContactButton = () => {
   const location = useLocation()
