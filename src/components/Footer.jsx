@@ -56,51 +56,15 @@ function Footer() {
   // };
 
   const ref = useRef()
-  const isInView = useInView(ref, { margin: "-100px" })
-
-  const smallAnimations = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  }
-
-  const variants = {
-    initial: {
-      y: 500,
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        // delay:1,
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
   return (
     <footer ref={ref} className="flex h-fit min-h-screen" id="contact">
-      <motion.div
-        // variants={variants}
-        // initial="initial"
-        // whileInView="animate"
-        className="m-auto flex h-full w-2/3 flex-row items-center justify-between gap-y-5 text-secondary2 [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6"
-      >
-        <motion.div
-          className="flex flex-col gap-y-[40px] [@media(max-width:412px)]:gap-y-[10px] [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px]"
-          // variants={variants}
-        >
-          <motion.h1
-            className="text-6xl font-extrabold [@media(max-width:362px)]:text-3xl [@media(max-width:715px)]:text-center [@media(max-width:715px)]:text-4xl"
-            // variants={variants}
-          >
+      <motion.div className="m-auto flex h-full w-2/3 flex-row items-center justify-between gap-y-5 text-secondary2 [@media(max-width:715px)]:flex-wrap [@media(max-width:715px)]:!justify-around [@media(max-width:970px)]:w-5/6">
+        <motion.div className="flex flex-col gap-y-[40px] [@media(max-width:412px)]:gap-y-[10px] [@media(max-width:715px)]:items-center [@media(max-width:715px)]:gap-y-[30px]">
+          <motion.h1 className="text-6xl font-extrabold [@media(max-width:362px)]:text-3xl [@media(max-width:715px)]:text-center [@media(max-width:715px)]:text-4xl">
             Let's Work Together
           </motion.h1>
 
-          <motion.div
-          // variants={variants}
-          >
+          <motion.div>
             <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Address
             </h1>
@@ -109,9 +73,7 @@ function Footer() {
             </span>
           </motion.div>
 
-          <motion.div
-          // variants={variants}
-          >
+          <motion.div>
             <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Mail
             </h1>
@@ -120,9 +82,7 @@ function Footer() {
             </span>
           </motion.div>
 
-          <motion.div
-          // variants={variants}
-          >
+          <motion.div>
             <h1 className="font-semibold [@media(max-width:715px)]:text-center [@media(min-width:362px)]:text-lg">
               Phone
             </h1>
@@ -131,17 +91,7 @@ function Footer() {
             </span>
           </motion.div>
 
-          <motion.div
-            className="flex flex-wrap gap-x-6 gap-y-6 [@media(max-width:345px)]:gap-x-5"
-            // variants={variants}
-          >
-            {/* <Link target="_blank" to="https://github.com/Inquisitor820">
-              <motion.i
-                whileHover={{ scale: 2 }}
-                transition={{ type: "spring", duration: 0.4 }}
-                className="fa-brands fa-square-github fa-2xl"
-              ></motion.i>
-            </Link> */}
+          <motion.div className="flex flex-wrap gap-x-6 gap-y-6 [@media(max-width:345px)]:gap-x-5">
             <Link
               target="_blank"
               to="https://www.facebook.com/profile.php?id=100091328288195"
@@ -169,13 +119,6 @@ function Footer() {
                 className="fa-brands fa-square-x-twitter fa-2xl"
               ></motion.i>
             </Link>
-            {/* <Link target="_blank" to="https://www.behance.net/shadowz123">
-              <motion.i
-                whileHover={{ scale: 2 }}
-                transition={{ type: "spring", duration: 0.4 }}
-                className=" fa-brands fa-square-behance fa-2xl"
-              ></motion.i>
-            </Link> */}
             <Link
               target="_blank"
               to="https://www.linkedin.com/company/kimera-films21/"
@@ -194,10 +137,6 @@ function Footer() {
             // onSubmit={sendEmail}
             ref={form}
             id="contactForm"
-            // initial={{ opacity: 0 }}
-            // whileInView={{ opacity: 1 }}
-            // transition={{ duration: 1, delay: 1 }}
-            // viewport={{ once: true }}
             className="m-auto flex w-full flex-col flex-nowrap gap-y-5"
           >
             <input
@@ -247,22 +186,6 @@ function Footer() {
           </motion.form>
         </div>
       </motion.div>
-      {window.innerWidth >= 600 && (
-        <motion.span
-          initial="hidden"
-          whileInView="visible"
-          transition={{ staggerChildren: 0.05 }}
-          className="absolute bottom-5 left-6 inline-block pl-1 text-sm font-medium text-primary md:text-sm [@media(max-width:715px)]:bottom-6"
-        >
-          {"Designed by Robin Sen".split("").map((char, i) => {
-            return (
-              <motion.span variants={smallAnimations} key={i}>
-                {char}
-              </motion.span>
-            )
-          })}
-        </motion.span>
-      )}
     </footer>
   )
 }
