@@ -16,10 +16,6 @@ canvas {
   border-radius: 10px;
 }
 
-/* #imageContainer:hover {
-    filter: saturate(100%);
-  }
-   */
 .imageContainer > * {
   position: absolute;
   inset: 0;
@@ -28,10 +24,3 @@ canvas {
   object-fit: cover;
 }
 
-/* #heroText {
-  display: table;
-  width: -moz-fit-content;
-  width: fit-content !important;
-  height: fit-content !important;
-  top: 35vh;
-} */

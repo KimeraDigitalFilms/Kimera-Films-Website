@@ -5,7 +5,6 @@ import { motion, useAnimate } from "framer-motion"
 import colorContext from "../context/ColorContext"
 
 function Preloader({ setVis }) {
-  // const [ready, setReady] = useState(0);
 
   const { loadColor } = useContext(colorContext)
 
@@ -62,19 +61,6 @@ function Preloader({ setVis }) {
   }
 
   useEffect(() => {
-    // console.log(document.readyState)
-    // if (ready === 1) {
-    //   setTimeout(() => {
-    //     loaderAnimate2();
-    //   }, 2400);
-    //   // console.log(ready)
-    // } else {
-    //   loaderAnimate1();
-    // }
-    // loaderAnimate1()
-    // setTimeout(() => {
-    //   loaderAnimate2()
-    // }, 2400)
     loaderAnimate()
   }, [])
 

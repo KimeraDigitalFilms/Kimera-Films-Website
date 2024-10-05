@@ -105,7 +105,6 @@ const LogoItem = ({
       target="_blank"
       className="flex h-16 w-16 items-center justify-center px-2 md:h-24 md:w-24"
     >
-      {/* <Icon className="text-4xl md:text-5xl" /> */}
       {canvasBg !== "#ffffff" ? (
         <img
           src={Icon}
@@ -132,7 +131,6 @@ const LogoItem = ({
     </div>
   )
 }
-// ${zoom && `scale-[${zoom}]`} ${bright && `brightness-[${bright}]`}
 
 const LogoItemsTop = () => (
   <>
@@ -141,7 +139,6 @@ const LogoItemsTop = () => (
       bright={2}
       invert={100}
     />
-    {/* <LogoItem Icon={"/client logos/Media.Monks.svg"} /> */}
     <LogoItem
       Icon={"/client logos/Burgundy Logo.webp"}
       zoom={1.5}

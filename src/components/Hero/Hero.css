@@ -2,8 +2,8 @@
   left: 10%;
   top: 30%;
   width: 300px;
-  font-size: 0.875rem /* 14px */;
-  line-height: 1.25rem /* 20px */;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 @media (min-width: 426px) {

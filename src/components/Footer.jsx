@@ -10,14 +10,6 @@ function Footer() {
     message: "",
   })
 
-  // const handleChange = (e) => {
-  //   const { id, value } = e.target; //name= name attribute of element that triggered event and same with value
-  //   setFormData({
-  //     ...formData,
-  //     [id]: value, //keep all formdata same but change the object key-value pais whose name matches with that of the field. also add new pair if name dont alread exist
-  //   });
-  // };
-
   const form = useRef()
   const [error, setError] = useState(null)
 

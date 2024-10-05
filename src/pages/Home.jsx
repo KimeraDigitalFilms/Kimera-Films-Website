@@ -45,7 +45,6 @@ function Home() {
   )
 }
 
-// export default Home
 
 const WrappedHome = PageTransition(Home)
 

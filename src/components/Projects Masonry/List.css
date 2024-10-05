@@ -1,11 +1,9 @@
 #grid {
   display: grid;
-  /* grid-auto-rows: 10px; */
 }
 
 @media (max-width: 535px) {
   #grid {
-    /* grid-auto-columns: 30px; */
     grid-auto-rows: 15px;
   }
 }

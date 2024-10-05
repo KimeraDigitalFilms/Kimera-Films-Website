@@ -157,7 +157,6 @@ const Card = ({ content, name, desig, src }) => {
             src={src}
             alt="name"
             className="w-[250px] rounded-lg [@media(min-width:670px)]:w-[300px]"
-            // style={{width:'300px',height:"300px"}}
           />
         )}
 

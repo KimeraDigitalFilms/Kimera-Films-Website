@@ -1,6 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { FiAlertCircle } from "react-icons/fi"
-// import { useState } from "react";
 
 const ShowReelModal = ({ isOpen, setIsOpen }) => {
   return (
@@ -21,24 +19,9 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
             initial={{ scale: 0, rotate: "12.5deg" }}
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
-            // onClick={
-            //   (e) =>
-            //     e.stopPropagation()
-            // }
             className="relative w-full max-w-[1000px] cursor-default rounded-lg bg-primary p-2 text-white shadow-xl"
           >
             <div className="relative z-10 h-full w-full object-cover">
-              {/* <video
-                preload="none"
-                poster="/thumbnails/random3.png"
-                loop
-                autoPlay
-                muted
-                playsInline
-                controls
-                src="/videos/random3.mp4"
-                className="w-full hover:cursor-pointer h-full"
-              ></video> */}
               <div
                 style={{
                   position: "relative",
@@ -55,11 +38,9 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
                 <iframe
                   title="reelModal"
                   loading="lazy"
-                  // src="https://player.vimeo.com/video/938376141?h=4bb8442f8d&autoplay=1&loop=1&title=0&byline=0&muted=0&controls=1"
                   src="https://www.youtube-nocookie.com/embed/co3oF61Lm6k?si=obnDMZmXGPns34Tj&amp;playlist=co3oF61Lm6k&amp;mute=0&amp;controls=1&amp;autoplay=1&amp;loop=1"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
-                  // style={{ position:'relative',width: "25vw !important", height: "25vh !important",padding:0 }}
                   style={{
                     position: "absolute",
                     top: "0",
@@ -67,9 +48,7 @@ const ShowReelModal = ({ isOpen, setIsOpen }) => {
                     width: "100%",
                     height: "100%",
                   }}
-                  // className="w-full h-full"
                   frameBorder="0"
-                  // allow="autoplay; fullscreen; picture-in-picture"
                   webkitallowfullscreen
                   mozallowfullscreen
                   allowfullscreen

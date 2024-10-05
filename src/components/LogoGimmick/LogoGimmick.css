@@ -26,7 +26,7 @@
 
 @media (min-width: 1280px) {
   #gimmickText {
-    font-size: 3.75rem /* 60px */;
+    font-size: 3.75rem;
     line-height: 1;
   }
 }
@@ -77,6 +77,6 @@
 
 @media (min-width: 770px) {
   #gimmickLogo {
-    margin-top: 2.5rem /* 40px */;
+    margin-top: 2.5rem;
   }
 }

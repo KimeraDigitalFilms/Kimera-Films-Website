@@ -5,7 +5,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion"
 const Anchor = ({ content, colorStyle, href, onClick }) => {
   return (
     <>
-      <div className="">
+      <div>
         <FlyoutLink href={href} colorStyle={colorStyle} onClick={onClick}>
           {content}
         </FlyoutLink>
@@ -98,11 +98,6 @@ const AnchorButton = () => {
               behavior: "smooth",
             })
           })
-          // window.scrollTo({
-          //   left: 0,
-          //   top: document.body.scrollHeight,
-          //   behavior: "smooth",
-          // })
         }}
         className={`${onBlack ? "text-white" : "text-secondary1"} transition-colors`}
       >

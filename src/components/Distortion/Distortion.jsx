@@ -179,21 +179,9 @@ camera.position.z = 1;
    
     animateScene();
   }, []);
-
-  // window.addEventListener(
-  //   "resize",
-  //   useEffect(() => {
-  //     let w = imageContainer.offsetWidth;
-  //     let h = imageContainer.offsetHeight;
-  //     renderer.setSize(w, h);
-  //     camera.aspect = w / h;
-  //     camera.updateProjectionMatrix();
-  //   }, [])
-  // );
-
   
   return (
-    <div className="">
+    <div>
       <div
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
@@ -201,15 +189,8 @@ camera.position.z = 1;
         id={containerId}
         className="imageContainer"
       >
-        {/* <div className=" inset-0 z-[10] flex justify-center w-full h-full">
-        <h1 
-        id="heroText"
-            className="absolute text-white z-[10] pointer-events-none text-7xl block mx-auto font-serif  w-fit h-fit">Unseen. Unknown. Unmatched.</h1>
-        </div> */}
         <img
           id={imageId}
-          // src="https://raw.githubusercontent.com/naymurdev/LiquidDistortionSlider/main/img/2.jpg"
-          // src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
           src={src}
           className="myImage "
         />

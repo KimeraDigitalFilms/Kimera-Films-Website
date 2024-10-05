@@ -62,19 +62,7 @@ function Featured() {
         }
       >
         <div className={"sticky top-0 h-[100vh] overflow-hidden"}>
-          {/* <motion.div
-          style={{ scale: scale4 }}
-          className={
-            "el w-full h-full top-0 absolute flex items-center justify-center"
-          }
-        >
-          <div ref={videoRef} className={" relative w-[25vw] h-[25vh]"}>
-            <motion.video playsInline id="reel" muted autoPlay loop src="/videos/random1.mp4" className="w-full h-full z-50"></motion.video>
-            <img src={videos[0].src} alt="image" className="object-cover w-full h-full"/>
-          </div>
-        </motion.div> */}
           <motion.div
-            //  style={{ scale: scale4 }}
             className="flex h-full w-full items-center justify-center"
           >
             <ShowReel scale={scale4} viewRef={videoRef} />

@@ -10,15 +10,9 @@ function SmoothScroll({ children }) {
   }
 
   return (
-    // <>
-    //   {window.innerwidth < 655 ? (
-    //     <></>
-    //   ) : (
         <ReactLenis root options={lenisOptions}>
           {children}
         </ReactLenis>
-    //   )}
-    // </>
   )
 }
 export default SmoothScroll

@@ -11,10 +11,6 @@ const Hero = () => {
     window.innerWidth >= 500 ? 1.5 : 4.5
   )
 
-  // useEffect(() => {
-  //   setSensitivity(window.innerWidth >= 500 ? 1.5 : 3)
-  // }, [window.innerWidth])
-
   useEffect(() => {
     webGLFluidEnhanced.simulation(canvasRef.current, {
       SIM_RESOLUTION: 256,
@@ -26,10 +22,7 @@ const Hero = () => {
       BLOOM: false,
       CURL: 0,
       BACK_COLOR: canvasBg,
-      // BACK_COLOR:'rgba(255, 99, 71, 0)',
-      // TRANSPARENT: true,
       SPLAT_RADIUS: 0.5,
-      // COLOR_PALETTE: ['#61dafb', '#a8dadc', '#457b9d', '#1d3557', '#f1faee'],
       COLOR_PALETTE: [canvasColor],
     })
   }, [canvasColor, canvasBg])
@@ -57,7 +50,6 @@ const Hero = () => {
       <h2
         id="h2"
         className="absolute font-Recoleta font-bold text-secondary1"
-        // className="absolute left-[15%] top-[20%] font-Recoleta text-2xl font-bold text-secondary1 [@media(min-width:1000px)]:top-[40%] [@media(min-width:1120px)]:text-4xl [@media(min-width:405px)]:left-[20%] [@media(min-width:525px)]:text-3xl [@media(min-width:700px)]:left-[30%] [@media(min-width:970px)]:left-[5%] [@media(min-width:970px)]:top-[45%] [@media(min-width:970px)]:text-2xl"
       >
         Elevating brands in the digital
         <br />
@@ -81,7 +73,6 @@ const Hero = () => {
           </span>
         </h1>
       </div>
-      {/* </div> */}
     </div>
   )
 }
