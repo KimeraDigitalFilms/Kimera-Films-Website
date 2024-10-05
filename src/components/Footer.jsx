@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom"
-import { motion, useInView } from "framer-motion"
-// import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion"
+import emailjs from "@emailjs/browser"
 
 function Footer() {
   const [formData, setFormData] = useState({
@@ -21,39 +21,39 @@ function Footer() {
   const form = useRef()
   const [error, setError] = useState(null)
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   emailjs
-  //     .sendForm(
-  //       "service_gu1gtzg",
-  //       "template_k5ksp3y",
-  //       form.current,
-  //       "SkgLwwqay6wLx83lf"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         setFormData({
-  //           name: "",
-  //           email: "",
-  //           message: "",
-  //         });
-  //         setError(false);
-  //         // document.getElementById('contactForm').reset()
-  //         document.getElementById("name").value = "";
-  //         document.getElementById("email").value = "";
-  //         document.getElementById("message").value = "";
-  //         setTimeout(() => {
-  //           setError(null);
-  //         }, 3000);
-  //       },
-  //       (error) => {
-  //         setError(true);
-  //         setTimeout(() => {
-  //           setError(null);
-  //         }, 3000);
-  //       }
-  //     );
-  // };
+  const sendEmail = (e) => {
+    e.preventDefault()
+    emailjs
+      .sendForm(
+        "service_kfv0oqs",
+        "template_876ytij",
+        form.current,
+        "SkgLwwqay6wLx83lf"
+      )
+      .then(
+        (result) => {
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          })
+          setError(false)
+          // document.getElementById('contactForm').reset()
+          document.getElementById("name").value = ""
+          document.getElementById("email").value = ""
+          document.getElementById("message").value = ""
+          setTimeout(() => {
+            setError(null)
+          }, 3000)
+        },
+        (error) => {
+          setError(true)
+          setTimeout(() => {
+            setError(null)
+          }, 3000)
+        }
+      )
+  }
 
   const ref = useRef()
   return (
@@ -134,7 +134,7 @@ function Footer() {
 
         <div className="relative w-[500px]">
           <motion.form
-            // onSubmit={sendEmail}
+            onSubmit={sendEmail}
             ref={form}
             id="contactForm"
             className="m-auto flex w-full flex-col flex-nowrap gap-y-5"
@@ -143,7 +143,7 @@ function Footer() {
               required
               id="name"
               name="name"
-              className="bg-transparent px-3 py-2 text-secondary1 outline outline-1 outline-secondary1 placeholder:text-gray-500"
+              className="bg-transparent px-3 py-2 text-secondary outline outline-1 outline-secondary1 placeholder:text-gray-500"
               color="white"
               placeholder="Name"
             ></input>
@@ -151,7 +151,7 @@ function Footer() {
               required
               id="email"
               name="email"
-              className="bg-transparent px-3 py-2 text-secondary1 outline outline-1 outline-secondary1 placeholder:text-gray-500"
+              className="bg-transparent px-3 py-2 text-secondary outline outline-1 outline-secondary1 placeholder:text-gray-500"
               placeholder="Email"
             ></input>
             <textarea
@@ -162,19 +162,20 @@ function Footer() {
               className="text-secondary bg-transparent p-3 outline outline-1 outline-secondary1 placeholder:text-gray-500"
               placeholder="Message"
             ></textarea>
-            {/* <input
+            <input
               type="submit"
               id="btnsubmit"
-              value="SEND"
-              className="rounded-none bg-secondary py-2 hover:cursor-pointer"
-            /> */}
-            <button
-              // onClick={sendEmail}
+              value="SUBMIT"
+              // className="rounded-none bg-secondary py-2 hover:cursor-pointer"
+              className="scale-100 bg-buttonBg px-4 py-1 font-NeueMontrealLight text-3xl uppercase tracking-wider text-primary transition-all hover:scale-110 hover:cursor-pointer active:scale-95"
+            />
+            {/* <button
+              onClick={sendEmail}
 
               className="scale-100 bg-buttonBg px-4 py-1 font-NeueMontrealLight text-3xl uppercase tracking-wider text-primary transition-all hover:scale-110 active:scale-95"
             >
               Submit
-            </button>
+            </button> */}
 
             {error === null && <span>&nbsp;</span>}
             {error === false && (
